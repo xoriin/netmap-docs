@@ -1,6 +1,5 @@
 ---
 title: NetMap
-description: Learn what NetMap does and choose the right documentation path for installing, using, administering, operating, or automating it.
 keywords:
   - NetMap documentation
   - network mapping
@@ -45,33 +44,33 @@ Active operations such as discovery, ping, traceroute, SNMP, and service checks 
 
 ### Install NetMap
 
-Read [What Is NetMap?](../product-introduction/what-is-netmap.md), then follow the [Quick Start](../installation/quick-start.md). Before storing important data, review [Storage](../configuration/storage.md), [Secrets Management](../security/secrets-management.md), and [Backup and Restore](../installation/backup-and-restore.md).
+Read [What Is NetMap?](./product-introduction/what-is-netmap.md), then follow the [Quick Start](./installation/quick-start.md). Before storing important data, review [Storage](./configuration/storage.md), [Secrets Management](./security/secrets-management.md), and [Backup and Restore](./installation/backup-and-restore.md).
 
 ### Use NetMap day to day
 
-Begin with the [Interface Overview](../using-netmap/interface-overview.md), then open the workspace you need:
+Begin with the [Interface Overview](./using-netmap/interface-overview.md), then open the workspace you need:
 
-- [Inventory](../using-netmap/inventory.md)
-- [Topology](../using-netmap/topology.md)
-- [Monitoring](../using-netmap/monitoring.md)
-- [IPAM](../using-netmap/ipam.md)
-- [Security Events](../using-netmap/security-events.md)
+- [Inventory](./using-netmap/inventory.md)
+- [Topology](./using-netmap/topology.md)
+- [Monitoring](./using-netmap/monitoring.md)
+- [IPAM](./using-netmap/ipam.md)
+- [Security Events](./using-netmap/security-events.md)
 
 ### Administer or operate NetMap
 
-Use [Administration](../using-netmap/admin.md), [Permissions](../security/permissions.md), and the [Security Model](../security/security-model.md) for access and instance-wide controls. Use [Health Checks](../operations/health-checks.md), [Logging](../operations/logging.md), [Backups](../operations/backups.md), and [Disaster Recovery](../operations/disaster-recovery.md) for container operations.
+Use [Administration](./using-netmap/admin.md), [Permissions](./security/permissions.md), and the [Security Model](./security/security-model.md) for access and instance-wide controls. Use [Health Checks](./operations/health-checks.md), [Logging](./operations/logging.md), [Backups](./operations/backups.md), and [Disaster Recovery](./operations/disaster-recovery.md) for container operations.
 
 ### Automate or contribute
 
-For REST automation, start with [API Authentication](../api/authentication.md), [API-Key Permissions](../api/api-key-permissions.md), and the [Endpoint Inventory](../api/api-reference.md). Contributors should begin with [Repository Structure](../development/repository-structure.md), [Local Development](../development/local-development.md), and [Testing](../development/testing.md).
+For REST automation, start with [API Authentication](./api/authentication.md), [API-Key Permissions](./api/api-key-permissions.md), and the [Endpoint Inventory](./api/api-reference.md). Contributors should begin with [Repository Structure](./development/repository-structure.md), [Local Development](./development/local-development.md), and [Testing](./development/testing.md).
 
 ## Use this documentation confidently
 
-- [How to Use This Documentation](./how-to-use-this-documentation.md) explains search, conventions, permissions, examples, and safety notes.
-- [Documentation Version and Product Compatibility](./documentation-version-compatibility.md) matches pages to production, test, and development builds.
-- [Quick Links by Goal](./quick-links.md) goes directly to common tasks.
-- [Documentation Sitemap](./sitemap.md) lists every published page.
-- [Documentation Changelog](./documentation-changelog.md) records material additions and corrections.
-- [Reporting Documentation Problems](./reporting-documentation-problems.md) explains how to report inaccurate, missing, or unclear guidance.
+- [How to Use This Documentation](./orientation/how-to-use-this-documentation.md) explains search, conventions, permissions, examples, and safety notes.
+- [Documentation Version and Product Compatibility](./orientation/documentation-version-compatibility.md) explains how this v1.5.0 documentation applies to other installed versions.
+- [Quick Links by Goal](./orientation/quick-links.md) goes directly to common tasks.
+- [Documentation Sitemap](./orientation/sitemap.md) lists every published page.
+- [Documentation Changelog](./orientation/documentation-changelog.md) records material additions and corrections.
+- [Reporting Documentation Problems](./orientation/reporting-documentation-problems.md) explains how to report inaccurate, missing, or unclear guidance.
 
-The implementation in the named channel is the source of truth. Procedures identify required access, important side effects, and destructive actions where they apply. Examples use reserved addresses and obvious placeholders; never paste real secrets, private network data, or unsanitized screenshots into public reports.
+Production NetMap v1.5.0 is the source used for this documentation. Procedures identify required access, important side effects, and destructive actions where they apply. Examples use reserved addresses and obvious placeholders; never paste real secrets, private network data, or unsanitized screenshots into public reports.

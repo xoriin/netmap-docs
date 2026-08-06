@@ -52,8 +52,10 @@ export default defineConfig({
 
           emitRedirect("development/local-development.md", "03-installation/development-installation.md");
           emitRedirect("development/contributing-workflow.md", "11-development/release-process.md");
-          emitRedirect("orientation/netmap.md", "orientation/welcome-to-netmap-documentation.md");
-          emitRedirect("orientation/netmap.md", "01-orientation/welcome-to-netmap-documentation.md");
+          emitRedirect("NetMap.md", "orientation/netmap.md");
+          emitRedirect("NetMap.md", "01-orientation/netmap.md");
+          emitRedirect("NetMap.md", "orientation/welcome-to-netmap-documentation.md");
+          emitRedirect("NetMap.md", "01-orientation/welcome-to-netmap-documentation.md");
           emitRedirect("development/contributing-workflow.md", "cloudflare-pages.md");
           emitRedirect("development/contributing-workflow.md", "reference/cloudflare-pages.md");
           emitRedirect("development/contributing-workflow.md", "12-reference/cloudflare-pages.md");
@@ -75,7 +77,7 @@ export default defineConfig({
       provider: "local"
     },
     nav: [
-      { text: "Guide", link: "/orientation/netmap" },
+      { text: "Guide", link: "/NetMap" },
       { text: "Install", link: "/installation/quick-start" },
       { text: "API", link: "/api/authentication" },
       { text: "Operations", link: "/operations/health-checks" },
@@ -86,7 +88,7 @@ export default defineConfig({
         text: "Orientation",
         collapsed: false,
         items: [
-          { text: "NetMap", link: "/orientation/netmap" },
+          { text: "NetMap", link: "/NetMap" },
           { text: "How To Use These Docs", link: "/orientation/how-to-use-this-documentation" },
           { text: "Versions And Compatibility", link: "/orientation/documentation-version-compatibility" },
           { text: "Quick Links By Goal", link: "/orientation/quick-links" },

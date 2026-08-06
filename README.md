@@ -6,7 +6,7 @@ This documentation was based on the production release of NetMap `v1.5.0` at the
 
 ## Start reading
 
-- [NetMap](./orientation/netmap.md)
+- [NetMap](./NetMap.md)
 - [How to Use This Documentation](./orientation/how-to-use-this-documentation.md)
 - [Documentation Version and Product Compatibility](./orientation/documentation-version-compatibility.md)
 - [Quick Links by Goal](./orientation/quick-links.md)

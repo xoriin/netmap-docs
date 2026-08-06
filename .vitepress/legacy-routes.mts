@@ -16,7 +16,7 @@ export const numberedDocumentationSections = {
 } as const;
 
 export const legacyDocumentationRoutes = {
-  "orientation/netmap.md": "index.md",
+  "NetMap.md": "index.md",
   "orientation/how-to-use-this-documentation.md": "how-to-use-this-documentation.md",
   "orientation/documentation-version-compatibility.md": "documentation-version-compatibility.md",
   "orientation/quick-links.md": "quick-links.md",
