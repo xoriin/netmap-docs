@@ -3,8 +3,11 @@
 - 01 - Orientation
   - [Welcome to the NetMap Documentation](./01-orientation/welcome-to-netmap-documentation.md)
   - [How to Use This Documentation](./01-orientation/how-to-use-this-documentation.md)
+  - [Documentation Version and Product Compatibility](./01-orientation/documentation-version-compatibility.md)
   - [Quick Links by Goal](./01-orientation/quick-links.md)
   - [NetMap Documentation Sitemap](./01-orientation/sitemap.md)
+  - [Documentation Changelog](./01-orientation/documentation-changelog.md)
+  - [Reporting Documentation Problems](./01-orientation/reporting-documentation-problems.md)
 - 02 - Product Introduction
   - [Product Overview and Architecture](./02-product-introduction/introduction.md)
   - [What Is NetMap?](./02-product-introduction/what-is-netmap.md)

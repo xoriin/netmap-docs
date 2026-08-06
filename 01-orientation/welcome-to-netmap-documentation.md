@@ -1,65 +1,77 @@
 ---
 title: Welcome to the NetMap Documentation
-description: Choose the right path for installing, using, administering, operating, automating, or contributing to NetMap.
+description: Learn what NetMap does and choose the right documentation path for installing, using, administering, operating, or automating it.
 keywords:
   - NetMap documentation
-  - getting started
   - network mapping
   - monitoring
   - IPAM
+  - syslog
 verified_version: "1.5.0-dev"
+outline: deep
 ---
 
 # Welcome to the NetMap Documentation
 
-NetMap is a self-hosted application for keeping a device inventory, drawing network topology, monitoring devices and services, managing IP addresses, discovering hosts, searching syslog events, and administering access. This documentation helps you move from a new installation to routine operation and recovery without assuming that you already know NetMap's terminology.
+NetMap is a self-hosted application for understanding and operating a network from one browser interface. It brings together device inventory, topology mapping, monitoring, IP address management (IPAM), discovery, syslog and firewall-event search, alerting, exports, and administration.
 
-This documentation set was verified against the **NetMap 1.5.0 development channel**. Some linked pages describe features that the master documentation checklist still classifies as development-only; those links are labelled **Development channel**. Check the version shown in your NetMap sidebar or Admin workspace before following version-sensitive instructions.
+It is designed for people who need a practical local source of truth: network administrators, homelab operators, support teams, security analysts, container operators, automation authors, and contributors.
 
-## Choose your path
+> **Documentation coverage:** This orientation section is verified against NetMap `1.5.0-dev`. Later sections are being reviewed page by page; development-only behavior is labelled where the documentation checklist still requires release confirmation.
 
-### I am installing NetMap for the first time
+## What NetMap brings together
 
-Start with [What Is NetMap?](../02-product-introduction/what-is-netmap.md) if you want a short product overview. Then use the [Quick Start](../03-installation/quick-start.md) for a Docker Compose deployment and [Environment Variables](../04-configuration/environment-variables.md) for production configuration.
+- **Inventory:** Record devices, identity fields, lifecycle, expected state, groups, VLANs, locations, tags, and notes.
+- **Topology:** Map devices, group zones, sites, relationships, link direction, layouts, and visual preferences.
+- **Monitoring:** Track device reachability, latency, service checks, HTTP/HTTPS endpoints, history, and alert conditions.
+- **IPAM:** Manage internal subnets, reservations, DHCP leases, conflicts, utilization, and external address pools.
+- **Discovery:** Scan permitted private targets and review observations before changing inventory.
+- **Security events:** Receive syslog, search parsed firewall events, save searches, and correlate activity with devices.
+- **Operations:** Export data, create and restore backups, inspect health, and collect diagnostic information.
+- **Administration and automation:** Manage users, roles, permissions, integrations, OIDC, notifications, API keys, and audit history.
 
-Before storing important data, read [Storage](../04-configuration/storage.md), [Secrets Management](../10-security/secrets-management.md), and [Backup and Restore](../03-installation/backup-and-restore.md).
+## How it fits together
 
-### I use NetMap day to day
+NetMap is delivered as one Docker container. nginx serves the React interface and proxies API and WebSocket traffic to FastAPI over a local Unix socket. Background services handle monitoring, discovery schedules, alert evaluation, notification delivery, backups, reminders, and syslog maintenance.
 
-Begin with the [Interface Overview](../05-using-netmap/interface-overview.md), then open the guide for your workspace:
+Application data is stored locally in two SQLite databases:
 
-- [Inventory](../05-using-netmap/inventory.md) for device records.
-- [Topology](../05-using-netmap/topology.md) for the network map and links.
-- [Monitoring](../05-using-netmap/monitoring.md) for device and service health.
-- [IPAM](../05-using-netmap/ipam.md) for subnets, leases, reservations, and conflicts.
-- [Security Events](../05-using-netmap/security-events.md) for syslog and firewall-event search.
+- `netmap.db` contains inventory, topology, users, settings, monitoring, IPAM, alerts, and other application records.
+- `firewall.db` isolates higher-volume syslog and firewall-event writes from the main application database.
 
-The [Quick Links by Goal](./quick-links.md) page takes you directly to common procedures.
+Active operations such as discovery, ping, traceroute, SNMP, and service checks make network connections from the NetMap container. Deployment, permissions, and network exposure therefore matter as much as the interface itself.
 
-### I administer NetMap
+## Start here
 
-Use [Administration](../05-using-netmap/admin.md) for the Admin workspace, [Permissions](../10-security/permissions.md) for access control, and the [Security Model](../10-security/security-model.md) for deployment responsibilities. Configuration that affects the whole installation is grouped under [Configuration Reference](../04-configuration/configuration.md).
+### Install NetMap
 
-### I operate or recover the container
+Read [What Is NetMap?](../02-product-introduction/what-is-netmap.md), then follow the [Quick Start](../03-installation/quick-start.md). Before storing important data, review [Storage](../04-configuration/storage.md), [Secrets Management](../10-security/secrets-management.md), and [Backup and Restore](../03-installation/backup-and-restore.md).
 
-Use [Health Checks](../08-operations/health-checks.md), [Logging](../08-operations/logging.md), and [Monitoring NetMap](../08-operations/monitoring-netmap.md) for routine operations. For data protection and recovery, continue to [Backups](../08-operations/backups.md), [Restores](../08-operations/restores.md), and [Disaster Recovery](../08-operations/disaster-recovery.md).
+### Use NetMap day to day
 
-### I automate NetMap
+Begin with the [Interface Overview](../05-using-netmap/interface-overview.md), then open the workspace you need:
 
-Start with [API Authentication](../07-api/authentication.md), then review [API-Key Permissions](../07-api/api-key-permissions.md) and the [Endpoint Inventory](../07-api/api-reference.md). API-key access is currently tracked as a **Development channel** capability in the documentation checklist.
+- [Inventory](../05-using-netmap/inventory.md)
+- [Topology](../05-using-netmap/topology.md)
+- [Monitoring](../05-using-netmap/monitoring.md)
+- [IPAM](../05-using-netmap/ipam.md)
+- [Security Events](../05-using-netmap/security-events.md)
 
-### I contribute to NetMap
+### Administer or operate NetMap
 
-Begin with [Repository Structure](../11-development/repository-structure.md), [Development Installation](../03-installation/development-installation.md), and [Testing](../11-development/testing.md). The developer pages describe the `dev` → `test` → production workflow and the validation expected before promotion.
+Use [Administration](../05-using-netmap/admin.md), [Permissions](../10-security/permissions.md), and the [Security Model](../10-security/security-model.md) for access and instance-wide controls. Use [Health Checks](../08-operations/health-checks.md), [Logging](../08-operations/logging.md), [Backups](../08-operations/backups.md), and [Disaster Recovery](../08-operations/disaster-recovery.md) for container operations.
 
-## Find your way around
+### Automate or contribute
 
-- [How to Use This Documentation](./how-to-use-this-documentation.md) explains search, page conventions, version labels, examples, and permissions.
-- [Quick Links by Goal](./quick-links.md) groups common tasks by outcome.
-- [Documentation Sitemap](./sitemap.md) lists the complete published page tree.
-- [Glossary](../12-reference/glossary.md) defines NetMap-specific and networking terms used throughout the site.
+For REST automation, start with [API Authentication](../07-api/authentication.md), [API-Key Permissions](../07-api/api-key-permissions.md), and the [Endpoint Inventory](../07-api/api-reference.md). Contributors should begin with [Repository Structure](../11-development/repository-structure.md), [Development Installation](../03-installation/development-installation.md), and [Testing](../11-development/testing.md).
 
-## Trust and safety
+## Use this documentation confidently
 
-The implementation in the named channel is the source of truth for these pages. Procedures identify required access, important side effects, and destructive actions where they apply. Examples use reserved addresses and obvious placeholders; replace them with values from your own environment, and never paste real secrets into issue reports or screenshots.
+- [How to Use This Documentation](./how-to-use-this-documentation.md) explains search, conventions, permissions, examples, and safety notes.
+- [Documentation Version and Product Compatibility](./documentation-version-compatibility.md) matches pages to production, test, and development builds.
+- [Quick Links by Goal](./quick-links.md) goes directly to common tasks.
+- [Documentation Sitemap](./sitemap.md) lists every published page.
+- [Documentation Changelog](./documentation-changelog.md) records material additions and corrections.
+- [Reporting Documentation Problems](./reporting-documentation-problems.md) explains how to report inaccurate, missing, or unclear guidance.
 
+The implementation in the named channel is the source of truth. Procedures identify required access, important side effects, and destructive actions where they apply. Examples use reserved addresses and obvious placeholders; never paste real secrets, private network data, or unsanitized screenshots into public reports.

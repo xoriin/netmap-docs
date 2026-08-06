@@ -16,8 +16,11 @@ This is the complete human-readable tree used for published documentation naviga
 
 - [Welcome to the NetMap Documentation](./welcome-to-netmap-documentation.md)
 - [How to Use This Documentation](./how-to-use-this-documentation.md)
+- [Documentation Version and Product Compatibility](./documentation-version-compatibility.md)
 - [Quick Links by Goal](./quick-links.md)
 - [NetMap Documentation Sitemap](./sitemap.md)
+- [Documentation Changelog](./documentation-changelog.md)
+- [Reporting Documentation Problems](./reporting-documentation-problems.md)
 
 ## 02 - Product Introduction
 

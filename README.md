@@ -1,42 +1,52 @@
-# NetMap documentation source
+# NetMap Documentation
 
-This directory contains the source-backed NetMap documentation for users, administrators, container operators, API consumers, and contributors. The current foundation pages were verified against NetMap `1.5.0-dev`.
+Source-backed documentation for [NetMap](https://github.com/xoriin/netmap), a self-hosted network inventory, topology, monitoring, IPAM, discovery, syslog, alerting, and administration platform.
 
-Reader-facing source is organized into 12 numbered folders. Only folders carry numeric prefixes; page order is defined explicitly in `SUMMARY.md` for GitBook and in `.vitepress/config.mts` for VitePress. `.vitepress/legacy-routes.mts` preserves former public URLs as build-time redirects.
+The documentation is being reviewed against NetMap `1.5.0`, beginning with the development channel. Page frontmatter records the version used for verification, and development-only behavior remains explicitly labelled until release review is complete.
 
-Start with:
+## Start reading
 
-- [Welcome to the NetMap Documentation](./01-orientation/welcome-to-netmap-documentation.md)
+- [What Is NetMap?](./01-orientation/welcome-to-netmap-documentation.md)
 - [How to Use This Documentation](./01-orientation/how-to-use-this-documentation.md)
+- [Documentation Version and Product Compatibility](./01-orientation/documentation-version-compatibility.md)
 - [Quick Links by Goal](./01-orientation/quick-links.md)
-- [NetMap Documentation Sitemap](./01-orientation/sitemap.md)
+- [Documentation Sitemap](./01-orientation/sitemap.md)
 
-The published site uses the sidebar in `.vitepress/config.mts`. `SUMMARY.md` mirrors the same page tree in portable Markdown for repository browsing and future GitBook Git Sync use. Internal planning prompts and authoring checklists are kept outside this repository.
+GitBook navigation is defined in [SUMMARY.md](./SUMMARY.md). The VitePress sidebar and local search are configured in `.vitepress/config.mts`.
 
-## Preview or build locally
+## Repository structure
 
-Run these commands from this `documentation/` directory:
+Reader content is grouped into 12 numbered folders. Markdown filenames are intentionally unnumbered: page order comes from `SUMMARY.md` in GitBook and the sidebar configuration in VitePress.
+
+```text
+01-orientation/
+02-product-introduction/
+03-installation/
+...
+12-reference/
+```
+
+Internal planning prompts, authoring checklists, installed dependencies, and generated site output are kept outside this repository.
+
+## Preview locally
+
+From the repository root:
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-Build the production site with:
+Create a production build with:
 
 ```bash
 npm run build
 ```
 
-The generated output belongs to `.vitepress/dist/` and must not be edited by hand.
+Generated output is written to `.vitepress/dist/` and is excluded from version control.
 
-## Authoring rules
+## Contribute a correction
 
-- Treat the implementation in the documented channel as the source of truth.
-- Record the checked source in each reviewed page's `verified_version` frontmatter.
-- Label development-only behavior explicitly.
-- Use relative Markdown links and portable GitHub-flavored Markdown.
-- Update both VitePress navigation and `SUMMARY.md` when a published page is added, removed, or moved.
-- Never include credentials, private network data, production logs, or database contents in examples or screenshots.
+Use the [documentation issue tracker](https://github.com/xoriin/netmap-docs/issues) for inaccurate, missing, unclear, or broken documentation. See [Reporting Documentation Problems](./01-orientation/reporting-documentation-problems.md) for the information to include and the sensitive data to remove first.
 
-See [Documentation Maintenance Plan](./12-reference/maintenance-plan.md) for the broader maintenance workflow and [Documentation Inventory and Gaps](./12-reference/documentation-inventory.md) for known coverage gaps.
+Application defects and feature requests belong in the [NetMap application tracker](https://github.com/xoriin/netmap/issues).

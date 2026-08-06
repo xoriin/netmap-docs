@@ -4,6 +4,7 @@ import { legacyDocumentationRoutes } from "./legacy-routes.mts";
 export default defineConfig({
   title: "NetMap",
   description: "Self-hosted network mapping and monitoring documentation",
+  appearance: "dark",
   srcExclude: [
     "README.md",
     "SUMMARY.md"
@@ -47,15 +48,20 @@ export default defineConfig({
     sidebar: [
       {
         text: "01 - Orientation",
+        collapsed: false,
         items: [
           { text: "Welcome", link: "/01-orientation/welcome-to-netmap-documentation" },
           { text: "How To Use These Docs", link: "/01-orientation/how-to-use-this-documentation" },
+          { text: "Versions And Compatibility", link: "/01-orientation/documentation-version-compatibility" },
           { text: "Quick Links By Goal", link: "/01-orientation/quick-links" },
-          { text: "Documentation Sitemap", link: "/01-orientation/sitemap" }
+          { text: "Documentation Sitemap", link: "/01-orientation/sitemap" },
+          { text: "Documentation Changelog", link: "/01-orientation/documentation-changelog" },
+          { text: "Report A Documentation Problem", link: "/01-orientation/reporting-documentation-problems" }
         ]
       },
       {
         text: "02 - Product Introduction",
+        collapsed: true,
         items: [
           { text: "Product Overview And Architecture", link: "/02-product-introduction/introduction" },
           { text: "What Is NetMap?", link: "/02-product-introduction/what-is-netmap" },
@@ -67,6 +73,7 @@ export default defineConfig({
       },
       {
         text: "03 - Installation",
+        collapsed: true,
         items: [
           { text: "Installation Overview", link: "/03-installation/installation" },
           { text: "Quick Start", link: "/03-installation/quick-start" },
@@ -81,6 +88,7 @@ export default defineConfig({
       },
       {
         text: "04 - Configuration",
+        collapsed: true,
         items: [
           { text: "Configuration Reference", link: "/04-configuration/configuration" },
           { text: "Environment Variables", link: "/04-configuration/environment-variables" },
@@ -92,6 +100,7 @@ export default defineConfig({
       },
       {
         text: "05 - Using NetMap",
+        collapsed: true,
         items: [
           { text: "User Guide", link: "/05-using-netmap/user-guide" },
           { text: "Interface Overview", link: "/05-using-netmap/interface-overview" },
@@ -111,6 +120,7 @@ export default defineConfig({
       },
       {
         text: "06 - Guides",
+        collapsed: true,
         items: [
           { text: "Add A Device", link: "/06-guides/add-device" },
           { text: "Import Devices", link: "/06-guides/import-devices" },
@@ -128,6 +138,7 @@ export default defineConfig({
       },
       {
         text: "07 - API",
+        collapsed: true,
         items: [
           { text: "API Overview", link: "/07-api/api-overview" },
           { text: "API Keys", link: "/07-api/api-keys" },
@@ -147,6 +158,7 @@ export default defineConfig({
       },
       {
         text: "08 - Operations",
+        collapsed: true,
         items: [
           { text: "Operations Overview", link: "/08-operations/operations" },
           { text: "Health Checks", link: "/08-operations/health-checks" },
@@ -160,6 +172,7 @@ export default defineConfig({
       },
       {
         text: "09 - Troubleshooting",
+        collapsed: true,
         items: [
           { text: "Common Issues", link: "/09-troubleshooting/common-issues" },
           { text: "Installation Problems", link: "/09-troubleshooting/installation-problems" },
@@ -174,6 +187,7 @@ export default defineConfig({
       },
       {
         text: "10 - Security",
+        collapsed: true,
         items: [
           { text: "Security Overview", link: "/10-security/security" },
           { text: "Security Model", link: "/10-security/security-model" },
@@ -186,6 +200,7 @@ export default defineConfig({
       },
       {
         text: "11 - Development",
+        collapsed: true,
         items: [
           { text: "Developer Guide", link: "/11-development/development" },
           { text: "Repository Structure", link: "/11-development/repository-structure" },
@@ -199,6 +214,7 @@ export default defineConfig({
       },
       {
         text: "12 - Reference",
+        collapsed: true,
         items: [
           { text: "Default Values", link: "/12-reference/default-values" },
           { text: "File And Directory Paths", link: "/12-reference/file-paths" },

@@ -36,7 +36,7 @@ Every newly reviewed page records the source version in `verified_version` front
 
 The running application is authoritative for its installed version. Check the version displayed in the NetMap interface. Development and test images may also show a **Dev** or **Test** channel label. Do not use the newest GitHub tag as a substitute for the installed version.
 
-When a page or link says **Development channel**, the master checklist has not yet cleared that behavior as generally released documentation. Verify your installed channel before relying on it. The dedicated version-compatibility page is still planned; until it is complete, the page-level `verified_version` and explicit channel notes take precedence.
+When a page or link says **Development channel**, the master checklist has not yet cleared that behavior as generally released documentation. Verify your installed channel before relying on it. See [Documentation Version and Product Compatibility](./documentation-version-compatibility.md) for the complete matching rules.
 
 ## Recognize page types
 
@@ -86,7 +86,10 @@ Relative links are used so the same Markdown works in VitePress, GitHub, and a f
 ## Related pages
 
 - [Welcome to the NetMap Documentation](./welcome-to-netmap-documentation.md)
+- [Documentation Version and Product Compatibility](./documentation-version-compatibility.md)
 - [Quick Links by Goal](./quick-links.md)
 - [Documentation Sitemap](./sitemap.md)
+- [Documentation Changelog](./documentation-changelog.md)
+- [Reporting Documentation Problems](./reporting-documentation-problems.md)
 - [Glossary](../12-reference/glossary.md)
 - [Changelog](../12-reference/changelog.md)

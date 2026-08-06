@@ -3,8 +3,11 @@
 export const legacyDocumentationRoutes = {
   "01-orientation/welcome-to-netmap-documentation.md": "index.md",
   "01-orientation/how-to-use-this-documentation.md": "how-to-use-this-documentation.md",
+  "01-orientation/documentation-version-compatibility.md": "documentation-version-compatibility.md",
   "01-orientation/quick-links.md": "quick-links.md",
   "01-orientation/sitemap.md": "sitemap.md",
+  "01-orientation/documentation-changelog.md": "documentation-changelog.md",
+  "01-orientation/reporting-documentation-problems.md": "reporting-documentation-problems.md",
   "02-product-introduction/introduction.md": "introduction.md",
   "02-product-introduction/what-is-netmap.md": "introduction/what-is-netmap.md",
   "02-product-introduction/features.md": "introduction/features.md",
