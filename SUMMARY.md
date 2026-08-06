@@ -1,7 +1,6 @@
 # Summary
 
 - Orientation
-  - [Welcome to the NetMap Documentation](./orientation/welcome-to-netmap-documentation.md)
   - [How to Use This Documentation](./orientation/how-to-use-this-documentation.md)
   - [Documentation Version and Product Compatibility](./orientation/documentation-version-compatibility.md)
   - [Quick Links by Goal](./orientation/quick-links.md)

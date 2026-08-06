@@ -32,6 +32,7 @@ This is separate from the NetMap product [Changelog](../reference/changelog.md),
 - Recorded production NetMap `v1.5.0` as the version basis at the time of writing.
 - Replaced maintainer-only release material with a contributor workflow based on forks and the `test` branch.
 - Removed documentation-hosting, internal inventory, and maintenance-plan pages from the published product navigation.
+- Configured GitBook to use **Welcome to the NetMap Documentation** as the homepage instead of publishing the repository `README.md` as a separate page.
 
 ### Version coverage
 
