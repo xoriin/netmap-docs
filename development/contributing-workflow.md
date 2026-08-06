@@ -3,6 +3,7 @@ title: Contributing Workflow
 description: Fork NetMap, prepare and validate a change, and submit it through the test branch.
 sidebar_position: 8
 keywords: [contributing, fork, test branch, pull request]
+verified_version: "1.5.0"
 ---
 
 # Contributing Workflow
