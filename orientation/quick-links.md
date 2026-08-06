@@ -110,6 +110,6 @@ Choose the outcome closest to what you need. Read the linked page's prerequisite
 
 ## Related pages
 
-- [Welcome to the NetMap Documentation](./welcome-to-netmap-documentation.md)
+- [NetMap](./netmap.md)
 - [How to Use This Documentation](./how-to-use-this-documentation.md)
 - [Documentation Sitemap](./sitemap.md)

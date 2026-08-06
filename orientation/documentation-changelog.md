@@ -18,7 +18,7 @@ This is separate from the NetMap product [Changelog](../reference/changelog.md),
 
 ### Added
 
-- Added **Welcome to the NetMap Documentation** with entry paths for users, administrators, operators, API consumers, and contributors.
+- Added the **NetMap** homepage with entry paths for users, administrators, operators, API consumers, and contributors.
 - Added **How to Use This Documentation**, including search, permission, placeholder, safety, and documentation-gap conventions.
 - Added **Quick Links by Goal** and a complete human-readable documentation sitemap.
 - Added this documentation changelog, version-compatibility guidance, and a dedicated procedure for reporting documentation problems.
@@ -32,7 +32,7 @@ This is separate from the NetMap product [Changelog](../reference/changelog.md),
 - Recorded production NetMap `v1.5.0` as the version basis at the time of writing.
 - Replaced maintainer-only release material with a contributor workflow based on forks and the `test` branch.
 - Removed documentation-hosting, internal inventory, and maintenance-plan pages from the published product navigation.
-- Configured GitBook to use **Welcome to the NetMap Documentation** as the homepage instead of publishing the repository `README.md` as a separate page.
+- Configured GitBook to use **NetMap** as the homepage instead of publishing the repository `README.md` as a separate page.
 
 ### Version coverage
 

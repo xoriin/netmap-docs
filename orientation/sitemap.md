@@ -14,7 +14,7 @@ This is the complete human-readable tree used for published documentation naviga
 
 ## Orientation
 
-- [Welcome to the NetMap Documentation](./welcome-to-netmap-documentation.md)
+- [NetMap](./netmap.md)
 - [How to Use This Documentation](./how-to-use-this-documentation.md)
 - [Documentation Version and Product Compatibility](./documentation-version-compatibility.md)
 - [Quick Links by Goal](./quick-links.md)

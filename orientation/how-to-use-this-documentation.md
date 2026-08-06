@@ -79,11 +79,11 @@ The text following the callout should identify what remains uncertain and where 
 
 Interface instructions use the labels visible in the verified build, such as **Inventory**, **Add device**, or **Admin**. A bold label identifies UI text; backticks identify permission names, environment variables, paths, header names, or code values.
 
-Relative links are used so the same Markdown works in VitePress, GitHub, and a future GitBook Git Sync setup. If you are reading the source files rather than the published site, begin at [Welcome to the NetMap Documentation](./welcome-to-netmap-documentation.md); repository maintainers can also use the unlisted `README.md` and `SUMMARY.md` files.
+Relative links are used so the same Markdown works in VitePress, GitHub, and GitBook Git Sync. If you are reading the source files rather than the published site, begin at [NetMap](./netmap.md); repository maintainers can also use the unlisted `README.md` and `SUMMARY.md` files.
 
 ## Related pages
 
-- [Welcome to the NetMap Documentation](./welcome-to-netmap-documentation.md)
+- [NetMap](./netmap.md)
 - [Documentation Version and Product Compatibility](./documentation-version-compatibility.md)
 - [Quick Links by Goal](./quick-links.md)
 - [Documentation Sitemap](./sitemap.md)

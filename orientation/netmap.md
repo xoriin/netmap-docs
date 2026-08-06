@@ -1,5 +1,5 @@
 ---
-title: Welcome to the NetMap Documentation
+title: NetMap
 description: Learn what NetMap does and choose the right documentation path for installing, using, administering, operating, or automating it.
 keywords:
   - NetMap documentation
@@ -11,7 +11,7 @@ verified_version: "1.5.0"
 outline: deep
 ---
 
-# Welcome to the NetMap Documentation
+# NetMap
 
 NetMap is a self-hosted application for understanding and operating a network from one browser interface. It brings together device inventory, topology mapping, monitoring, IP address management (IPAM), discovery, syslog and firewall-event search, alerting, exports, and administration.
 

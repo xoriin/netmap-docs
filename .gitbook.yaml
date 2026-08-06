@@ -1,5 +1,5 @@
 root: ./
 
 structure:
-  readme: orientation/welcome-to-netmap-documentation.md
+  readme: orientation/netmap.md
   summary: SUMMARY.md
