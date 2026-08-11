@@ -22,6 +22,7 @@ This is separate from the NetMap product [Changelog](../reference/changelog.md),
 - Consolidated **Quick Links by Goal** into the homepage and redirected its former VitePress URL to the homepage.
 - Moved documentation conventions, version compatibility, the documentation changelog, and reporting guidance to **About This Documentation** at the end of GitBook and VitePress navigation.
 - Removed the unused `orientation/` source folder; these documentation-meta pages now live under `about-documentation/`.
+- Consolidated Section 3 around canonical terminology and data-model pages instead of creating one repetitive article per checklist line.
 - Removed the documentation sitemap from primary navigation while retaining it as a complete text index linked from the homepage and documentation guide.
 
 ## 11 August 2026

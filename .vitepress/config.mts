@@ -117,7 +117,15 @@ export default defineConfig({
           { text: "Browser And Platform Support", link: "/product-introduction/browser-and-platform-support" },
           { text: "Product Limitations And Capacity Planning", link: "/product-introduction/limitations-and-capacity-planning" },
           { text: "Privacy And Data Collection", link: "/product-introduction/privacy-and-data-collection" },
-          { text: "Terminology", link: "/product-introduction/terminology" }
+          { text: "Terminology And Data Model", link: "/product-introduction/terminology" },
+          { text: "Device Records And State", link: "/product-introduction/device-records-and-state" },
+          { text: "Topology Entities", link: "/product-introduction/topology-entities" },
+          { text: "Internal IPAM Data Model", link: "/product-introduction/ipam-data-model" },
+          { text: "External IP Pools And Assignments", link: "/product-introduction/external-ip-pools-and-assignments" },
+          { text: "Monitoring And Discovery Data Model", link: "/product-introduction/monitoring-and-discovery-model" },
+          { text: "Security Events And Notifications", link: "/product-introduction/security-events-and-notifications" },
+          { text: "Access-Control Model", link: "/product-introduction/access-control-model" },
+          { text: "Configuration, Time, Retention, And Expiry", link: "/product-introduction/configuration-time-and-retention" }
         ]
       },
       {
