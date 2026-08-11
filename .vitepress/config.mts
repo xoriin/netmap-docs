@@ -56,12 +56,24 @@ export default defineConfig({
           emitRedirect("NetMap.md", "01-orientation/netmap.md");
           emitRedirect("NetMap.md", "orientation/welcome-to-netmap-documentation.md");
           emitRedirect("NetMap.md", "01-orientation/welcome-to-netmap-documentation.md");
+          emitRedirect("about-documentation/how-to-use-this-documentation.md", "orientation/how-to-use-this-documentation.md");
+          emitRedirect("about-documentation/how-to-use-this-documentation.md", "01-orientation/how-to-use-this-documentation.md");
+          emitRedirect("about-documentation/documentation-version-compatibility.md", "orientation/documentation-version-compatibility.md");
+          emitRedirect("about-documentation/documentation-version-compatibility.md", "01-orientation/documentation-version-compatibility.md");
+          emitRedirect("about-documentation/sitemap.md", "orientation/sitemap.md");
+          emitRedirect("about-documentation/sitemap.md", "01-orientation/sitemap.md");
+          emitRedirect("about-documentation/documentation-changelog.md", "orientation/documentation-changelog.md");
+          emitRedirect("about-documentation/documentation-changelog.md", "01-orientation/documentation-changelog.md");
+          emitRedirect("about-documentation/reporting-documentation-problems.md", "orientation/reporting-documentation-problems.md");
+          emitRedirect("about-documentation/reporting-documentation-problems.md", "01-orientation/reporting-documentation-problems.md");
+          emitRedirect("NetMap.md", "orientation/quick-links.md");
+          emitRedirect("NetMap.md", "quick-links.md");
           emitRedirect("development/contributing-workflow.md", "cloudflare-pages.md");
           emitRedirect("development/contributing-workflow.md", "reference/cloudflare-pages.md");
           emitRedirect("development/contributing-workflow.md", "12-reference/cloudflare-pages.md");
-          emitRedirect("orientation/reporting-documentation-problems.md", "documentation-inventory.md");
-          emitRedirect("orientation/reporting-documentation-problems.md", "reference/documentation-inventory.md");
-          emitRedirect("orientation/reporting-documentation-problems.md", "12-reference/documentation-inventory.md");
+          emitRedirect("about-documentation/reporting-documentation-problems.md", "documentation-inventory.md");
+          emitRedirect("about-documentation/reporting-documentation-problems.md", "reference/documentation-inventory.md");
+          emitRedirect("about-documentation/reporting-documentation-problems.md", "12-reference/documentation-inventory.md");
           emitRedirect("development/contributing-workflow.md", "maintenance-plan.md");
           emitRedirect("development/contributing-workflow.md", "reference/maintenance-plan.md");
           emitRedirect("development/contributing-workflow.md", "12-reference/maintenance-plan.md");
@@ -85,27 +97,26 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: "Orientation",
-        collapsed: false,
-        items: [
-          { text: "NetMap", link: "/NetMap" },
-          { text: "How To Use These Docs", link: "/orientation/how-to-use-this-documentation" },
-          { text: "Versions And Compatibility", link: "/orientation/documentation-version-compatibility" },
-          { text: "Quick Links By Goal", link: "/orientation/quick-links" },
-          { text: "Documentation Sitemap", link: "/orientation/sitemap" },
-          { text: "Documentation Changelog", link: "/orientation/documentation-changelog" },
-          { text: "Report A Documentation Problem", link: "/orientation/reporting-documentation-problems" }
-        ]
+        text: "NetMap",
+        link: "/NetMap"
       },
       {
         text: "Product Introduction",
-        collapsed: true,
+        collapsed: false,
         items: [
-          { text: "Product Overview And Architecture", link: "/product-introduction/introduction" },
+          { text: "Product Introduction", link: "/product-introduction/introduction" },
           { text: "What Is NetMap?", link: "/product-introduction/what-is-netmap" },
-          { text: "Features", link: "/product-introduction/features" },
-          { text: "Architecture", link: "/product-introduction/architecture" },
+          { text: "NetMap Feature Tour", link: "/product-introduction/features" },
           { text: "Supported Use Cases", link: "/product-introduction/supported-use-cases" },
+          { text: "Unsupported And Out-of-Scope Use Cases", link: "/product-introduction/unsupported-use-cases" },
+          { text: "How NetMap Works", link: "/product-introduction/architecture" },
+          { text: "Single-Container Architecture", link: "/product-introduction/single-container-architecture" },
+          { text: "The Two-Database Design", link: "/product-introduction/two-database-design" },
+          { text: "Network Access Model", link: "/product-introduction/network-access-model" },
+          { text: "Production Images And Installed Versions", link: "/product-introduction/production-images-and-versions" },
+          { text: "Browser And Platform Support", link: "/product-introduction/browser-and-platform-support" },
+          { text: "Product Limitations And Capacity Planning", link: "/product-introduction/limitations-and-capacity-planning" },
+          { text: "Privacy And Data Collection", link: "/product-introduction/privacy-and-data-collection" },
           { text: "Terminology", link: "/product-introduction/terminology" }
         ]
       },
@@ -259,6 +270,16 @@ export default defineConfig({
           { text: "Ports", link: "/reference/ports" },
           { text: "Glossary", link: "/reference/glossary" },
           { text: "Changelog", link: "/reference/changelog" }
+        ]
+      },
+      {
+        text: "About This Documentation",
+        collapsed: true,
+        items: [
+          { text: "How To Use These Docs", link: "/about-documentation/how-to-use-this-documentation" },
+          { text: "Versions And Compatibility", link: "/about-documentation/documentation-version-compatibility" },
+          { text: "Documentation Changelog", link: "/about-documentation/documentation-changelog" },
+          { text: "Report A Documentation Problem", link: "/about-documentation/reporting-documentation-problems" }
         ]
       }
     ],

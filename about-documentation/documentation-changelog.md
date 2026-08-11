@@ -14,6 +14,33 @@ This page records material changes to the NetMap documentation itself. Use it to
 
 This is separate from the NetMap product [Changelog](../reference/changelog.md), which describes application releases and supplies the in-app **What's new** content. A documentation-only correction does not imply that application behavior changed.
 
+## 12 August 2026
+
+### Changed
+
+- Removed **Orientation** as a competing reader journey. The NetMap homepage is now the single goal-based entry point, followed directly by **Product Introduction**.
+- Consolidated **Quick Links by Goal** into the homepage and redirected its former VitePress URL to the homepage.
+- Moved documentation conventions, version compatibility, the documentation changelog, and reporting guidance to **About This Documentation** at the end of GitBook and VitePress navigation.
+- Removed the unused `orientation/` source folder; these documentation-meta pages now live under `about-documentation/`.
+- Removed the documentation sitemap from primary navigation while retaining it as a complete text index linked from the homepage and documentation guide.
+
+## 11 August 2026
+
+### Added
+
+- Added focused introductions for unsupported use cases, the all-in-one process model, the two SQLite databases, network access, production image tags, browser support, capacity planning, and privacy/data collection.
+
+### Changed
+
+- Reworked the product introduction into a source-verified `v1.5.0` evaluation path.
+- Expanded **What Is NetMap?**, the workspace feature tour, supported use cases, and application architecture with audience, permission, limitation, failure, recovery, and related-reading guidance.
+- Added Mermaid diagrams for runtime flow, process supervision, database isolation, network traffic, image versioning, capacity drivers, and data destinations.
+- Updated GitBook, VitePress, and the human-readable sitemap so all product-introduction pages are discoverable.
+
+### Version coverage
+
+- All twelve checklist topics in **Product Introduction** are reviewed against production NetMap `v1.5.0`.
+
 ## 6 August 2026
 
 ### Added

@@ -15,7 +15,7 @@ Use this page to find the right type of guidance and to interpret the convention
 
 ## Navigate and search
 
-The site groups pages by reader goal:
+The [NetMap homepage](../NetMap.md) routes common goals to the appropriate page. The sidebar groups the detailed pages by purpose:
 
 - **Introduction** explains what NetMap is and the concepts behind it.
 - **Installation** and **Configuration** cover deployment and instance-wide settings.
@@ -28,7 +28,7 @@ The site groups pages by reader goal:
 
 Use the search field when you know a UI label, environment variable, error message, endpoint path, or concept but not its section. Search for the exact visible label first. If that does not find the page, try the underlying term—for example, search for both “Locations” and “sites.”
 
-For a complete browsable tree, see the [Documentation Sitemap](./sitemap.md). For common outcomes, use [Quick Links by Goal](./quick-links.md).
+Use the homepage for common outcomes. The sidebar and search are the primary ways to browse; the [Documentation Sitemap](./sitemap.md) remains available as a complete text index.
 
 ## Read version labels
 
@@ -85,7 +85,6 @@ Relative links are used so the same Markdown works in VitePress, GitHub, and Git
 
 - [NetMap](../NetMap.md)
 - [Documentation Version and Product Compatibility](./documentation-version-compatibility.md)
-- [Quick Links by Goal](./quick-links.md)
 - [Documentation Sitemap](./sitemap.md)
 - [Documentation Changelog](./documentation-changelog.md)
 - [Reporting Documentation Problems](./reporting-documentation-problems.md)

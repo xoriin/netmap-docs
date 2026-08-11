@@ -1,18 +1,20 @@
 # Summary
 
-- Orientation
-  - [How to Use This Documentation](./orientation/how-to-use-this-documentation.md)
-  - [Documentation Version and Product Compatibility](./orientation/documentation-version-compatibility.md)
-  - [Quick Links by Goal](./orientation/quick-links.md)
-  - [NetMap Documentation Sitemap](./orientation/sitemap.md)
-  - [Documentation Changelog](./orientation/documentation-changelog.md)
-  - [Reporting Documentation Problems](./orientation/reporting-documentation-problems.md)
+- [NetMap](./NetMap.md)
 - Product Introduction
-  - [Product Overview and Architecture](./product-introduction/introduction.md)
+  - [Product Introduction](./product-introduction/introduction.md)
   - [What Is NetMap?](./product-introduction/what-is-netmap.md)
-  - [Features](./product-introduction/features.md)
-  - [Architecture](./product-introduction/architecture.md)
+  - [NetMap Feature Tour](./product-introduction/features.md)
   - [Supported Use Cases](./product-introduction/supported-use-cases.md)
+  - [Unsupported and Out-of-Scope Use Cases](./product-introduction/unsupported-use-cases.md)
+  - [How NetMap Works](./product-introduction/architecture.md)
+  - [Single-Container Architecture](./product-introduction/single-container-architecture.md)
+  - [The Two-Database Design](./product-introduction/two-database-design.md)
+  - [Network Access Model](./product-introduction/network-access-model.md)
+  - [Production Images and Installed Versions](./product-introduction/production-images-and-versions.md)
+  - [Browser and Platform Support](./product-introduction/browser-and-platform-support.md)
+  - [Product Limitations and Capacity Planning](./product-introduction/limitations-and-capacity-planning.md)
+  - [Privacy and Data Collection](./product-introduction/privacy-and-data-collection.md)
   - [Terminology](./product-introduction/terminology.md)
 - Installation
   - [Installation](./installation/installation.md)
@@ -116,3 +118,8 @@
   - [Ports](./reference/ports.md)
   - [Glossary](./reference/glossary.md)
   - [Changelog](./reference/changelog.md)
+- About This Documentation
+  - [How to Use This Documentation](./about-documentation/how-to-use-this-documentation.md)
+  - [Documentation Version and Product Compatibility](./about-documentation/documentation-version-compatibility.md)
+  - [Documentation Changelog](./about-documentation/documentation-changelog.md)
+  - [Reporting Documentation Problems](./about-documentation/reporting-documentation-problems.md)

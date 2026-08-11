@@ -1,40 +1,45 @@
 ---
 title: What Is NetMap?
-description: Plain-language overview of NetMap and the problems it solves.
-sidebar_position: 1
-keywords: [overview, self-hosted, network mapping]
+description: Learn NetMap's purpose, primary workflows, intended users, and self-hosted deployment model.
+sidebar_position: 2
+keywords: [NetMap, self-hosted, network mapping, network monitoring, audience]
+verified_version: "1.5.0"
 ---
 
 # What Is NetMap?
 
-NetMap is a self-hosted application for mapping and monitoring networks. It combines inventory, topology, device health, service checks, IP address management, syslog/firewall event search, exports, and administration in one browser interface.
+NetMap is a self-hosted browser application that brings network inventory, topology, availability monitoring, IP address management, discovery, and syslog context into one operational view. Its supported distribution is an all-in-one Docker image with persistent local storage.
 
-The application is intended for network administrators, homelab operators, security analysts, and support teams that need a local operational source of truth.
+This page is for anyone evaluating NetMap. No account or special role is required to understand the product; actions inside NetMap are permission-controlled.
 
-NetMap is packaged as a single Docker container running nginx, a React single-page application, FastAPI, uvicorn, SQLite, syslog listeners, and background workers.
+## The problem it addresses
 
-## What Problem It Solves
+Small networks often spread their operating knowledge across spreadsheets, router interfaces, monitoring tools, firewall logs, and individual memory. NetMap provides a local source of truth where operators can:
 
-Small and medium networks often end up split across spreadsheets, router pages, monitoring tools, firewall logs, and memory. NetMap gives operators one place to track devices, topology, IP address usage, service health, and security events.
+1. record devices, locations, groups, VLANs, and relationships;
+2. draw and share a topology map;
+3. discover private-network hosts and review changes before importing them;
+4. compare observed device state with its expected state;
+5. run device, service, and HTTP endpoint checks;
+6. manage subnets, reservations, DHCP leases, conflicts, and public-IP allocations;
+7. receive and search firewall/syslog events;
+8. alert through configured notification providers; and
+9. export data or automate REST operations with revocable API keys.
 
-## What It Includes
+## Intended users
 
-- Inventory for network devices.
-- Topology graph for devices, groups, sites, and links.
-- nmap discovery and scheduled discovery observations.
-- Monitoring summaries, history, and service checks.
-- IPAM for subnets, reservations, DHCP leases, and conflicts.
-- Syslog/firewall event ingestion and search.
-- User, role, SSO, notification, backup, and diagnostic administration.
-- REST API access through API keys.
+- **Home-lab operators** who want a maintainable map and inventory without a collection of separate services.
+- **Small-business IT teams** that need shared operational context and role-based access.
+- **Network administrators** managing VLANs, sites, address space, discovery, and availability.
+- **Support and security operators** correlating device records with health and firewall events.
+- **Automation users** calling the same permission-gated `/api/v1` resources through API keys.
 
-## Deployment Model
+## What self-hosted means
 
-The verified production deployment is the all-in-one Docker image. NetMap does not require a separate database service in the documented deployment; it uses SQLite files under `/app/data`.
+The application, its two SQLite databases, and uploaded/configured data run on infrastructure you control. NetMap is not a hosted service and does not require a cloud account or external database. Some optional features make outbound requests—for example update checks, OIDC, notifications, HTTP monitors, or active network tools. See [Privacy and Data Collection](./privacy-and-data-collection.md).
 
-## Where To Go Next
+NetMap does not automatically know the network merely because it is installed. You add or import records, enable discovery where appropriate, configure monitoring, and forward syslog from devices. Active features require network reachability and may need host networking or container capabilities.
 
-- [Features](./features.md)
-- [Architecture](./architecture.md)
-- [Quick Start](../installation/quick-start.md)
-- [API Keys](../api/api-keys.md)
+## Before choosing NetMap
+
+Read [Supported Use Cases](./supported-use-cases.md), [Unsupported and Out-of-Scope Use Cases](./unsupported-use-cases.md), and [Product Limitations and Capacity Planning](./limitations-and-capacity-planning.md). For a workspace-by-workspace view, continue to the [NetMap Feature Tour](./features.md).

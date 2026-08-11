@@ -7,10 +7,10 @@ This documentation was based on the production release of NetMap `v1.5.0` at the
 ## Start reading
 
 - [NetMap](./NetMap.md)
-- [How to Use This Documentation](./orientation/how-to-use-this-documentation.md)
-- [Documentation Version and Product Compatibility](./orientation/documentation-version-compatibility.md)
-- [Quick Links by Goal](./orientation/quick-links.md)
-- [Documentation Sitemap](./orientation/sitemap.md)
+- [Product Introduction](./product-introduction/introduction.md)
+- [How to Use This Documentation](./about-documentation/how-to-use-this-documentation.md)
+- [Documentation Version and Product Compatibility](./about-documentation/documentation-version-compatibility.md)
+- [Documentation Sitemap](./about-documentation/sitemap.md)
 
 GitBook navigation is defined in [SUMMARY.md](./SUMMARY.md). The VitePress sidebar and local search are configured in `.vitepress/config.mts`.
 
@@ -19,11 +19,11 @@ GitBook navigation is defined in [SUMMARY.md](./SUMMARY.md). The VitePress sideb
 Reader content is grouped into descriptive, unnumbered folders. Folder names do not control publication order: `SUMMARY.md` controls GitBook navigation, and `.vitepress/config.mts` controls the VitePress sidebar.
 
 ```text
-orientation/
 product-introduction/
 installation/
 ...
 reference/
+about-documentation/         Documentation-meta and compatibility pages
 ```
 
 Internal planning prompts, authoring checklists, installed dependencies, and generated site output are kept outside this repository.
@@ -47,6 +47,6 @@ Generated output is written to `.vitepress/dist/` and is excluded from version c
 
 ## Contribute a correction
 
-Use the [documentation issue tracker](https://github.com/xoriin/netmap-docs/issues) for inaccurate, missing, unclear, or broken documentation. See [Reporting Documentation Problems](./orientation/reporting-documentation-problems.md) for the information to include and the sensitive data to remove first.
+Use the [documentation issue tracker](https://github.com/xoriin/netmap-docs/issues) for inaccurate, missing, unclear, or broken documentation. See [Reporting Documentation Problems](./about-documentation/reporting-documentation-problems.md) for the information to include and the sensitive data to remove first.
 
 Application defects and feature requests belong in the [NetMap application tracker](https://github.com/xoriin/netmap/issues).

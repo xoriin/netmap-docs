@@ -17,12 +17,11 @@ export const numberedDocumentationSections = {
 
 export const legacyDocumentationRoutes = {
   "NetMap.md": "index.md",
-  "orientation/how-to-use-this-documentation.md": "how-to-use-this-documentation.md",
-  "orientation/documentation-version-compatibility.md": "documentation-version-compatibility.md",
-  "orientation/quick-links.md": "quick-links.md",
-  "orientation/sitemap.md": "sitemap.md",
-  "orientation/documentation-changelog.md": "documentation-changelog.md",
-  "orientation/reporting-documentation-problems.md": "reporting-documentation-problems.md",
+  "about-documentation/how-to-use-this-documentation.md": "how-to-use-this-documentation.md",
+  "about-documentation/documentation-version-compatibility.md": "documentation-version-compatibility.md",
+  "about-documentation/sitemap.md": "sitemap.md",
+  "about-documentation/documentation-changelog.md": "documentation-changelog.md",
+  "about-documentation/reporting-documentation-problems.md": "reporting-documentation-problems.md",
   "product-introduction/introduction.md": "introduction.md",
   "product-introduction/what-is-netmap.md": "introduction/what-is-netmap.md",
   "product-introduction/features.md": "introduction/features.md",
