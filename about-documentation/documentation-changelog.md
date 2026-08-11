@@ -18,6 +18,7 @@ This is separate from the NetMap product [Changelog](../reference/changelog.md),
 
 ### Changed
 
+- Expanded the Docker Compose installation guidance with bridge/host networking decisions, capabilities, syslog mappings, read-only runtime storage, lifecycle validation, and the source-build workflow.
 - Added the Section 4 installation foundations: a deployment-path overview and a source-verified Docker Compose quick start.
 - Removed **Orientation** as a competing reader journey. The NetMap homepage is now the single goal-based entry point, followed directly by **Product Introduction**.
 - Consolidated **Quick Links by Goal** into the homepage and redirected its former VitePress URL to the homepage.
