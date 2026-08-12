@@ -1,6 +1,5 @@
 ---
 title: File And Directory Paths
-description: Important paths used by NetMap.
 sidebar_position: 2
 keywords: [paths, files]
 ---

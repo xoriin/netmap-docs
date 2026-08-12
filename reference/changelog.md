@@ -1,6 +1,5 @@
 ---
 title: Changelog
-description: Release notes and What's New source.
 sidebar_position: 5
 keywords: [changelog, release notes]
 ---

@@ -1,6 +1,5 @@
 ---
 title: Glossary
-description: Compatibility entry for the canonical NetMap terminology and data-model reference.
 sidebar_position: 4
 keywords: [glossary, terminology]
 verified_version: "1.5.0"

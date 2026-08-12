@@ -1,6 +1,5 @@
 ---
 title: Ports
-description: Reference for NetMap web, API, syslog, and internal runtime ports.
 sidebar_position: 3
 keywords: [ports, firewall, syslog, Docker, reverse proxy]
 ---

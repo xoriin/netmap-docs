@@ -1,6 +1,5 @@
 ---
 title: Reference Appendices
-description: Index of NetMap's source-backed reference tables and operational catalogs.
 sidebar_position: 6
 keywords: [reference, matrix, defaults, glossary, API, permissions]
 ---
@@ -24,11 +23,11 @@ The documentation is intentionally split by audience. This page is the index for
 
 ## State and data-model references
 
-- [Device records and state](../product-introduction/device-records-and-state.md) explains lifecycle, expected state, and observed health.
-- [Monitoring and discovery model](../product-introduction/monitoring-and-discovery-model.md) explains checks, history, scans, and observations.
-- [Topology entities](../product-introduction/topology-entities.md) explains devices, groups, sites, relationships, and layouts.
-- [IPAM data model](../product-introduction/ipam-data-model.md) explains subnets, addresses, reservations, VLAN links, and public allocations.
-- [Security events and notifications](../product-introduction/security-events-and-notifications.md) explains firewall events, alert events, and deliveries.
+- [Device records and state](../product-introduction/terminology.md#device-records-and-state) explains lifecycle, expected state, and observed health.
+- [Monitoring and discovery model](../product-introduction/terminology.md#monitoring-and-discovery) explains checks, history, scans, and observations.
+- [Topology entities](../product-introduction/terminology.md#topology-entities) explains devices, groups, sites, relationships, and layouts.
+- [IPAM data model](../product-introduction/terminology.md#internal-ipam) explains subnets, addresses, reservations, VLAN links, and public allocations.
+- [Security events and notifications](../product-introduction/terminology.md#security-events-and-notifications) explains firewall events, alert events, and deliveries.
 
 ## Scope of generated references
 

@@ -1,6 +1,5 @@
 ---
 title: Default Values
-description: Important runtime defaults.
 sidebar_position: 1
 keywords: [defaults]
 ---
