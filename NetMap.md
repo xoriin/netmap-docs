@@ -1,6 +1,5 @@
 ---
 title: NetMap
-description: NetMap documentation for installation, operation, administration, APIs, and development.
 keywords:
   - NetMap documentation
   - getting started
@@ -21,8 +20,8 @@ This is the NetMap documentation homepage. It links the product overview, instal
 
 | Goal | Start here |
 |---|---|
-| Understand the product and intended use | [Product Introduction](./product-introduction/introduction.md) |
-| Tour the available workspaces | [NetMap Feature Tour](./product-introduction/features.md) |
+| Understand the product and intended use | [What Is NetMap?](./product-introduction/what-is-netmap.md) |
+| Tour the available workspaces | [NetMap Feature Tour](./product-introduction/what-is-netmap.md#feature-tour) |
 | Check whether NetMap fits your environment | [What Is NetMap?](./product-introduction/what-is-netmap.md#where-netmap-fits) |
 | Understand deployment and data flow | [How NetMap Works](./product-introduction/architecture.md) |
 | Review limitations before deploying | [Product Limitations and Capacity Planning](./product-introduction/limitations-and-capacity-planning.md) |

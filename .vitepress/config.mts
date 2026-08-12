@@ -91,24 +91,10 @@ export default defineConfig({
         text: "Product Introduction",
         collapsed: false,
         items: [
-          { text: "Product Introduction", link: "/product-introduction/introduction" },
           { text: "What Is NetMap?", link: "/product-introduction/what-is-netmap" },
-          { text: "NetMap Feature Tour", link: "/product-introduction/features" },
           { text: "How NetMap Works", link: "/product-introduction/architecture" },
-          { text: "Network Access Model", link: "/product-introduction/network-access-model" },
-          { text: "Production Images And Installed Versions", link: "/product-introduction/production-images-and-versions" },
-          { text: "Browser And Platform Support", link: "/product-introduction/browser-and-platform-support" },
-          { text: "Product Limitations And Capacity Planning", link: "/product-introduction/limitations-and-capacity-planning" },
-          { text: "Privacy And Data Collection", link: "/product-introduction/privacy-and-data-collection" },
-          { text: "Terminology And Data Model", link: "/product-introduction/terminology" },
-          { text: "Device Records And State", link: "/product-introduction/device-records-and-state" },
-          { text: "Topology Entities", link: "/product-introduction/topology-entities" },
-          { text: "Internal IPAM Data Model", link: "/product-introduction/ipam-data-model" },
-          { text: "External IP Pools And Assignments", link: "/product-introduction/external-ip-pools-and-assignments" },
-          { text: "Monitoring And Discovery Data Model", link: "/product-introduction/monitoring-and-discovery-model" },
-          { text: "Security Events And Notifications", link: "/product-introduction/security-events-and-notifications" },
-          { text: "Access-Control Model", link: "/product-introduction/access-control-model" },
-          { text: "Configuration, Time, Retention, And Expiry", link: "/product-introduction/configuration-time-and-retention" }
+          { text: "NetMap Data Model", link: "/product-introduction/terminology" },
+          { text: "Operating Boundaries And Administration", link: "/product-introduction/limitations-and-capacity-planning" }
         ]
       },
       {

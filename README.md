@@ -7,7 +7,7 @@ This documentation was based on the production release of NetMap `v1.5.0` at the
 ## Start reading
 
 - [NetMap](./NetMap.md)
-- [Product Introduction](./product-introduction/introduction.md)
+- [What Is NetMap?](./product-introduction/what-is-netmap.md)
 
 GitBook navigation is defined in [SUMMARY.md](./SUMMARY.md). The VitePress sidebar and local search are configured in `.vitepress/config.mts`.
 
@@ -16,7 +16,7 @@ GitBook navigation is defined in [SUMMARY.md](./SUMMARY.md). The VitePress sideb
 Reader content is grouped into descriptive, unnumbered folders. Folder names do not control publication order: `SUMMARY.md` controls GitBook navigation, and `.vitepress/config.mts` controls the VitePress sidebar.
 
 ```text
-product-introduction/
+product-introduction/             Product overview, architecture, data model, and boundaries
 installation/
 ...
 reference/
