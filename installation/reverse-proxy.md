@@ -1,6 +1,5 @@
 ---
 title: Reverse Proxy And HTTPS
-description: Reverse proxy requirements for NetMap.
 sidebar_position: 6
 keywords: [reverse proxy, HTTPS, nginx, websocket]
 ---

@@ -1,6 +1,5 @@
 ---
 title: Backup And Restore
-description: Protect and restore NetMap persistent data.
 sidebar_position: 8
 keywords: [backup, restore, SQLite]
 ---

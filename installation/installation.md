@@ -1,6 +1,5 @@
 ---
 title: Installation Overview
-description: Choose a supported NetMap deployment method and plan the installation.
 sidebar_position: 1
 keywords:
   - install
@@ -41,7 +40,7 @@ The first start creates the database schema and applies registered migrations. K
 
 Use the default Docker bridge network when you want normal port publishing and clear container isolation. Use `network_mode: host` when the container must use the host's LAN address for ARP/MAC discovery or for DHCP checks against a server whose scopes do not include the Docker bridge address.
 
-Host networking changes the port model: the container binds directly to the host, so `ports:` mappings are not used and host ports must be available. See [Choose Bridge or Host Networking](../product-introduction/network-access-model.md) and [Docker Compose](./docker-compose.md) before changing this setting.
+Host networking changes the port model: the container binds directly to the host, so `ports:` mappings are not used and host ports must be available. See [How NetMap Works](../product-introduction/architecture.md#network-access-and-capabilities) and [Docker Compose](./docker-compose.md) before changing this setting.
 
 ## Installation sequence
 
@@ -77,7 +76,7 @@ Confirm that:
 ## Related concepts
 
 - [How NetMap Works](../product-introduction/architecture.md#the-all-in-one-image-and-persistent-databases)
-- [Network Access Model](../product-introduction/network-access-model.md)
-- [Production Images and Installed Versions](../product-introduction/production-images-and-versions.md)
+- [How NetMap Works](../product-introduction/architecture.md#network-access-and-capabilities)
+- [How NetMap Works](../product-introduction/architecture.md#production-images-and-installed-versions)
 - [Configuration Reference](../configuration/configuration.md)
 - [Installation Problems](../troubleshooting/installation-problems.md)

@@ -1,6 +1,5 @@
 ---
 title: Docker Compose
-description: Configure the NetMap all-in-one image, networking, capabilities, logging, and source builds.
 sidebar_position: 3
 keywords:
   - Docker Compose
@@ -89,7 +88,7 @@ Use host networking when NetMap must see the host's Layer-2 network for ARP/MAC 
 network_mode: host
 ```
 
-Host networking means the container binds directly to the host. The host ports must be free, and the `ports:` section must be removed because Docker does not publish ports for a host-networked container. See [Network Access Model](../product-introduction/network-access-model.md) for the security and capability implications.
+Host networking means the container binds directly to the host. The host ports must be free, and the `ports:` section must be removed because Docker does not publish ports for a host-networked container. See [How NetMap Works](../product-introduction/architecture.md#network-access-and-capabilities) for the security and capability implications.
 
 ## Capabilities and nmap
 

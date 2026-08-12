@@ -1,6 +1,5 @@
 ---
 title: Native Installation
-description: Status of native installation support.
 sidebar_position: 4
 keywords: [native installation]
 ---

@@ -1,6 +1,5 @@
 ---
 title: Docker CLI
-description: Run the NetMap all-in-one image directly with docker run.
 sidebar_position: 4
 keywords: [Docker, docker run, container, deployment]
 verified_version: "1.5.0"
@@ -104,5 +103,5 @@ Keep `SECRET_KEY`, `MASTER_KEY`, and `/app/data` unchanged. Startup applies regi
 - [Docker Compose](./docker-compose.md)
 - [Ports](../configuration/ports.md)
 - [Storage](../configuration/storage.md)
-- [Network Access Model](../product-introduction/network-access-model.md)
+- [How NetMap Works](../product-introduction/architecture.md#network-access-and-capabilities)
 - [Container Problems](../troubleshooting/container-problems.md)

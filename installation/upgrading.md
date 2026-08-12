@@ -1,6 +1,5 @@
 ---
 title: Upgrading
-description: Upgrade NetMap safely.
 sidebar_position: 7
 keywords: [upgrade, update]
 ---

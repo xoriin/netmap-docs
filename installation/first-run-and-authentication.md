@@ -1,6 +1,5 @@
 ---
 title: First-Run Setup and Authentication
-description: Complete initial setup, local sign-in, sessions, password recovery, and login lockout recovery.
 sidebar_position: 5
 keywords:
   - setup

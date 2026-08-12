@@ -1,6 +1,5 @@
 ---
 title: Five-Minute Quick Start
-description: Start a persistent NetMap Docker Compose deployment and complete first-run setup.
 sidebar_position: 2
 keywords:
   - quick start
