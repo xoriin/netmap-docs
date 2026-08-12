@@ -1,6 +1,5 @@
 ---
 title: Reverse Proxy Problems
-description: Troubleshoot proxy, HTTPS, CORS, and WebSocket issues.
 sidebar_position: 7
 keywords: [reverse proxy, CORS, websocket]
 ---

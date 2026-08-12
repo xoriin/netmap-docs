@@ -1,6 +1,5 @@
 ---
 title: Authentication Problems
-description: Troubleshoot login, sessions, lockouts, and SSO.
 sidebar_position: 3
 keywords: [auth, login, SSO]
 ---

@@ -1,6 +1,5 @@
 ---
 title: API-Key Problems
-description: Troubleshoot API-key authentication and authorization.
 sidebar_position: 4
 keywords: [API key, 401, 403, 429]
 ---

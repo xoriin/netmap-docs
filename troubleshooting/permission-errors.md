@@ -1,6 +1,5 @@
 ---
 title: Permission Errors
-description: Understand 403 responses.
 sidebar_position: 5
 keywords: [permissions, 403]
 ---

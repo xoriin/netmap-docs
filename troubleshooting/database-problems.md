@@ -1,6 +1,5 @@
 ---
 title: Database Problems
-description: Troubleshoot SQLite database issues.
 sidebar_position: 6
 keywords: [SQLite, database]
 ---

@@ -1,6 +1,5 @@
 ---
 title: Diagnostic Information
-description: Collect useful data for support.
 sidebar_position: 9
 keywords: [diagnostics, support]
 ---

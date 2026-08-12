@@ -1,6 +1,5 @@
 ---
 title: Common Issues
-description: A source-backed troubleshooting workflow for NetMap.
 sidebar_position: 1
 keywords: [troubleshooting, diagnostics, recovery]
 ---

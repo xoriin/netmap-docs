@@ -1,6 +1,5 @@
 ---
 title: Container Problems
-description: Troubleshoot Docker runtime issues.
 sidebar_position: 8
 keywords: [Docker, container]
 ---

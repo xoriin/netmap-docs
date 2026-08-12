@@ -1,6 +1,5 @@
 ---
 title: Installation Problems
-description: Troubleshoot startup and health failures.
 sidebar_position: 2
 keywords: [install, startup]
 ---
