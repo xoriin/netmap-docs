@@ -78,9 +78,29 @@ For least privilege, create a dedicated user with only the permissions required 
 - API keys do not support per-key IP allowlists.
 - API keys do not authenticate the syslog live WebSocket.
 - ReDoc is not configured.
-- The OpenAPI schema includes an application-wide `ApiKeyAuth` security scheme, but many route details still rely on FastAPI defaults and dependency names rather than hand-authored descriptions.
+- The OpenAPI schema applies `ApiKeyAuth` and `BearerAuth` to protected operations, but many route details still rely on FastAPI defaults and dependency names rather than hand-authored descriptions.
 - Documentation gap: no explicit public API stability, deprecation, or request-id policy exists in source.
 
 ## Vulnerability Reporting
 
 Documentation gap: no source-backed security reporting address or policy file was found during this pass. Maintainers should add a `SECURITY.md` or equivalent and link it from this page.
+
+## Security model and hardening
+
+NetMap assumes the operator controls the host, Docker daemon, persistent data directory, reverse proxy, and networks reachable by active probes. The trust boundary includes browser users, API clients, syslog senders, configured OIDC/notification providers, and devices being probed. Deploy behind HTTPS, restrict exposed ports and syslog senders, use exact trusted hosts/origins, and keep the image and host current.
+
+Local passwords are Argon2-hashed. Access tokens are short-lived in React memory; refresh tokens are HttpOnly cookies. CSRF uses a double-submit cookie for cookie-authenticated mutating requests; safe methods are unaffected, while bearer/API-key requests are exempt because they carry explicit credentials. Secure cookies require HTTPS. Failed-login thresholds, progressive delay, user/IP lockouts, password-reset expiry, and session idle timeout limit credential abuse.
+
+Authorization is evaluated at the route and ownership boundary. Hidden navigation is not a security control by itself: APIs return `403` when the live role lacks permission, and users can revoke only their own keys unless SuperAdmin. Role and key changes apply to subsequent requests immediately.
+
+Security headers include CSP, HSTS when enabled, frame protection through CSP, content type protection, Referrer-Policy, and Permissions-Policy. Set HSTS only after HTTPS is stable; preserve forwarded host/protocol headers only from trusted proxies.
+
+`MASTER_KEY` protects Fernet-encrypted integration values such as OIDC, notification, SNMP, and monitor secrets. The signing secret protects API-key HMAC verification and backup integrity. Backups provide integrity signatures, not confidentiality; protect backup files and keys separately. Rotating keys can invalidate sessions, API-key verification, or encrypted settings depending on the key, so plan and test it.
+
+Active tools, discovery, nmap via sudo, notification webhooks, HTTP monitors, and OIDC all make outbound requests. Public targets are disabled by default for active tools; rate limits and SSRF/private-target controls reduce abuse but do not replace network egress policy. Host networking and `NET_RAW` increase reachability and must be granted only to the intended container.
+
+Custom SVG/icon-pack data is sanitised with DOMPurify before rendering or export and remains browser-local. Syslog raw logs, IP addresses, audit records, usernames, and provider delivery details can contain sensitive operational data; restrict access and retention. Never paste API keys, client secrets, webhook URLs, or private keys into logs/issues.
+
+## Incident response
+
+For suspected compromise: revoke affected API keys and sessions, disable the user, preserve audit/syslog/container logs, inspect unusual exports and active probes, rotate exposed provider/application secrets according to the key-dependency plan, restore only from a validated trusted backup, and verify health, users, roles, integrations, and alerting. Report vulnerabilities privately to the project maintainer using the repository's current security contact; do not publish exploit details before a fix and coordinated disclosure plan exists.

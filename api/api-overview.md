@@ -36,7 +36,7 @@ http://127.0.0.1:8080/api/v1
 | Swagger UI | `/api/docs` |
 | ReDoc | Not configured |
 
-The FastAPI schema title is `NetMap API`. The OpenAPI version field is currently `0.1.0` in `backend/app/main.py`; installed application version is reported by `GET /api/v1/system/version`.
+The schema title is `NetMap API`, and its version is read from the same installed `VERSION` file used by the application. Swagger groups operations by NetMap capability and marks protected routes with API-key and bearer authentication options.
 
 ## Authentication Methods
 
@@ -132,3 +132,19 @@ curl --fail-with-body \
   --header "X-API-Key: ${API_KEY}" \
   --header "Accept: application/json"
 ```
+
+## Client quick starts
+
+Python clients should keep the API key in an environment variable, use a bounded timeout, call `raise_for_status()`, and treat `401/403/429` according to the error table. For downloads, write the response bytes and preserve the server filename/content type rather than decoding as JSON. PowerShell uses the same header and JSON contracts:
+
+```powershell
+$headers = @{ "X-API-Key" = $env:NETMAP_API_KEY; Accept = "application/json" }
+$device = Invoke-RestMethod -Uri "$env:NETMAP_URL/api/v1/auth/me" -Headers $headers
+$device | ConvertTo-Json -Depth 8
+```
+
+For automation, create a dedicated least-privilege user/key, list and match records by stable IDs or normalised IP/MAC, use explicit fields in `PATCH` requests, back off on `429`, and verify a create/update with a follow-up `GET`. Inventory export, IP reservation, discovery polling/import, and monitoring summary are the preferred recipes; do not retry destructive deletes blindly because the API has no universal idempotency key.
+
+## Compatibility and security boundaries
+
+The stable base path is `/api/v1`; compatibility aliases are called out in the endpoint inventory. There is no source-backed global deprecation or backward-compatibility SLA, so pin the product image/version and review release notes before upgrading. API keys are REST-only; the live syslog WebSocket requires browser/session authentication. Use HTTPS, preserve `X-API-Key` through proxies, validate inputs server-side, and keep request/response logs free of secrets.

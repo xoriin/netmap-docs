@@ -132,6 +132,30 @@ Useful external signals:
 - nginx 5xx rates.
 - Presence of worker startup errors in logs.
 
+## Process architecture and routine care
+
+The all-in-one image is supervised by tini and runs nginx, uvicorn/FastAPI, the syslog server, monitoring/alert workers, scheduled discovery, reservation reminders, backup scheduling, and deferred firewall maintenance. Use `docker compose ps`, `docker compose logs`, and the health endpoint rather than attaching to internal processes as a normal control method.
+
+Daily checks should cover health, container restarts, recent error logs, listener reachability, disk space, and alert delivery. Weekly checks should review backup age, database growth, retention, failed notifications, and audit activity. Before every upgrade or configuration/key change, take an off-host backup and verify recovery evidence.
+
+## SQLite, WAL, retention, and recovery
+
+Both databases use WAL mode, a 20-second busy timeout, and short write transactions. Background services must not hold a session across network I/O. Monitoring history and firewall retention delete in committed batches; this avoids a single multi-million-row delete blocking the application. Do not copy only a live `.db` file: include its `-wal`/`-shm` sidecars or use the application backup endpoint.
+
+Firewall FTS rebuild and retention cleanup run after startup in a daemon worker, so nginx can create the uvicorn socket promptly. FTS-only corruption is rebuilt without deleting main firewall rows; whole-firewall corruption may recreate `firewall.db` and lose unrecovered logs. Run manual SQLite integrity checks during a maintenance window and stop writes before filesystem-level repair.
+
+## Capacity, tuning, and migration
+
+Capacity is driven by device count, monitoring interval/history, service checks, syslog events, discovery ranges, and backup retention. Tune intervals and retention before adding volume; watch `/app/data`, container logs, and firewall growth. Startup migrations are registered in the application session and run forward; do not manually delete migration records or assume downgrade support. A failed migration requires logs, a verified backup, and the matching image version before recovery.
+
+## Secret rotation and relocation
+
+Changing `SECRET_KEY` affects sessions/API-key signing; changing `MASTER_KEY` affects encrypted fields; changing notification/OIDC secrets affects only those integrations. Plan a maintenance window, preserve old values for rollback, re-test login, API keys, encrypted settings, and notifications, then remove obsolete secrets securely. To move hosts, restore data and configuration/keys onto the replacement image rather than running two containers against one SQLite directory. Changing domain, ports, or proxy requires updating cookies, CORS/trusted hosts, OIDC redirect, WebSocket forwarding, and syslog sender configuration.
+
+## Operational readiness checklist
+
+Before calling a deployment ready, verify health and restart behavior, HTTPS and trusted origins, least-privilege users/keys, active probe scope, syslog allowlists, alert delivery, disk/retention limits, off-host backups, a validated restore, and emergency local SuperAdmin access.
+
 ## Troubleshooting
 
 ### Web UI does not load

@@ -146,3 +146,19 @@ Expected validation for code changes:
 - Documentation updates for behavior, API, configuration, or structure changes.
 
 Submit changes from your fork's `test` branch to the upstream `test` branch. See [Contributing Workflow](./contributing-workflow.md) for the complete commands and review expectations. Contributors should not create production tags or publish official images.
+
+## Architecture and implementation boundaries
+
+The frontend entry point mounts providers for auth, toasts, confirmations, themes, icons, and entity colours. Routing is a typed `AppRoute` plus `history.pushState`, not React Router. API wrappers in `frontend/src/api/client.ts` centralise typed requests, CSRF, transparent access-token refresh, and binary downloads; workspaces own feature state and error boundaries. CSS is layered global CSS (`tokens`, `base`, shell/workspaces, monitoring, dark theme, components), not CSS modules.
+
+The backend uses FastAPI routers, Pydantic schemas, SQLAlchemy models, service modules, and dependency-based RBAC. The main and firewall SQLite engines use WAL/busy timeout; background services snapshot database state, perform network I/O without a held session, then write in short transactions. Migrations are numbered startup migrations registered in the session initializer; test both a fresh database and an upgrade database.
+
+Feature-specific boundaries matter: Cytoscape ownership stays in the topology orchestrator while overlays receive model data; monitor HTTP secrets are Fernet-encrypted/write-only and response bodies are capped at 2 MiB; discovery normalises private ranges before nmap; syslog uses a separate DB and FTS5; OIDC uses single-use state/nonce/PKCE rows; API keys use HMAC digests and live role checks; backups are signed and schema/integrity validated before replacement.
+
+## Testing and quality gates
+
+Run focused backend tests first, then the full suite with the repository's `uv` command. For frontend changes run strict TypeScript, a production Vite build, and Playwright (`npm exec playwright test`; install Chromium once when absent). The e2e suite covers inventory filters/bulk menus, topology interactions, auth, and workspace regressions. Security tests must cover auth/CSRF/RBAC, API-key lockouts, OIDC claims, notification SSRF, SVG sanitisation, secret redaction, and ownership. Performance tests should exercise indexed monitoring history, syslog/FTS volume, discovery timeouts, SQLite contention, and browser rendering.
+
+## Release and documentation workflow
+
+Normal development edits `dev/` first, mirrors intended code to `test/` for image validation, and only mirrors to `prod/` after test-image confirmation. Keep normal changes under the `Unreleased` section of `dev/CHANGELOG.md`; finalize and mirror the changelog only for an explicit version release. Documentation belongs in the separate documentation repository, with every page registered in `SUMMARY.md` and the VitePress config. Source verification records the production version, permission, limitations, examples, destructive effects, and unresolved gaps.
