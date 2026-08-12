@@ -1,6 +1,5 @@
 ---
 title: Security Events
-description: Configure syslog and search firewall/security events.
 sidebar_position: 9
 keywords: [security, syslog, firewall, events]
 ---

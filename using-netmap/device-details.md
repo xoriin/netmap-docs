@@ -1,6 +1,5 @@
 ---
 title: Device Details
-description: Inspect and edit a NetMap device record.
 sidebar_position: 5
 keywords: [devices, details, inventory, monitoring]
 ---

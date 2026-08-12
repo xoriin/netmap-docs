@@ -1,6 +1,5 @@
 ---
 title: VLANs And Groups
-description: Manage topology groups and VLAN metadata.
 sidebar_position: 5
 keywords: [VLANs, groups]
 ---

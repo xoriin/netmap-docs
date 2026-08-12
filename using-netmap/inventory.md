@@ -1,6 +1,5 @@
 ---
 title: Inventory
-description: Manage device inventory.
 sidebar_position: 4
 keywords: [inventory, devices]
 ---

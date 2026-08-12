@@ -1,6 +1,5 @@
 ---
 title: Profile
-description: Manage your identity, preferences, password, and personal API keys.
 sidebar_position: 13
 keywords: [profile, password, API keys, preferences]
 ---

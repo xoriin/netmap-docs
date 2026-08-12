@@ -1,6 +1,5 @@
 ---
 title: External IP Pools And Assignments
-description: Track provider-assigned public address allocations separately from internal IPAM.
 sidebar_position: 9
 keywords: [external IP, public address, IPAM, allocations]
 ---

@@ -1,6 +1,5 @@
 ---
 title: Administration
-description: Manage users, roles, settings, notifications, SSO, backups, diagnostics, and API-key oversight.
 sidebar_position: 12
 keywords: [admin, users, roles, settings, notifications, SNMP]
 ---

@@ -1,6 +1,5 @@
 ---
 title: Topology
-description: Use the topology graph, layouts, relationships, search, path mode, and bulk actions.
 sidebar_position: 3
 keywords: [topology, graph, layouts, relationships]
 ---

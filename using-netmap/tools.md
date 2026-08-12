@@ -1,6 +1,5 @@
 ---
 title: Tools
-description: Run DNS, ping, traceroute, port, subnet, SNMP, and LLDP tools.
 sidebar_position: 10
 keywords: [tools, DNS, ping, traceroute, SNMP, LLDP]
 ---

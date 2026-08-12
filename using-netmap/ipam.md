@@ -1,6 +1,5 @@
 ---
 title: IPAM
-description: Manage internal subnets, addresses, reservations, DHCP leases, and conflicts.
 sidebar_position: 8
 keywords: [IPAM, subnet, reservations, DHCP]
 ---

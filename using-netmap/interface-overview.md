@@ -1,6 +1,5 @@
 ---
 title: Interface Overview
-description: NetMap workspace navigation, common controls, access rules, and browser behavior.
 sidebar_position: 1
 keywords: [interface, navigation, workspace]
 ---
@@ -49,5 +48,5 @@ Choose light or dark mode from Profile → Appearance. The selection persists pe
 
 - [Using the Application](./user-guide.md)
 - [First-Run Setup and Authentication](../installation/first-run-and-authentication.md)
-- [Entity Colors and Icons](../product-introduction/device-records-and-state.md)
+- [Entity Colors and Icons](../product-introduction/terminology.md#device-records-and-state)
 - [Administration](./admin.md)

@@ -1,6 +1,5 @@
 ---
 title: Using The Application
-description: Workspace-by-workspace guide to NetMap's browser interface and related API endpoints.
 sidebar_position: 5
 keywords:
   - user guide

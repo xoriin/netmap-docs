@@ -1,6 +1,5 @@
 ---
 title: Monitoring
-description: View device health, configure service checks, and monitor HTTP endpoints.
 sidebar_position: 7
 keywords: [monitoring, health, service checks, HTTP monitors]
 ---

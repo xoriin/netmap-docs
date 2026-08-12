@@ -1,6 +1,5 @@
 ---
 title: Dashboard
-description: Use the Overview workspace.
 sidebar_position: 2
 keywords: [dashboard, overview]
 ---

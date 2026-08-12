@@ -1,6 +1,5 @@
 ---
 title: Locations
-description: Manage sites and locations.
 sidebar_position: 6
 keywords: [locations, sites]
 ---

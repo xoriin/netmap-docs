@@ -1,6 +1,5 @@
 ---
 title: Exports
-description: Export inventory, firewall logs, reports, backups, and scheduled backup files.
 sidebar_position: 11
 keywords: [exports, backup, report]
 ---
