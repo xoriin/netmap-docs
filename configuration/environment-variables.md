@@ -1,6 +1,5 @@
 ---
 title: Environment Variables
-description: Complete environment variable reference.
 sidebar_position: 1
 keywords: [environment, variables, settings]
 ---

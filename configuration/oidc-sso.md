@@ -1,6 +1,5 @@
 ---
 title: OIDC SSO
-description: Configure OpenID Connect single sign-on, account linking, role mapping, and recovery.
 sidebar_position: 4
 keywords: [OIDC, SSO, authentication, PKCE]
 verified_version: "1.5.0"

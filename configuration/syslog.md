@@ -1,6 +1,5 @@
 ---
 title: Syslog
-description: Configure NetMap syslog ingestion.
 sidebar_position: 5
 keywords: [syslog, firewall, logs]
 ---

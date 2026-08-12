@@ -1,6 +1,5 @@
 ---
 title: Configuration Reference
-description: Environment variables, ports, storage paths, reverse proxy settings, and runtime defaults.
 sidebar_position: 4
 keywords:
   - configuration

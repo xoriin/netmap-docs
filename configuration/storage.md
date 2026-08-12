@@ -1,6 +1,5 @@
 ---
 title: Storage
-description: Persistent files and directories used by NetMap.
 sidebar_position: 2
 keywords: [storage, SQLite, data]
 ---

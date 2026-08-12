@@ -1,6 +1,5 @@
 ---
 title: Ports
-description: Configure NetMap network ports for web, API, syslog, Docker, and reverse proxy deployments.
 sidebar_position: 3
 keywords: [ports, syslog, http]
 ---
