@@ -1,6 +1,5 @@
 ---
 title: Generating API Keys
-description: Create API keys through the UI or API.
 sidebar_position: 2
 keywords: [API key, generate]
 ---

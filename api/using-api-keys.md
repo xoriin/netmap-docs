@@ -1,6 +1,5 @@
 ---
 title: Using API Keys
-description: Make authenticated NetMap API requests with X-API-Key.
 sidebar_position: 3
 keywords: [API key, curl, Python]
 ---

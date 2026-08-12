@@ -1,6 +1,5 @@
 ---
 title: Capability Matrix
-description: What the UI and API keys can do.
 sidebar_position: 10
 keywords: [capability matrix, permissions]
 ---

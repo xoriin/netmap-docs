@@ -1,6 +1,5 @@
 ---
 title: Endpoint Inventory
-description: Verified FastAPI route inventory, authentication groups, and API-key capability matrix.
 sidebar_position: 8
 keywords:
   - endpoint

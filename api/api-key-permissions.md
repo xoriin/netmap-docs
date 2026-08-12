@@ -1,6 +1,5 @@
 ---
 title: API-Key Permissions
-description: Understand how API keys inherit user roles.
 sidebar_position: 4
 keywords: [API key, permissions, roles]
 ---

@@ -1,6 +1,5 @@
 ---
 title: OpenAPI And Swagger
-description: Use NetMap's generated FastAPI schema.
 sidebar_position: 9
 keywords: [OpenAPI, Swagger]
 ---

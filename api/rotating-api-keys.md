@@ -1,6 +1,5 @@
 ---
 title: Rotating API Keys
-description: Replace an API key without downtime.
 sidebar_position: 5
 keywords: [API key, rotation]
 ---

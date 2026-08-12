@@ -1,6 +1,5 @@
 ---
 title: API Authentication
-description: Authenticate REST requests to NetMap.
 sidebar_position: 1
 keywords: [API, authentication, X-API-Key]
 ---

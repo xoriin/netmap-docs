@@ -1,6 +1,5 @@
 ---
 title: Endpoint Reference
-description: Endpoint inventory and schema entry point.
 sidebar_position: 11
 keywords: [endpoints, routes]
 ---

@@ -1,6 +1,5 @@
 ---
 title: Revoking API Keys
-description: Revoke own or all-user API keys.
 sidebar_position: 6
 keywords: [API key, revoke]
 ---

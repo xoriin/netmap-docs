@@ -1,6 +1,5 @@
 ---
 title: API Errors
-description: NetMap API error envelope and common statuses.
 sidebar_position: 7
 keywords: [API, errors, status codes]
 ---

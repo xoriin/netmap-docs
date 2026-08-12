@@ -1,6 +1,5 @@
 ---
 title: API Overview
-description: How NetMap's REST API is exposed, authenticated, versioned, and documented.
 sidebar_position: 6
 keywords:
   - API

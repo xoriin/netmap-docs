@@ -1,6 +1,5 @@
 ---
 title: Rate Limits
-description: API-key, tools, discovery, and login rate limits.
 sidebar_position: 8
 keywords: [rate limits, 429]
 ---

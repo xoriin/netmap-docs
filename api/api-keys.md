@@ -1,6 +1,5 @@
 ---
 title: API Keys
-description: Generate, authenticate with, rotate, revoke, secure, and troubleshoot NetMap API keys.
 sidebar_position: 7
 keywords:
   - API key
