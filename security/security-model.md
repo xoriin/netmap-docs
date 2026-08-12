@@ -1,6 +1,5 @@
 ---
 title: Security Model
-description: Implemented security controls.
 sidebar_position: 1
 keywords: [security model]
 ---

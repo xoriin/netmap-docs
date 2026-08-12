@@ -1,6 +1,5 @@
 ---
 title: Secrets Management
-description: Manage NetMap secrets safely.
 sidebar_position: 4
 keywords: [secrets, MASTER_KEY, SECRET_KEY]
 ---

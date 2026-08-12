@@ -1,6 +1,5 @@
 ---
 title: Security Overview
-description: Authentication, sessions, API keys, roles, secrets, deployment duties, and known limitations.
 sidebar_position: 10
 keywords:
   - security

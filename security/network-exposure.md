@@ -1,6 +1,5 @@
 ---
 title: Network Exposure
-description: Safely expose NetMap and syslog listeners.
 sidebar_position: 5
 keywords: [network exposure, TLS, syslog]
 ---

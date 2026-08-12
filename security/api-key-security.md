@@ -1,6 +1,5 @@
 ---
 title: API-Key Security
-description: Store and rotate API keys safely.
 sidebar_position: 2
 keywords: [API key, security]
 ---

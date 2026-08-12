@@ -1,6 +1,5 @@
 ---
 title: Permissions
-description: Roles and permission keys.
 sidebar_position: 3
 keywords: [roles, permissions]
 ---
