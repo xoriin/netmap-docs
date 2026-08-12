@@ -76,7 +76,7 @@ Confirm that:
 
 ## Related concepts
 
-- [Single-Container Architecture](../product-introduction/single-container-architecture.md)
+- [How NetMap Works](../product-introduction/architecture.md#the-all-in-one-image-and-persistent-databases)
 - [Network Access Model](../product-introduction/network-access-model.md)
 - [Production Images and Installed Versions](../product-introduction/production-images-and-versions.md)
 - [Configuration Reference](../configuration/configuration.md)

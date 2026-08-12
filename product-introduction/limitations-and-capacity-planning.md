@@ -64,4 +64,4 @@ Mount `/app/data` on durable storage and monitor free space as well as database 
 
 If health degrades, pause schedules or monitors, reduce incoming syslog at the source, shorten retention with awareness of deletion, and preserve a backup before structural changes. Do not start a second container on the same data to add capacity.
 
-See [The Two-Database Design](./two-database-design.md), [Monitoring NetMap](../operations/monitoring-netmap.md), and [Unsupported and Out-of-Scope Use Cases](./unsupported-use-cases.md).
+See [How NetMap Works](./architecture.md#the-all-in-one-image-and-persistent-databases), [Monitoring NetMap](../operations/monitoring-netmap.md), and [What Is NetMap?](./what-is-netmap.md#where-netmap-fits).

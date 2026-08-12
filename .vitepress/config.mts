@@ -107,11 +107,7 @@ export default defineConfig({
           { text: "Product Introduction", link: "/product-introduction/introduction" },
           { text: "What Is NetMap?", link: "/product-introduction/what-is-netmap" },
           { text: "NetMap Feature Tour", link: "/product-introduction/features" },
-          { text: "Supported Use Cases", link: "/product-introduction/supported-use-cases" },
-          { text: "Unsupported And Out-of-Scope Use Cases", link: "/product-introduction/unsupported-use-cases" },
           { text: "How NetMap Works", link: "/product-introduction/architecture" },
-          { text: "Single-Container Architecture", link: "/product-introduction/single-container-architecture" },
-          { text: "The Two-Database Design", link: "/product-introduction/two-database-design" },
           { text: "Network Access Model", link: "/product-introduction/network-access-model" },
           { text: "Production Images And Installed Versions", link: "/product-introduction/production-images-and-versions" },
           { text: "Browser And Platform Support", link: "/product-introduction/browser-and-platform-support" },
@@ -136,6 +132,7 @@ export default defineConfig({
           { text: "Quick Start", link: "/installation/quick-start" },
           { text: "Docker Compose", link: "/installation/docker-compose" },
           { text: "Docker", link: "/installation/docker" },
+          { text: "First-Run Setup And Authentication", link: "/installation/first-run-and-authentication" },
           { text: "Native Installation", link: "/installation/native-installation" },
           { text: "Reverse Proxy And HTTPS", link: "/installation/reverse-proxy" },
           { text: "Upgrading", link: "/installation/upgrading" },
@@ -163,10 +160,12 @@ export default defineConfig({
           { text: "Dashboard", link: "/using-netmap/dashboard" },
           { text: "Topology", link: "/using-netmap/topology" },
           { text: "Inventory", link: "/using-netmap/inventory" },
+          { text: "Device Details", link: "/using-netmap/device-details" },
           { text: "VLANs And Groups", link: "/using-netmap/vlans" },
           { text: "Locations", link: "/using-netmap/locations" },
           { text: "Monitoring", link: "/using-netmap/monitoring" },
           { text: "IPAM", link: "/using-netmap/ipam" },
+          { text: "External IP Pools And Assignments", link: "/using-netmap/external-ipam" },
           { text: "Security Events", link: "/using-netmap/security-events" },
           { text: "Tools", link: "/using-netmap/tools" },
           { text: "Exports", link: "/using-netmap/exports" },
@@ -189,7 +188,8 @@ export default defineConfig({
           { text: "Create An IP Reservation", link: "/guides/create-ip-reservation" },
           { text: "Search Syslog Events", link: "/guides/search-syslog" },
           { text: "Export Data", link: "/guides/export-data" },
-          { text: "Automation With API Keys", link: "/guides/automation-with-api-keys" }
+          { text: "Automation With API Keys", link: "/guides/automation-with-api-keys" },
+          { text: "Integration Patterns", link: "/guides/integration-patterns" }
         ]
       },
       {
@@ -273,6 +273,7 @@ export default defineConfig({
         text: "Reference",
         collapsed: true,
         items: [
+          { text: "Reference Appendices", link: "/reference/reference-appendices" },
           { text: "Default Values", link: "/reference/default-values" },
           { text: "File And Directory Paths", link: "/reference/file-paths" },
           { text: "Ports", link: "/reference/ports" },
@@ -284,6 +285,7 @@ export default defineConfig({
         text: "About This Documentation",
         collapsed: true,
         items: [
+          { text: "Documentation Coverage Report", link: "/about-documentation/coverage-report" },
           { text: "How To Use These Docs", link: "/about-documentation/how-to-use-this-documentation" },
           { text: "Versions And Compatibility", link: "/about-documentation/documentation-version-compatibility" },
           { text: "Documentation Changelog", link: "/about-documentation/documentation-changelog" },

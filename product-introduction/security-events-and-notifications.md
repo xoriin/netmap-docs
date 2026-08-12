@@ -40,4 +40,4 @@ Firewall events live in `firewall.db`, separate from the main application record
 - [Configure Syslog](../configuration/syslog.md)
 - [Search Syslog Events](../guides/search-syslog.md)
 - [Create an Alert Rule](../guides/create-alert-rule.md)
-- [The Two-Database Design](./two-database-design.md)
+- [How NetMap Works](./architecture.md#the-all-in-one-image-and-persistent-databases)

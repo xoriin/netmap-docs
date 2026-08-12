@@ -35,6 +35,7 @@ Most changes require a container restart because settings are loaded at process 
 | Variable | Required | Default | Accepted values | Secret | Restart | Description |
 |---|---:|---|---|---:|---:|---|
 | `APP_ENV` | No | `development` | string; `production` enables stricter startup checks | No | Yes | Runtime environment. |
+| `APP_VERSION` | Fallback only | image `/app/VERSION` | string | No | Yes | Development/fallback version; the baked `/app/VERSION` is authoritative in release images. |
 | `APP_URL` | Production recommended | empty | Absolute URL | No | Yes | Public URL for password reset links and security-sensitive redirects. |
 | `APP_PORT` | No | `8080` in Dockerfile | TCP port | No | Yes | nginx listen port in the all-in-one container. |
 | `DATABASE_URL` | No | `sqlite:////app/data/netmap.db` | SQLAlchemy URL | No | Yes | Main database connection. Current supported deployment uses SQLite. |
@@ -107,6 +108,8 @@ Most changes require a container restart because settings are loaded at process 
 | `OIDC_DEFAULT_ROLE` | No | `Viewer` | role name | No | Yes, unless overridden in DB | Auto-provisioned default role. |
 | `OIDC_ALLOW_SUPER_ADMIN` | No | `false` | boolean | No | Yes, unless overridden in DB | Allows OIDC mapping to SuperAdmin. |
 | `LOG_LEVEL` | No | `info` | `debug`, `info`, `warning`, `error`, `critical` | No | Yes | uvicorn log level. |
+
+`APP_CHANNEL` and `/app/VERSION_CHANNEL` identify dev/test channels when baked into those images. `PUID`, `PGID`, and `FORWARDED_ALLOW_IPS` are entrypoint/uvicorn deployment variables rather than Pydantic application settings; document them with the container deployment examples.
 
 ## Reverse Proxy Requirements
 

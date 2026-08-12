@@ -67,4 +67,4 @@ NetMap records data that authorized users enter/import and traffic that configur
 5. Review notification bodies and external provider policies before sending sensitive event data.
 6. Document local privacy notices and access procedures where required.
 
-To reduce outbound traffic, leave optional integrations disabled, avoid external HTTP monitors, and block destinations at the network boundary with the understanding that update information, OIDC, or notifications will fail. See [Secrets Management](../security/secrets-management.md), [Network Exposure](../security/network-exposure.md), and [The Two-Database Design](./two-database-design.md).
+To reduce outbound traffic, leave optional integrations disabled, avoid external HTTP monitors, and block destinations at the network boundary with the understanding that update information, OIDC, or notifications will fail. See [Secrets Management](../security/secrets-management.md), [Network Exposure](../security/network-exposure.md), and [How NetMap Works](./architecture.md#the-all-in-one-image-and-persistent-databases).

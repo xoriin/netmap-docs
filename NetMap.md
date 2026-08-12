@@ -1,6 +1,6 @@
 ---
 title: NetMap
-description: Choose the NetMap documentation path that matches what you want to accomplish.
+description: NetMap documentation for installation, operation, administration, APIs, and development.
 keywords:
   - NetMap documentation
   - getting started
@@ -13,7 +13,7 @@ verified_version: "1.5.0"
 
 NetMap is a self-hosted application for network inventory, topology, monitoring, IP address management, discovery, syslog, alerting, and administration.
 
-This is the documentation homepage. Choose the outcome closest to yours; the linked page will provide the explanation, prerequisites, permissions, and procedure. If you are evaluating the product, begin with [What Is NetMap?](./product-introduction/what-is-netmap.md).
+This is the NetMap documentation homepage. It links the product overview, installation, operational workspaces, administration, APIs, troubleshooting, and development guidance. If you are evaluating the product, begin with [What Is NetMap?](./product-introduction/what-is-netmap.md).
 
 > **Version basis:** Reviewed pages describe production NetMap `v1.5.0`. Check the version displayed by your installation before following version-sensitive procedures.
 
@@ -23,7 +23,7 @@ This is the documentation homepage. Choose the outcome closest to yours; the lin
 |---|---|
 | Understand the product and intended use | [Product Introduction](./product-introduction/introduction.md) |
 | Tour the available workspaces | [NetMap Feature Tour](./product-introduction/features.md) |
-| Check whether NetMap fits your environment | [Supported Use Cases](./product-introduction/supported-use-cases.md) |
+| Check whether NetMap fits your environment | [What Is NetMap?](./product-introduction/what-is-netmap.md#where-netmap-fits) |
 | Understand deployment and data flow | [How NetMap Works](./product-introduction/architecture.md) |
 | Review limitations before deploying | [Product Limitations and Capacity Planning](./product-introduction/limitations-and-capacity-planning.md) |
 

@@ -46,10 +46,16 @@ Uploads and generated persistent files also live below the configured data direc
 
 These workers run with the API process; there is no separate distributed queue. A stopped container stops monitoring, discovery schedules, notifications, syslog reception, and maintenance until it restarts.
 
+## The all-in-one image and persistent databases
+
+The supported production image keeps nginx, uvicorn/FastAPI, the syslog listener, and background workers under one supervised container. nginx serves the SPA and proxies API/WebSocket traffic to uvicorn over `/tmp/uvicorn.sock`; the container exposes HTTP plus optional syslog listeners. Persistent state belongs under `/app/data`; `/tmp` and the Unix socket are runtime-only. Docker capabilities and host networking are added only when active probes or ARP/MAC discovery require them.
+
+NetMap uses two SQLite databases. `netmap.db` stores users, settings, devices, topology, monitoring configuration, IPAM, alerts, and audit data. `firewall.db` stores high-volume syslog/firewall events and the `firewall_events_fts` full-text mirror. Both use WAL mode and busy timeouts, but the split prevents a syslog flood from contending with ordinary application writes. Firewall retention and FTS maintenance run in the background; confirmed whole-firewall corruption can recreate `firewall.db` while preserving the main database, so external backups remain essential.
+
 ## Startup and failure behavior
 
 At startup NetMap validates the data directory and required production secrets, initializes both databases and built-in migrations, then starts services. nginx becomes useful only after the uvicorn socket and public health endpoint are ready. Invalid secrets or an unwritable data directory prevent a healthy start.
 
 The firewall database has targeted recovery behavior: a damaged FTS index is rebuilt, while confirmed whole-database corruption causes `firewall.db` and its sidecars to be recreated, losing stored firewall history but preserving `netmap.db`. Always keep backups and inspect container logs after an unexpected rebuild.
 
-For process and port detail, see [Single-Container Architecture](./single-container-architecture.md). For exposure and probes, see [Network Access Model](./network-access-model.md).
+For network exposure and probe requirements, see [Network Access Model](./network-access-model.md). For operational backup and recovery procedures, see [Exports](../using-netmap/exports.md) and [Backups](../operations/backups.md).

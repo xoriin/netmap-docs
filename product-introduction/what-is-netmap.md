@@ -40,6 +40,10 @@ The application, its two SQLite databases, and uploaded/configured data run on i
 
 NetMap does not automatically know the network merely because it is installed. You add or import records, enable discovery where appropriate, configure monitoring, and forward syslog from devices. Active features require network reachability and may need host networking or container capabilities.
 
-## Before choosing NetMap
+## Where NetMap fits
 
-Read [Supported Use Cases](./supported-use-cases.md), [Unsupported and Out-of-Scope Use Cases](./unsupported-use-cases.md), and [Product Limitations and Capacity Planning](./limitations-and-capacity-planning.md). For a workspace-by-workspace view, continue to the [NetMap Feature Tour](./features.md).
+NetMap is a good fit for home labs, small-business and internal IT teams, managed environments with a bounded customer/site scope, and multi-site networks that can reach the application over a trusted path. Common supported workflows are maintaining inventory and topology, reviewing private-network discovery, comparing expected and observed health, tracking internal and public IP allocations, searching firewall/syslog context, and automating permissioned operations through the API.
+
+NetMap is not a hosted SaaS service, a clustered/high-availability monitoring system, a replacement for a full SIEM, a configuration-management system, or an Internet-wide scanner. The supported deployment is the all-in-one Docker image with persistent local storage; native installs and arbitrary multi-container decompositions are outside the supported boundary. SQLite, event retention, discovery limits, and container reachability define practical scale, so very large fleets or high-volume log estates should use a purpose-built platform alongside NetMap. See [Product Limitations and Capacity Planning](./limitations-and-capacity-planning.md) for sizing and [Privacy and Data Collection](./privacy-and-data-collection.md) for data boundaries.
+
+For a workspace-by-workspace view, continue to the [NetMap Feature Tour](./features.md).

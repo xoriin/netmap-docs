@@ -40,5 +40,5 @@ Back up before changing retention or deleting expired records, and verify host t
 - [Configuration Reference](../configuration/configuration.md)
 - [Environment Variables](../configuration/environment-variables.md)
 - [Secrets Management](../security/secrets-management.md)
-- [The Two-Database Design](./two-database-design.md)
+- [How NetMap Works](./architecture.md#the-all-in-one-image-and-persistent-databases)
 - [Default Values](../reference/default-values.md)
