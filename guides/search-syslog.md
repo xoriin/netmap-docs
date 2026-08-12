@@ -1,6 +1,5 @@
 ---
 title: Search Syslog Events
-description: Search firewall and syslog events.
 sidebar_position: 10
 keywords: [syslog, firewall, search]
 ---

@@ -1,6 +1,5 @@
 ---
 title: Review Discovery Observations
-description: Review, apply, or resolve scheduled discovery observations.
 sidebar_position: 4
 keywords: [scheduled discovery, observations]
 ---

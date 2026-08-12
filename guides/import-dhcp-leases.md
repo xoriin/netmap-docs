@@ -1,6 +1,5 @@
 ---
 title: Import DHCP Leases
-description: Import DHCP lease data into IPAM.
 sidebar_position: 8
 keywords: [DHCP, IPAM, leases]
 ---

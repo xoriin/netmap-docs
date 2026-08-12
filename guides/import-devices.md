@@ -1,6 +1,5 @@
 ---
 title: Import Devices
-description: Import multiple devices into inventory.
 sidebar_position: 2
 keywords: [import, devices, inventory]
 ---

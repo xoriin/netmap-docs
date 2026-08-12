@@ -1,6 +1,5 @@
 ---
 title: Share A Topology Layout
-description: Share and import topology layouts with share codes.
 sidebar_position: 5
 keywords: [topology, layouts, share]
 ---

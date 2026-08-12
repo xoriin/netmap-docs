@@ -1,6 +1,5 @@
 ---
 title: Run Discovery
-description: Run and review nmap discovery scans.
 sidebar_position: 3
 keywords: [discovery, nmap, scan, inventory]
 ---

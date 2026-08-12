@@ -1,6 +1,5 @@
 ---
 title: Create An Alert Rule
-description: Configure, test, and troubleshoot alert rules.
 sidebar_position: 7
 keywords: [alerts, notifications, monitoring]
 ---

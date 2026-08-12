@@ -1,6 +1,5 @@
 ---
 title: Automation With API Keys
-description: Build safe automation against the NetMap REST API.
 sidebar_position: 12
 keywords: [automation, API key, scripts]
 ---

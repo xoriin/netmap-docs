@@ -1,6 +1,5 @@
 ---
 title: Create An IP Reservation
-description: Reserve an IP address in IPAM.
 sidebar_position: 9
 keywords: [IPAM, reservation]
 ---

@@ -1,6 +1,5 @@
 ---
 title: Export Data
-description: Export inventory, firewall logs, reports, and backups.
 sidebar_position: 11
 keywords: [export, CSV, JSON, PDF, backup]
 ---

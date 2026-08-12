@@ -1,6 +1,5 @@
 ---
 title: Add A Device
-description: Add a device to NetMap inventory.
 sidebar_position: 1
 keywords: [device, inventory]
 ---

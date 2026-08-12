@@ -1,6 +1,5 @@
 ---
 title: Integration Patterns
-description: Source-backed patterns for connecting NetMap to scripts and external systems.
 sidebar_position: 13
 keywords: [integrations, automation, API, CMDB, IPAM, discovery]
 ---

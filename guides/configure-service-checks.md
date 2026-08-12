@@ -1,6 +1,5 @@
 ---
 title: Configure Service Checks
-description: Add and remove monitored service checks.
 sidebar_position: 6
 keywords: [monitoring, service checks]
 ---
