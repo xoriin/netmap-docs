@@ -31,7 +31,7 @@ Clearing site data signs the browser out and removes local-only preferences or i
 
 NetMap provides responsive rules, but topology canvases, dense monitoring tables, IPAM grids, and administration forms are designed primarily for a desktop-sized viewport and pointer/keyboard input. Small screens may require horizontal scrolling and are not a substitute for a full desktop workflow. There is no native mobile application.
 
-Keyboard focus, dialogs, listboxes, and standard controls should remain usable, but no complete assistive-technology conformance claim is published for `v1.5.0`. Report inaccessible interactions through [Reporting Documentation Problems](../about-documentation/reporting-documentation-problems.md) or the project's issue tracker.
+Keyboard focus, dialogs, listboxes, and standard controls should remain usable, but no complete assistive-technology conformance claim is published for `v1.5.0`. Report inaccessible interactions through the project's [documentation issue tracker](https://github.com/xoriin/netmap-docs/issues).
 
 ## Server platform
 

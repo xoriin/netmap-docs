@@ -66,7 +66,3 @@ This is the NetMap documentation homepage. It links the product overview, instal
 ## If something is not working
 
 Start with [Common Issues](./troubleshooting/common-issues.md), then choose the troubleshooting page for the affected area. Before sharing logs or screenshots, remove credentials, private addresses, database contents, and raw syslog data.
-
-## About these docs
-
-[How to Use This Documentation](./about-documentation/how-to-use-this-documentation.md) explains page types and conventions. Use [Version and Compatibility](./about-documentation/documentation-version-compatibility.md) when your installed release differs from a page's verified version. Documentation maintainers can also consult the [documentation changelog](./about-documentation/documentation-changelog.md), [sitemap](./about-documentation/sitemap.md), or [reporting guidance](./about-documentation/reporting-documentation-problems.md).

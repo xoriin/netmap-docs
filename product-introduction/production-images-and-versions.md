@@ -55,4 +55,4 @@ An available update is not an automatic upgrade. Upgrading replaces the image an
 3. If they disagree, trust the baked installed-version label for application code and inspect whether the deployment reused a mutable tag without pulling.
 4. Recreate with a pinned tag after a validated backup if deterministic versioning is required.
 
-See [Upgrading](../installation/upgrading.md), [Documentation Version and Product Compatibility](../about-documentation/documentation-version-compatibility.md), and the [Product Changelog](../reference/changelog.md).
+See [Upgrading](../installation/upgrading.md) and the [Product Changelog](../reference/changelog.md).

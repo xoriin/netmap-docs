@@ -127,9 +127,3 @@
   - [Ports](./reference/ports.md)
   - [Glossary](./reference/glossary.md)
   - [Changelog](./reference/changelog.md)
-- About This Documentation
-  - [Documentation Coverage Report](./about-documentation/coverage-report.md)
-  - [How to Use This Documentation](./about-documentation/how-to-use-this-documentation.md)
-  - [Documentation Version and Product Compatibility](./about-documentation/documentation-version-compatibility.md)
-  - [Documentation Changelog](./about-documentation/documentation-changelog.md)
-  - [Reporting Documentation Problems](./about-documentation/reporting-documentation-problems.md)
