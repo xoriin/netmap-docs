@@ -1,6 +1,6 @@
 ---
 title: Interface Overview
-description: NetMap workspace navigation and access rules.
+description: NetMap workspace navigation, common controls, access rules, and browser behavior.
 sidebar_position: 1
 keywords: [interface, navigation, workspace]
 ---
@@ -23,3 +23,31 @@ The frontend routes are defined in `frontend/src/routes/index.ts`.
 | Exports | Inventory, firewall, report, backup exports | export permissions; backup requires SuperAdmin |
 | Admin | Users, roles, settings, SSO, diagnostics | SuperAdmin |
 | Profile | Profile, password, API keys | Authenticated |
+
+## Common layout
+
+The application shell has a sidebar, a top bar, and one workspace at a time. Workspace content is arranged into panels; tables scroll inside their panels rather than moving the entire page. Admin and Monitoring use nested tabs, and direct browser navigation preserves the selected workspace.
+
+Common controls behave consistently:
+
+- search fields filter the current panel as text is entered;
+- filter and status controls can be reset to their all-items value;
+- sortable column headers change direction when selected again;
+- resizable table dividers retain widths in browser storage and double-click resets them;
+- destructive actions use a themed confirmation dialog; and
+- errors appear as inline messages or toasts with a retry or refresh path.
+
+## Permissions and hidden navigation
+
+Authentication is required for every workspace. The sidebar hides areas the current account cannot use: Security requires `security_view`, Admin requires SuperAdmin, and write controls appear only when the relevant permission is present. A direct URL does not bypass the backend permission check.
+
+## Themes, loading, and empty states
+
+Choose light or dark mode from Profile → Appearance. The selection persists per browser. Loading skeletons indicate an in-flight request; an empty state means the request succeeded but there is no matching data. If a workspace error boundary appears, retry the workspace or navigate away and return after checking the service health endpoint.
+
+## Related pages
+
+- [Using the Application](./user-guide.md)
+- [First-Run Setup and Authentication](../installation/first-run-and-authentication.md)
+- [Entity Colors and Icons](../product-introduction/device-records-and-state.md)
+- [Administration](./admin.md)

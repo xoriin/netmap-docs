@@ -1,63 +1,43 @@
 ---
 title: Create An Alert Rule
-description: Configure alert rules and test notifications.
+description: Configure, test, and troubleshoot alert rules.
 sidebar_position: 7
-keywords: [alerts, notifications]
+keywords: [alerts, notifications, monitoring]
 ---
 
 # Create An Alert Rule
 
-Alert rule management requires `alert_write`.
+Alert rules are evaluated by the background alert worker. A rule selects an event type, target scope, optional threshold/service/monitor, enabled state, cooldown, and notification methods. Changes require `alert_write`.
 
-API equivalents:
+## Supported event types
 
-- `GET /api/v1/alerts/rules`
-- `POST /api/v1/alerts/rules`
-- `PATCH /api/v1/alerts/rules/{rule_id}`
-- `DELETE /api/v1/alerts/rules/{rule_id}`
-- `POST /api/v1/alerts/rules/{rule_id}/test`
+Device rules cover offline, online recovery, warning, any status change, unexpected state, expected state restored, RTT above a threshold, packet loss above a percentage, and flapping (four or more status changes in the last hour). Service rules cover one/all service checks down or slow above a response threshold. Standalone monitor rules cover endpoint down, slow response, and certificate expiry within the monitor's configured lead days.
 
-Notification delivery records are available at `GET /api/v1/alerts/deliveries`.
+Expected-status rules compare observed health with the device's expected state, so an intentionally offline device does not create an unexpected outage. Down/online and service transitions are edge-triggered; thresholds can repeat after cooldown. Cooldowns suppress duplicate notifications but do not erase the underlying event.
 
-## What This Does
+## Lifecycle
 
-Alert rules watch device and service health conditions and send notifications through configured channels or notification profiles.
+1. Confirm monitoring and notification methods are working.
+2. Create a rule with the event type, target scope, threshold where required, cooldown, and enabled methods.
+3. Save and use **Test** to send a sample delivery.
+4. Pause/resume or edit the rule as conditions change; delete only after confirmation.
+5. Review alert events and delivery history for status, target, result, detail, and timestamps.
 
-## Before You Begin
+Disabled notification profiles are skipped. A rule can target all devices/checks/monitors or one selected resource where supported. Recovery events are separate deliveries when the condition clears.
 
-Confirm:
-
-- monitoring is collecting the signal you want to alert on;
-- notification settings or profiles are configured;
-- your role has `alert_write`;
-- the target device or service check exists.
-
-## Verify
-
-Use the test endpoint after creating a rule:
-
-```bash
-API_URL="https://netmap.example.com"
-API_KEY="<alert-write-api-key>"
-RULE_ID="<rule-id>"
-
-curl --fail-with-body \
-  --request POST \
-  --url "${API_URL}/api/v1/alerts/rules/${RULE_ID}/test" \
-  --header "X-API-Key: ${API_KEY}"
-```
-
-## Common Problems
+## Troubleshooting
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| `400` on test | no notification channels | configure notification profile/channel |
-| `404` | wrong rule, device, or service check ID | list resources and retry |
-| `422` | threshold required for selected rule type | include required threshold field |
-| no deliveries | rule inactive or condition not met | inspect rule and monitoring data |
+| no event | worker not running, scope mismatch, or condition not met | check worker logs, monitoring data, and target scope |
+| repeated messages | cooldown too short or high event volume | increase cooldown and narrow the target |
+| no delivery | method disabled, invalid credentials, or provider error | test the method and inspect delivery detail |
+| test returns `422` | required threshold missing | set RTT/service/slow threshold for that rule type |
+| expected-offline alert | expected status is online or rule is raw-status based | set expected offline or use the expected-state rule |
 
-## Related Pages
+## API equivalents
 
-- [Monitoring](../using-netmap/monitoring.md)
-- [Administration](../using-netmap/admin.md)
-- [API Errors](../api/errors.md)
+- `GET/POST /api/v1/alerts/rules`
+- `PATCH/DELETE /api/v1/alerts/rules/{rule_id}`
+- `POST /api/v1/alerts/rules/{rule_id}/test`
+- `GET /api/v1/alerts/deliveries`

@@ -7,59 +7,47 @@ keywords: [locations, sites]
 
 # Locations
 
-Locations are represented as sites and can be attached to devices.
+Locations are sites attached to devices and subnets. They provide a consistent scope for inventory, topology, and IPAM. Write actions require `topology_write`.
 
-API equivalents:
+## Workspace tour
+
+The Locations workspace presents site cards/table rows with name, address, colour, assigned-device count, and related map links. Search matches the internal name, display name, and address; sortable columns include name, address, and device count. Select a row to edit it.
+
+## Create and edit a location
+
+Create a site with an internal name, optional display name, street/address text, and optional colour. The internal name is the stable identifier used by APIs and filters; the display name is what readers see. Editing the address or colour changes future links and chips but does not move devices automatically.
+
+## Assign devices and subnets
+
+Assign devices from Device Details, Inventory bulk edit, Topology bulk assignment, or discovery. Inventory offers an explicit **Unassigned** filter. Assign IPAM subnets to a site from the subnet editor; site assignment is independent of a device's VLAN/group.
+
+Selecting a site in Topology scopes the canvas to devices assigned to it. **All Sites** clears that scope. A site filter does not alter the underlying graph or device assignments.
+
+## Map links and privacy
+
+When an address is present, the workspace can open it in the configured external map service. This sends the address to that provider; omit sensitive street details or leave the address blank when external disclosure is not acceptable. NetMap does not geocode or store provider results.
+
+## Colours and deletion
+
+Explicit site colours are used by entity chips and topology/site selectors. Without one, a stable name-based palette colour is shown. Deleting a site requires confirmation and clears the site relationship from assigned devices/subnets; it does not delete those records.
+
+## API equivalents
 
 - `GET /api/v1/topology/sites`
 - `POST /api/v1/topology/sites`
 - `PATCH /api/v1/topology/sites/{site_id}`
 - `DELETE /api/v1/topology/sites/{site_id}`
 
-Write actions require `topology_write`.
-
-## When To Use Locations
-
-Use locations when the same NetMap instance tracks devices across multiple places or logical sites. Locations make topology and inventory easier to filter and understand.
-
-Examples:
-
-- home lab rack;
-- branch office;
-- data closet;
-- cloud/VPN segment;
-- customer site;
-- floor or building.
-
-## Workflow
-
-1. Open Locations.
-2. Create a site with a clear name.
-3. Add optional metadata where the UI exposes it.
-4. Assign devices to the site from device details, inventory, topology, or bulk actions.
-5. Use the site context when reading topology and inventory.
-
-## API Usage
-
-```bash
-API_URL="https://netmap.example.com"
-API_KEY="<api-key>"
-
-curl --fail-with-body \
-  --url "${API_URL}/api/v1/topology/sites" \
-  --header "X-API-Key: ${API_KEY}"
-```
-
-## Common Problems
-
 | Symptom | Cause | Fix |
 |---|---|---|
 | cannot create site | missing `topology_write` | update role permissions |
-| site does not appear on device | device not assigned | edit device or use bulk update |
-| API returns `404` on update | wrong site ID | list sites and retry |
+| site does not appear on a device | device is unassigned | edit the device or use bulk update |
+| topology appears empty | a site scope is active | select **All Sites** or assign devices |
+| map link exposes too much detail | address contains sensitive information | remove the address or use an internal-only label |
 
-## Related Pages
+## Related pages
 
 - [Topology](./topology.md)
 - [Inventory](./inventory.md)
 - [VLANs And Groups](./vlans.md)
+- [IPAM](./ipam.md)
