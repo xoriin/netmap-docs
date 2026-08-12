@@ -1,6 +1,5 @@
 ---
 title: Backend Development
-description: FastAPI backend development notes.
 sidebar_position: 2
 keywords: [backend, FastAPI]
 ---

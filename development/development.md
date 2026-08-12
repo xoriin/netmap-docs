@@ -1,6 +1,5 @@
 ---
 title: Developer Guide
-description: Repository structure, local development, validation, and contribution workflow for NetMap.
 sidebar_position: 11
 keywords:
   - development

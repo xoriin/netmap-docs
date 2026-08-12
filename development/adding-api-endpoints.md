@@ -1,6 +1,5 @@
 ---
 title: Adding API Endpoints
-description: Add route handlers that support session and API-key authentication.
 sidebar_position: 5
 keywords: [API, endpoint, FastAPI]
 ---

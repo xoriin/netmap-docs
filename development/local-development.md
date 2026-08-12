@@ -1,6 +1,5 @@
 ---
 title: Local Development
-description: Build and validate a NetMap source checkout before submitting a contribution.
 sidebar_position: 2
 keywords: [development, local setup, contributor]
 ---

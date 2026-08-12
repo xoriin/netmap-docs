@@ -1,6 +1,5 @@
 ---
 title: Repository Structure
-description: NetMap workspace and source layout.
 sidebar_position: 1
 keywords: [repository, structure]
 ---

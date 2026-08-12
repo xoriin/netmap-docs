@@ -1,6 +1,5 @@
 ---
 title: Testing
-description: Test and validation commands.
 sidebar_position: 4
 keywords: [testing, pytest, tsc, vite]
 ---

@@ -1,6 +1,5 @@
 ---
 title: Frontend Development
-description: React frontend development notes.
 sidebar_position: 3
 keywords: [frontend, React, TypeScript]
 ---

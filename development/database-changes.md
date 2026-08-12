@@ -1,6 +1,5 @@
 ---
 title: Database Changes
-description: Add models and schema migrations.
 sidebar_position: 6
 keywords: [database, migration]
 ---
