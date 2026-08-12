@@ -1,6 +1,5 @@
 ---
 title: Operations
-description: Health checks, logging, backups, restore, upgrades, monitoring, and troubleshooting.
 sidebar_position: 9
 keywords:
   - operations

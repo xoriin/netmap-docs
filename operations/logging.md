@@ -1,6 +1,5 @@
 ---
 title: Logging
-description: Runtime logs and diagnostic searches.
 sidebar_position: 2
 keywords: [logs, diagnostics]
 ---

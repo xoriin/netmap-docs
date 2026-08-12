@@ -1,6 +1,5 @@
 ---
 title: Disaster Recovery
-description: Recover NetMap after data loss or failed upgrades.
 sidebar_position: 7
 keywords: [disaster recovery]
 ---

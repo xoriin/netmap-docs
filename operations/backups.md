@@ -1,6 +1,5 @@
 ---
 title: Backups
-description: Backup NetMap data and secrets.
 sidebar_position: 3
 keywords: [backup]
 ---

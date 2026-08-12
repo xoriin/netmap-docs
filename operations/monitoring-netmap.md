@@ -1,6 +1,5 @@
 ---
 title: Monitoring NetMap
-description: Signals to monitor for the NetMap service itself.
 sidebar_position: 6
 keywords: [operations, monitoring]
 ---

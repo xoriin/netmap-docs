@@ -1,6 +1,5 @@
 ---
 title: Health Checks
-description: Health endpoints and monitoring examples.
 sidebar_position: 1
 keywords: [health, monitoring]
 ---

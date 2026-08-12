@@ -1,6 +1,5 @@
 ---
 title: Restores
-description: Restore NetMap data.
 sidebar_position: 4
 keywords: [restore]
 ---

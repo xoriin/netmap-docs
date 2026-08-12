@@ -1,6 +1,5 @@
 ---
 title: Database Migrations
-description: Database initialization and migration notes.
 sidebar_position: 5
 keywords: [database, migrations]
 ---
