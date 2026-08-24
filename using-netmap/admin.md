@@ -30,6 +30,10 @@ The 17 built-in device types are code constants, not editable database rows. Adm
 
 Custom icon packs are browser-local JSON/SVG assets. Import validates the pack, sanitises SVG paths with DOMPurify before rendering/export, and allows selection/removal without changing other users' browsers. Never treat an icon pack as a trusted HTML extension.
 
+## Cloud providers
+
+Cloud providers are managed on their own Admin page because the catalogue is shared by External IPAM and Inventory → Cloud assets. Each provider has a name, matching aliases, and a built-in or uploaded brand mark. AWS, Azure, and Google Cloud are convenience seeds rather than immutable system records: they can be edited or removed, and a removed provider is not recreated on restart. Removing a provider does not delete allocations or Inventory devices; affected records appear under **No provider** until reassigned. Existing customised or referenced Cloudflare entries are preserved as normal providers during upgrade.
+
 ## SNMP profiles and LLDP
 
 NetMap supports SNMPv2c for permitted probes. A profile stores name, encrypted community, UDP port, timeout, and retries; the community is write-only. Create/replace/delete profiles as SuperAdmin, then assign one to eligible routers/layer-3 devices or use it in Tools and Discovery. Deleting a profile removes future credential selection but does not delete devices.
@@ -38,7 +42,7 @@ LLDP scans select a source device, query neighbours, match remote identities, an
 
 ## Notification methods and delivery
 
-Notification methods are reusable by alert rules, reservation reminders, scheduled discovery, and other workflows. Create a named enabled method and test it before attaching rules. Supported providers include SMTP email (host, port/security, credentials, sender, recipients), Discord, Slack, Microsoft Teams, Telegram, generic webhooks, and custom Apprise URLs. Secrets are encrypted/write-only and redacted from logs.
+Notification methods are reusable by alert rules, reservation reminders, scheduled discovery, and other workflows. Create a named enabled method and test it before attaching rules. Built-in choices are ntfy, Telegram, Signal, SMTP email, Discord, Slack, Gotify, Pushover, Google Chat, generic JSON webhooks, and custom Apprise URLs. A custom Apprise URL can connect additional supported services such as Matrix, Mattermost, Rocket.Chat, Webex Teams, Mailgun, Opsgenie, PagerDuty, and SMS gateways. Secrets are encrypted/write-only and redacted from logs.
 
 Edit, enable, disable, or delete a method only after checking dependent rules. Provider errors, TLS/credential failures, blocked private targets, and disabled methods are recorded in delivery results. Webhook targets are subject to SSRF/private-target controls; do not use notification URLs as an arbitrary network proxy. Legacy notification labels are migrated into saved profiles where supported.
 
