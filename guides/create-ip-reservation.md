@@ -21,7 +21,7 @@ Use `GET /api/v1/ipam/subnets/{subnet_id}/next-available` to find an available a
 
 ## What This Does
 
-An IP reservation records that a specific address should be held for a device, service, user, or operational purpose. Reservations help avoid accidental reuse and make IPAM conflict checks more useful.
+An IP reservation records that a specific address should be held for a device, service, user, or operational purpose. Reservations help avoid accidental reuse and make IPAM conflict checks more useful. Creating a reservation does not create an inventory device.
 
 ## Before You Begin
 
@@ -39,6 +39,12 @@ Confirm:
 3. Find an available address or enter a known address.
 4. Create the reservation with useful owner/purpose notes where available.
 5. Review conflicts after saving.
+
+## Allocate A Reserved Address To A Device
+
+Open the reservation in IPAM and select **Convert to device** beside the close button. NetMap prefills the device form with the reservation's label, address, MAC, and notes, then warns that the address is reserved and asks for confirmation. Confirming removes the reservation and creates the device as one operation; cancelling leaves the reservation unchanged and does not create the device. A claim-capable role without general IPAM editing receives the same conversion action directly on the reservation row.
+
+This conversion requires both `topology_write` and `ipam_reservation_claim`. NetworkAdmin has both permissions by default, SuperAdmin bypasses named permission checks, and a custom role must be granted both explicitly.
 
 ## API Example
 

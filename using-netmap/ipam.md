@@ -6,7 +6,10 @@ keywords: [IPAM, subnet, reservations, DHCP]
 
 # IPAM
 
-IPAM manages internal address space from one workspace: summary cards, conflict review, VLAN suggestions, subnets, reservations, DHCP leases, and address grids. Write actions require `ipam_write`.
+The IPAM section separates **Internal networks** from **External IPs** in its sidebar navigation.
+Internal networks manages summary cards, conflict review, VLAN suggestions, subnets, reservations,
+DHCP leases, and address grids. External IPs manages provider-assigned public allocations; see
+[External IPAM](./external-ipam.md). Write actions require `ipam_write`.
 
 ## Summary and subnet list
 
@@ -22,7 +25,9 @@ Open a subnet to browse addresses. Filters and labels distinguish network/broadc
 
 ## Reservations
 
-Create a single-IP reservation with address, label, MAC, notes, owner, expiry, and subnet. A range reservation accepts a validated start/end range and creates the supported records. Addresses remain immutable after creation; edit metadata or delete and recreate to move one. Optional default expiry prefills 90 days. Expiry reminders require enablement, a lead time, and a saved notification method; delivery is one-time per expiry event. Delete expired reservations is a confirmed bulk operation with a result count.
+Create a single-IP reservation with address, label, MAC, notes, owner, expiry, and subnet. A range reservation accepts a validated start/end range and creates the supported records. A reservation holds an address but does not create an inventory device. Addresses remain immutable after creation; edit metadata or delete and recreate to move one. Optional default expiry prefills 90 days. Expiry reminders require enablement, a lead time, and a saved notification method; delivery is one-time per expiry event. Delete expired reservations is a confirmed bulk operation with a result count.
+
+Open an existing reservation and select **Convert to device** beside the close button to start with its label, address, MAC, and notes already filled in. NetMap then requires an explicit confirmation before replacing the reservation. On confirmation, the reservation is removed and the device is created atomically. The user needs both `topology_write` and `ipam_reservation_claim`; `ipam_write` is additionally required to enter through the reservation editor. A custom role with claim/create access but without general IPAM editing receives **Convert to device** directly on the reservation row. Cancelling leaves the reservation untouched.
 
 ## Conflicts
 
@@ -61,3 +66,4 @@ Import VLAN/group ranges as subnet suggestions. Select the desired suggestions a
 - [Import DHCP Leases](../guides/import-dhcp-leases.md)
 - [VLANs And Groups](./vlans.md)
 - [Locations](./locations.md)
+- [External IPAM](./external-ipam.md)
