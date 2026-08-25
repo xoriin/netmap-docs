@@ -36,7 +36,9 @@ Heartbeat history shows sampled status and RTT over the selected range. Uptime i
 
 ## Service checks
 
-Service checks are device-scoped and can be applied globally or to selected devices. TCP checks use a port or range; UDP checks report reachability limitations because many UDP services do not acknowledge arbitrary probes. HTTP/HTTPS device checks support method, path, expected status, redirects, TLS verification, timeout, and scope. Results show protocol, status, response time, and failure details. Checks can be paused, resumed, edited, or deleted; history is retained according to monitoring retention settings.
+Service checks are device-scoped and can be applied globally or to selected devices. TCP checks use a port or range; UDP checks report reachability limitations because many UDP services do not acknowledge arbitrary probes. HTTP/HTTPS device checks support method, path, expected status, redirects, TLS verification, timeout, and scope. Results show protocol, status, response time, and readable failure details. Checks can be paused, resumed, edited, or deleted; history is retained according to monitoring retention settings.
+
+The list can be kept in automatic alphabetical order or switched to manual order. Manual mode provides a drag handle on each row and stores the chosen sequence. Dragging shows a translucent copy and opens space at the prospective drop position.
 
 ### DHCP checks
 
@@ -69,5 +71,7 @@ Endpoint details show uptime, response-time history, heartbeat, recent HTTP stat
 - `GET /api/v1/monitoring/devices/{device_id}/history`
 - `GET /api/v1/monitoring/devices/{device_id}/analysis`
 - `GET/POST /api/v1/monitoring/service-checks`
+- `PUT/DELETE /api/v1/monitoring/service-checks/{target_id}`
+- `GET/PUT /api/v1/monitoring/service-checks/order-config`
 - `GET/POST/PATCH/DELETE /api/v1/monitors`
 - `GET /api/v1/monitors/{monitor_id}/history`

@@ -191,29 +191,32 @@ Deleting a subnet or reservation can remove the organizing record while leaving 
 - [Create an IP Reservation](../guides/create-ip-reservation.md)
 - [Import DHCP Leases](../guides/import-dhcp-leases.md)
 - [VLAN and IPAM synchronization](../using-netmap/vlans.md)
-- [External IP Pools and Assignments](#external-ip-pools-and-assignments)
+- [External IPAM](#external-ipam)
 
-## External IP Pools and Assignments
+## External IPAM
 
 External IP tracking is for administrators and operators who manage provider-assigned public addresses. It is separate from internal subnet IPAM and does not configure a provider, router, or firewall.
 
-### Pool versus assignment
+### Provider, service, allocation, and address
 
-An **external IP pool** represents a provider allocation or public CIDR/range. An **assignment** records one address from that pool with a label and optional provider, account, owner, service, tags, and notes. Assignment status distinguishes operational use such as `in_use` and `reserved`.
+External IPAM uses a four-level hierarchy. A **provider** is the cloud or ISP source. A **cloud service/area** is the provider product or operational subsection. An **allocation** is a named address source carrying account/subscription, region, description, icon, and one or more public address ranges. An **address tracking record** adds status, label, owner, tags, notes, and an optional link to the Inventory device holding that address.
+
+A cloud asset is not a second database record: **Inventory → Cloud assets** is a provider-grouped view of Inventory devices linked from External IP addresses.
 
 ### Validation rules
 
 - Private, loopback, link-local, multicast, and other special-purpose ranges are rejected.
 - Overlapping external allocations are blocked.
-- An assignment must belong to a pool and remain inside that pool.
-- An address cannot be assigned twice.
-- Resizing or deleting a pool cannot orphan an existing assignment.
+- A tracked address must belong to an allocation and remain inside one of its ranges.
+- An address cannot be tracked twice.
+- Removing one address from a larger range splits the range around that IP and preserves its neighbours.
+- Deleting External IP tracking does not silently delete a linked Inventory device.
 
 These checks protect the inventory model; they do not prove that a provider has actually routed the address or that a service is reachable from the Internet.
 
 ### Planning example
 
-Record the provider's public allocation as a pool, then create assignments for addresses used by a reverse proxy, mail service, VPN, or reserved future service. Keep provider account and ownership fields current enough for incident response, and avoid putting credentials in notes.
+Record the provider and cloud service/area first, create an allocation for the supplied address/range/CIDR, then track the individual addresses used by a virtual machine, reverse proxy, mail service, VPN, or reserved future service. Keep account and ownership fields current enough for incident response, and avoid putting credentials in notes.
 
 ### Related pages
 

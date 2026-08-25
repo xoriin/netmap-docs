@@ -34,7 +34,7 @@
   - [Locations](./using-netmap/locations.md)
   - [Monitoring](./using-netmap/monitoring.md)
   - [IPAM](./using-netmap/ipam.md)
-  - [External IP Pools And Assignments](./using-netmap/external-ipam.md)
+  - [External IPAM](./using-netmap/external-ipam.md)
   - [Security Events](./using-netmap/security-events.md)
   - [Tools](./using-netmap/tools.md)
   - [Exports](./using-netmap/exports.md)

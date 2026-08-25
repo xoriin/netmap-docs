@@ -57,11 +57,11 @@ This tour is for prospective users and newly signed-in operators. Visible worksp
 |---|---|
 | **Overview** | Fleet totals, health summaries, recent changes, groups, device types, offline notices, and favourite-device detail. |
 | **Topology** | Interactive devices, groups, sites, and links; search, path highlighting, a mini-map, saved layouts, share-code import, export, and bulk assignment. |
-| **Inventory** | Searchable device records, status and identity fields, favourites, import/export, filters, resizable columns, and bulk editing. |
+| **Inventory** | Searchable device records, status and identity fields, favourites, import/export, filters, resizable columns, bulk editing, and a provider-grouped Cloud assets view for devices linked from External IPAM. |
 | **VLANs / Groups** | Topology groups with VLAN, subnet, gateway, DNS, color, and membership metadata, including IPAM synchronization. |
 | **Locations** | Physical or logical sites used to organize and filter devices. |
 | **Monitoring** | Fleet health, uptime and latency history, expected state, pause controls, device checks, service checks, and detailed HTTP monitors. |
-| **IPAM** | IPv4/IPv6 subnets, address grids, reservations, DHCP leases, conflict detection, available-address lookup, reminders, and separate public-IP pools and assignments. |
+| **IPAM** | Internal IPv4/IPv6 subnets, address grids, reservations, DHCP leases, conflicts, and a separate External IPs page organised Provider → Cloud service/area → Allocation → Address. |
 | **Security** | UDP/TCP syslog and parsed firewall events, full-text raw-log search, filters, live updates, saved searches, and export. |
 | **Tools** | Permission- and rate-limited ping, traceroute, DNS, port, SNMP, and related diagnostic operations. |
 | **Exports** | Data exports and generated reports available to the current user's permissions. |

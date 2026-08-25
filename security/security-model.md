@@ -34,8 +34,20 @@ Named permissions include:
 - `firewall_export`
 - `report_export`
 - `ipam_write`
+- `ipam_reservation_claim`
 - `monitoring_write`
 - `alert_write`
+- `user_manage`
+- `notification_manage`
+- `device_catalog_manage`
+- `snmp_profile_manage`
+- `audit_view`
+- `diagnostics_view`
+- `backup_manage`
+- `automation_manage`
+- `discovery_manage`
+
+Delegated administrative permissions never allow a user to grant or manage SuperAdmin, restore a database, change role definitions, or modify OIDC and global security settings.
 
 ## API-Key Security Boundary
 

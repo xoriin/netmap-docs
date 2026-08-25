@@ -27,6 +27,7 @@ That means existing route guards apply without special API-key code:
 - `require_firewall_export`
 - `require_report_export`
 - `require_alert_write`
+- delegated administration dependencies for users, notifications, device catalogue, SNMP profiles, audit, diagnostics, backups, automation, and discovery
 - `require_ipam_write`
 
 Monitoring write checks are enforced in `monitoring.py` using the role permission cache.
@@ -55,6 +56,10 @@ Examples:
 | Export firewall logs | `security_view` and `firewall_export` where needed |
 | Manage IPAM | `ipam_write` |
 | Configure alerts | `alert_write` |
+| Run and review discovery | `discovery_manage` |
+| Manage scheduled discovery | `automation_manage` |
+| View audit history | `audit_view` |
+| Download/manage backups | `backup_manage` |
 | Manage users | SuperAdmin |
 
 ## Related Pages

@@ -103,7 +103,7 @@ All endpoints in this section require SuperAdmin unless noted.
 
 ## Discovery
 
-All discovery endpoints require `topology_write`.
+Manual scans, scan history, observations, and imports require `discovery_manage`. Schedule CRUD and manual schedule runs require `automation_manage`. Applying or importing discovery results also requires `topology_write` because inventory is mutated.
 
 | Method | Endpoint | Schemas |
 |---|---|---|
@@ -125,6 +125,9 @@ All discovery endpoints require `topology_write`.
 | Alert event read | `/api/v1/alerts/events` | Authenticated |
 | IPAM read | `/api/v1/ipam/summary`, `/subnets`, addresses, next available, conflicts, DHCP leases | Authenticated |
 | IPAM write | subnet/reservation/DHCP import and delete endpoints | `ipam_write` |
+| External IPAM read | `/api/v1/ipam/external/summary`, `/pools`, pool addresses, assignments, providers | Authenticated |
+| External IPAM write | `/api/v1/ipam/external/pools*`, pool ranges/addresses, assignments, assets, and device links | `ipam_write` |
+| Cloud provider catalogue | `/api/v1/admin/cloud-providers*` | `device_catalog_manage` |
 | Syslog/security | `/api/v1/syslog/status`, `/events`, `/searches` | `security_view` |
 | Passive tools | DNS, reverse DNS, subnet calculator, LLDP neighbours | `tools_passive` |
 | Active tools | ping, traceroute, port check, SNMP probe, LLDP scan/patch | `tools_active` |
@@ -142,7 +145,8 @@ All discovery endpoints require `topology_write`.
 | Administer all API keys | Yes | Yes | SuperAdmin | `/api/v1/api-keys/admin/*` |
 | View devices/topology | Yes | Yes | authenticated | `/api/v1/topology/graph`, `/devices` |
 | Edit inventory/topology | Yes | Yes | `topology_write` | topology write endpoints |
-| Run discovery | Yes | Yes | `topology_write` | `/api/v1/discovery/*` |
+| Run discovery | Yes | Yes | `discovery_manage` | `/api/v1/discovery/scans`, observations and import |
+| Manage discovery schedules | Yes | Yes | `automation_manage` | `/api/v1/discovery/schedules*` |
 | View monitoring | Yes | Yes | authenticated | `/api/v1/monitoring/*` read endpoints |
 | Configure service checks | Yes | Yes | `monitoring_write` | monitoring service-check write endpoints |
 | Manage IPAM | Yes | Yes | `ipam_write` | IPAM write endpoints |

@@ -24,6 +24,8 @@ Built-in roles are intended as least-privilege starting points: **Viewer** for r
 
 Permission changes apply live to sessions and API keys because keys inherit the owner's current role. Custom roles require a unique name and initial permissions, can be edited, and cannot be deleted while safeguards/assignments would leave an invalid account. Design separate read-only, help-desk, security, and network-operator roles rather than sharing SuperAdmin keys.
 
+Administrative work can be delegated independently for users/sessions, notifications, device types/icons/colours, SNMP profiles, audit logs, diagnostics, backups, automation, and discovery. A delegated administrator sees only the Admin sections their effective permissions allow. SuperAdmin accounts cannot be created, reassigned, reset, disabled, or logged out by a delegated user manager. Database restore, role administration, OIDC/SSO configuration, global security/secrets, and SuperAdmin assignment remain SuperAdmin-only.
+
 ## Device types, icons, and colours
 
 The 17 built-in device types are code constants, not editable database rows. Admin can create/edit/delete custom types with unique value, label, and icon. Built-ins can receive colour overrides through the `device_type_colors` system-setting map but cannot be renamed/deleted. Device-type colours, group/VLAN colours, and location colours use explicit values or a stable name-hash fallback palette. Reset removes explicit overrides and returns to automatic colours.
