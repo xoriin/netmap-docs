@@ -22,7 +22,7 @@ Search raw text with full-text matching or combine structured filters for addres
 
 ## Live events and device correlation
 
-The live stream uses an authenticated WebSocket and reconnects when the connection drops, subject to `SYSLOG_WS_MAX_CONNECTIONS`. API-key authentication is intentionally not supported for this WebSocket; use a browser session or the polling API. Selecting a device activity view correlates events by the device IP and returns an isolated empty/error result if the firewall database is unavailable; it does not make topology perform a broad log aggregation.
+The live stream uses an authenticated WebSocket and reconnects when the connection drops, subject to `SYSLOG_WS_MAX_CONNECTIONS`; after reconnecting it reloads the event list so events received while offline are not missed, and the topbar shows whether the stream is connecting, connected, reconnecting, or paused. With **Auto-scroll** on, the table follows new events to the top. Event table columns can be resized by dragging their dividers; widths are remembered per browser, and **Reset columns** (or double-clicking a divider) restores the default layout. API-key authentication is intentionally not supported for this WebSocket; use a browser session or the polling API. Selecting a device activity view correlates events by the device IP and returns an isolated empty/error result if the firewall database is unavailable; it does not make topology perform a broad log aggregation.
 
 ## Export and retention
 
