@@ -24,7 +24,13 @@ CORS_ORIGINS=["https://netmap.example.com"]
 TRUSTED_HOSTS=["netmap.example.com"]
 AUTH_COOKIE_SECURE=true
 SECURE_HSTS_ENABLED=true
+AUTH_IP_LOCKOUT_ENABLED=true
+AUTH_IP_MAX_FAILED_ATTEMPTS=50
 ```
+
+When `APP_URL` uses HTTPS, production startup requires both Secure cookies and HSTS. The independent
+IP threshold complements the lower per-account login threshold without allowing one user's failed
+attempts to lock a shared office address immediately.
 
 ## Header Requirements
 

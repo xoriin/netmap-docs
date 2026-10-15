@@ -10,7 +10,7 @@ Admin is restricted to SuperAdmins. The workspace uses URL-hash tabs for setting
 
 ## System settings and diagnostics
 
-Application settings include app name, login message, announcement, support email/URL, global live ping enablement, monitoring interval bounds, public-target policy, reservation defaults/reminder lead time and channels, idle session timeout, backup schedule/retention, and notification defaults. Validate each change and note whether it is environment-owned (for example listener ports and secret files) or database-managed.
+Application settings include app name, login message, announcement, support email/URL, global live ping enablement, monitoring interval bounds, public-target policy, reservation defaults/reminder lead time and channels, optional inactivity logout and its idle timeout, backup schedule/retention, and notification defaults. Validate each change and note whether it is environment-owned (for example listener ports and secret files) or database-managed.
 
 The version panel compares the installed `/app/VERSION` and channel with GitHub tags when online. What's New is built from the installed changelog, opens once per user/version, and can fall back to raw GitHub when the bundled data is unavailable. Offline installations show the installed version without inventing an update state.
 
@@ -19,6 +19,8 @@ System diagnostics reports SQLite file sizes, monitoring cache/status counters, 
 ## Users, sessions, and roles
 
 SuperAdmins can create users with username, password, role, and active state; edit identity/email/avatar, role, and active state; deactivate/reactivate accounts; reset passwords; unlock login lockouts; force logout all refresh sessions; and inspect audit activity. Deactivation invalidates access and API keys; forced logout affects sessions, not API keys. SSO-linked rows show issuer/subject and last SSO login alongside local fields.
+
+Users with two-factor authentication on show a **2FA** pill; **Reset 2FA** turns it off and signs the user out. **Security → Two-factor authentication** sets whether it is required for nobody, administrators, or all local users. See [Two-Factor Authentication](../security/two-factor-authentication.md).
 
 Built-in roles are intended as least-privilege starting points: **Viewer** for read-only workspaces, **SecurityAnalyst** for security search/export as assigned, **NetworkAdmin** for topology/IPAM/monitoring operations, and **SuperAdmin** for unrestricted administration and recovery. Verify the live permission matrix before assigning; custom roles can add only named permissions and cannot bypass SuperAdmin safeguards.
 
@@ -34,7 +36,7 @@ Custom icon packs are browser-local JSON/SVG assets. Import validates the pack, 
 
 ## Cloud providers
 
-Cloud providers are managed on their own Admin page because the catalogue is shared by External IPAM and Inventory → Cloud assets. Each provider has a name, matching aliases, and a built-in or uploaded brand mark. AWS, Azure, and Google Cloud are convenience seeds rather than immutable system records: they can be edited or removed, and a removed provider is not recreated on restart. Removing a provider does not delete allocations or Inventory devices; affected records appear under **No provider** until reassigned. Existing customised or referenced Cloudflare entries are preserved as normal providers during upgrade.
+Cloud providers are managed on their own Admin page because the catalogue is used by External IPs. Each provider has a name, matching aliases, and a built-in or uploaded brand mark. AWS, Azure, and Google Cloud are convenience seeds rather than immutable system records: they can be edited or removed, and a removed provider is not recreated on restart. Removing a provider does not delete external addresses, provider accounts, or Inventory devices; affected accounts fall back to no provider until reassigned. Existing customised or referenced Cloudflare entries are preserved as normal providers during upgrade.
 
 ## SNMP profiles and LLDP
 

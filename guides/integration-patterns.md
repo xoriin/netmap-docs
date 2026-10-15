@@ -16,7 +16,7 @@ See [Automation With API Keys](./automation-with-api-keys.md), [Exports](../usin
 
 ## Safe write automation
 
-For device, reservation, or external-allocation automation:
+For device, reservation, or external-address automation:
 
 1. Read the current object and retain its ID and `updated_at` value.
 2. Validate addresses and ownership before writing.
@@ -25,7 +25,7 @@ For device, reservation, or external-allocation automation:
 5. Re-read after a successful write and record the resulting ID.
 6. Revoke the key when the integration is retired.
 
-Reservation and external allocation rules are documented in [IPAM](../using-netmap/ipam.md) and [External IPAM](../using-netmap/external-ipam.md). The API does not provide a general-purpose transaction across multiple resources; do not assume a partially completed batch can be rolled back automatically.
+Reservation and external address rules are documented in [IPAM](../using-netmap/ipam.md) and [External IPAM](../using-netmap/external-ipam.md). The API does not provide a general-purpose transaction across multiple resources; do not assume a partially completed batch can be rolled back automatically.
 
 ## Discovery and health polling
 

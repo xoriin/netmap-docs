@@ -8,7 +8,7 @@ keywords: [IPAM, subnet, reservations, DHCP]
 
 The IPAM section separates **Internal networks** from **External IPs** in its sidebar navigation.
 Internal networks manages summary cards, conflict review, VLAN suggestions, subnets, reservations,
-DHCP leases, and address grids. External IPs manages provider-assigned public allocations; see
+DHCP leases, and address grids. External IPs keeps a register of public addresses; see
 [External IPAM](./external-ipam.md). Write actions require `ipam_write`.
 
 ## Summary and subnet list

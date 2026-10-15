@@ -39,6 +39,15 @@ SuperAdmins can unlock a user through the Admin UI or:
 POST /api/v1/auth/users/{user_id}/unlock-login
 ```
 
+## Two-Factor Code Rejected Or Authenticator Lost
+
+- **Code rejected:** check the device clock is set automatically; a code also cannot be reused, so wait for the next one. Wrong codes count toward the account lockout above.
+- **Sign-in expired:** the code step lasts 5 minutes; go back and enter the password again.
+- **Authenticator lost:** sign in with a saved recovery code, or ask a SuperAdmin to use **Reset 2FA** in Admin → Users.
+- **Only SuperAdmin locked out:** run `docker exec <container> netmap-admin reset-2fa <username>` on the host.
+
+See [Two-Factor Authentication](../security/two-factor-authentication.md).
+
 ## Require SSO
 
 When Require SSO is enabled and usable, local login is restricted for non-SuperAdmin users. SuperAdmin local login remains available as the emergency recovery path.

@@ -92,6 +92,7 @@
   - [Security Overview](./security/security.md)
   - [Security Model](./security/security-model.md)
   - [API-Key Security](./security/api-key-security.md)
+  - [Two-Factor Authentication](./security/two-factor-authentication.md)
   - [Permissions](./security/permissions.md)
   - [Secrets Management](./security/secrets-management.md)
   - [Network Exposure](./security/network-exposure.md)

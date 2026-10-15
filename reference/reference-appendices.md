@@ -26,7 +26,7 @@ The documentation is intentionally split by audience. This page is the index for
 - [Device records and state](../product-introduction/terminology.md#device-records-and-state) explains lifecycle, expected state, and observed health.
 - [Monitoring and discovery model](../product-introduction/terminology.md#monitoring-and-discovery) explains checks, history, scans, and observations.
 - [Topology entities](../product-introduction/terminology.md#topology-entities) explains devices, groups, sites, relationships, and layouts.
-- [IPAM data model](../product-introduction/terminology.md#internal-ipam) explains subnets, addresses, reservations, VLAN links, and public allocations.
+- [IPAM data model](../product-introduction/terminology.md#internal-ipam) explains subnets, addresses, reservations, VLAN links, and public IP addresses.
 - [Security events and notifications](../product-introduction/terminology.md#security-events-and-notifications) explains firewall events, alert events, and deliveries.
 
 ## Scope of generated references

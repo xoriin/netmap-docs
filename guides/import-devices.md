@@ -10,6 +10,9 @@ keywords: [import, devices, inventory]
 
 Imports device records in bulk.
 
+The browser accepts CSV or JSON files up to 5 MB and 5,000 device rows. The API independently
+enforces the 5,000-row limit. Split larger inventories into smaller reviewed batches.
+
 ## Required Permissions
 
 `topology_write`.

@@ -12,7 +12,6 @@ keywords: [defaults]
 | `DATABASE_URL` | `sqlite:////app/data/netmap.db` |
 | `DATA_DIR` | `/app/data` |
 | `ACCESS_TOKEN_MINUTES` | `60` |
-| `IDLE_TIMEOUT_MINUTES` | `15` |
 | `REFRESH_TOKEN_DAYS` | `7` |
 | `API_KEY_RATE_LIMIT_MAX_CALLS` | `120` |
 | `API_KEY_RATE_LIMIT_WINDOW_SECONDS` | `60` |
@@ -31,6 +30,10 @@ Production startup rejects missing or placeholder `SECRET_KEY` and `MASTER_KEY` 
 `AUTH_COOKIE_SECURE` defaults to `false` so local HTTP development works. Enable it for HTTPS deployments.
 
 `SECURE_HSTS_ENABLED` defaults to `false`. Enable it only after HTTPS is working.
+
+`AUTH_IP_LOCKOUT_ENABLED` defaults to `true`. Its independent
+`AUTH_IP_MAX_FAILED_ATTEMPTS` default is `50`, compared with the per-account default of `5`, to
+limit distributed credential attacks without immediately locking a shared NAT.
 
 ## Operational Defaults
 

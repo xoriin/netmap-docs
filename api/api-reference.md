@@ -79,8 +79,9 @@ All endpoints in this section require SuperAdmin unless noted.
 | GET | `/api/v1/audit/logs/export` | Export audit logs | query → file |
 | GET | `/api/v1/system/diagnostics` | Diagnostics | none → object |
 | GET | `/api/v1/exports/backup` | Download DB backup | none → file |
-| POST | `/api/v1/exports/restore/validate` | Validate backup upload | multipart → `RestoreValidationResult` |
-| POST | `/api/v1/exports/restore` | Restore backup | multipart → 204 |
+| POST | `/api/v1/exports/backup/encrypted` | Download passphrase-encrypted DB backup | JSON passphrase → `.nmbak` file |
+| POST | `/api/v1/exports/restore/validate` | Validate backup upload | octet-stream + optional passphrase header → `RestoreValidationResult` |
+| POST | `/api/v1/exports/restore` | Restore backup | octet-stream + optional passphrase header → 204 |
 | GET/DELETE | `/api/v1/exports/scheduled-backups*` | Scheduled backup files | none → list/file/204 |
 
 ## Inventory And Topology
@@ -125,8 +126,8 @@ Manual scans, scan history, observations, and imports require `discovery_manage`
 | Alert event read | `/api/v1/alerts/events` | Authenticated |
 | IPAM read | `/api/v1/ipam/summary`, `/subnets`, addresses, next available, conflicts, DHCP leases | Authenticated |
 | IPAM write | subnet/reservation/DHCP import and delete endpoints | `ipam_write` |
-| External IPAM read | `/api/v1/ipam/external/summary`, `/pools`, pool addresses, assignments, providers | Authenticated |
-| External IPAM write | `/api/v1/ipam/external/pools*`, pool ranges/addresses, assignments, assets, and device links | `ipam_write` |
+| External IPAM read | `/api/v1/ipam/external/summary`, `/addresses` (filter by status, location, search), `/accounts`, `/locations`, `/providers`, `/migration-report` | Authenticated |
+| External IPAM write | `POST /api/v1/ipam/external/addresses` (one address, CIDR, or range; up to 256 addresses per call), `PATCH`/`DELETE /addresses/{id}`, account and location create/update/delete, `DELETE /migration-report` | `ipam_write` |
 | Cloud provider catalogue | `/api/v1/admin/cloud-providers*` | `device_catalog_manage` |
 | Syslog/security | `/api/v1/syslog/status`, `/events`, `/searches` | `security_view` |
 | Passive tools | DNS, reverse DNS, subnet calculator, LLDP neighbours | `tools_passive` |

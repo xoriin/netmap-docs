@@ -23,6 +23,17 @@ Restoring database files without the matching secrets can break encrypted settin
 
 ## Restore Steps
 
+For an application backup, open **Admin → System**, select the `.nmbak` or `.db` file, provide the
+backup passphrase when restoring `.nmbak`, and validate it before enabling the destructive restore
+action. Validation checks authenticated encryption or the legacy signature, expected tables, and
+SQLite integrity without changing the live database. The upload limit is 256 MB.
+
+An encrypted `.nmbak` is portable between NetMap installations, but encrypted integration settings
+inside the database still require the original `MASTER_KEY` to remain usable. A legacy signed `.db`
+also requires the source installation's signing secret.
+
+For a full filesystem archive, use the stopped-container procedure below:
+
 ```bash
 cd <install-dir>
 docker compose down
@@ -50,6 +61,7 @@ After the health check passes:
 | Container fails startup | data directory not writable | fix host ownership or `PUID`/`PGID` |
 | Login/session issues | wrong `SECRET_KEY` | restore the original secret |
 | encrypted settings fail | wrong `MASTER_KEY` | restore the original Fernet key |
+| `.nmbak` validation fails | wrong passphrase or modified file | retrieve the original passphrase and an unmodified backup |
 | missing recent data | incomplete live SQLite copy | restore from stopped-container backup or include WAL sidecars |
 
 ## Related Pages

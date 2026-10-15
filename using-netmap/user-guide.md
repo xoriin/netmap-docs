@@ -42,9 +42,7 @@ Required permissions: read access requires authentication. Write actions require
 
 ## Inventory
 
-Purpose: search, filter, import, and update device records. **Inventory → Cloud assets** presents
-Inventory devices linked from External IPAM as Provider → Device → Address; it is not a separate
-asset database.
+Purpose: search, filter, import, and update device records.
 
 Related API:
 
@@ -59,7 +57,7 @@ Write actions require `topology_write`.
 
 Purpose: manage internal networks and provider-assigned public addresses from separate IPAM
 sub-pages. **Internal networks** covers subnets, reservations, leases, conflicts, and address grids.
-**External IPs** uses Provider → Cloud service/area → Allocation → Address. Write actions require
+**External IPs** is a flat register of public addresses, optionally filed under locations. Write actions require
 `ipam_write`.
 
 Related API: `/api/v1/ipam/*`, including `/api/v1/ipam/external/*`.

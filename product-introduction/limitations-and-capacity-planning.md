@@ -122,7 +122,7 @@ Most operational data remains on the NetMap host. The external path exists for s
 Depending on the features you use, `/app/data` can contain:
 
 - usernames, email addresses, password hashes, roles, sessions, OIDC identity links, API-key metadata, and audit logs;
-- device names, IP/MAC addresses, vendors, notes, locations, relationships, VLANs, subnets, DHCP leases, and public-IP allocations;
+- device names, IP/MAC addresses, vendors, notes, locations, relationships, VLANs, subnets, DHCP leases, and public IP addresses;
 - scan definitions/results, discovery observations, health history, response times, service/HTTP monitor configuration, alert history, and notification deliveries;
 - raw and parsed syslog/firewall messages, which may contain usernames, addresses, URLs, device identifiers, or other data supplied by senders;
 - encrypted application secrets such as notification credentials, OIDC client secrets, and sensitive HTTP-monitor fields; and

@@ -18,6 +18,10 @@ Change a local password by providing the current password and a compliant replac
 
 Device icon packs include built-ins and custom packs stored in browser local storage. Select a pack, import a validated JSON/SVG definition, or remove a custom pack. Custom SVG paths are sanitised before rendering/export; never import untrusted markup casually.
 
+## Two-factor authentication
+
+Local accounts can turn on an authenticator-app code for sign-in, save one-time recovery codes, generate a new set, or turn it off (unless an administrator requires it). SSO-only accounts do not see this row. See [Two-Factor Authentication](../security/two-factor-authentication.md).
+
 ## Personal API keys
 
 Create a key with a name and optional expiry (never, 30, 90, or 365 days). The full `nm_<prefix>_<secret>` value is shown exactly once. Store it in a secret manager immediately. NetMap stores only the plaintext prefix and an HMAC-SHA256 digest, so the secret cannot be displayed later.
@@ -34,6 +38,7 @@ The list shows prefix/suffix, creation, expiry, last use, and revocation state. 
 
 ## Related pages
 
+- [Two-Factor Authentication](../security/two-factor-authentication.md)
 - [API Keys](../api/api-keys.md)
 - [API Authentication](../api/authentication.md)
 - [API-Key Problems](../troubleshooting/api-key-problems.md)

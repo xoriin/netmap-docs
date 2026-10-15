@@ -39,13 +39,30 @@ curl --fail http://127.0.0.1:8080/api/health
 
 ## Application Backup
 
-SuperAdmins can use the backup endpoint:
+In **Admin → System**, choose **Download encrypted backup**, enter and confirm a passphrase of at
+least 12 characters, and save the resulting `.nmbak` file. The passphrase is not stored by NetMap;
+keep it in a password manager separate from the backup.
+
+The encrypted API endpoint is:
+
+```text
+POST /api/v1/exports/backup/encrypted
+```
+
+with JSON body `{"passphrase":"..."}`. It uses authenticated encryption, so a wrong passphrase or
+modified file is rejected. The legacy instance-signed, unencrypted endpoint remains available for
+compatibility:
 
 ```text
 GET /api/v1/exports/backup
 ```
 
-Use the UI Exports/Admin backup controls where available. This is preferable when you cannot stop the container.
+Both application endpoints back up only the main application database. Include `firewall.db`,
+environment/secret files, and other persistent files in a filesystem backup when required.
+
+Scheduled backups are signed but unencrypted because NetMap does not retain an interactive backup
+passphrase. Put the data/backup directory on an encrypted host volume or filesystem and restrict its
+permissions.
 
 ## Retention
 
@@ -56,6 +73,8 @@ Keep enough restore points to recover from:
 - database corruption;
 - compromised administrator or API key;
 - unnoticed syslog volume growth.
+
+Application restore uploads are limited to 256 MB.
 
 ## Backup Verification
 
@@ -73,3 +92,18 @@ A backup is not complete until it has been restored in a safe test location. Ver
 - [Storage](../configuration/storage.md)
 - [Restores](./restores.md)
 - [Disaster Recovery](./disaster-recovery.md)
+
+
+## Scheduled destination and filenames
+
+From 1.7.0, scheduled backups can be written to an operator-configured `BACKUP_DIR`. Mount the host folder into the
+container, pass its absolute container path as `BACKUP_DIR`, and give the NetMap container user write
+permission. For example, mount `/srv/netmap-backups:/mnt/backups` and set `BACKUP_DIR=/mnt/backups`.
+Recreate the container after changing its environment. The default remains `/app/data/backups`.
+
+**Admin → System → Scheduled backups** shows the effective destination. Filename prefix and date
+order can be changed beside the schedule; prefixes start with a letter or number and contain only
+letters, numbers, underscores and hyphens, up to 60 characters. UTC time and a unique suffix are
+appended automatically. Keep the `.netmap-backups.json` manifest with custom-named files so NetMap can
+list and retain them. Existing default-directory backups remain listed after changing the destination.
+Scheduled backups contain only the main database.

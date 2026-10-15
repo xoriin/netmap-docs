@@ -19,6 +19,7 @@ API equivalents:
 - `GET /api/v1/exports/firewall`
 - `GET /api/v1/exports/report.pdf`
 - `GET /api/v1/exports/backup`
+- `POST /api/v1/exports/backup/encrypted`
 
 ## What This Does
 
@@ -32,6 +33,10 @@ Exports let you take NetMap data into other tools, create reports, archive evide
 | Firewall | Syslog/firewall events for investigation or archive |
 | PDF report | Human-readable network report |
 | Backup | Database backup for recovery |
+
+CSV exports prefix text that begins like a spreadsheet formula (`=`, `+`, `-`, or `@`, including
+after whitespace) so opening untrusted device or event fields in a spreadsheet does not execute the
+text as a formula. JSON exports preserve the original value.
 
 ## Example
 

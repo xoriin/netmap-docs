@@ -55,12 +55,12 @@ Most changes require a container restart because settings are loaded at process 
 | `SECURE_PERMISSIONS_POLICY` | No | `camera=(), geolocation=(), microphone=()` | string | No | Yes | Permissions-Policy header. |
 | `AUTH_COOKIE_SECURE` | No | `false` | boolean | No | Yes | Marks auth cookies Secure; enable behind HTTPS. |
 | `ACCESS_TOKEN_MINUTES` | No | `60` | integer minutes | No | Yes | Access-token lifetime. |
-| `IDLE_TIMEOUT_MINUTES` | No | `15` | integer minutes | No | Yes | Frontend idle timeout and auth behavior. |
 | `REFRESH_TOKEN_DAYS` | No | `7` | integer days | No | Yes | Refresh-token lifetime. |
 | `AUTH_MAX_FAILED_ATTEMPTS` | No | `5` | integer | No | Yes | Per-user login lockout threshold. |
 | `AUTH_LOCKOUT_MINUTES` | No | `15` | integer minutes | No | Yes | Login lockout duration. |
 | `AUTH_PROGRESSIVE_DELAY_SECONDS` | No | `0.5` | float seconds | No | Yes | Delay applied during failed login handling. |
-| `AUTH_IP_LOCKOUT_ENABLED` | No | `false` | boolean | No | Yes | Enables IP-level login lockout controls. |
+| `AUTH_IP_LOCKOUT_ENABLED` | No | `true` | boolean | No | Yes | Enables persistent source-IP login lockout controls. |
+| `AUTH_IP_MAX_FAILED_ATTEMPTS` | No | `50` | integer | No | Yes | Source-IP threshold; intentionally higher than the account threshold for shared NATs. |
 | `API_KEY_RATE_LIMIT_MAX_CALLS` | No | `120` | integer | No | Yes | Per-key fixed-window request limit. |
 | `API_KEY_RATE_LIMIT_WINDOW_SECONDS` | No | `60` | integer seconds | No | Yes | API-key rate-limit window. |
 | `API_KEY_MAX_FAILED_LOOKUPS` | No | `10` | integer | No | Yes | Invalid-key attempts before source IP lockout. |

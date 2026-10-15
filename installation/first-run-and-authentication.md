@@ -52,9 +52,10 @@ Defaults are:
 | --- | ---: | --- |
 | `ACCESS_TOKEN_MINUTES` | 60 | Access-token lifetime. |
 | `REFRESH_TOKEN_DAYS` | 7 | Refresh-token lifetime. |
-| `IDLE_TIMEOUT_MINUTES` | 15 | Browser inactivity timeout; Admin can change the application setting. |
 
 The SPA proactively refreshes the access token before its one-hour expiry. Reloading the page does not expose the refresh token to JavaScript.
+
+Inactivity logout is optional and is set under **Admin → System**. With **Log out inactive users** turned off — the default on new installations from 1.7.0 — users stay signed in until they sign out, their refresh session expires, their password changes, or an administrator revokes the session. Turn it on and set **Idle session timeout (minutes)** (1–480) to sign users out after that long without mouse, keyboard, touch, or scroll activity in NetMap. Installations upgraded from an earlier release keep the timeout they already had, which was 15 minutes unless changed.
 
 ## Forgot and reset password
 
@@ -80,7 +81,7 @@ OIDC-only users may not have a local password to change; manage their credential
 
 Failed local sign-ins are throttled per username. The defaults are five failed attempts followed by a 15-minute lockout, with a short progressive delay during failed-login handling. Administrators can adjust `AUTH_MAX_FAILED_ATTEMPTS`, `AUTH_LOCKOUT_MINUTES`, and `AUTH_PROGRESSIVE_DELAY_SECONDS`.
 
-If `AUTH_IP_LOCKOUT_ENABLED=true`, the deployment also applies the configured IP-level controls. A SuperAdmin can unlock a user from Admin → Users. Do not repeatedly retry a locked account; verify the password or use the administrator recovery path.
+IP-level throttling is enabled by default with a separate 50-failure threshold (`AUTH_IP_MAX_FAILED_ATTEMPTS`) so one account does not immediately lock users behind the same NAT. A SuperAdmin can unlock a user's account-level state from Admin → Users; the source-IP state expires after the configured lockout window. Do not repeatedly retry a locked account; verify the password or use the administrator recovery path.
 
 ## OIDC single sign-on
 

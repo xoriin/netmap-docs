@@ -197,26 +197,24 @@ Deleting a subnet or reservation can remove the organizing record while leaving 
 
 External IP tracking is for administrators and operators who manage provider-assigned public addresses. It is separate from internal subnet IPAM and does not configure a provider, router, or firewall.
 
-### Provider, service, allocation, and address
+### Address, location, and provider account
 
-External IPAM uses a four-level hierarchy. A **provider** is the cloud or ISP source. A **cloud service/area** is the provider product or operational subsection. An **allocation** is a named address source carrying account/subscription, region, description, icon, and one or more public address ranges. An **address tracking record** adds status, label, owner, tags, notes, and an optional link to the Inventory device holding that address.
+External IPAM is a flat register: each row is one public **address** with a status (**in use**, **reserved**, or **available**), an optional **purpose**, owner, URL, tags, notes, and an optional link to the Inventory device holding it. An address can optionally sit in a **location** — a region, datacentre, or site — and a location can optionally belong to a **provider account** under a cloud or ISP **provider**. None of these are required: an address with no location is listed under **Unassigned**.
 
-A cloud asset is not a second database record: **Inventory → Cloud assets** is a provider-grouped view of Inventory devices linked from External IP addresses.
+Releases before 1.7.0 used a Provider → Cloud service/area → Allocation → Address hierarchy and an **Inventory → Cloud assets** view; upgrading flattens them automatically into this register.
 
 ### Validation rules
 
-- Private, loopback, link-local, multicast, and other special-purpose ranges are rejected.
-- Overlapping external allocations are blocked.
-- A tracked address must belong to an allocation and remain inside one of its ranges.
-- An address cannot be tracked twice.
-- Removing one address from a larger range splits the range around that IP and preserves its neighbours.
-- Deleting External IP tracking does not silently delete a linked Inventory device.
+- An address, CIDR, or start–end range is accepted; one add creates at most 256 addresses.
+- An address can be tracked only once.
+- A location cannot be deleted while it holds addresses, and a provider account cannot be deleted while it has locations.
+- Deleting an address never deletes a linked Inventory device.
 
 These checks protect the inventory model; they do not prove that a provider has actually routed the address or that a service is reachable from the Internet.
 
 ### Planning example
 
-Record the provider and cloud service/area first, create an allocation for the supplied address/range/CIDR, then track the individual addresses used by a virtual machine, reverse proxy, mail service, VPN, or reserved future service. Keep account and ownership fields current enough for incident response, and avoid putting credentials in notes.
+Add each public address as you are given it — a single IP for a virtual machine or reverse proxy, or a whole range at once, which arrives as **Available** capacity. File addresses under locations when that helps you find them, set **Purpose** and **Owner** as each address is put to use, and use **Mark available** when a service is decommissioned. Keep ownership fields current enough for incident response, and avoid putting credentials in notes.
 
 ### Related pages
 

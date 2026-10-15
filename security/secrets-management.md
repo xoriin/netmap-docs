@@ -19,6 +19,10 @@ Production startup requires `SECRET_KEY` and `MASTER_KEY` or their file variants
 
 Keep secrets with backups. Losing `MASTER_KEY` may make encrypted settings unusable.
 
+Manual `.nmbak` backup passphrases are never stored by NetMap. Keep each passphrase in a password
+manager separate from the backup file. The passphrase protects the backup container, while the
+original `MASTER_KEY` is still needed to use integration secrets stored inside the restored database.
+
 ## Required Production Secrets
 
 Production startup requires:

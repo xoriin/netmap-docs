@@ -19,6 +19,7 @@ This page separates implemented protections from deployment responsibilities.
 |---|---|
 | Passwords | Local passwords are hashed by backend security code. |
 | Sessions | Access tokens are short-lived; refresh tokens are stored in HttpOnly cookies. |
+| Login abuse | Persistent per-account throttling is combined with a higher source-IP threshold to remain safer for shared NATs; lockouts return `Retry-After`. |
 | CSRF | Double-submit CSRF middleware protects cookie-authenticated mutating requests. `X-API-Key` and bearer requests are exempt. |
 | API keys | Plaintext shown once; prefix stored; full key HMAC-SHA256 digest stored. |
 | API-key auth order | `X-API-Key` is checked before bearer/cookie auth. |
@@ -27,7 +28,9 @@ This page separates implemented protections from deployment responsibilities.
 | Permissions | Named permissions gate topology writes, security view, tools, exports, IPAM writes, monitoring writes, and alerts. |
 | OIDC | Authorization Code + PKCE, state/nonce rows, JWKS validation, local SuperAdmin downgrade guard rails. |
 | Secrets | `MASTER_KEY` encrypts stored integration secrets; production startup rejects missing placeholder secrets. |
-| Headers | Security headers middleware is enabled by default. |
+| Headers | Security headers middleware is enabled by default; HTTPS production URLs require both HSTS and Secure cookies. |
+| Input and files | Persisted images are decoded and inspected server-side, SVG active content is blocked, imports/uploads are bounded, and CSV formula-like text is neutralised. |
+| Backups | Manual `.nmbak` downloads use passphrase-derived authenticated encryption; legacy and scheduled `.db` backups remain signed but unencrypted. |
 | Host validation | TrustedHostMiddleware is enabled when `TRUSTED_HOSTS` is non-empty. |
 | Syslog isolation | Firewall/syslog writes use a separate SQLite database. |
 | Audit | API-key lifecycle and authentication threshold events are audited. |
@@ -47,13 +50,13 @@ SuperAdmins can change role permission mappings in Admin.
 
 Administrators are responsible for:
 
-- Running behind HTTPS before enabling `AUTH_COOKIE_SECURE=true`.
+- Running behind HTTPS with `AUTH_COOKIE_SECURE=true` and `SECURE_HSTS_ENABLED=true` for an HTTPS `APP_URL`; production startup rejects an inconsistent combination.
 - Setting strong `SECRET_KEY` and Fernet `MASTER_KEY`.
 - Backing up secrets with the database.
 - Restricting `TRUSTED_HOSTS` and `CORS_ORIGINS` to exact production origins.
 - Preserving `X-API-Key` and WebSocket upgrade headers through reverse proxies.
 - Restricting syslog sender networks with `SYSLOG_SENDER_ALLOWLIST` where possible.
-- Protecting `/app/data` file permissions.
+- Protecting `/app/data` with restrictive permissions and encrypted host storage, particularly for unencrypted scheduled backups.
 - Keeping Docker images and host packages current.
 - Reviewing audit logs and key usage.
 
@@ -94,7 +97,7 @@ Authorization is evaluated at the route and ownership boundary. Hidden navigatio
 
 Security headers include CSP, HSTS when enabled, frame protection through CSP, content type protection, Referrer-Policy, and Permissions-Policy. Set HSTS only after HTTPS is stable; preserve forwarded host/protocol headers only from trusted proxies.
 
-`MASTER_KEY` protects Fernet-encrypted integration values such as OIDC, notification, SNMP, and monitor secrets. The signing secret protects API-key HMAC verification and backup integrity. Backups provide integrity signatures, not confidentiality; protect backup files and keys separately. Rotating keys can invalidate sessions, API-key verification, or encrypted settings depending on the key, so plan and test it.
+`MASTER_KEY` protects Fernet-encrypted integration values such as OIDC, notification, SNMP, and monitor secrets. The signing secret protects API-key HMAC verification and legacy backup integrity. Manual `.nmbak` backups add passphrase-derived AES-GCM confidentiality and integrity; scheduled and legacy `.db` backups do not, so protect those files with encrypted storage. Rotating keys can invalidate sessions, API-key verification, or encrypted settings depending on the key, so plan and test it.
 
 Active tools, discovery, nmap via sudo, notification webhooks, HTTP monitors, and OIDC all make outbound requests. Public targets are disabled by default for active tools; rate limits and SSRF/private-target controls reduce abuse but do not replace network egress policy. Host networking and `NET_RAW` increase reachability and must be granted only to the intended container.
 

@@ -25,10 +25,14 @@ AUTH_COOKIE_SECURE=true
 SECURE_HSTS_ENABLED=true
 ```
 
+Production startup rejects an HTTPS `APP_URL` if either Secure cookies or HSTS is disabled. Enable
+these only after the proxy serves working HTTPS and forwards the original protocol correctly.
+
 nginx example:
 
 ```nginx
 server {
+    client_max_body_size 256m;
     listen 443 ssl http2;
     server_name netmap.example.com;
 

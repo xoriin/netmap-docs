@@ -20,7 +20,7 @@ Small networks often spread their operating knowledge across spreadsheets, route
 3. discover private-network hosts and review changes before importing them;
 4. compare observed device state with its expected state;
 5. run device, service, and HTTP endpoint checks;
-6. manage subnets, reservations, DHCP leases, conflicts, and public-IP allocations;
+6. manage subnets, reservations, DHCP leases, conflicts, and public IP addresses;
 7. receive and search firewall/syslog events;
 8. alert through configured notification providers; and
 9. export data or automate REST operations with revocable API keys.
@@ -41,7 +41,7 @@ NetMap does not automatically know the network merely because it is installed. Y
 
 ### Where NetMap fits
 
-NetMap is a good fit for home labs, small-business and internal IT teams, managed environments with a bounded customer/site scope, and multi-site networks that can reach the application over a trusted path. Common supported workflows are maintaining inventory and topology, reviewing private-network discovery, comparing expected and observed health, tracking internal and public IP allocations, searching firewall/syslog context, and automating permissioned operations through the API.
+NetMap is a good fit for home labs, small-business and internal IT teams, managed environments with a bounded customer/site scope, and multi-site networks that can reach the application over a trusted path. Common supported workflows are maintaining inventory and topology, reviewing private-network discovery, comparing expected and observed health, tracking internal and public IP addresses, searching firewall/syslog context, and automating permissioned operations through the API.
 
 NetMap is not a hosted SaaS service, a clustered/high-availability monitoring system, a replacement for a full SIEM, a configuration-management system, or an Internet-wide scanner. The supported deployment is the all-in-one Docker image with persistent local storage; native installs and arbitrary multi-container decompositions are outside the supported boundary. SQLite, event retention, discovery limits, and container reachability define practical scale, so very large fleets or high-volume log estates should use a purpose-built platform alongside NetMap. See [Operating Boundaries and Administration](./limitations-and-capacity-planning.md) for sizing and data boundaries.
 
@@ -57,11 +57,11 @@ This tour is for prospective users and newly signed-in operators. Visible worksp
 |---|---|
 | **Overview** | Fleet totals, health summaries, recent changes, groups, device types, offline notices, and favourite-device detail. |
 | **Topology** | Interactive devices, groups, sites, and links; search, path highlighting, a mini-map, saved layouts, share-code import, export, and bulk assignment. |
-| **Inventory** | Searchable device records, status and identity fields, favourites, import/export, filters, resizable columns, bulk editing, and a provider-grouped Cloud assets view for devices linked from External IPAM. |
+| **Inventory** | Searchable device records, status and identity fields, favourites, import/export, filters, resizable columns, and bulk editing. |
 | **VLANs / Groups** | Topology groups with VLAN, subnet, gateway, DNS, color, and membership metadata, including IPAM synchronization. |
 | **Locations** | Physical or logical sites used to organize and filter devices. |
 | **Monitoring** | Fleet health, uptime and latency history, expected state, pause controls, device checks, service checks, and detailed HTTP monitors. |
-| **IPAM** | Internal IPv4/IPv6 subnets, address grids, reservations, DHCP leases, conflicts, and a separate External IPs page organised Provider → Cloud service/area → Allocation → Address. |
+| **IPAM** | Internal IPv4/IPv6 subnets, address grids, reservations, DHCP leases, conflicts, and a separate External IPs register of public addresses, grouped by location, provider, or status. |
 | **Security** | UDP/TCP syslog and parsed firewall events, full-text raw-log search, filters, live updates, saved searches, and export. |
 | **Tools** | Permission- and rate-limited ping, traceroute, DNS, port, SNMP, and related diagnostic operations. |
 | **Exports** | Data exports and generated reports available to the current user's permissions. |
