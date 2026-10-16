@@ -27,7 +27,7 @@ Authentication column:
 | GET | `/api/health` | Container health | Public · response `{status:"ok"}` |
 | GET | `/api/v1/health` | API health | Public · response `{status:"ok"}` |
 | GET | `/api/v1/system/version` | Installed version and changelog highlights | Public · response object |
-| GET | `/api/v1/admin/settings/public` | Public UI settings | Public · response `SystemSettingsRead` |
+| GET | `/api/v1/admin/settings/public` | Sign-in page settings | Public · response `PublicSettingsRead` (`app_name`, `login_message`, `announcement`, `support_email`, `support_url`) |
 | GET | `/api/v1/setup/status` | Whether initial setup is needed | Public · response `SetupStatus` |
 | POST | `/api/v1/setup/admin` | Create first admin before setup is complete | Public until first user exists · `AdminCreate` → `UserRead` |
 | POST | `/api/v1/auth/login` | Local login | Public · `LoginRequest` → `TokenPair` |
@@ -59,6 +59,7 @@ All endpoints in this section require SuperAdmin unless noted.
 |---|---|---|---|
 | GET/POST | `/api/v1/admin/device-types` | List/create device types | `DeviceTypeCreate` → `DeviceTypeRead` |
 | PATCH/PUT/DELETE | `/api/v1/admin/device-types/{value}` | Update/delete device type | `DeviceTypeUpdate` → `DeviceTypeRead` or 204 |
+| GET | `/api/v1/admin/settings/app` | Settings the signed-in app needs (idle timeout, monitor interval, reservation defaults) | Any signed-in user · response `SystemSettingsRead` |
 | GET/PUT | `/api/v1/admin/settings` | Read/update system settings | `SystemSettingsUpdate` → `SystemSettingsRead` |
 | GET/PUT | `/api/v1/admin/notification-settings` | Legacy notification settings | `NotificationSettingsUpdate` → `NotificationSettings` |
 | POST | `/api/v1/admin/notifications/test` | Test notification settings | `TestNotificationRequest` → object |

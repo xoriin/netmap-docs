@@ -18,11 +18,12 @@ Two-factor authentication applies to **local password sign-in only**:
 ## Turn it on
 
 1. Open **Profile**. In the **Two-factor authentication** row, select **Set up**.
-2. Scan the QR code with your authenticator app. If you cannot scan it, select **Copy** and enter the key into the app manually.
-3. Enter the 6-digit code the app shows and select **Verify**.
-4. NetMap shows ten **recovery codes** in the form `XXXXX-XXXXX`. Copy them or select **Download .txt**, store them somewhere safe (a password manager, not the same phone), tick **I've saved these recovery codes**, and select **Done**.
+2. Enter your current password and select **Continue**. This stops someone using a signed-in browser you left open from adding their own authenticator. Wrong passwords count toward the login lockout.
+3. Scan the QR code with your authenticator app. If you cannot scan it, select **Copy** and enter the key into the app manually.
+4. Enter the 6-digit code the app shows and select **Verify**.
+5. NetMap shows ten **recovery codes** in the form `XXXXX-XXXXX`. Copy them or select **Download .txt**, store them somewhere safe (a password manager, not the same phone), tick **I've saved these recovery codes**, and select **Done**.
 
-The recovery codes are shown only once. NetMap stores only a one-way hash of each code and cannot display them again. If you close the dialog (including with Escape) before saving them, generate a new set as described below.
+The recovery codes are shown only once. NetMap stores only a one-way hash of each code and cannot display them again, so while they are on screen the dialog cannot be closed with Escape, by clicking outside it, or with a close button; it closes only with **Done** after you tick the box. The same applies when you generate a new set.
 
 The Profile row then shows **On** and how many recovery codes are left.
 
