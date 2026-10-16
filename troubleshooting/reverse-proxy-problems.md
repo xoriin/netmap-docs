@@ -14,6 +14,9 @@ Common causes:
 - Proxy strips `X-API-Key`.
 - Proxy does not pass WebSocket upgrade headers.
 - `AUTH_COOKIE_SECURE=true` while using plain HTTP.
+- An `https://` `APP_URL` while signing in over plain HTTP, for example by IP address. Cookies are
+  then marked `Secure` and the browser will not store them over HTTP. Use the HTTPS address, or set
+  `AUTH_COOKIE_SECURE=false`.
 
 Fix proxy headers and restart NetMap after configuration changes.
 

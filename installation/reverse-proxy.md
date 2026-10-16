@@ -21,12 +21,16 @@ Set production URL variables:
 APP_URL=https://netmap.example.com
 CORS_ORIGINS=["https://netmap.example.com"]
 TRUSTED_HOSTS=["netmap.example.com"]
-AUTH_COOKIE_SECURE=true
-SECURE_HSTS_ENABLED=true
 ```
 
-Production startup rejects an HTTPS `APP_URL` if either Secure cookies or HSTS is disabled. Enable
-these only after the proxy serves working HTTPS and forwards the original protocol correctly.
+With an `https://` `APP_URL`, sign-in cookies are marked `Secure` automatically. Set
+`AUTH_COOKIE_SECURE` only to override that; NetMap logs a warning at startup if it is `false` while
+`APP_URL` uses HTTPS.
+
+HSTS is opt-in. Set `SECURE_HSTS_ENABLED=true` once NetMap will only ever be served over HTTPS on
+this hostname and the proxy forwards the original protocol correctly. Browsers then refuse plain
+HTTP for that hostname for `SECURE_HSTS_MAX_AGE` seconds (one year by default), and this cannot be
+withdrawn early. NetMap logs a warning at startup while HSTS is off.
 
 nginx example:
 
