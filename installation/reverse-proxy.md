@@ -32,6 +32,14 @@ this hostname and the proxy forwards the original protocol correctly. Browsers t
 HTTP for that hostname for `SECURE_HSTS_MAX_AGE` seconds (one year by default), and this cannot be
 withdrawn early. NetMap logs a warning at startup while HSTS is off.
 
+In production, SuperAdmins also see a persistent **Deployment security needs attention** banner on
+every workspace while HTTPS security settings need attention. It cannot be dismissed and lists the
+environment flags to enable. The check includes Secure cookies, HSTS, and `SECURE_HEADERS_ENABLED`;
+ordinary HTTP installations are not asked to enable HTTPS-only settings. Recreate the container
+after changing its environment. The banner checks again every 30 seconds and when the browser
+window regains focus, and disappears once the running configuration is compliant. Missing flags
+produce warnings rather than preventing an existing installation from starting.
+
 nginx example:
 
 ```nginx
