@@ -20,6 +20,8 @@ System diagnostics reports SQLite file sizes, monitoring cache/status counters, 
 
 SuperAdmins can create users with username, password, role, and active state; edit identity/email/avatar, role, and active state; deactivate/reactivate accounts; reset passwords; unlock login lockouts; force logout all refresh sessions; and inspect audit activity. Deactivation invalidates access and API keys; forced logout affects sessions, not API keys. SSO-linked rows show issuer/subject and last SSO login alongside local fields.
 
+Resetting a password signs the user out everywhere. The form closes as soon as it is saved, and a notification then reports whether the reset email (a link for the user to choose their own password) was sent, failed, or was not sent because the user has no email address or account email is not set up (`APP_URL` plus an enabled SMTP method).
+
 Users with two-factor authentication on show a **2FA** pill; **Reset 2FA** turns it off and signs the user out. **Security → Two-factor authentication** sets whether it is required for nobody, administrators, or all local users. See [Two-Factor Authentication](../security/two-factor-authentication.md).
 
 Built-in roles are intended as least-privilege starting points: **Viewer** for read-only workspaces, **SecurityAnalyst** for security search/export as assigned, **NetworkAdmin** for topology/IPAM/monitoring operations, and **SuperAdmin** for unrestricted administration and recovery. Verify the live permission matrix before assigning; custom roles can add only named permissions and cannot bypass SuperAdmin safeguards.
