@@ -32,6 +32,8 @@ Users with monitoring write permission can run one device's enabled checks immed
 
 The page uses a bounded stale-while-revalidate cache: route re-entry paints the last snapshot immediately, then performs a delta refresh when possible or a full refresh when stale. Summary data settles before the device table so a slow table request does not hide fleet totals. A missing last-check value is a null state, not zero latency.
 
+A device recorded without an IP address is never probed: monitoring, live status, and service checks skip it and show it as Unknown until an address is added.
+
 ## History, baselines, and incidents
 
 Heartbeat history shows sampled status and RTT over the selected range. Uptime is the proportion of successful observations; latency and packet-loss values are calculated only from available samples. Device analysis reports p50/p95, standard deviation, trend, and an anomaly score when enough samples exist; insufficient data is shown explicitly. Flapping detection identifies repeated state changes over the configured threshold. Incidents include start, end, duration, and longest outage when an outage has closed.
