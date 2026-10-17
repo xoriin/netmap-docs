@@ -28,6 +28,8 @@ Ping, attached service checks, manual status, expected status, monitoring pause,
 
 Administrators can enable/disable global live ping monitoring and set the monitoring interval within the configured safe range. A per-device Pause/Resume control overrides normal checks and is visible in Inventory, Details, Overview, and Monitoring. Favourites are per-user. Search and filters include health, expected/paused state, and favourites.
 
+Users with monitoring write permission can run one device's enabled checks immediately with **Check now**, from the device's details or its service-check configuration. It runs the same status probe and service checks as a scheduled cycle for that device only, records normal history, and evaluates alert rules; it is unavailable while the device is paused or not active.
+
 The page uses a bounded stale-while-revalidate cache: route re-entry paints the last snapshot immediately, then performs a delta refresh when possible or a full refresh when stale. Summary data settles before the device table so a slow table request does not hide fleet totals. A missing last-check value is a null state, not zero latency.
 
 ## History, baselines, and incidents
@@ -70,6 +72,7 @@ Endpoint details show uptime, response-time history, heartbeat, recent HTTP stat
 - `GET /api/v1/monitoring/devices`
 - `GET /api/v1/monitoring/devices/{device_id}/history`
 - `GET /api/v1/monitoring/devices/{device_id}/analysis`
+- `POST /api/v1/monitoring/devices/{device_id}/check`
 - `GET/POST /api/v1/monitoring/service-checks`
 - `PUT/DELETE /api/v1/monitoring/service-checks/{target_id}`
 - `GET/PUT /api/v1/monitoring/service-checks/order-config`
