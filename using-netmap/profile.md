@@ -10,7 +10,7 @@ Profile is personal: changes affect the signed-in account and, where noted, the 
 
 ## Account and identity
 
-Update display name, email, and avatar within the validation limits shown by the form. The avatar is stored with the account; remove it explicitly when required. The page shows username, role, active state, SSO issuer/identity where linked, and last-login details. Role and security fields are read-only to the user.
+Update display name, email, and avatar within the validation limits shown by the form. After uploading, changing, or removing a photo, select **Save photo** beside the photo controls. The saved photo also appears beside Profile in the sidebar. **Save account details** saves the display name and email separately. The page shows username, role, active state, SSO issuer/identity where linked, and last-login details. Role and security fields are read-only to the user.
 
 ## Password and appearance
 
