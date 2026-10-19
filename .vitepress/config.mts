@@ -144,6 +144,7 @@ export default defineConfig({
           { text: "Exports", link: "/using-netmap/exports" },
           { text: "Administration", link: "/using-netmap/admin" },
           { text: "Status Pages", link: "/using-netmap/status-pages" },
+          { text: "Status Page Integrations", link: "/using-netmap/status-page-integrations" },
           { text: "Profile", link: "/using-netmap/profile" }
         ]
       },

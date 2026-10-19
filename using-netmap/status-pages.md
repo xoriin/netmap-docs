@@ -52,7 +52,7 @@ The same source can sit on several pages, with a different display name and diff
 
 ### Display names are required
 
-Every item needs a **display name**, and visitors only ever see group names and display names. There is no fallback to the hostname or IP address, so a page cannot be saved with an unnamed item. The editor shows the real source (marked internal) beside each row, and an ID you can use with the integration API.
+Every item needs a **display name**, and visitors only ever see group names and display names. There is no fallback to the hostname or IP address, so a page cannot be saved with an unnamed item. The editor shows the real source (marked internal) beside each row, and an ID you can use with the [integration API](./status-page-integrations.md).
 
 ### Item states
 
@@ -233,10 +233,15 @@ Status pages are served from an in-memory snapshot that is rebuilt whenever some
 - Public requests are rate-limited per client IP. Over the limit returns `429`.
 - The snapshot cache lives in one process. NetMap runs a single worker, and it takes a lock file named `status-pages.lock` in its data directory to enforce that; a second worker would not serve status pages and would log a warning. Do not run several NetMap workers against one data directory.
 
+## Integration tokens
+
+Outside systems (a backup server, a ticketing tool, a deployment pipeline) can set notices, open and update incidents, and schedule maintenance on chosen pages using page-scoped integration tokens, created under **Integration tokens** in the editor. A token can use only the status integration endpoints, is limited to the pages you choose, and its name is shown publicly as the author of what it posts. See [Status Page Integrations](./status-page-integrations.md) for the endpoints, scope rules and `curl` examples.
+
 ## Related pages
 
 - [Monitoring](./monitoring.md)
 - [Create An Alert Rule](../guides/create-alert-rule.md)
 - [Permissions](../security/permissions.md)
+- [Status Page Integrations](./status-page-integrations.md)
 - [Endpoint Inventory](../api/api-reference.md)
 - [Rate Limits](../api/rate-limits.md)

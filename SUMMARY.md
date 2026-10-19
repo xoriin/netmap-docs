@@ -40,6 +40,7 @@
   - [Exports](./using-netmap/exports.md)
   - [Administration](./using-netmap/admin.md)
   - [Status Pages](./using-netmap/status-pages.md)
+  - [Status Page Integrations](./using-netmap/status-page-integrations.md)
   - [Profile](./using-netmap/profile.md)
 - Guides
   - [Add A Device](./guides/add-device.md)
