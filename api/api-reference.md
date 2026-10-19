@@ -136,6 +136,44 @@ Manual scans, scan history, observations, and imports require `discovery_manage`
 | SNMP profile management | `/api/v1/tools/snmp/profiles*` write endpoints | SuperAdmin |
 | Exports | inventory/firewall/report | `inventory_export`, `firewall_export`, `report_export` |
 
+## Status Pages
+
+Editor endpoints require `status_page_manage` and an ordinary NetMap session or API key, except `/status-pages/{slug}/view`, which any signed-in user may call. All paths are under `/api/v1`.
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| GET/POST | `/status-pages` | List and create pages |
+| GET/PATCH/DELETE | `/status-pages/{page_id}` | Read, update (including `custom_css`, validated; rejected CSS returns `422` with `css_errors` listing each line and column) and delete a page |
+| PUT | `/status-pages/{page_id}/layout` | Replace a page's groups, items, display names and extras |
+| GET | `/status-pages/sources` | Devices, monitors and service checks that can be added, with their IDs |
+| GET | `/status-pages/{page_id}/preview` | Authenticated preview payload; `audience=public` (default) or `private` |
+| GET | `/status-pages/{slug}/view` | Cached payload for any signed-in viewer of a page, in that page's own audience |
+| GET/POST | `/status-pages/incidents` | List and open incidents |
+| POST | `/status-pages/incidents/{id}/updates`, `/resolve`, `/publish` | Add an update, resolve, or publish to more pages |
+| GET/PUT/DELETE | `/status-pages/{page_id}/notice` and `/notices` | Your notice on a page; list and clear notices |
+| DELETE | `/status-pages/notices/{notice_id}` | Clear any notice |
+| GET/POST/PATCH/DELETE | `/status-pages/maintenance*` | Maintenance windows; `suppress_alerts` also needs `alert_write` |
+| GET/POST/DELETE | `/status-pages/tokens*` | List, create (secret returned once) and revoke integration tokens |
+| GET/PUT | `/admin/status-page-default-css` | SuperAdmin: default CSS copied into new pages |
+
+Public read endpoint, no authentication:
+
+| Method | Endpoint | Behaviour |
+|---|---|---|
+| GET | `/api/v1/public/status-pages/{slug}` | The cached payload for a Public page. Returns `404` for Private and unknown slugs alike, `503` with `Retry-After` while the page is being built or when its snapshot has expired, `304` for a matching `If-None-Match`, and `429` over the per-IP limit. Responses carry `Cache-Control: no-cache, private, must-revalidate`, an `ETag` and `Vary: Cookie, Authorization`. |
+
+Integration endpoints use a page-scoped `nmsp_` token (not an API key) in `Authorization: Bearer` and require an `Idempotency-Key` header on writes:
+
+| Method | Endpoint |
+|---|---|
+| PUT/DELETE | `/api/v1/status-integrations/pages/{slug}/notice` |
+| POST | `/api/v1/status-integrations/incidents` |
+| POST | `/api/v1/status-integrations/incidents/{id}/updates` |
+| POST | `/api/v1/status-integrations/incidents/{id}/resolve` |
+| POST/PATCH/DELETE | `/api/v1/status-integrations/maintenance[/{id}]` |
+
+Token scope rules, request fields, `curl` examples and error codes are in [Status Page Integrations](../using-netmap/status-page-integrations.md).
+
 ## API-Key Capability Matrix
 
 | Capability | UI | API key | Required permission | Endpoint |
@@ -147,6 +185,7 @@ Manual scans, scan history, observations, and imports require `discovery_manage`
 | Administer all API keys | Yes | Yes | SuperAdmin | `/api/v1/api-keys/admin/*` |
 | View devices/topology | Yes | Yes | authenticated | `/api/v1/topology/graph`, `/devices` |
 | Edit inventory/topology | Yes | Yes | `topology_write` | topology write endpoints |
+| Manage status pages | Yes | Yes | `status_page_manage` | `/api/v1/status-pages*` |
 | Run discovery | Yes | Yes | `discovery_manage` | `/api/v1/discovery/scans`, observations and import |
 | Manage discovery schedules | Yes | Yes | `automation_manage` | `/api/v1/discovery/schedules*` |
 | View monitoring | Yes | Yes | authenticated | `/api/v1/monitoring/*` read endpoints |

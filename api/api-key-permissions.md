@@ -57,6 +57,7 @@ Examples:
 | Manage IPAM | `ipam_write` |
 | Configure alerts | `alert_write` |
 | Run and review discovery | `discovery_manage` |
+| Manage status pages, incidents, notices and integration tokens | `status_page_manage` (suppressing alerts for maintenance also needs `alert_write`) |
 | Manage scheduled discovery | `automation_manage` |
 | View audit history | `audit_view` |
 | Download/manage backups | `backup_manage` |

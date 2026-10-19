@@ -16,6 +16,8 @@ The version panel compares the installed `/app/VERSION` and channel with GitHub 
 
 System diagnostics reports SQLite file sizes, monitoring cache/status counters, syslog retention counters, and process PID without broad expensive scans. Use it with health and logs when investigating resource or startup issues. Backup/restore and scheduled-backup workflows are covered by [Exports](./exports.md).
 
+SuperAdmins also set **Status page default CSS** here: the stylesheet copied into each new [status page](./status-pages.md). Changing it never restyles existing pages. It is validated by the same rules as a page's own custom CSS.
+
 ## Users, sessions, and roles
 
 SuperAdmins can create users with username, password, role, and active state; edit identity/email/avatar, role, and active state; deactivate/reactivate accounts; reset passwords; unlock login lockouts; force logout all refresh sessions; and inspect audit activity. Deactivation invalidates access and API keys; forced logout affects sessions, not API keys. SSO-linked rows show issuer/subject and last SSO login alongside local fields.

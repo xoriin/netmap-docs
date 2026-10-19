@@ -16,7 +16,10 @@ Rate limits protect expensive network tools, login, discovery, and API-key authe
 | Discovery | 60 seconds between scans |
 | Login failures | 5 failures, then 15 minutes |
 
-API-key rate limits return `429`.
+| Public status page reads | 600 requests per 60 seconds per client IP, 6000 per 60 seconds overall |
+| Status integration token writes | 60 writes per 60 seconds per token |
+
+API-key rate limits return `429`. Status page limits also return `429` with a `Retry-After` header; see [Status Pages](../using-netmap/status-pages.md) and [Status Page Integrations](../using-netmap/status-page-integrations.md).
 
 ## API-Key Call Limit
 

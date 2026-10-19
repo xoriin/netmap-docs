@@ -28,6 +28,7 @@ Permission keys:
 - `backup_manage`
 - `automation_manage`
 - `discovery_manage`
+- `status_page_manage`
 
 SuperAdmin bypasses permission checks.
 
@@ -43,6 +44,8 @@ SuperAdmin bypasses permission checks.
 SuperAdmins can define custom roles and update role permission mappings.
 
 `ipam_reservation_claim` permits a user to confirm that a reservation should be removed when converting it into a device. The user also needs `topology_write` to create the device. With `ipam_write`, the action appears in the reservation editor; without `ipam_write`, a claim-capable role receives the conversion action directly on the reservation row. A reservation by itself never creates an inventory device.
+
+`status_page_manage` (**Manage status pages**) allows creating, editing and deleting status pages, groups and items, opening, updating and resolving incidents, setting notices, scheduling page maintenance, and creating or revoking integration tokens. It does not allow silencing monitoring alerts: turning on **Suppress monitoring alerts** for a maintenance window additionally requires `alert_write`, because suppression affects the affected items throughout NetMap, not only on the status page. Viewing a Private status page needs no permission beyond being signed in, and Public pages need no sign-in. See [Status Pages](../using-netmap/status-pages.md).
 
 Administrative permissions expose only their matching Admin sections. Delegated user managers cannot assign or manage SuperAdmin accounts. `backup_manage` does not permit database restore. Applying a discovery observation requires both `discovery_manage` and `topology_write` because it mutates inventory.
 
@@ -65,6 +68,7 @@ A missing permission returns `403`. Missing or invalid authentication returns `4
 
 ## Related Pages
 
+- [Status Pages](../using-netmap/status-pages.md)
 - [API-Key Permissions](../api/api-key-permissions.md)
 - [Permission Errors](../troubleshooting/permission-errors.md)
 - [Security Model](./security-model.md)

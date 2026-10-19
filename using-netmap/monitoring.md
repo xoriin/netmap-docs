@@ -68,6 +68,10 @@ Endpoint details show uptime, response-time history, heartbeat, recent HTTP stat
 | endpoint TLS fails | untrusted CA, expired certificate, or verification mismatch | inspect issuer/expiry and configure a trusted CA or verification policy |
 | endpoint assertion fails | status, keyword, or JSONPath condition is not met | inspect the assertion detail and correct the expected expression |
 
+## Status pages
+
+**Monitoring → Status pages** (for users with Manage status pages) publishes chosen devices, endpoints and service checks as a Public or Private status page with incidents, notices and scheduled maintenance. See [Status Pages](./status-pages.md).
+
 ## API equivalents
 
 - `GET /api/v1/monitoring/summary`

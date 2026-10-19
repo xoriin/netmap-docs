@@ -20,6 +20,7 @@ Check Admin role permissions for:
 - `ipam_write`
 - `monitoring_write`
 - `alert_write`
+- `status_page_manage`
 
 ## 401 Versus 403
 

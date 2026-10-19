@@ -46,6 +46,7 @@ Named permissions include:
 - `backup_manage`
 - `automation_manage`
 - `discovery_manage`
+- `status_page_manage`
 
 Delegated administrative permissions never allow a user to grant or manage SuperAdmin, restore a database, change role definitions, or modify OIDC and global security settings.
 
