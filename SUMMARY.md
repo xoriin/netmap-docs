@@ -39,6 +39,7 @@
   - [Tools](./using-netmap/tools.md)
   - [Exports](./using-netmap/exports.md)
   - [Administration](./using-netmap/admin.md)
+  - [Status Pages](./using-netmap/status-pages.md)
   - [Profile](./using-netmap/profile.md)
 - Guides
   - [Add A Device](./guides/add-device.md)

@@ -143,6 +143,7 @@ export default defineConfig({
           { text: "Tools", link: "/using-netmap/tools" },
           { text: "Exports", link: "/using-netmap/exports" },
           { text: "Administration", link: "/using-netmap/admin" },
+          { text: "Status Pages", link: "/using-netmap/status-pages" },
           { text: "Profile", link: "/using-netmap/profile" }
         ]
       },
