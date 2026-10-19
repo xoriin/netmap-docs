@@ -152,7 +152,7 @@ While suppression is active, matching notifications are held without using up th
 
 Each page has a **Custom CSS** field, and a SuperAdmin can set default CSS for new pages under **Admin → System → Status page default CSS**. A new page starts with a copy of the default; later changes to the default do not restyle existing pages.
 
-Custom CSS affects only the public status page, never NetMap's own screens. The page is rendered inside a sandboxed frame with no scripts, forms or same-origin access, under its own content security policy that blocks all network requests. The CSS is parsed by a real CSS parser and only a presentation-only subset is accepted. A rejected stylesheet cannot be saved; the editor lists each error with its line and column, and the page falls back to the built-in style.
+Custom CSS affects only the public status page, never NetMap's own screens. The page is rendered inside a sandboxed frame with no scripts, forms or same-origin access, under its own content security policy that blocks all network requests. The CSS is parsed by a real CSS parser and only a presentation-only subset is accepted. A rejected stylesheet cannot be saved: the editor lists each error with its line and column, and the page keeps its previous, validated CSS.
 
 ### Allowed
 
