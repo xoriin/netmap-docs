@@ -40,7 +40,7 @@ Public and Private pages are served from separate cached payloads. Switching a p
 
 The built-in page uses a Material design in light and dark mode. Its overall status banner is green when operational, yellow for warnings or maintenance, red for an outage, and neutral when status is unavailable. Notice and maintenance chips use matching severity colours; informational notices use blue.
 
-The **Settings** tab shows a preview beside the form (below it on narrower screens). CSS, title, logo and accent edits appear after a short pause as you type. Changes stay local until you choose **Save settings**; layout and monitoring data use the last saved configuration. **Discard changes** restores the saved appearance. The **Preview** tab also remains available for a wider view and public/private audience checks.
+Every editor tab keeps the same preview beside its controls in equal-width columns (below them on narrower screens). The selected public/private preview audience is preserved when switching tabs. CSS, title, logo and accent edits appear after a short pause as you type. Changes stay local until you choose **Save settings**; layout and monitoring data use the last saved configuration. **Discard changes** restores the saved appearance. The preview refreshes when switching tabs or saving settings/layout; use **Refresh** to reload it after other changes.
 
 ## Groups, items and display names
 
