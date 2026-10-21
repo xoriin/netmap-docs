@@ -38,7 +38,7 @@ Public and Private pages are served from separate cached payloads. Switching a p
 | **Heartbeat window** | **Last hour** (default) or **Last 24 hours**. |
 | **Custom CSS** | See [Custom CSS](#custom-css). |
 
-The built-in page uses a Material design in light and dark mode. Its overall status banner is green when operational, yellow for warnings or maintenance, red for an outage, and neutral when status is unavailable. Notice and maintenance chips use matching severity colours; informational notices use blue.
+The built-in page uses a Material design in light and dark mode. Its overall status banner is green when operational, yellow for warnings or maintenance, red for an outage, and neutral when status is unavailable. Notice, incident and maintenance bars use matching tinted surfaces, a stronger coloured edge and readable supporting text; informational notices use blue.
 
 Every editor tab keeps the same preview beside its controls in equal-width columns (below them on narrower screens). The selected public/private preview audience is preserved when switching tabs. CSS, title, logo and accent edits render immediately as you type. Unsaved groups, display names, ordering, extras and heartbeat-window changes also appear using real monitoring data. Drafts are not published until you choose **Save settings** or **Save layout**. **Discard changes** restores the saved appearance. The preview refreshes when switching tabs, saving settings/layout or changing incidents; use **Refresh** to reload it after other changes.
 
@@ -204,7 +204,7 @@ Attributes you can match:
 | `data-state` | `operational`, `degraded`, `down`, `maintenance`, `unknown` | `sp-row` |
 | `data-state` | `empty`, `major`, `affected`, `unknown`, `maintenance`, `operational` | `sp-summary`, `sp-group` |
 | `data-tone` | `good`, `warning`, `danger`, `neutral` | `sp-uptime` |
-| `data-tone` | `info`, `warning`, `danger`, `maintenance`, `neutral` | `sp-pill` |
+| `data-tone` | `info`, `warning`, `danger`, `maintenance`, `neutral` | `sp-pill`, `sp-strip` |
 | `data-kind` | `incident`, `maintenance` | `sp-strip`, `sp-incident` |
 | `data-level` | `info`, `warning`, `critical` | `sp-notice` |
 | `data-severity` | `performance`, `partial`, `major` | `sp-incident` |
