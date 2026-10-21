@@ -146,10 +146,11 @@ Editor endpoints require `status_page_manage` and an ordinary NetMap session or 
 | GET/PATCH/DELETE | `/status-pages/{page_id}` | Read, update (including `custom_css`, validated; rejected CSS returns `422` with `css_errors` listing each line and column) and delete a page |
 | PUT | `/status-pages/{page_id}/layout` | Replace a page's groups, items, display names and extras |
 | GET | `/status-pages/sources` | Devices, monitors and service checks that can be added, with their IDs |
-| GET | `/status-pages/{page_id}/preview` | Authenticated preview payload; `audience=public` (default) or `private` |
+| GET/POST | `/status-pages/{page_id}/preview` | Authenticated preview payload; `audience=public` (default) or `private`. POST accepts optional `heartbeat_window` and `groups` in the layout format, projects real source data without saving or publishing the draft |
 | GET | `/status-pages/{slug}/view` | Cached payload for any signed-in viewer of a page, in that page's own audience |
 | GET/POST | `/status-pages/incidents` | List and open incidents |
 | POST | `/status-pages/incidents/{id}/updates`, `/resolve`, `/publish` | Add an update, resolve, or publish to more pages |
+| PUT | `/status-pages/incidents/{id}/pages/{page_id}/visibility` | Set `{ "visible": false }` to remove a resolved incident from one board, or `true` to restore it; retains history and other pages. Active incidents return `409`; manager responses include `hidden_page_ids` |
 | GET/PUT/DELETE | `/status-pages/{page_id}/notice` and `/notices` | Your notice on a page; list and clear notices |
 | DELETE | `/status-pages/notices/{notice_id}` | Clear any notice |
 | GET/POST/PATCH/DELETE | `/status-pages/maintenance*` | Maintenance windows; `suppress_alerts` also needs `alert_write` |
