@@ -97,6 +97,8 @@ Rows expand with native disclosure elements, so they work without any script.
 
 An incident has a title, a severity (**Performance issues**, **Partial outage** or **Major outage**), a status (**Investigating**, **Identified**, **Monitoring** or **Resolved**), the items it affects, an optional ticket link, and a timeline of updates.
 
+Resolved incidents can be removed from the current page with **Remove from board** in the Incidents tab. This hides them from public and private visitors on that page while retaining their timeline and other pages. Turn on **Show removed incidents** to view their history or choose **Restore to board**. Open incidents must be resolved first; restored incidents still follow the normal 30-day visitor history window.
+
 ### Automatic incidents from alert rules
 
 Alert rules have an **Open an incident on status pages** switch and a **Consecutive breaching checks** count; see [Create An Alert Rule](../guides/create-alert-rule.md). When an enabled rule's condition holds for that many consecutive checks, every page that currently shows the affected item gets an incident. The incident:
