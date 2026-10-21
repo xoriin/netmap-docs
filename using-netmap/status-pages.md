@@ -177,7 +177,7 @@ Custom CSS affects only the public status page, never NetMap's own screens. The 
 
 Use the page's own **Logo** setting for images.
 
-Motion is reduced automatically for visitors who ask for it. The built-in style follows the visitor's light or dark preference. Existing custom CSS is preserved and can override the built-in design. Clear the page's Custom CSS and save to return to the default appearance.
+Motion is reduced automatically for visitors who ask for it. The page follows the visitor's saved NetMap light/dark choice, or the browser/device preference when no choice is saved. Custom CSS light/dark media queries follow the same choice. Existing custom CSS is preserved and can override the built-in design. Clear the page's Custom CSS and save to return to the default appearance.
 
 ### Stable class names
 

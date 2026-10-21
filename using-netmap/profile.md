@@ -14,7 +14,7 @@ Update display name, email, and avatar within the validation limits shown by the
 
 ## Password and appearance
 
-Change a local password by providing the current password and a compliant replacement. A bad current password returns `401`; use reset flow if the account is locked or the password is forgotten. Theme selection (light, dark, or system where available) persists per browser. Entity colours can be disabled per account; chips keep their shape/icons and use neutral styling so table layout does not shift.
+Change a local password by providing the current password and a compliant replacement. A bad current password returns `401`; use reset flow if the account is locked or the password is forgotten. On first load, NetMap follows your browser/device’s light or dark preference. It keeps following system changes until you choose Light mode or Dark mode; that explicit choice is saved in this browser and takes precedence on later visits. Entity colours can be disabled per account; chips keep their shape/icons and use neutral styling so table layout does not shift.
 
 Device icon packs include built-ins and custom packs stored in browser local storage. Select a pack, import a validated JSON/SVG definition, or remove a custom pack. Custom SVG paths are sanitised before rendering/export; never import untrusted markup casually.
 
