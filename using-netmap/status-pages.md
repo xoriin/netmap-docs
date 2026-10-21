@@ -186,7 +186,7 @@ These class names are stable. Select on them, and on the `data-*` attributes bel
 | Area | Classes |
 |---|---|
 | Page and header | `sp-page`, `sp-header`, `sp-logo`, `sp-title` |
-| Summary | `sp-summary`, `sp-summary-dot`, `sp-summary-label`, `sp-summary-counts` |
+| Summary | `sp-summary`, `sp-summary-dot`, `sp-summary-label` |
 | Notices, incident and maintenance lines | `sp-strip`, `sp-strip-title`, `sp-strip-meta`, `sp-strip-body`, `sp-notice`, `sp-pill` |
 | Groups | `sp-groups`, `sp-group`, `sp-group-name`, `sp-group-label`, `sp-group-state`, `sp-group-empty` |
 | Rows | `sp-row`, `sp-row-main`, `sp-row-more`, `sp-ident`, `sp-caret`, `sp-uptime`, `sp-row-name`, `sp-state` |
@@ -217,9 +217,6 @@ The built-in style is driven by custom properties you can override on `:root`: `
 }
 .sp-title { letter-spacing: 0.04em; }
 .sp-row[data-state="down"] .sp-row-name { font-weight: 700; }
-@media (max-width: 600px) {
-  .sp-summary-counts { display: none; }
-}
 ```
 
 ## What visitors never see
