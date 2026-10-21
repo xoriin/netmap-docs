@@ -38,6 +38,10 @@ Public and Private pages are served from separate cached payloads. Switching a p
 | **Heartbeat window** | **Last hour** (default) or **Last 24 hours**. |
 | **Custom CSS** | See [Custom CSS](#custom-css). |
 
+The built-in page uses a Material design in light and dark mode. Its overall status banner is green when operational, yellow for warnings or maintenance, red for an outage, and neutral when status is unavailable. Notice and maintenance chips use matching severity colours; informational notices use blue.
+
+The **Settings** tab shows a preview beside the form (below it on narrower screens). CSS, title, logo and accent edits appear after a short pause as you type. Changes stay local until you choose **Save settings**; layout and monitoring data use the last saved configuration. **Discard changes** restores the saved appearance. The **Preview** tab also remains available for a wider view and public/private audience checks.
+
 ## Groups, items and display names
 
 A **group** is a named, collapsible section; groups and the items inside them can be reordered by dragging the handle or with the move up and down arrows. A group can be set to start collapsed.
@@ -173,7 +177,7 @@ Custom CSS affects only the public status page, never NetMap's own screens. The 
 
 Use the page's own **Logo** setting for images.
 
-Motion is reduced automatically for visitors who ask for it. The built-in style follows the visitor's light or dark preference.
+Motion is reduced automatically for visitors who ask for it. The built-in style follows the visitor's light or dark preference. Existing custom CSS is preserved and can override the built-in design. Clear the page's Custom CSS and save to return to the default appearance.
 
 ### Stable class names
 
