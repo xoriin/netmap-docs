@@ -80,11 +80,11 @@ The uptime figure on the row is **observed availability** over the heartbeat win
 
 ### Extras
 
-All extras are off by default. Enable them per item in the editor and the row gains a disclosure arrow; a row without extras does not expand.
+All extras are off by default. Enable them per item in the editor and the row gains a disclosure arrow; a row without extras does not expand. Expanded metrics sit side by side and wrap on narrow screens; the response chart aligns with the heartbeat bar above it.
 
 | Extra | Shows |
 |---|---|
-| **Response-time graph** (**RTT graph** for ICMP) | The average successful response time per slot, on the same time axis as the heartbeat bar. Slots with no successful response leave a gap. |
+| **Response-time graph** (**RTT graph** for ICMP) | The average successful response time per slot, on the same time axis as the heartbeat bar. Measured points form a line across healthy intervals, with gaps for failed or unknown intervals. A single measurement shows a point; zero stays zero, and empty history says No successful responses. |
 | **Uptime over 24 h / 7 d / 30 d** | Availability over the chosen period. |
 | **Average response time** | Mean of the successful samples in the heartbeat window. |
 | **p95 response time** | Nearest-rank 95th percentile of the same samples. |
@@ -192,8 +192,8 @@ These class names are stable. Select on them, and on the `data-*` attributes bel
 | Notices, incident and maintenance lines | `sp-strip`, `sp-strip-title`, `sp-strip-meta`, `sp-strip-body`, `sp-notice`, `sp-pill` |
 | Groups | `sp-groups`, `sp-group`, `sp-group-name`, `sp-group-label`, `sp-group-state`, `sp-group-empty` |
 | Rows | `sp-row`, `sp-row-main`, `sp-row-more`, `sp-ident`, `sp-caret`, `sp-uptime`, `sp-row-name`, `sp-state` |
-| Heartbeats and graphs | `sp-graphs`, `sp-lane`, `sp-lane-label`, `sp-heartbeats`, `sp-beat`, `sp-beat--healthy`, `sp-beat--unhealthy`, `sp-beat--unknown`, `sp-beat--maintenance`, `sp-axis`, `sp-response`, `sp-response-area`, `sp-response-line` |
-| Extras | `sp-stats` |
+| Heartbeats and graphs | `sp-graphs`, `sp-lane`, `sp-lane-label`, `sp-heartbeats`, `sp-beat`, `sp-beat--healthy`, `sp-beat--unhealthy`, `sp-beat--unknown`, `sp-beat--maintenance`, `sp-axis`, `sp-response`, `sp-response-area`, `sp-response-line`, `sp-response-point`, `sp-response-grid`, `sp-response-empty` |
+| Extras | `sp-stats`, `sp-stat` |
 | Incident log and past incidents | `sp-log`, `sp-past`, `sp-section-title`, `sp-section-heading`, `sp-section-count`, `sp-incident`, `sp-incident-title`, `sp-incident-meta` |
 | Updates | `sp-updates`, `sp-update`, `sp-update-time`, `sp-update-author`, `sp-update-status`, `sp-update-text`, `sp-update-internal` |
 
