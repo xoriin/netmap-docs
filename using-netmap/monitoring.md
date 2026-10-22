@@ -28,7 +28,7 @@ Ping, attached service checks, manual status, expected status, monitoring pause,
 
 Administrators can enable/disable global live ping monitoring and set the monitoring interval within the configured safe range. The interval runs from the start of one scheduled batch to the next: time spent checking devices and services counts toward it. A batch that takes longer than the interval finishes before the next starts; checks do not overlap. A per-device Pause/Resume control overrides normal checks and is visible in Inventory, Details, Overview, and Monitoring. Favourites are per-user. Search and filters include health, expected/paused state, and favourites.
 
-Users with monitoring write permission can run one device's enabled checks immediately with **Check now**, from the device's details or its service-check configuration. It runs the same status probe and service checks as a scheduled cycle for that device only, records normal history, and evaluates alert rules; it is unavailable while the device is paused or not active.
+Users with monitoring write permission can run one device's enabled checks immediately with **Check now**, from the header of the device's details window (beside **Pause monitoring**) or from its service-check configuration. It runs the same status probe and service checks as a scheduled cycle for that device only, records normal history, and evaluates alert rules; it is unavailable while the device is paused or not active.
 
 The page uses a bounded stale-while-revalidate cache: route re-entry paints the last snapshot immediately, then performs a delta refresh when possible or a full refresh when stale. Summary data settles before the device table so a slow table request does not hide fleet totals. A missing last-check value is a null state, not zero latency.
 
@@ -36,7 +36,7 @@ A device recorded without an IP address is never probed: monitoring, live status
 
 ## History, baselines, and incidents
 
-Heartbeat history shows sampled status and RTT over the selected range. Uptime is the proportion of successful observations; latency and packet-loss values are calculated only from available samples. Device analysis reports p50/p95, standard deviation, trend, and an anomaly score when enough samples exist; insufficient data is shown explicitly. Flapping detection identifies repeated state changes over the configured threshold. Incidents include start, end, duration, and longest outage when an outage has closed.
+Heartbeat history shows sampled status and RTT over the selected range. In the device details window, move the pointer along the heartbeat to enlarge each check and see its time, status, expected state, RTT and service results; click a check to keep its details open, use the left and right arrow keys to step through checks, and press Escape to close them. The response-time graph shows the time and RTT of the nearest reading under the pointer (or with the arrow keys). Uptime is the proportion of successful observations; latency and packet-loss values are calculated only from available samples. Device analysis reports p50/p95, standard deviation, trend, and an anomaly score when enough samples exist; insufficient data is shown explicitly. Flapping detection identifies repeated state changes over the configured threshold. Incidents include start, end, duration, and longest outage when an outage has closed.
 
 ## Service checks
 
