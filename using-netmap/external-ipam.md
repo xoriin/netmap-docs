@@ -20,9 +20,25 @@ The address field accepts:
 - a CIDR, such as `203.0.113.0/29`; or
 - an inclusive range, such as `203.0.113.10-203.0.113.13`.
 
-A count under the field shows how many addresses the entry represents before you save. One add can create at most **256** addresses (a `/24` in IPv4, a `/120` in IPv6); larger entries are refused with the count shown. For IPv4 CIDRs of `/30` or larger, the network and broadcast addresses are left out; IPv6 CIDRs leave out the subnet-router anycast address. An address can only be tracked once — adding one that already exists is refused and nothing from that add is saved.
+A count under the field shows how many addresses the entry represents before you save. One add can create at most **256** addresses (a `/24` in IPv4, a `/120` in IPv6); larger entries are refused with the count shown. For IPv4 CIDRs of `/30` or larger, the network and broadcast addresses are left out; IPv6 CIDRs leave out the subnet-router anycast address. An address can only be tracked once. Adding an already tracked single address is refused; adding a CIDR or range keeps existing rows unchanged and creates only missing addresses.
 
 For a single address, the form also offers **Location**, **Status**, **Device**, and **Purpose**, with **Owner**, **URL**, **Tags**, and **Notes** under **More details**. When the entry covers more than one address, the per-address fields are hidden and every created address gets the chosen location and status, which defaults to **Available** — so a range you have just been given shows up as free capacity.
+
+### Extend or correct a range
+
+To expand an existing block, choose **Add external IP** and enter the larger CIDR or range. For
+example, enter `203.0.113.0/24` after previously adding `203.0.113.0/26`. NetMap keeps the 62
+existing addresses and adds the 192 missing usable addresses. Existing purposes, notes, owners,
+tags, statuses, locations and device links remain unchanged; the form's settings apply only to
+new addresses. The result reports how many were added and how many existing addresses were kept.
+
+Repeating a fully tracked range adds nothing and leaves all records unchanged. Adding a smaller
+range also leaves addresses outside that range untouched; it does not shrink or delete the register.
+The 256-address limit applies to the entire submitted range, including addresses already tracked.
+
+For API callers, `POST /api/v1/ipam/external/addresses` accepts `skip_existing: true` for this behaviour
+and returns only newly created rows (an empty array when there are none). Omitting the flag retains
+conflict rejection for overlapping addresses. The normal IPAM write permission still applies.
 
 ### Locations
 
