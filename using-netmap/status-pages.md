@@ -12,7 +12,7 @@ Status pages are managed from **Monitoring → Status pages**. That tab appears 
 
 ## Create a page
 
-The Status pages workspace opens with **Service health across pages**: a ring of monitored services and a compact legend showing Healthy, Degraded, Unavailable, Maintenance and No data counts. The Monitored services card reports the same total. A service included on several pages is counted for each page. These labels describe the workspace overview; public page states and each page's configured display names retain their existing meaning.
+The Status pages workspace opens with **Service health across pages**: a ring of monitored services and a legend showing Healthy, Degraded, Unavailable, Maintenance and No data counts. Legend share bars extend across the available width beside the ring, with counts aligned at the right edge. The Monitored services card reports the same total. A service included on several pages is counted for each page. These labels describe the workspace overview; public page states and each page's configured display names retain their existing meaning.
 
 1. Open **Monitoring → Status pages** and choose **New status page**.
 2. Enter a **name** and an **address** (the slug). The slug is 1 to 48 lowercase letters, digits or hyphens, and does not start or end with a hyphen. The page is served at `/status/<slug>` on your NetMap address.
