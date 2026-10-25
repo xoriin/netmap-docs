@@ -25,6 +25,12 @@ Overview’s Network health keeps two independently configurable visuals: the he
 
 A gauge shows the named category's share of the total; it does not infer an uptime target. Number views show the total for additive categories, the latest value for a time series, or the highest value for ranked data. IPAM's Address space alternatives use Used and Free, because reservation and DHCP counts can overlap the used addresses.
 
+Monitoring’s Highest latency and Devices by VLAN start as horizontal bars. Devices by VLAN supports all twelve graphic styles and includes No VLAN for unassigned devices. Your saved chart choice still takes priority, and Reset returns to bars. Visual options stays available when no devices match the filters.
+
+## Filter device visuals
+
+Inventory’s Devices by type and Monitoring’s Fleet health, Highest latency and Devices by VLAN follow the filters in their device table. Select a VLAN/group, device type, location, status or favourites, or search for a device, to update the visual to the matching devices. Combined filters apply together. Charts include all matching results across pages; changing the table page does not change their data. Clear the filters to restore the full device view. Your saved visual type and display options still apply to the filtered data.
+
 ## Save, cancel and reset
 
 - Changes preview immediately. **Save my view** saves that chart's type and display options to your account.

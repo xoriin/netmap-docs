@@ -12,7 +12,9 @@ Monitoring has separate **Devices** and **Monitors** views. Devices represent in
 
 The Devices view provides summary cards, searchable/filterable/paginated rows, a details panel, heartbeat history, service-check results, uptime, latency, packet loss, last-check time, incidents, and analysis. Sortable columns can be resized and reset; the table keeps fixed widths so one divider does not redistribute other columns.
 
-Above the device table, **Highest latency, last 24 h** and **Least uptime, last 24 h** compare up to six devices in shaded line charts. Devices are ranked by their 24-hour average RTT or uptime; the horizontal axis lists devices rather than elapsed time. Hover or focus a point to read its full device name and value. Missing measurements are omitted, and an empty chart explains when nothing has been recorded.
+Above the device table, **Highest Latency** ranks up to six devices by average RTT. **Devices by VLAN** counts every matching device by its VLAN, including **No VLAN** for unassigned devices. Both start as horizontal bars and follow the device table filters across all matching pages. Changing the table page does not change chart membership.
+
+Use the sliders icon in either chart header to change its graphic style. Devices by VLAN supports ring, pie, bars, columns, stacked bar, line, area, dot plot, treemap, gauge, number and data table. **Save my view** remembers your choice, **Cancel** restores the saved choice, and **Reset this chart** restores bars. The controls stay available when the filtered dataset is empty. Highest latency offers the graphic styles appropriate to ranked measurements. Hover or focus a mark to read its full label and value.
 
 ## Health model
 
