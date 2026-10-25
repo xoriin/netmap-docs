@@ -11,9 +11,17 @@ Use the sliders icon in a chart's header to open **Visual options**. Chart choic
 
 The gallery includes ring, pie, bars, columns, stacked bar, line, area, dot plot, treemap, gauge, number and data table. Choices that do not fit the chart's data are disabled. For example, time series retain chronological order, and overlapping measurements cannot become parts of a total. Changing a visual changes its presentation; it does not change the underlying records or your permissions.
 
-Display settings include values, percentages or both where meaningful; category order; legend placement; value labels; and legend share bars. Only settings supported by the selected visual are enabled. Status colours retain their meaning. Bar tracks fill the available chart width, and columns and their labels are centred. Selecting Bars keeps the default bar sizing, label widths and row spacing.
+## Choose the elements
 
-For a chart with a separate legend, choose **Legend position → Top, Bottom, Left or Right**. This applies to rings, pies, stacked bars and multi-series plots. The legend moves around the chart; save the view to remember its placement. Existing beside/below choices continue to work.
+Use **Elements** to enable **Show chart**, **Show bars** and **Show legend** independently. For example, keep a ring on its own, combine it with bars without a text legend, or hide the chart and keep just the bars. At least one element stays visible. When Bars is the main chart, NetMap uses that one set of bars rather than adding a duplicate.
+
+Rings and pies do not automatically include bars. A stacked bar has a plain text legend, with extra bars only when you enable them. Pie slices include category/value labels where space allows; small slices retain their full labels and values through focus, hover or tap. **Show values** hides or shows those labels and numeric readouts.
+
+Choose **Bars position** and **Legend position → Top, Bottom, Left or Right** separately. Bars are positioned around the chart; the text legend is positioned around the resulting composition. On a narrow panel, side bars stack above or below the chart to keep standard row spacing and readable values. Save the view to remember all element choices and positions.
+
+Display settings also include values, percentages or both where meaningful, category order and value labels. Status colours retain their meaning. Optional bars use the same sizing, label widths, row spacing and scale as the main Bars view. Columns and their labels are centred.
+
+Older saved ring share bars become an independent Bars element with the same placement. Older stacked bars use a plain legend instead of duplicate tracks. Reset uses the current default, including rings without automatic bars.
 
 A gauge shows the named category's share of the total; it does not infer an uptime target. Number views show the total for additive categories, the latest value for a time series, or the highest value for ranked data. IPAM's Address space alternatives use Used and Free, because reservation and DHCP counts can overlap the used addresses.
 
