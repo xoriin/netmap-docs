@@ -42,3 +42,7 @@ The list shows prefix/suffix, creation, expiry, last use, and revocation state. 
 - [API Keys](../api/api-keys.md)
 - [API Authentication](../api/authentication.md)
 - [API-Key Problems](../troubleshooting/api-key-problems.md)
+
+## Personal chart views
+
+Use the sliders icon beside a chart title to choose its visual and display options. **Save my view** remembers that chart for your account across browsers and devices. **Reset this chart** restores one chart; **Preferences → Reset all chart views** restores all your defaults. See [Personal chart views](./chart-views.md) for supported visuals and data-specific options.

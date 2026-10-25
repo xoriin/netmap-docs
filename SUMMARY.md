@@ -42,6 +42,7 @@
   - [Status Pages](./using-netmap/status-pages.md)
   - [Status Page Integrations](./using-netmap/status-page-integrations.md)
   - [Profile](./using-netmap/profile.md)
+  - [Personal chart views](./using-netmap/chart-views.md)
 - Guides
   - [Add A Device](./guides/add-device.md)
   - [Import Devices](./guides/import-devices.md)
