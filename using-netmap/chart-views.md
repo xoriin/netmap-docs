@@ -13,15 +13,15 @@ The gallery includes ring, pie, bars, columns, stacked bar, line, area, dot plot
 
 ## Choose the elements
 
-Use **Elements** to enable **Show chart**, **Show bars** and **Show legend** independently. For example, keep a ring on its own, combine it with bars without a text legend, or hide the chart and keep just the bars. At least one element stays visible. When Bars is the main chart, NetMap uses that one set of bars rather than adding a duplicate.
+Use **Elements** to show the chart and optionally add Bars or a text legend. Bars already include names and values, so **Show legend** is hidden while bars are visible. Selecting Bars as the main chart uses one labelled bar list. At least one element remains visible.
 
-Rings and pies do not automatically include bars. A stacked bar has a plain text legend, with extra bars only when you enable them. Pie slices include category/value labels where space allows; small slices retain their full labels and values through focus, hover or tap. **Show values** hides or shows those labels and numeric readouts.
+The **Arrangement** arrow buttons move either element above, below, left or right of the other. For example, choose “Number left of Bars” or “Bars above Number”. The two rows describe the same layout from each element’s perspective. On narrow panels, side bars stack to preserve readable rows.
 
-Choose **Bars position** and **Legend position → Top, Bottom, Left or Right** separately. Bars are positioned around the chart; the text legend is positioned around the resulting composition. On a narrow panel, side bars stack above or below the chart to keep standard row spacing and readable values. Save the view to remember all element choices and positions.
+For Ring and Number views, **Value to display** selects the total or a named category. **Values → Values, Percentages, or Values and percentages** changes the actual readout, including when no legend is visible. Ring readouts show both formats on separate lines when both are selected. Total percentages are 100%; choose a category such as Online to show its share instead.
 
-Display settings also include values, percentages or both where meaningful, category order and value labels. Status colours retain their meaning. Optional bars use the same sizing, label widths, row spacing and scale as the main Bars view. Columns and their labels are centred.
+Pie slices include category/value labels where space allows; small slices retain full values through focus, hover or tap. **Show values** controls labels and readouts where applicable. Optional bars share the standard bar sizing, spacing and scale.
 
-Older saved ring share bars become an independent Bars element with the same placement. Older stacked bars use a plain legend instead of duplicate tracks. Reset uses the current default, including rings without automatic bars.
+Overview’s Network health keeps two independently configurable visuals: the health ring and the health breakdown. Each keeps its own visual type and saved preferences. In either visual’s options, use the panel arrangement arrows to place it above, below, left or right of the other. Save my view remembers the placement; Cancel restores the saved placement, and Reset this chart also restores the default arrangement. Selecting the original visual type retains its original dimensions and spacing.
 
 A gauge shows the named category's share of the total; it does not infer an uptime target. Number views show the total for additive categories, the latest value for a time series, or the highest value for ranked data. IPAM's Address space alternatives use Used and Free, because reservation and DHCP counts can overlap the used addresses.
 
@@ -35,3 +35,11 @@ A gauge shows the named category's share of the total; it does not infer an upti
 If a save or reset fails, NetMap shows an error and keeps your preview available for retry. If preferences cannot load, retry before saving so an existing view is not accidentally replaced.
 
 Operational address maps, topology canvases, heartbeat strips and small activity indicators inside table rows keep their dedicated controls.
+
+Chart legends use the available width, with their values aligned at the far edge. Bar-only views start near the header and keep the same bar thickness and row spacing as their default view.
+
+Ring breakdowns such as Devices by type start with labelled bars beside the ring. You can turn those bars off or reposition them in Visual options; your saved choices take priority. Reset restores the ring-and-bars default. Overview’s standalone health ring and separate health breakdown remain independent.
+
+IPAM Address space defaults to a gauge showing the used share, with Used and Free bars on the right. Visual options still lets you change the chart, hide the bars or move them; Reset restores this layout. Reserved addresses and DHCP leases remain separate summary metrics.
+
+Column charts show non-zero totals above each column by default, on a subtle background with small rounded corners. For stacked columns the value is the combined total; hover or focus still shows the individual series. Turn off Show values to hide the labels in your saved view.
