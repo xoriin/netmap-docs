@@ -12,6 +12,8 @@ Monitoring has separate **Devices** and **Monitors** views. Devices represent in
 
 The Devices view provides summary cards, searchable/filterable/paginated rows, a details panel, heartbeat history, service-check results, uptime, latency, packet loss, last-check time, incidents, and analysis. Sortable columns can be resized and reset; the table keeps fixed widths so one divider does not redistribute other columns.
 
+Above the device table, **Highest latency, last 24 h** and **Least uptime, last 24 h** compare up to six devices in shaded line charts. Devices are ranked by their 24-hour average RTT or uptime; the horizontal axis lists devices rather than elapsed time. Hover or focus a point to read its full device name and value. Missing measurements are omitted, and an empty chart explains when nothing has been recorded.
+
 ## Health model
 
 Health is observed versus expected, not a raw ping flag:
