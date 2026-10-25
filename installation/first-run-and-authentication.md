@@ -40,6 +40,8 @@ After signing in as the initial SuperAdmin:
 
 ## Local sign-in and sign-out
 
+Login branding uses a brief text-reveal entrance. Your system’s Reduce motion preference disables the animation and shows the text immediately. The sign-in fields remain available while the animation plays.
+
 Local sign-in uses the username and password created during setup or by an administrator. The browser receives a short-lived access token in application memory and a refresh token in an HttpOnly cookie. The access token is not stored in localStorage.
 
 Use the Sign out control to revoke the current refresh session. If the access token expires while the browser is idle, NetMap attempts a refresh; a failed refresh returns the browser to the login screen.
