@@ -199,7 +199,7 @@ Integration endpoints use a page-scoped `nmsp_` token (not an API key) in `Autho
 | POST | `/api/v1/status-integrations/incidents/{id}/resolve` |
 | POST/PATCH/DELETE | `/api/v1/status-integrations/maintenance[/{id}]` |
 
-Token scope rules, request fields, `curl` examples and error codes are in [Status Page Integrations](../using-netmap/status-page-integrations.md).
+Token scope rules, request fields, `curl` examples and error codes are in [Status Page Integrations](../../using-netmap/status-page-integrations.md).
 
 ## API-Key Capability Matrix
 

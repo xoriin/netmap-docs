@@ -76,7 +76,7 @@ export const legacyDocumentationRoutes = {
   "api/rate-limits.md": "api/rate-limits.md",
   "api/openapi-swagger.md": "api/openapi-swagger.md",
   "api/capability-matrix.md": "api/capability-matrix.md",
-  "api/api-reference.md": "api-reference.md",
+  "api/reference/endpoints.md": "api-reference.md",
   "api/endpoint-reference.md": "api/endpoint-reference.md",
   "operations/operations.md": "operations.md",
   "operations/health-checks.md": "operations/health-checks.md",
@@ -135,4 +135,5 @@ export const retiredDocumentationRoutes = [
 // Former routes of pages that were moved or merged into another page, mapped to the
 // canonical source file that replaced them. Numbered section variants are derived too.
 export const movedDocumentationRoutes: Record<string, string> = {
+  "api/api-reference.md": "api/reference/endpoints.md",
 };

@@ -248,5 +248,5 @@ Outside systems (a backup server, a ticketing tool, a deployment pipeline) can s
 - [Create An Alert Rule](../guides/create-alert-rule.md)
 - [Permissions](../security/permissions.md)
 - [Status Page Integrations](./status-page-integrations.md)
-- [Endpoint Inventory](../api/api-reference.md)
+- [Endpoint Inventory](../api/reference/endpoints.md)
 - [Rate Limits](../api/rate-limits.md)

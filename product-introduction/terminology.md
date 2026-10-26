@@ -57,7 +57,7 @@ The dotted paths are conditional relationships, not automatic ownership. For exa
 
 The UI may show a display name while APIs and matching logic use stable IDs and identity fields. A device's observed health is not the same thing as its expected status, lifecycle, or monitoring pause state. Use the [Device Records and State](#device-records-and-state) section when interpreting status.
 
-For exact API fields, see the [Endpoint Inventory](../api/api-reference.md). For a compact compatibility entry, see the [Reference Glossary](../reference/glossary.md).
+For exact API fields, see the [Endpoint Inventory](../api/reference/endpoints.md). For a compact compatibility entry, see the [Reference Glossary](../reference/glossary.md).
 
 ### Related concepts
 

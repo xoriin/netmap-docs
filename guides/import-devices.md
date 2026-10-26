@@ -57,4 +57,4 @@ Request model: `DeviceBulkImportRequest`.
 
 - [Inventory](../using-netmap/inventory.md)
 - [Add A Device](./add-device.md)
-- [Endpoint Inventory](../api/api-reference.md)
+- [Endpoint Inventory](../api/reference/endpoints.md)

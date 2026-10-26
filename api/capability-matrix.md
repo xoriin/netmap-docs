@@ -36,4 +36,4 @@ Key rule: API keys can call REST endpoints that the owning user could call. They
 | Manage all API keys | Yes | Yes | SuperAdmin | `/api/v1/api-keys/admin/*` |
 | Live syslog stream | Yes | No | JWT-first-frame, `security_view` (no SuperAdmin bypass) | `/api/v1/syslog/events/live` |
 
-Use [Endpoint Inventory](./api-reference.md) for route grouping and [API-Key Permissions](./api-key-permissions.md) for the permission model.
+Use [Endpoint Inventory](./reference/endpoints.md) for route grouping and [API-Key Permissions](./api-key-permissions.md) for the permission model.

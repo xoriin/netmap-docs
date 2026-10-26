@@ -70,7 +70,7 @@
   - [Rate Limits](./api/rate-limits.md)
   - [OpenAPI And Swagger](./api/openapi-swagger.md)
   - [Capability Matrix](./api/capability-matrix.md)
-  - [Endpoint Inventory](./api/api-reference.md)
+  - [Endpoint Inventory](./api/reference/endpoints.md)
   - [Endpoint Reference](./api/endpoint-reference.md)
 - Operations
   - [Operations](./operations/operations.md)

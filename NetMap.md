@@ -59,7 +59,7 @@ This is the NetMap documentation homepage. It links the product overview, instal
 | Configure OIDC sign-in | [OIDC SSO](./configuration/oidc-sso.md) |
 | Secure the deployment | [Security Overview](./security/security.md) |
 | Automate through the REST API | [API Overview](./api/api-overview.md) |
-| Find an endpoint | [Endpoint Inventory](./api/api-reference.md) |
+| Find an endpoint | [Endpoint Inventory](./api/reference/endpoints.md) |
 | Contribute to NetMap | [Developer Guide](./development/development.md) |
 
 ## If something is not working

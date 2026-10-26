@@ -31,7 +31,7 @@ Reservation and external address rules are documented in [IPAM](../using-netmap/
 
 Use the discovery endpoints to start a scan, poll its status, and review observations before importing anything. Scheduled discovery is review-oriented and does not silently mutate inventory. For an external monitor, poll the lightweight health endpoint and use diagnostics only for an authenticated administrative check; do not expose diagnostics publicly.
 
-See [Run Discovery](./run-discovery.md), [Monitoring](../using-netmap/monitoring.md), [Health checks](../operations/health-checks.md), and [API endpoint reference](../api/api-reference.md).
+See [Run Discovery](./run-discovery.md), [Monitoring](../using-netmap/monitoring.md), [Health checks](../operations/health-checks.md), and [API endpoint reference](../api/reference/endpoints.md).
 
 ## Syslog sender checklist
 

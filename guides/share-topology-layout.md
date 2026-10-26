@@ -61,4 +61,4 @@ curl --fail-with-body \
 ## Related Pages
 
 - [Topology](../using-netmap/topology.md)
-- [Endpoint Inventory](../api/api-reference.md)
+- [Endpoint Inventory](../api/reference/endpoints.md)

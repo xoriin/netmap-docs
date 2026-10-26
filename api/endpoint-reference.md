@@ -6,7 +6,7 @@ keywords: [endpoints, routes]
 
 # Endpoint Reference
 
-The current route inventory is maintained in [Endpoint Inventory](./api-reference.md). That page lists every route generated from the FastAPI app and groups them by public, authenticated, administrative, topology, discovery, monitoring, alerts, IPAM, security, tools, LLDP, and exports.
+The current route inventory is maintained in [Endpoint Inventory](./reference/endpoints.md). That page lists every route generated from the FastAPI app and groups them by public, authenticated, administrative, topology, discovery, monitoring, alerts, IPAM, security, tools, LLDP, and exports.
 
 Detailed schemas are available at `/api/openapi.json` and `/api/docs`.
 
@@ -15,7 +15,7 @@ Documentation gap: this section still needs source-verified endpoint pages with 
 ## How To Use The Reference Today
 
 1. Start with [API Overview](./api-overview.md) for base URL, authentication, errors, and rate limits.
-2. Use [Endpoint Inventory](./api-reference.md) to find the route group.
+2. Use [Endpoint Inventory](./reference/endpoints.md) to find the route group.
 3. Open `/api/docs` on your NetMap instance for exact schema fields.
 4. Use [API Keys](./api-keys.md) for authentication examples.
 
