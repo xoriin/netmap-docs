@@ -7,7 +7,6 @@ keywords:
   - authentication
   - password reset
   - sessions
-verified_version: "1.5.0"
 ---
 
 # First-Run Setup and Authentication

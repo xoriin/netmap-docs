@@ -2,12 +2,10 @@
 
 Source-backed documentation for [NetMap](https://github.com/xoriin/netmap), a self-hosted network inventory, topology, monitoring, IPAM, discovery, syslog, alerting, and administration platform.
 
-This documentation was based on the production release of NetMap `v1.5.0` at the time of writing. Page frontmatter records the version used when a page was last verified.
-
-## Start reading
+## Start Reading
 
 - [NetMap](./NetMap.md)
-- [What Is NetMap?](./product-introduction/what-is-netmap.md)
+- [What Is NetMap](./product-introduction/what-is-netmap.md)
 
 GitBook navigation is defined in [SUMMARY.md](./SUMMARY.md). The VitePress sidebar and local search are configured in `.vitepress/config.mts`.
 

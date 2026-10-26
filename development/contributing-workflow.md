@@ -2,7 +2,6 @@
 title: Contributing Workflow
 sidebar_position: 8
 keywords: [contributing, fork, test branch, pull request]
-verified_version: "1.5.0"
 ---
 
 # Contributing Workflow

@@ -7,7 +7,6 @@ keywords:
   - Docker
   - Docker Compose
   - networking
-verified_version: "1.5.0"
 ---
 
 # Installation Overview

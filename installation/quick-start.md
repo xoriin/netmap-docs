@@ -6,7 +6,6 @@ keywords:
   - install
   - Docker Compose
   - first login
-verified_version: "1.5.0"
 ---
 
 # Five-Minute Quick Start

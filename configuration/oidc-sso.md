@@ -2,7 +2,6 @@
 title: OIDC SSO
 sidebar_position: 4
 keywords: [OIDC, SSO, authentication, PKCE]
-verified_version: "1.5.0"
 ---
 
 # OIDC SSO

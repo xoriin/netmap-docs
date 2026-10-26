@@ -2,7 +2,6 @@
 title: Docker CLI
 sidebar_position: 4
 keywords: [Docker, docker run, container, deployment]
-verified_version: "1.5.0"
 ---
 
 # Docker CLI

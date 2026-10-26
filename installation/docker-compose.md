@@ -7,7 +7,6 @@ keywords:
   - host networking
   - syslog
   - source build
-verified_version: "1.5.0"
 ---
 
 # Docker Compose

@@ -11,7 +11,7 @@ keywords:
 
 # Developer Guide
 
-NetMap's end-user documentation describes the production v1.5.0 product. This section is the exception: it provides the source, validation, and contribution guidance needed to propose a change safely. Begin with the [Contributing Workflow](./contributing-workflow.md), which uses a personal fork and the `test` branch.
+The rest of this documentation describes the released product. This section is for contributors: it provides the source, validation, and contribution guidance needed to propose a change safely. Begin with the [Contributing Workflow](./contributing-workflow.md), which uses a personal fork and the `test` branch.
 
 ## Repository Structure
 
