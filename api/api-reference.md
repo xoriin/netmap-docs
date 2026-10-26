@@ -68,22 +68,22 @@ All endpoints in this section require SuperAdmin unless noted.
 
 | Method | Endpoint | Purpose | Schemas |
 |---|---|---|---|
-| GET/POST | `/api/v1/admin/device-types` | List/create device types | `DeviceTypeCreate` → `DeviceTypeRead` |
-| PATCH/PUT/DELETE | `/api/v1/admin/device-types/{value}` | Update/delete device type | `DeviceTypeUpdate` → `DeviceTypeRead` or 204 |
+| GET/POST | `/api/v1/admin/device-types` | List/create device types | GET any signed-in user; POST `device_catalog_manage` · `DeviceTypeCreate` → `DeviceTypeRead` |
+| PATCH/PUT/DELETE | `/api/v1/admin/device-types/{value}` | Update/delete device type | `device_catalog_manage` · `DeviceTypeUpdate` → `DeviceTypeRead` or 204 |
 | GET | `/api/v1/admin/settings/app` | Settings the signed-in app needs (idle timeout, monitor interval, reservation defaults) | Any signed-in user · response `SystemSettingsRead` |
 | GET/PUT | `/api/v1/admin/settings` | Read/update system settings | `SystemSettingsUpdate` → `SystemSettingsRead` |
-| GET/PUT | `/api/v1/admin/notification-settings` | Legacy notification settings | `NotificationSettingsUpdate` → `NotificationSettings` |
-| POST | `/api/v1/admin/notifications/test` | Test notification settings | `TestNotificationRequest` → object |
-| GET/POST | `/api/v1/admin/notification-profiles` | List/create profiles | `NotificationProfileCreate` → `NotificationProfileRead` |
-| PATCH/DELETE | `/api/v1/admin/notification-profiles/{profile_id}` | Update/delete profile | `NotificationProfileUpdate` → `NotificationProfileRead` or 204 |
-| POST | `/api/v1/admin/notification-profiles/{profile_id}/test` | Test profile | none → object |
-| GET/PUT | `/api/v1/admin/role-permissions` | Read/update role permissions | `RolePermissionsUpdate` → `RolePermissionsResponse` |
+| GET/PUT | `/api/v1/admin/notification-settings` | Legacy notification settings | `notification_manage` · `NotificationSettingsUpdate` → `NotificationSettings` |
+| POST | `/api/v1/admin/notifications/test` | Test notification settings | `notification_manage` · `TestNotificationRequest` → object |
+| GET/POST | `/api/v1/admin/notification-profiles` | List/create profiles | `notification_manage` · `NotificationProfileCreate` → `NotificationProfileRead` |
+| PATCH/DELETE | `/api/v1/admin/notification-profiles/{profile_id}` | Update/delete profile | `notification_manage` · `NotificationProfileUpdate` → `NotificationProfileRead` or 204 |
+| POST | `/api/v1/admin/notification-profiles/{profile_id}/test` | Test profile | `notification_manage` · none → object |
+| GET/PUT | `/api/v1/admin/role-permissions` | Read/update role permissions | GET `user_manage`; PUT SuperAdmin · `RolePermissionsUpdate` → `RolePermissionsResponse` |
 | POST | `/api/v1/admin/roles` | Create custom role | `RoleCreate` → `RolePermissionsResponse` |
 | DELETE | `/api/v1/admin/roles/{name}` | Delete custom role | none → `RolePermissionsResponse` |
-| GET/POST/PATCH | `/api/v1/auth/users` and `/{user_id}` | User administration | user schemas → `UserRead` |
-| POST | `/api/v1/auth/users/{user_id}/unlock-login` | Clear login lockout | none → 204 |
-| POST | `/api/v1/auth/users/{user_id}/reset-password` | Admin password reset; signs the user out of all sessions | `AdminPasswordResetRequest` (`new_password`, 12–256 characters) → `AdminPasswordResetResult` (`email_status`: `sent`, `failed`, `not_configured` or `no_email`, for the email sent to the user) |
-| DELETE | `/api/v1/auth/users/{user_id}/sessions` | Revoke user sessions | none → 204 |
+| GET/POST/PATCH | `/api/v1/auth/users` and `/{user_id}` | User administration | `user_manage` · user schemas → `UserRead` |
+| POST | `/api/v1/auth/users/{user_id}/unlock-login` | Clear login lockout | `user_manage` · none → 204 |
+| POST | `/api/v1/auth/users/{user_id}/reset-password` | Admin password reset; signs the user out of all sessions | `user_manage` · `AdminPasswordResetRequest` (`new_password`, 12–256 characters) → `AdminPasswordResetResult` (`email_status`: `sent`, `failed`, `not_configured` or `no_email`, for the email sent to the user) |
+| DELETE | `/api/v1/auth/users/{user_id}/sessions` | Revoke user sessions | `user_manage` · none → 204 |
 | DELETE | `/api/v1/auth/users/{user_id}/totp` | Reset a user's two-factor and sign them out | none → 204 |
 | GET/PUT/POST | `/api/v1/admin/oidc-settings`, `/test` | Manage/test SSO | `OidcSettingsUpdate` → OIDC schemas |
 | GET | `/api/v1/api-keys/admin/all` | List all API keys | none → `list[ApiKeyAdminRead]` |
@@ -91,7 +91,7 @@ All endpoints in this section require SuperAdmin unless noted.
 | GET | `/api/v1/audit/summary` | Audit activity summary | `audit_view` · query `days` (1–90, default 14) → `AuditSummary` (`days[]` with `date`, `signed_in`, `failed`; top 8 `by_action`; top 5 `by_actor`; `total`; `failed_total`) |
 | GET | `/api/v1/audit/logs` | Search audit logs | `audit_view` · query → `AuditLogList` |
 | GET | `/api/v1/audit/logs/export` | Export audit logs | `audit_view` · query → file |
-| GET | `/api/v1/system/diagnostics` | Diagnostics | none → object |
+| GET | `/api/v1/system/diagnostics` | Diagnostics | `diagnostics_view` · none → object |
 | GET | `/api/v1/exports/backup` | Download DB backup | `backup_manage` · none → file |
 | POST | `/api/v1/exports/backup/encrypted` | Download passphrase-encrypted DB backup | `backup_manage` · JSON passphrase → `.nmbak` file |
 | POST | `/api/v1/exports/restore/validate` | Validate backup upload | octet-stream + optional passphrase header → `RestoreValidationResult` |
@@ -150,7 +150,7 @@ Manual scans, scan history, observations, and imports require `discovery_manage`
 | Syslog/security | `/api/v1/syslog/status`, `/events`, `/searches` | `security_view` |
 | Passive tools | DNS, reverse DNS, subnet calculator, LLDP neighbours | `tools_passive` |
 | Active tools | ping, traceroute, port check, SNMP probe, LLDP scan/patch | `tools_active` |
-| SNMP profile management | `/api/v1/tools/snmp/profiles*` write endpoints | SuperAdmin |
+| SNMP profile management | `/api/v1/tools/snmp/profiles*` (list and write) | `snmp_profile_manage` |
 | Exports | inventory/firewall/report | `inventory_export`, `firewall_export`, `report_export` |
 
 Alert rules (`AlertRuleCreate`, `AlertRuleUpdate`, `AlertRuleRead`) include two status-page incident fields:
@@ -219,7 +219,8 @@ Token scope rules, request fields, `curl` examples and error codes are in [Statu
 | Search syslog/security | Yes | Yes | `security_view` | `/api/v1/syslog/*` |
 | Use passive tools | Yes | Yes | `tools_passive` | DNS, reverse DNS, subnet, LLDP neighbours |
 | Use active tools | Yes | Yes | `tools_active` | ping, traceroute, port check, SNMP probe |
-| Manage users/settings | Yes | Yes | SuperAdmin | `/api/v1/admin/*`, `/api/v1/auth/users*` |
+| Manage users and sessions | Yes | Yes | `user_manage` | `/api/v1/auth/users*` |
+| Manage system settings, roles and SSO | Yes | Yes | SuperAdmin | `/api/v1/admin/settings`, `/admin/roles*`, `PUT /admin/role-permissions`, `/admin/oidc-settings*` |
 | Export inventory/firewall/report | Yes | Yes | export-specific permissions | `/api/v1/exports/*` |
 | Download and manage DB backups | Yes | Yes | `backup_manage` | `/api/v1/exports/backup*`, `/scheduled-backups*` |
 | Validate and restore DB backups | Yes | Yes | SuperAdmin | `/api/v1/exports/restore*` |

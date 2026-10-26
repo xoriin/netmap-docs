@@ -42,7 +42,7 @@ but a feature endpoint returns `403`, update the owning user's role or permissio
 
 ## SuperAdmin-Only Actions
 
-Some actions require SuperAdmin regardless of named permissions, including user administration, many system settings, OIDC configuration, global API-key oversight, diagnostics, and database restore. Downloading and managing backups needs `backup_manage` instead.
+Some actions require SuperAdmin regardless of named permissions, including role and permission changes, many system settings, OIDC configuration, global API-key oversight, resetting another user's two-factor, and database restore. User administration (`user_manage`), diagnostics (`diagnostics_view`) and backups (`backup_manage`) can be delegated.
 
 ## Related Pages
 

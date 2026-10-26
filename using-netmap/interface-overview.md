@@ -20,7 +20,7 @@ The frontend routes are defined in `frontend/src/routes/index.ts`.
 | Tools | DNS, ping, traceroute, subnet, SNMP tools | tool permissions |
 | Security | Syslog/firewall event search | `security_view` |
 | Exports | Inventory, firewall, report exports | export permissions |
-| Admin | Users, roles, settings, SSO, diagnostics | SuperAdmin |
+| Admin | Users, roles, settings, SSO, diagnostics | SuperAdmin; delegated permissions show only their matching sections |
 | Profile | Profile, password, API keys | Authenticated |
 
 ## Common layout
@@ -38,7 +38,7 @@ Common controls behave consistently:
 
 ## Permissions and hidden navigation
 
-Authentication is required for every workspace. The sidebar hides areas the current account cannot use: Security requires `security_view`, Admin requires SuperAdmin, and write controls appear only when the relevant permission is present. A direct URL does not bypass the backend permission check.
+Authentication is required for every workspace. The sidebar hides areas the current account cannot use: Security requires `security_view`, Admin requires SuperAdmin or a delegated administrative permission, and write controls appear only when the relevant permission is present. A direct URL does not bypass the backend permission check.
 
 ## Themes, loading, and empty states
 

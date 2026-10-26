@@ -31,7 +31,7 @@ Key rule: API keys can call REST endpoints that the owning user could call. They
 | Export inventory | Yes | Yes | `inventory_export` | `GET /api/v1/exports/inventory` |
 | Export firewall logs | Yes | Yes | `firewall_export` | `GET /api/v1/exports/firewall` |
 | Generate PDF report | Yes | Yes | `report_export` | `GET /api/v1/exports/report.pdf` |
-| Manage users | Yes | Yes | SuperAdmin | `/api/v1/auth/users*` |
+| Manage users | Yes | Yes | `user_manage` | `/api/v1/auth/users*` |
 | Manage OIDC | Yes | Yes | SuperAdmin | `/api/v1/admin/oidc-settings*` |
 | Manage all API keys | Yes | Yes | SuperAdmin | `/api/v1/api-keys/admin/*` |
 | Live syslog stream | Yes | No | JWT-first-frame | WebSocket implementation |
