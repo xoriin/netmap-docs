@@ -19,7 +19,7 @@ The documentation is intentionally split by audience. This page is the index for
 | Release history | [Release changelog](./changelog.md) |
 | Known constraints | [Limitations and capacity planning](../product-introduction/limitations-and-capacity-planning.md) |
 | API routes and schemas | [API reference](../api/api-reference.md), [OpenAPI and Swagger](../api/openapi-swagger.md) |
-| Permissions and roles | [Administration](../using-netmap/admin.md#users-sessions-and-roles), [Security](../security/security.md#authorization-and-role-boundaries) |
+| Permissions and roles | [Administration](../using-netmap/admin.md#users-sessions-and-roles), [Security](../security/security.md#role-defaults) |
 
 ## State and data-model references
 

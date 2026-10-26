@@ -219,7 +219,7 @@ Add each public address as you are given it — a single IP for a virtual machin
 ### Related pages
 
 - [IPAM workspace](../using-netmap/ipam.md)
-- [Privacy and Data Collection](../security/security.md#privacy-and-data-boundaries)
+- [Privacy and Data Collection](./limitations-and-capacity-planning.md#privacy-and-data-collection)
 - [Network Exposure](../security/network-exposure.md)
 - [Internal IPAM Data Model](#internal-ipam)
 
