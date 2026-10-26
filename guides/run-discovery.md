@@ -6,7 +6,7 @@ keywords: [discovery, nmap, scan, inventory]
 
 # Run Discovery
 
-Discovery runs nmap against private targets and presents detected devices for review before import. It requires `topology_write`. NetMap does not silently overwrite inventory from an ad-hoc scan.
+Discovery runs nmap against private targets and presents detected devices for review before import. Running scans and reviewing results requires `discovery_manage`; applying or importing results into inventory also requires `topology_write`. NetMap does not silently overwrite inventory from an ad-hoc scan.
 
 ## Requirements and safety
 

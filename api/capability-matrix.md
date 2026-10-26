@@ -18,7 +18,9 @@ Key rule: API keys can call REST endpoints that the owning user could call. They
 | Import devices | Yes | Yes | `topology_write` | `POST /api/v1/topology/devices/import` |
 | Manage topology links | Yes | Yes | `topology_write` | `/api/v1/topology/relationships*` |
 | Manage layouts | Yes | Yes | authenticated, owner rules | `/api/v1/topology/layouts*` |
-| Run discovery | Yes | Yes | `topology_write` | `/api/v1/discovery/*` |
+| Run discovery scans and review observations | Yes | Yes | `discovery_manage` | `/api/v1/discovery/scans`, `/observations*` |
+| Manage discovery schedules | Yes | Yes | `automation_manage` | `/api/v1/discovery/schedules*` |
+| Apply or import discovery results | Yes | Yes | `discovery_manage` and `topology_write` | `/api/v1/discovery/observations/{id}/apply`, `/api/v1/discovery/import` |
 | View monitoring | Yes | Yes | authenticated | `/api/v1/monitoring/*` read endpoints |
 | Configure service checks | Yes | Yes | `monitoring_write` | monitoring service-check write endpoints |
 | Manage IPAM | Yes | Yes | `ipam_write` | IPAM write endpoints |

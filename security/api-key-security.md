@@ -42,7 +42,7 @@ Create a dedicated user for each major integration. Assign only the required per
 | inventory export job | `inventory_export` |
 | syslog export job | `security_view`, `firewall_export` |
 | IPAM sync | `ipam_write` |
-| discovery job | `topology_write` |
+| discovery job | `discovery_manage`; add `automation_manage` for schedules and `topology_write` to apply or import results |
 | monitoring service check manager | `monitoring_write` |
 
 ## Rotation
