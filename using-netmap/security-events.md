@@ -14,7 +14,7 @@ Configure a firewall, router, switch, or host to forward syslog to the NetMap ho
 
 `SYSLOG_SENDER_ALLOWLIST` accepts sender IPs/CIDRs. Rejected senders are logged as rejected, including the proxy/trusted-client interpretation where configured. Restrict the allowlist to expected devices and test with a single sender before broadening it.
 
-NetMap accepts common RFC-style and firewall log formats. Parsed fields include timestamp, source/destination addresses and ports, action, protocol, interface, rule, and reason. Unrecognised messages remain available as raw logs rather than being discarded. Syslog over TLS settings may exist in deployments, but the current published listener support must be verified against the image before promising a TLS sender configuration; use UDP/TCP unless TLS support is confirmed.
+NetMap accepts common RFC-style and firewall log formats. Parsed fields include timestamp, source/destination addresses and ports, action, protocol, interface, rule, and reason. Unrecognised messages remain available as raw logs rather than being discarded.
 
 ## Traffic Mix And Top Sources
 

@@ -1,6 +1,6 @@
 # NetMap Documentation
 
-Source-backed documentation for [NetMap](https://github.com/xoriin/netmap), a self-hosted network inventory, topology, monitoring, IPAM, discovery, syslog, alerting, and administration platform.
+Documentation for [NetMap](https://github.com/xoriin/netmap), a self-hosted network inventory, topology, monitoring, IPAM, discovery, syslog, alerting, and administration platform.
 
 ## Start Reading
 
