@@ -89,8 +89,8 @@ All endpoints in this section require SuperAdmin unless noted.
 | GET | `/api/v1/api-keys/admin/all` | List all API keys | none → `list[ApiKeyAdminRead]` |
 | DELETE | `/api/v1/api-keys/admin/{key_id}` | Revoke any API key | none → 204 |
 | GET | `/api/v1/audit/summary` | Audit activity summary | `audit_view` · query `days` (1–90, default 14) → `AuditSummary` (`days[]` with `date`, `signed_in`, `failed`; top 8 `by_action`; top 5 `by_actor`; `total`; `failed_total`) |
-| GET | `/api/v1/audit/logs` | Search audit logs | query → `AuditLogList` |
-| GET | `/api/v1/audit/logs/export` | Export audit logs | query → file |
+| GET | `/api/v1/audit/logs` | Search audit logs | `audit_view` · query → `AuditLogList` |
+| GET | `/api/v1/audit/logs/export` | Export audit logs | `audit_view` · query → file |
 | GET | `/api/v1/system/diagnostics` | Diagnostics | none → object |
 | GET | `/api/v1/exports/backup` | Download DB backup | `backup_manage` · none → file |
 | POST | `/api/v1/exports/backup/encrypted` | Download passphrase-encrypted DB backup | `backup_manage` · JSON passphrase → `.nmbak` file |
