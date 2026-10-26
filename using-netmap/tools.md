@@ -1,42 +1,52 @@
 ---
 title: Tools
 sidebar_position: 10
-keywords: [tools, DNS, ping, traceroute, SNMP, LLDP]
+keywords: [tools, DNS, ping, traceroute, port check, SNMP, subnet calculator]
 ---
 
 # Network Tools
 
-Tools separate passive lookups from active probes. Passive tools require `tools_passive`; active tools require `tools_active`. Public-target policy and rate limits are administrator-controlled, and every result identifies the target, source, and timestamp.
+The Tools workspace runs one-off network checks from the NetMap host. Passive tools need `tools_passive`, and active tools, which send traffic to the target, need `tools_active`. Each tool has a **How … Works** guide beside it.
 
-## Passive lookups
+## Passive Tools
 
-- **DNS lookup** queries A, AAAA, MX, TXT, NS, or CNAME and shows TTL, answer source, and raw response.
-- **Reverse DNS** performs PTR lookup for a supported IPv4/IPv6 address; an empty PTR is a valid no-result.
-- **Subnet calculator** shows network, mask/prefix, wildcard, usable range, broadcast where applicable, and host counts.
-- **LLDP neighbour list** reads stored/queried neighbour data without changing topology.
+- **DNS Lookup** resolves a name and shows its A, AAAA, MX, TXT, NS or CNAME records.
+- **Reverse DNS** looks up the PTR records for an IP address without probing the device. An empty answer is a valid result.
+- **Subnet Calculator** shows a CIDR's network, mask, wildcard mask, usable range, broadcast address and host counts.
 
-## Active probes
+## Active Tools
 
-- **Ping** accepts a target, count, timeout, and returns reachability, packet loss, and RTT.
-- **Traceroute** reports hops up to the configured limit; firewalls and platform differences can produce `*` hops.
-- **TCP port check** tests a host/port and timeout; it does not prove an application is healthy.
-- **UDP port check** is inherently ambiguous because silence can mean filtered or simply no response.
-- **SNMP probe** uses a saved SNMP profile or permitted manual credentials and returns supported device data. Profile administration is SuperAdmin-only.
-- **LLDP scan** selects an inventory device, reads neighbours, matches known devices, and can create a topology link after review. Dismissed suggestions do not mutate topology.
+- **Ping Test** measures reachability, packet loss and round-trip time.
+- **Traceroute** traces the network path to a target. Routers and firewalls that suppress replies show up as `*` hops.
+- **Port Check** tests whether a TCP or UDP service can be reached, with a protocol, port and timeout. UDP silence can mean filtered or simply no reply, and an open port does not prove the application is healthy.
+- **SNMP Probe** queries an SNMP-enabled device with a saved SNMP profile or a manual community string. Profiles are managed on the [SNMP Profiles](../administer/snmp-profiles.md) tab in Admin.
 
-## Activity and saved results
+By default, active tools only reach private targets. To allow public IP addresses and hostnames for ping, traceroute and port checks, an administrator turns on **Allow public active network targets** in [System](../administer/system.md) settings.
 
-Recent tool activity is held in the browser for the current user. You can rerun, copy, or clear it. Saved tool results can be restored, exported as JSON, or deleted; they are not a replacement for inventory or audit history.
+## Recent Checks
 
-## Limits and troubleshooting
+The cards at the top show **Available tools**, **Recent checks**, **Saved Results** and **Last check**, which names the last tool and target. **Your Recent Checks** charts how many checks you have run with each tool.
 
-Tools enforce active-tool rate limits and public-target restrictions using the configured trusted client IP. A blocked public target must be tested from an authorised internal path or enabled by an administrator; do not bypass policy with a proxy. Missing binaries, DNS failures, routing, SNMP timeout/credentials, and container capabilities appear in the result detail.
+The **Recent Activity** panel lists your latest checks; select one to reopen its inputs and result. For a successful check you can **Save result**, **Copy JSON** or **Export JSON**, and **Clear** empties the list. NetMap keeps up to 30 recent checks.
+
+## Saved Results
+
+**Saved Results** keeps up to 15 checks you chose to save, with their inputs. Select **Load inputs and result** to reopen one, **Export JSON** to download it, or **Remove** to delete it.
+
+Recent and saved checks are kept only in this browser. They are not shared with other users or devices, and they do not replace Inventory or the audit history.
+
+## Troubleshooting
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| DNS returns no records | no authoritative answer or resolver failure | compare the raw response and test the configured resolver |
-| ping always fails | missing raw-network capability or filtered ICMP | verify image capabilities and test TCP/route separately |
-| traceroute has gaps | routers/firewalls suppress TTL-expired replies | treat `*` as unknown, not automatically down |
-| UDP says unknown | no protocol response | use an application-level check where possible |
-| SNMP probe fails | wrong profile/community, ACL, or timeout | verify credentials and device SNMP access |
-| LLDP has no neighbours | LLDP disabled or bridge/container boundary | enable LLDP on the device and run from a network path that can see it |
+| A public target is refused | Public active targets are off | Test from an internal path, or ask an administrator to allow public targets |
+| DNS returns no records | No answer, or the resolver failed | Check the record type and the resolver NetMap uses |
+| Ping always fails | The container lacks raw-network capability, or ICMP is filtered | Check the image capabilities and test with **Port Check** |
+| Traceroute has gaps | Routers or firewalls suppress replies | Treat `*` as unknown, not down |
+| UDP result is unclear | The service did not reply | Use an application-level check where possible |
+| SNMP probe fails | Wrong profile or community, an ACL, or a timeout | Check the credentials and the device's SNMP access |
+
+## Related Pages
+
+- [SNMP Profiles](../administer/snmp-profiles.md)
+- [Network Exposure](../security/network-exposure.md)
