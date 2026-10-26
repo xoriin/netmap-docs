@@ -31,6 +31,9 @@ Authentication column:
 | GET | `/api/v1/setup/status` | Whether initial setup is needed | Public · response `SetupStatus` |
 | POST | `/api/v1/setup/admin` | Create first admin before setup is complete | Public until first user exists · `AdminCreate` → `UserRead` |
 | POST | `/api/v1/auth/login` | Local login | Public · `LoginRequest` → `TokenPair` (`access_token`, `token_type`), or `MfaChallengeResponse` (`mfa_required`, `mfa_setup_required`, `challenge`) when the account must enter or enrol a two-factor code |
+| POST | `/api/v1/auth/login/totp` | Finish sign-in with a two-factor or recovery code | Public · `challenge`, `code` → `TokenPair` |
+| POST | `/api/v1/auth/login/totp/setup` | Start required two-factor enrolment during sign-in | Public · `challenge` → `TotpSetupResponse` (`secret`, `otpauth_uri`) |
+| POST | `/api/v1/auth/login/totp/setup/confirm` | Confirm enrolment and finish sign-in | Public · `challenge`, `code` → `TotpCodesResponse` (`recovery_codes`, `access_token`) |
 | POST | `/api/v1/auth/refresh` | Refresh session token | Public cookie/body token · `RefreshRequest` → `TokenPair` |
 | POST | `/api/v1/auth/logout` | Revoke refresh session | Public with refresh input · `LogoutRequest` → 204 |
 | POST | `/api/v1/auth/forgot-password` | Start password reset | Public · `ForgotPasswordRequest` → 204 |
@@ -50,6 +53,10 @@ Authentication column:
 | PUT | `/api/v1/auth/me/chart-views/{chart_id}` | Save own view for one chart | Authenticated · `ChartViewOptions` → `ChartViewOptions`; `chart_id` must match `[a-z][a-z0-9._-]{0,119}` or `422` |
 | DELETE | `/api/v1/auth/me/chart-views/{chart_id}` | Reset one chart to its default | Authenticated · response 204 |
 | DELETE | `/api/v1/auth/me/chart-views` | Reset all own chart views | Authenticated · response 204 |
+| POST | `/api/v1/auth/me/totp/setup` | Start two-factor enrolment | Authenticated · `password` → `TotpSetupResponse`; `409` if already on |
+| POST | `/api/v1/auth/me/totp/confirm` | Confirm enrolment | Authenticated · `code` → `TotpCodesResponse` (`recovery_codes`) |
+| POST | `/api/v1/auth/me/totp/recovery-codes` | Replace recovery codes | Authenticated · `password`, `code` → `TotpCodesResponse` |
+| DELETE | `/api/v1/auth/me/totp` | Turn off two-factor | Authenticated · `password`, `code` → 204; `403` when two-factor is required for your role |
 | POST | `/api/v1/auth/change-password` | Change own password | Authenticated · `PasswordChangeRequest` → 204 |
 | GET | `/api/v1/api-keys` | List own API keys | Authenticated · response `list[ApiKeyRead]` |
 | POST | `/api/v1/api-keys` | Create own API key | Authenticated · `ApiKeyCreateRequest` → `ApiKeyCreateResponse` |
@@ -77,6 +84,7 @@ All endpoints in this section require SuperAdmin unless noted.
 | POST | `/api/v1/auth/users/{user_id}/unlock-login` | Clear login lockout | none → 204 |
 | POST | `/api/v1/auth/users/{user_id}/reset-password` | Admin password reset; signs the user out of all sessions | `AdminPasswordResetRequest` (`new_password`, 12–256 characters) → `AdminPasswordResetResult` (`email_status`: `sent`, `failed`, `not_configured` or `no_email`, for the email sent to the user) |
 | DELETE | `/api/v1/auth/users/{user_id}/sessions` | Revoke user sessions | none → 204 |
+| DELETE | `/api/v1/auth/users/{user_id}/totp` | Reset a user's two-factor and sign them out | none → 204 |
 | GET/PUT/POST | `/api/v1/admin/oidc-settings`, `/test` | Manage/test SSO | `OidcSettingsUpdate` → OIDC schemas |
 | GET | `/api/v1/api-keys/admin/all` | List all API keys | none → `list[ApiKeyAdminRead]` |
 | DELETE | `/api/v1/api-keys/admin/{key_id}` | Revoke any API key | none → 204 |
