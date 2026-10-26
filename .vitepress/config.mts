@@ -2,6 +2,7 @@ import { defineConfig } from "vitepress";
 import {
   legacyDocumentationRoutes,
   numberedDocumentationSections,
+  retiredDocumentationRoutes,
 } from "./legacy-routes.mts";
 
 export default defineConfig({
@@ -48,6 +49,10 @@ export default defineConfig({
             if (numberedSection) {
               emitRedirect(sourcePath, `${numberedSection}/${relativePath.join("/")}`);
             }
+          }
+
+          for (const legacyPath of retiredDocumentationRoutes) {
+            emitRedirect("NetMap.md", legacyPath);
           }
 
           emitRedirect("development/local-development.md", "03-installation/development-installation.md");

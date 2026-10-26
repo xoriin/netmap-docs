@@ -17,11 +17,6 @@ export const numberedDocumentationSections = {
 
 export const legacyDocumentationRoutes = {
   "NetMap.md": "index.md",
-  "about-documentation/how-to-use-this-documentation.md": "how-to-use-this-documentation.md",
-  "about-documentation/documentation-version-compatibility.md": "documentation-version-compatibility.md",
-  "about-documentation/sitemap.md": "sitemap.md",
-  "about-documentation/documentation-changelog.md": "documentation-changelog.md",
-  "about-documentation/reporting-documentation-problems.md": "reporting-documentation-problems.md",
   "product-introduction/introduction.md": "introduction.md",
   "product-introduction/what-is-netmap.md": "introduction/what-is-netmap.md",
   "product-introduction/features.md": "introduction/features.md",
@@ -121,3 +116,18 @@ export const legacyDocumentationRoutes = {
   "reference/glossary.md": "reference/glossary.md",
   "reference/changelog.md": "reference/changelog.md",
 } as const;
+
+// Routes for deleted pages that have no direct replacement; they redirect to the docs home page.
+export const retiredDocumentationRoutes = [
+  "how-to-use-this-documentation.md",
+  "documentation-version-compatibility.md",
+  "sitemap.md",
+  "documentation-changelog.md",
+  "reporting-documentation-problems.md",
+  "about-documentation/how-to-use-this-documentation.md",
+  "about-documentation/documentation-version-compatibility.md",
+  "about-documentation/sitemap.md",
+  "about-documentation/documentation-changelog.md",
+  "about-documentation/reporting-documentation-problems.md",
+  "about-documentation/coverage-report.md",
+] as const;
