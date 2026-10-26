@@ -55,7 +55,7 @@ Import VLAN/group ranges as subnet suggestions. Select the desired suggestions a
 | CIDR rejected | malformed address, overlap, or special-purpose range | correct the CIDR and inspect conflicting subnets |
 | unique-CIDR error after VLAN import | duplicate matching subnet rows | retain the canonical row and merge/remove the duplicate |
 | utilisation looks stale | device/lease/reservation data changed | refresh IPAM and re-import authoritative leases |
-| address grid is not exhaustive | large IPv4/IPv6 range | use filters/search and summary counts; do not expect every address to render |
+| address map or list is not exhaustive | large IPv4/IPv6 range | use filters/search and summary counts; do not expect every address to render |
 
 ## API equivalents
 

@@ -34,7 +34,7 @@ Confirm:
 Check:
 
 - `GET /api/v1/ipam/dhcp-leases`;
-- subnet address grid;
+- the subnet's **DHCP** address tab;
 - conflict list;
 - IPAM summary.
 

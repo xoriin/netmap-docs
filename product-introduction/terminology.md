@@ -168,7 +168,7 @@ Subnet membership is calculated from normalized numeric IPv4/IPv6 indexes. A rec
 
 ### Utilization is a view, not a lease
 
-The address grid combines known devices, leases, reservations, and system-reserved addresses. “Free” means no tracked object currently claims the address under the view's rules; it does not guarantee that DHCP, a router, or another untracked system will allow it.
+A subnet's address view (the address map, or the address list for larger subnets) combines known devices, leases, reservations, and system-reserved addresses. “Free” means no tracked object currently claims the address under the view's rules; it does not guarantee that DHCP, a router, or another untracked system will allow it.
 
 ### Conflicts and synchronization
 
@@ -181,7 +181,7 @@ Overlapping subnet definitions, duplicate CIDRs, a gateway inside an incompatibl
 3. Import DHCP leases from a trusted export if needed.
 4. Review utilization and conflicts against device and reservation records.
 5. Resolve duplicates or overlaps before creating new reservations.
-6. Recheck the address grid after each correction.
+6. Recheck the subnet's addresses after each correction.
 
 Deleting a subnet or reservation can remove the organizing record while leaving external systems unchanged. Export or back up before destructive cleanup.
 

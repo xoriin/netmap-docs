@@ -56,7 +56,7 @@ Write actions require `topology_write`.
 ## IPAM
 
 Purpose: manage internal networks and provider-assigned public addresses from separate IPAM
-sub-pages. **Internal networks** covers subnets, reservations, leases, conflicts, and address grids.
+sub-pages. **Internal networks** covers subnets, reservations, leases, conflicts, and per-subnet address maps.
 **External IPs** is a flat register of public addresses, optionally filed under locations. Write actions require
 `ipam_write`.
 
