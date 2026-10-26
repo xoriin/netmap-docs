@@ -136,7 +136,7 @@ Sign in with a username and password to get a session:
 ```bash
 curl --fail-with-body \
   --request POST \
-  --url "https://netmap.example.com/api/v1/auth/login" \
+  --url "${NETMAP_URL}/api/v1/auth/login" \
   --header "Content-Type: application/json" \
   --data '{"username":"admin","password":"<password>"}'
 ```
@@ -145,11 +145,16 @@ curl --fail-with-body \
 {"access_token":"<access-token>","token_type":"bearer"}
 ```
 
-Send the access token as `Authorization: Bearer <access-token>`. It lasts 60 minutes. If the account has two-factor authentication, the response is a challenge instead, which the client completes at `POST /api/v1/auth/login/totp`:
+Send the access token as `Authorization: Bearer <access-token>`. It lasts 60 minutes. If a second factor is needed, the response is a challenge instead, valid for 5 minutes:
 
 ```json
 {"mfa_required":true,"mfa_setup_required":false,"challenge":"<challenge>"}
 ```
+
+| Challenge | Next step |
+|---|---|
+| `mfa_required` | `POST /api/v1/auth/login/totp` with `challenge` and `code` (an authenticator or recovery code). Returns the access token. |
+| `mfa_setup_required` | Two-factor authentication is required but not set up. `POST /api/v1/auth/login/totp/setup` with `challenge` returns `secret` and `otpauth_uri`; `POST /api/v1/auth/login/totp/setup/confirm` with `challenge` and `code` returns `recovery_codes` and `access_token`. |
 
 Sign-in also sets these cookies:
 
