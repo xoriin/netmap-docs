@@ -18,7 +18,9 @@ Expected-status rules compare observed health with the device's expected state, 
 
 Each rule has an **Open an incident on status pages** switch and a **Consecutive breaching checks** count (1 to 20, default 3), stored as `open_incident` and `incident_min_failures` in the [alert-rule API](../api/reference/endpoints.md#alerts). When the switch is on and the rule's condition holds for that many checks in a row, every [status page](../using-netmap/status-pages.md) that shows the affected device, service check or monitor gets an incident, published immediately. Endpoint monitors also wait for their own retry count; the larger of the two applies.
 
-The switch is on by default for device offline, unexpected state, service down and monitor down rules, and off for the threshold and noise rules. It is not available for recovery or any-status-change rules. Incidents are independent of notifications, so a notification cooldown or a failed delivery never delays or prevents one. The incident moves to Monitoring when every source has recovered. No incident opens for an item on a page while a maintenance window covers it. Existing rules are updated automatically on upgrade.
+The switch is on by default for device offline, unexpected state, service down and monitor down rules, and off for the threshold and noise rules. It is not available for recovery or any-status-change rules. Incidents are independent of notifications, so a notification cooldown or a failed delivery never delays or prevents one. The incident moves to Monitoring when every source has recovered.
+
+No incident opens for an item on a page while a maintenance window covers it. Existing rules are updated automatically on upgrade.
 
 ## Lifecycle
 

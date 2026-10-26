@@ -10,7 +10,9 @@ The device details view is the record-level editor used from Overview, Inventory
 
 ## Open And Edit A Record
 
-Select a device row, node, result, or linked IP. Users with `topology_write` can double-click an editable value, type a replacement, then press Enter or leave the field to save. Escape cancels. Read-only users see values but no edit affordance. Delete is irreversible and requires confirmation.
+Select a device row, node, result, or linked IP. Users with `topology_write` can double-click an editable value, type a replacement, then press Enter or leave the field to save. Escape cancels. Read-only users see values but no edit affordance.
+
+Delete is irreversible and requires confirmation.
 
 ## Identity And Classification Fields
 
@@ -31,7 +33,9 @@ Health is resolved from observed state, expected status, monitoring pause, and l
 
 ## Organisation And Enrichment
 
-Assign a VLAN/group explicitly or leave it unassigned. A topology group label can also be inferred from relationships; inference does not create an explicit group assignment. Assign a location/site to include the device in site filters. Subnet accepts CIDR notation. Tags are comma-separated values and notes are free text. An SNMP profile can be selected for eligible enrichment; credentials remain protected by the profile and are not shown in the device record.
+Assign a VLAN/group explicitly or leave it unassigned. A topology group label can also be inferred from relationships; inference does not create an explicit group assignment. Assign a location/site to include the device in site filters. Subnet accepts CIDR notation.
+
+Tags are comma-separated values and notes are free text. An SNMP profile can be selected for eligible enrichment; credentials remain protected by the profile and are not shown in the device record.
 
 ## Monitoring And Favourites
 
@@ -39,7 +43,9 @@ Pause or resume monitoring from the details header. Paused devices show a paused
 
 ## Activity And SNMP ARP Enrichment
 
-The Activity tab is available to users with security-event permission. It correlates firewall activity to the device IP and isolates firewall-database failures from the main device view. With an SNMP profile, **SNMP ARP preview** lists proposed field changes without writing them. Review the current and suggested values, then choose **Apply updates**; no-change previews are safe to dismiss. Refresh Inventory after applying enrichment.
+The Activity tab is available to users with security-event permission. It correlates firewall activity to the device IP and isolates firewall-database failures from the main device view. With an SNMP profile, **SNMP ARP preview** lists proposed field changes without writing them. Review the current and suggested values, then choose **Apply updates**; no-change previews are safe to dismiss.
+
+Refresh Inventory after applying enrichment.
 
 ## Delete A Device
 

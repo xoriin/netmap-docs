@@ -29,7 +29,9 @@ Custom CSS affects only the public status page, never NetMap's own screens. The 
 
 Use the page's own **Logo** setting for images.
 
-The green operational dot gently breathes. It stays steady when the visitor requests reduced motion; warning, outage and maintenance dots are also steady. This animation does not change the normal data refresh interval. The page follows the visitor's saved NetMap light/dark choice, or the browser/device preference when no choice is saved. In dark mode it uses the visitor's saved dark mode style, **Slate** or **Zinc**. Custom CSS light/dark media queries follow the same choice. Existing custom CSS is preserved and can override the built-in design. Clear the page's Custom CSS and save to return to the default appearance.
+The green operational dot gently breathes. It stays steady when the visitor requests reduced motion; warning, outage and maintenance dots are also steady. This animation does not change the normal data refresh interval. The page follows the visitor's saved NetMap light/dark choice, or the browser/device preference when no choice is saved.
+
+In dark mode it uses the visitor's saved dark mode style, **Slate** or **Zinc**. Custom CSS light/dark media queries follow the same choice. Existing custom CSS is preserved and can override the built-in design. Clear the page's Custom CSS and save to return to the default appearance.
 
 ## Stable Class Names
 

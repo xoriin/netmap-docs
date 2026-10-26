@@ -156,7 +156,9 @@ Feature-specific boundaries matter: Cytoscape ownership stays in the topology or
 
 ## Testing And Quality Gates
 
-Run focused backend tests first, then the full suite with the repository's `uv` command. For frontend changes run strict TypeScript, a production Vite build, and Playwright (`npm exec playwright test`; install Chromium once when absent). The e2e suite covers inventory filters/bulk menus, topology interactions, auth, and workspace regressions. Security tests must cover auth/CSRF/RBAC, API-key lockouts, OIDC claims, notification SSRF, SVG sanitisation, secret redaction, and ownership. Performance tests should exercise indexed monitoring history, syslog/FTS volume, discovery timeouts, SQLite contention, and browser rendering.
+Run focused backend tests first, then the full suite with the repository's `uv` command. For frontend changes run strict TypeScript, a production Vite build, and Playwright (`npm exec playwright test`; install Chromium once when absent). The e2e suite covers inventory filters/bulk menus, topology interactions, auth, and workspace regressions. Security tests must cover auth/CSRF/RBAC, API-key lockouts, OIDC claims, notification SSRF, SVG sanitisation, secret redaction, and ownership.
+
+Performance tests should exercise indexed monitoring history, syslog/FTS volume, discovery timeouts, SQLite contention, and browser rendering.
 
 ## Release And Documentation Workflow
 

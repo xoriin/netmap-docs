@@ -21,7 +21,9 @@ For Ring and Number views, **Value to display** selects the total or a named cat
 
 Pie slices include category/value labels where space allows; small slices retain full values through focus, hover or tap. **Show values** controls labels and readouts where applicable. Optional bars share the standard bar sizing, spacing and scale.
 
-Overview’s Network health keeps two independently configurable visuals: the health ring and the health breakdown. Each keeps its own visual type and saved preferences. In either visual’s options, use the panel arrangement arrows to place it above, below, left or right of the other. Save my view remembers the placement; Cancel restores the saved placement, and Reset this chart also restores the default arrangement. Selecting the original visual type retains its original dimensions and spacing.
+Overview’s Network health keeps two independently configurable visuals: the health ring and the health breakdown. Each keeps its own visual type and saved preferences. In either visual’s options, use the panel arrangement arrows to place it above, below, left or right of the other. Save my view remembers the placement; Cancel restores the saved placement, and Reset this chart also restores the default arrangement.
+
+Selecting the original visual type retains its original dimensions and spacing.
 
 A gauge shows the named category's share of the total; it does not infer an uptime target. Number views show the total for additive categories, the latest value for a time series, or the highest value for ranked data. IPAM's Address space alternatives use Used and Free, because reservation and DHCP counts can overlap the used addresses.
 
@@ -29,7 +31,9 @@ Monitoring’s Highest latency and Devices by VLAN start as horizontal bars. Dev
 
 ## Filter Device Visuals
 
-Inventory’s Devices by type and Monitoring’s Fleet health, Highest latency and Devices by VLAN follow the filters in their device table. Select a VLAN/group, device type, location, status or favourites, or search for a device, to update the visual to the matching devices. Combined filters apply together. Charts include all matching results across pages; changing the table page does not change their data. Clear the filters to restore the full device view. Your saved visual type and display options still apply to the filtered data.
+Inventory’s Devices by type and Monitoring’s Fleet health, Highest latency and Devices by VLAN follow the filters in their device table. Select a VLAN/group, device type, location, status or favourites, or search for a device, to update the visual to the matching devices. Combined filters apply together. Charts include all matching results across pages; changing the table page does not change their data.
+
+Clear the filters to restore the full device view. Your saved visual type and display options still apply to the filtered data.
 
 ## Save, Cancel And Reset
 

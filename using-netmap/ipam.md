@@ -25,15 +25,21 @@ The page opens with an **Address space** gauge (used and free hosts across all s
 
 Open a subnet to see its used, free, utilisation, gateway, and DHCP range figures, and a usage bar split into device, DHCP lease, reserved, gateway, and free addresses. The **All**, **Devices**, **DHCP**, **Reserved**, and **Free** tabs filter the addresses.
 
-With **All** selected and up to 256 addresses, the subnet is shown as an address map: 16 square tiles per row, with the last-octet offset of each row and column numbers across the top. Tiles are coloured by status (device, DHCP lease, free DHCP pool, reserved, gateway, free, network/broadcast). Select a tile to show the address in the panel beside the map, with its status, name, MAC, and vendor; free addresses offer **Reserve this address** to users with `ipam_write`. Other filters and larger subnets use a table. Subnets with more than 1,024 hosts are not enumerated address by address.
+With **All** selected and up to 256 addresses, the subnet is shown as an address map: 16 square tiles per row, with the last-octet offset of each row and column numbers across the top. Tiles are coloured by status (device, DHCP lease, free DHCP pool, reserved, gateway, free, network/broadcast). Select a tile to show the address in the panel beside the map, with its status, name, MAC, and vendor; free addresses offer **Reserve this address** to users with `ipam_write`. Other filters and larger subnets use a table.
+
+Subnets with more than 1,024 hosts are not enumerated address by address.
 
 **Reserve next IP** in the subnet header finds the next free address and opens a prefilled reservation; nothing is held until you save it.
 
 ## Reservations
 
-Create a single-IP reservation with address, label, MAC, notes, owner, expiry, and subnet. A range reservation accepts a validated start/end range and creates the supported records. A reservation holds an address but does not create an inventory device. Addresses remain immutable after creation; edit metadata or delete and recreate to move one. Optional default expiry prefills 90 days. Expiry reminders require enablement, a lead time, and a saved notification method; delivery is one-time per expiry event. Delete expired reservations is a confirmed bulk operation with a result count.
+Create a single-IP reservation with address, label, MAC, notes, owner, expiry, and subnet. A range reservation accepts a validated start/end range and creates the supported records. A reservation holds an address but does not create an inventory device. Addresses remain immutable after creation; edit metadata or delete and recreate to move one.
 
-Open an existing reservation and select **Convert to device** beside the close button to start with its label, address, MAC, and notes already filled in. NetMap then requires an explicit confirmation before replacing the reservation. On confirmation, the reservation is removed and the device is created atomically. The user needs both `topology_write` and `ipam_reservation_claim`; `ipam_write` is additionally required to enter through the reservation editor. A custom role with claim/create access but without general IPAM editing receives **Convert to device** directly on the reservation row. Cancelling leaves the reservation untouched.
+Optional default expiry prefills 90 days. Expiry reminders require enablement, a lead time, and a saved notification method; delivery is one-time per expiry event. Delete expired reservations is a confirmed bulk operation with a result count.
+
+Open an existing reservation and select **Convert to device** beside the close button to start with its label, address, MAC, and notes already filled in. NetMap then requires an explicit confirmation before replacing the reservation. On confirmation, the reservation is removed and the device is created atomically. The user needs both `topology_write` and `ipam_reservation_claim`; `ipam_write` is additionally required to enter through the reservation editor.
+
+A custom role with claim/create access but without general IPAM editing receives **Convert to device** directly on the reservation row. Cancelling leaves the reservation untouched.
 
 ## Conflicts
 

@@ -6,7 +6,9 @@ keywords: [exports, backup, report]
 
 # Exports
 
-The Exports workspace groups inventory and PDF report downloads above the firewall export controls. On wide screens, a separate information column shows available row counts, recent export activity, the last download time, and a CSV/JSON/PDF format guide. The page has a maximum width for readability; smaller screens stack these sections. Only download panels and format guidance permitted for your role are shown. Export permissions are separate: `inventory_export`, `firewall_export`, and `report_export`. Database backup/restore and scheduled-backup administration require SuperAdmin.
+The Exports workspace groups inventory and PDF report downloads above the firewall export controls. On wide screens, a separate information column shows available row counts, recent export activity, the last download time, and a CSV/JSON/PDF format guide. The page has a maximum width for readability; smaller screens stack these sections. Only download panels and format guidance permitted for your role are shown.
+
+Export permissions are separate: `inventory_export`, `firewall_export`, and `report_export`. Database backup/restore and scheduled-backup administration require SuperAdmin.
 
 ## Data Exports
 

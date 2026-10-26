@@ -10,11 +10,15 @@ Profile is personal: changes affect the signed-in account and, where noted, the 
 
 ## Account And Identity
 
-Update display name, email, and avatar within the validation limits shown by the form. After uploading, changing, or removing a photo, select **Save photo** beside the photo controls. The saved photo also appears beside Profile in the sidebar. **Save account details** saves the display name and email separately. The page shows username, role, active state, SSO issuer/identity where linked, and last-login details. Role and security fields are read-only to the user.
+Update display name, email, and avatar within the validation limits shown by the form. After uploading, changing, or removing a photo, select **Save photo** beside the photo controls. The saved photo also appears beside Profile in the sidebar. **Save account details** saves the display name and email separately.
+
+The page shows username, role, active state, SSO issuer/identity where linked, and last-login details. Role and security fields are read-only to the user.
 
 ## Password And Appearance
 
-Change a local password by providing the current password and a compliant replacement. A bad current password returns `401`; use reset flow if the account is locked or the password is forgotten. On first load, NetMap follows your browser/device’s light or dark preference. It keeps following system changes until you choose **Light mode** or **Dark mode** in the sidebar; that explicit choice is saved in this browser and takes precedence on later visits. **Preferences → Dark mode style** selects **Slate** (cool blue-grey, the default) or **Zinc** (neutral charcoal) for dark mode, saved in this browser. Entity colours can be disabled per account; chips keep their shape/icons and use neutral styling so table layout does not shift.
+Change a local password by providing the current password and a compliant replacement. A bad current password returns `401`; use reset flow if the account is locked or the password is forgotten. On first load, NetMap follows your browser/device’s light or dark preference. It keeps following system changes until you choose **Light mode** or **Dark mode** in the sidebar; that explicit choice is saved in this browser and takes precedence on later visits.
+
+**Preferences → Dark mode style** selects **Slate** (cool blue-grey, the default) or **Zinc** (neutral charcoal) for dark mode, saved in this browser. Entity colours can be disabled per account; chips keep their shape/icons and use neutral styling so table layout does not shift.
 
 Device icon packs include built-ins and custom packs stored in browser local storage. Select a pack, import a validated JSON/SVG definition, or remove a custom pack. Custom SVG paths are sanitised before rendering/export; never import untrusted markup casually.
 

@@ -28,7 +28,9 @@ For a single address, the form also offers **Location**, **Status**, **Device**,
 
 ### Extend Or Correct A Range
 
-To expand an existing block, choose **Add external IP** and enter the larger CIDR or range. For example, enter `203.0.113.0/24` after previously adding `203.0.113.0/26`. NetMap keeps the 62 existing addresses and adds the 192 missing usable addresses. Existing purposes, notes, owners, tags, statuses, locations and device links remain unchanged; the form's settings apply only to new addresses. The result reports how many were added and how many existing addresses were kept.
+To expand an existing block, choose **Add external IP** and enter the larger CIDR or range. For example, enter `203.0.113.0/24` after previously adding `203.0.113.0/26`. NetMap keeps the 62 existing addresses and adds the 192 missing usable addresses. Existing purposes, notes, owners, tags, statuses, locations and device links remain unchanged; the form's settings apply only to new addresses.
+
+The result reports how many were added and how many existing addresses were kept.
 
 Repeating a fully tracked range adds nothing and leaves all records unchanged. Adding a smaller range also leaves addresses outside that range untouched; it does not shrink or delete the register. The 256-address limit applies to the entire submitted range, including addresses already tracked.
 
@@ -40,7 +42,9 @@ Locations are optional. **Location** is a pick-or-create list: choose an existin
 
 ### Add To Inventory And Monitoring
 
-Turn on **Also add to Inventory and Monitoring** when the address belongs to a device NetMap should monitor. After the address is saved, the standard Add Device form opens with the address and details prefilled; review the device type, icon, and monitoring state before creating it. Cancelling that form keeps the saved address. Leave the option off for NAT addresses, virtual IPs, provider gateways, and reserved addresses. The option is shown only to roles that can create Inventory devices.
+Turn on **Also add to Inventory and Monitoring** when the address belongs to a device NetMap should monitor. After the address is saved, the standard Add Device form opens with the address and details prefilled; review the device type, icon, and monitoring state before creating it. Cancelling that form keeps the saved address. Leave the option off for NAT addresses, virtual IPs, provider gateways, and reserved addresses.
+
+The option is shown only to roles that can create Inventory devices.
 
 ## Browse And Filter
 

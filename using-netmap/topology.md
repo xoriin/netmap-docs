@@ -14,7 +14,9 @@ The canvas occupies the centre, with a toolbar/ribbon for search, fit, layout, d
 
 ## Canvas Navigation And Display
 
-Drag empty canvas space to pan, use the wheel or trackpad to zoom, select a node or edge to open details, and use Fit to frame visible elements. The mini-map viewport rectangle can be clicked to pan without changing zoom. Search accepts a device name, hostname, or IP; selecting a result centres it and briefly pulses the match. The location filter offers **All Sites** or one site. Device icons, labels, group visibility, and hidden-group search are independent display preferences and persist with the autosaved layout.
+Drag empty canvas space to pan, use the wheel or trackpad to zoom, select a node or edge to open details, and use Fit to frame visible elements. The mini-map viewport rectangle can be clicked to pan without changing zoom. Search accepts a device name, hostname, or IP; selecting a result centres it and briefly pulses the match. The location filter offers **All Sites** or one site.
+
+Device icons, labels, group visibility, and hidden-group search are independent display preferences and persist with the autosaved layout.
 
 Group zones contain their member devices; a relationship can connect devices, groups, or a device to its parent zone. Path mode accounts for both drawn edges and membership hops, so a device-to-switch route can pass through a VLAN/group zone even when no direct edge is drawn. If no route exists, the endpoints remain selected and the UI reports no path.
 
@@ -26,7 +28,9 @@ Use the Devices, Links, and Groups lists to search, hover, select, and toggle vi
 
 ## Devices, Links, And Relationship Editing
 
-Add a device from the topology toolbar to create it and place it immediately. Discovery opens the scan/review flow; import only the reviewed rows. To create a link, choose source and target endpoints, relationship type, direction, optional link speed, and notes. The endpoint picker searches by IP, hostname, or display name and supports keyboard navigation. Edit or delete a selected link from the details panel; direction controls determine whether source-to-target, target-to-source, or both states are allowed. Link speed presets are shown in the edge label and influence edge width; speed is presentation metadata, not a bandwidth test.
+Add a device from the topology toolbar to create it and place it immediately. Discovery opens the scan/review flow; import only the reviewed rows. To create a link, choose source and target endpoints, relationship type, direction, optional link speed, and notes. The endpoint picker searches by IP, hostname, or display name and supports keyboard navigation.
+
+Edit or delete a selected link from the details panel; direction controls determine whether source-to-target, target-to-source, or both states are allowed. Link speed presets are shown in the edge label and influence edge width; speed is presentation metadata, not a bandwidth test.
 
 ## Layout Controls And Persistence
 

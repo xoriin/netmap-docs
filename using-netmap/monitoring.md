@@ -32,7 +32,9 @@ Ping, attached service checks, manual status, expected status, monitoring pause,
 
 ## Controls And Fleet Data
 
-Administrators can enable/disable global live ping monitoring and set the monitoring interval within the configured safe range. The interval runs from the start of one scheduled batch to the next: time spent checking devices and services counts toward it. A batch that takes longer than the interval finishes before the next starts; checks do not overlap. A per-device Pause/Resume control overrides normal checks and is visible in Inventory, Details, Overview, and Monitoring. Favourites are per-user. Search and filters include health, expected/paused state, and favourites.
+Administrators can enable/disable global live ping monitoring and set the monitoring interval within the configured safe range. The interval runs from the start of one scheduled batch to the next: time spent checking devices and services counts toward it. A batch that takes longer than the interval finishes before the next starts; checks do not overlap. A per-device Pause/Resume control overrides normal checks and is visible in Inventory, Details, Overview, and Monitoring.
+
+Favourites are per-user. Search and filters include health, expected/paused state, and favourites.
 
 Users with monitoring write permission can run one device's enabled checks immediately with **Check now**, from the header of the device's details window (beside **Pause monitoring**) or from its service-check configuration. It runs the same status probe and service checks as a scheduled cycle for that device only, records normal history, and evaluates alert rules; it is unavailable while the device is paused or not active.
 
@@ -60,7 +62,9 @@ The **Response Time** chart in the device details window, endpoint details and a
 
 ## Service Checks
 
-Service checks are device-scoped and can be applied globally or to selected devices. TCP checks use a port or range; UDP checks report reachability limitations because many UDP services do not acknowledge arbitrary probes. HTTP/HTTPS device checks support method, path, expected status, redirects, TLS verification, timeout, and scope. Results show protocol, status, response time, and readable failure details. Checks can be paused, resumed, edited, or deleted; history is retained according to monitoring retention settings.
+Service checks are device-scoped and can be applied globally or to selected devices. TCP checks use a port or range; UDP checks report reachability limitations because many UDP services do not acknowledge arbitrary probes. HTTP/HTTPS device checks support method, path, expected status, redirects, TLS verification, timeout, and scope. Results show protocol, status, response time, and readable failure details.
+
+Checks can be paused, resumed, edited, or deleted; history is retained according to monitoring retention settings.
 
 The list can be kept in automatic alphabetical order or switched to manual order. Manual mode provides a drag handle on each row and stores the chosen sequence. Dragging shows a translucent copy and opens space at the prospective drop position.
 
