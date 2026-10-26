@@ -40,7 +40,7 @@ Send JSON with `Content-Type: application/json`. Responses are JSON, except file
 
 Errors return a `detail` field and a standard status code; see [API Errors](./errors.md).
 
-Timestamps are ISO 8601 strings, but they do not always carry a timezone. Most, such as an API key's `created_at`, have no offset: `2026-10-26T10:29:02.437310`. Times NetMap records itself, such as `created_at` and `last_used_at`, are in UTC. Where an endpoint takes a time, its schema says whether it needs an offset.
+Timestamps are ISO 8601 strings, but they do not always carry a timezone. Most, such as an API key's `created_at`, have no offset: `2026-10-26T10:29:02.437310`. Times NetMap records itself, such as `created_at` and `last_used_at`, are in UTC.
 
 Paging is set per endpoint. Syslog events and audit logs take `limit` (default 100, up to 500) and `offset`; many other lists return every item. Each endpoint's parameters are in the [OpenAPI schema](./reference/openapi.md).
 
