@@ -16,8 +16,6 @@ docker compose logs --tail=200 netmap
 
 nginx writes access logs to stdout and errors to stderr. uvicorn uses `LOG_LEVEL`, default `info`.
 
-Documentation gap: this behaviour could not be verified from the current source for request IDs or structured logging.
-
 ## Configure Log Level
 
 Set:

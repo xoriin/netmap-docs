@@ -155,8 +155,6 @@ The user or API-key owner lacks `security_view`.
 
 The request is unauthenticated, the API key is invalid/expired/revoked, or the owning user is inactive.
 
-Documentation gap: this behaviour could not be verified from the current source for full TLS syslog operation. `SYSLOG_TLS_*` settings exist and should be checked in `backend/app/services/syslog/server.py` before publishing TLS setup steps.
-
 ## Related Pages
 
 - [Security Events](../using-netmap/security-events.md)

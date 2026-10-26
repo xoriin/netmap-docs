@@ -61,8 +61,6 @@ server {
 }
 ```
 
-Documentation gap: this behaviour could not be verified from the current source for Caddy, Traefik, and Nginx Proxy Manager-specific examples.
-
 ## Caching
 
 The all-in-one image sends `Cache-Control: public, max-age=31536000, immutable` for the hashed

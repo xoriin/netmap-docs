@@ -10,8 +10,6 @@ NetMap uses SQLite with startup initialization and migration code in `backend/ap
 
 Do not manually edit SQLite files unless restoring from backup or following maintainer instructions.
 
-Documentation gap: this page needs a maintained list of every migration identifier and schema change.
-
 ## Databases
 
 | Database | Purpose |

@@ -21,10 +21,6 @@ enforces the 5,000-row limit. Split larger inventories into smaller reviewed bat
 
 Endpoint: `POST /api/v1/topology/devices/import`.
 
-Request model: `DeviceBulkImportRequest`.
-
-Documentation gap: this page needs field-level import examples from `backend/app/schemas/topology.py` and frontend import parser behavior in `frontend/src/utils/csv.ts`.
-
 ## Before You Begin
 
 Clean import data before loading it. Confirm:

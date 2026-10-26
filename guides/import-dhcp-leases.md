@@ -12,9 +12,7 @@ Required permission: `ipam_write`.
 
 API equivalent:
 
-`POST /api/v1/ipam/dhcp-leases/import` with `DhcpImportRequest`.
-
-Documentation gap: this page needs parser-specific file examples from `backend/app/services/ipam/dhcp_parser.py`.
+`POST /api/v1/ipam/dhcp-leases/import`.
 
 ## What This Does
 

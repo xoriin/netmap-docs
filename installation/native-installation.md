@@ -1,38 +1,14 @@
 ---
 title: Native Installation
 sidebar_position: 4
-keywords: [native installation]
+keywords: [native installation, bare metal, without Docker]
 ---
 
 # Native Installation
 
-Documentation gap: this behaviour could not be verified from the current source.
+NetMap does not support installing directly on a host without Docker. The supported way to run it in production is the all-in-one Docker image, which bundles the web server, API, background services and the network permissions the tools need.
 
-The repository contains FastAPI backend and React frontend source, but production packaging is centered on Docker. Native production installation is not documented as a supported deployment method in the verified source files.
-
-Use [Local Development](../development/local-development.md) for local source work.
-
-## Why This Page Exists
-
-Users often look for native install instructions when deploying self-hosted software. For NetMap, the verified production path is the all-in-one Docker image. This page prevents an unsupported install path from being mistaken for a missing article.
-
-## What Would Need To Be Defined
-
-A supported native installation guide would need source-backed decisions for:
-
-- supported operating systems;
-- Python version and virtual environment layout;
-- Node.js version and frontend build location;
-- nginx or alternative static asset serving;
-- uvicorn process supervision;
-- syslog listener permissions;
-- nmap sudoers configuration;
-- `/app/data` equivalent path;
-- service user and file ownership;
-- upgrade and migration commands;
-- backup and restore procedure.
-
-Until those decisions exist, use Docker Compose for production deployments.
+To run NetMap, follow [Five-Minute Quick Start](./quick-start.md) or [Docker Compose](./docker-compose.md). To work on the source code, see [Local Development](../development/local-development.md).
 
 ## Related Pages
 
