@@ -47,8 +47,6 @@ Clean import data before loading it. Confirm:
 POST /api/v1/topology/devices/import
 ```
 
-Request model: `DeviceBulkImportRequest`.
-
 ## Related Pages
 
 - [Inventory](../using-netmap/inventory.md)

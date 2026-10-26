@@ -6,7 +6,7 @@ keywords: [database, migrations]
 
 # Database Migrations
 
-NetMap uses SQLite with startup initialization and migration code in `backend/app/db/session.py` and `backend/app/db/firewall_session.py`.
+NetMap creates and migrates its SQLite databases automatically when it starts.
 
 Do not manually edit SQLite files unless restoring from backup or following maintainer instructions.
 

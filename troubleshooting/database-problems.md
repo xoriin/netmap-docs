@@ -8,7 +8,7 @@ keywords: [SQLite, database]
 
 NetMap uses `netmap.db` and `firewall.db`.
 
-Startup validates `DATA_DIR` exists and is writable. Firewall database corruption has specific recovery paths in `firewall_session.py`.
+Startup validates `DATA_DIR` exists and is writable. Firewall database corruption has its own recovery path; see [SQLite, WAL And Retention](../operations/operations.md#sqlite-wal-and-retention).
 
 Before any manual database action, create a backup.
 

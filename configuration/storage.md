@@ -26,7 +26,7 @@ services:
       - ./data:/app/data
 ```
 
-The startup validation in `backend/app/core/startup.py` creates `DATA_DIR` if needed and fails startup if it is not writable.
+On start-up, NetMap creates `DATA_DIR` if needed and stops if it is not writable.
 
 ## Database Files
 

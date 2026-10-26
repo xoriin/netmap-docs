@@ -48,7 +48,7 @@ This conversion requires both `topology_write` and `ipam_reservation_claim`. Net
 
 ## API Example
 
-Use `/api/docs` for the exact `IpReservationCreate` fields before automating.
+Check the exact reservation fields in `/api/docs` before you automate this.
 
 ```bash
 API_URL="https://netmap.example.com"

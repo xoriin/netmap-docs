@@ -39,4 +39,4 @@ curl --fail-with-body \
   --data '{"name":"core-switch","ip_address":"192.168.1.2"}'
 ```
 
-Confirm the exact request schema in `/api/docs` before automating; device fields are defined in `backend/app/schemas/topology.py`.
+Check the exact request fields in `/api/docs` before you automate this.

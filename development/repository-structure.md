@@ -30,6 +30,23 @@ Project notes: `docs/`.
 | `scripts/` | release and maintenance scripts |
 | `assets/` | screenshots and media used by the project |
 
+## Key Source Files
+
+| Path | Purpose |
+|---|---|
+| `backend/app/main.py` | FastAPI app entrypoint |
+| `backend/app/api/v1/` | Versioned REST route handlers |
+| `backend/app/api/deps.py` | Authentication and permission dependencies |
+| `backend/app/core/config.py` | Environment settings |
+| `backend/app/db/session.py` | Main SQLite setup |
+| `backend/app/db/firewall_session.py` | Firewall SQLite setup |
+| `frontend/src/routes/index.ts` | SPA route definitions |
+| `frontend/src/features/` | Workspace components |
+| `docker/aio.Dockerfile` | Production all-in-one image build |
+| `docker/aio-entrypoint.sh` | Runtime process startup |
+| `docker/aio-nginx.conf.template` | Bundled nginx config template |
+| `documentation/` | VitePress documentation project |
+
 ## Documentation
 
 The root `documentation/` directory contains the public documentation source and its VitePress configuration.
