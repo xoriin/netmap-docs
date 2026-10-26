@@ -40,7 +40,7 @@ This page separates implemented protections from deployment responsibilities.
 | Role | Default permissions |
 |---|---|
 | SuperAdmin | All permissions and admin-only actions. |
-| NetworkAdmin | topology write, security view, passive and active tools, all export permissions, IPAM write, monitoring write, alert write. |
+| NetworkAdmin | All named permissions (see [Permissions](./permissions.md)), but not SuperAdmin-only actions. |
 | SecurityAnalyst | security view, passive tools, firewall export. |
 | Viewer | passive tools. |
 
