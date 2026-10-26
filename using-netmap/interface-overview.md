@@ -19,7 +19,7 @@ The frontend routes are defined in `frontend/src/routes/index.ts`.
 | IPAM | Subnets, reservations, leases, conflicts | Authenticated; writes need `ipam_write` |
 | Tools | DNS, ping, traceroute, subnet, SNMP tools | tool permissions |
 | Security | Syslog/firewall event search | `security_view` |
-| Exports | Inventory, firewall, report, backup exports | export permissions; backup requires SuperAdmin |
+| Exports | Inventory, firewall, report exports | export permissions |
 | Admin | Users, roles, settings, SSO, diagnostics | SuperAdmin |
 | Profile | Profile, password, API keys | Authenticated |
 

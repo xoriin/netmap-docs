@@ -11,7 +11,7 @@ Permissions:
 - `inventory_export` for inventory export.
 - `firewall_export` for firewall event export.
 - `report_export` for PDF reports.
-- SuperAdmin for database backup and restore.
+- `backup_manage` for database backups; SuperAdmin for restore.
 
 API equivalents:
 
@@ -56,7 +56,7 @@ curl --fail-with-body \
 |---|---|---|
 | `403` | missing export permission | update role permissions |
 | empty firewall export | no matching events | widen filters or confirm syslog ingest |
-| backup denied | not SuperAdmin | use a SuperAdmin account/key |
+| backup denied | missing `backup_manage` (restore: not SuperAdmin) | update role permissions, or use a SuperAdmin account for restore |
 
 ## Related Pages
 

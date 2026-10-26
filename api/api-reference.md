@@ -84,11 +84,12 @@ All endpoints in this section require SuperAdmin unless noted.
 | GET | `/api/v1/audit/logs` | Search audit logs | query → `AuditLogList` |
 | GET | `/api/v1/audit/logs/export` | Export audit logs | query → file |
 | GET | `/api/v1/system/diagnostics` | Diagnostics | none → object |
-| GET | `/api/v1/exports/backup` | Download DB backup | none → file |
-| POST | `/api/v1/exports/backup/encrypted` | Download passphrase-encrypted DB backup | JSON passphrase → `.nmbak` file |
+| GET | `/api/v1/exports/backup` | Download DB backup | `backup_manage` · none → file |
+| POST | `/api/v1/exports/backup/encrypted` | Download passphrase-encrypted DB backup | `backup_manage` · JSON passphrase → `.nmbak` file |
 | POST | `/api/v1/exports/restore/validate` | Validate backup upload | octet-stream + optional passphrase header → `RestoreValidationResult` |
 | POST | `/api/v1/exports/restore` | Restore backup | octet-stream + optional passphrase header → 204 |
-| GET/DELETE | `/api/v1/exports/scheduled-backups*` | Scheduled backup files | none → list/file/204 |
+| GET | `/api/v1/exports/backup-location` | Scheduled backup directory | `backup_manage` · none → object |
+| GET/DELETE | `/api/v1/exports/scheduled-backups*` | Scheduled backup files | `backup_manage` · none → list/file/204 |
 
 ## Inventory And Topology
 
@@ -212,7 +213,8 @@ Token scope rules, request fields, `curl` examples and error codes are in [Statu
 | Use active tools | Yes | Yes | `tools_active` | ping, traceroute, port check, SNMP probe |
 | Manage users/settings | Yes | Yes | SuperAdmin | `/api/v1/admin/*`, `/api/v1/auth/users*` |
 | Export inventory/firewall/report | Yes | Yes | export-specific permissions | `/api/v1/exports/*` |
-| Download/restore DB backups | Yes | Yes | SuperAdmin | backup/restore endpoints |
+| Download and manage DB backups | Yes | Yes | `backup_manage` | `/api/v1/exports/backup*`, `/scheduled-backups*` |
+| Validate and restore DB backups | Yes | Yes | SuperAdmin | `/api/v1/exports/restore*` |
 | Live syslog WebSocket | Yes | No | JWT-first-frame, `security_view` | WebSocket in `syslog.py` |
 
 For request and response schema details, use `/api/docs` or `/api/openapi.json`.

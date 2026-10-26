@@ -76,7 +76,7 @@ Protect all persistent state:
 - `.env`
 - `SECRET_KEY`, `MASTER_KEY`, and secret files
 
-SuperAdmins can download a database backup through `GET /api/v1/exports/backup` and validate/restore backups through `/api/v1/exports/restore/validate` and `/api/v1/exports/restore`.
+Users with `backup_manage` can download a database backup through `GET /api/v1/exports/backup`. Validating and restoring backups through `/api/v1/exports/restore/validate` and `/api/v1/exports/restore` requires SuperAdmin.
 
 Filesystem backup:
 

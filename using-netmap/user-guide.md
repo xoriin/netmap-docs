@@ -157,7 +157,7 @@ Related API:
 - `POST /api/v1/exports/restore`
 - `GET/DELETE /api/v1/exports/scheduled-backups`
 
-Permissions: inventory, firewall, and report exports have separate permissions. Backup and restore actions require SuperAdmin.
+Permissions: inventory, firewall, and report exports have separate permissions. Backups need `backup_manage`; restore requires SuperAdmin.
 
 ## Admin
 
