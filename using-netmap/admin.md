@@ -20,7 +20,7 @@ The card compares the installed `/app/VERSION` and channel with GitHub tags when
 
 System diagnostics reports SQLite file sizes, monitoring cache/status counters, syslog retention counters, and process PID without broad expensive scans. Use it with health and logs when investigating resource or startup issues.
 
-To restore, choose a `.nmbak` or `.db` file (up to 256 MB), enter the passphrase for an encrypted backup, and select **Upload backup**; it stays disabled until the file and passphrase are ready. NetMap validates the upload and shows its device, user, subnet, and table counts before **Restore** overwrites the live database. Backup/restore and scheduled-backup workflows are covered by [Exports](./exports.md).
+To restore, choose a `.nmbak` or `.db` file (up to 256 MB), enter the passphrase for an encrypted backup, and select **Upload backup**; it stays disabled until you choose a file and, for a `.nmbak`, enter a passphrase of at least 12 characters. NetMap validates the upload and shows its device, user, subnet, and table counts before **Restore** *file name* overwrites the live database. Backup/restore and scheduled-backup workflows are covered by [Exports](./exports.md).
 
 SuperAdmins also set **Status page default CSS** here: the stylesheet copied into each new [status page](./status-pages.md). Changing it never restyles existing pages. It is validated by the same rules as a page's own custom CSS.
 
