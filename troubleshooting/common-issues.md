@@ -30,7 +30,7 @@ Confirm the image tag and `/app/VERSION`, data-directory ownership, free disk, r
 | login/session/SSO fails | [Authentication Problems](./authentication-problems.md) | check cookies/HTTPS, clocks, lockouts, issuer/JWKS, and required SSO |
 | API key fails | [API-Key Problems](./api-key-problems.md) | verify `X-API-Key` format, owner state, role, expiry, and rate limit |
 | discovery/tools find nothing | [Run Discovery](../guides/run-discovery.md) and [Network Tools](../using-netmap/tools.md) | check target scope, capabilities, host networking, routing, DNS, and public-target policy |
-| SNMP/LLDP empty | [Administration](../using-netmap/admin.md#snmp-profiles-and-lldp) | verify UDP 161, credentials, ACLs, device support, and Layer-2 visibility |
+| SNMP/LLDP empty | [Administration](../administer/snmp-profiles.md) | verify UDP 161, credentials, ACLs, device support, and Layer-2 visibility |
 | monitoring status stale/wrong | [Monitoring](../using-netmap/monitoring.md#health-model) | check expected/paused/lifecycle state, cache freshness, interval, worker, and ping capability |
 | service/HTTP check fails | [Monitoring](../using-netmap/monitoring.md#endpoint-history-and-troubleshooting) | inspect protocol, DNS, proxy, TLS, auth, assertion, timeout, and scope details |
 | syslog absent/live stream stale | [Security Events](../using-netmap/security-events.md#troubleshooting) | verify listeners, mappings, allowlist, WebSocket proxy, connection cap, and parser |

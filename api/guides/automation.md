@@ -114,7 +114,7 @@ To post incidents and maintenance from another tool, use a status page integrati
 These are configured in NetMap rather than through the API:
 
 - Syslog senders: [Syslog](../../configuration/syslog.md).
-- Notification channels: [Administration](../../using-netmap/admin.md#notification-methods-and-delivery).
+- Notification channels: [Administration](../../administer/notifications.md#notification-methods).
 - Single sign-on: [OIDC SSO](../../configuration/oidc-sso.md).
 
 ## Keep Integrations Safe To Re-Run

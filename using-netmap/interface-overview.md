@@ -22,7 +22,7 @@ NetMap has one workspace for each area of your network, listed in the sidebar. T
 | [Tools](./tools.md) | Run DNS, ping, traceroute, port and SNMP checks | The matching tool permission |
 | [Security](./security-events.md) | Search firewall and syslog events | `security_view` |
 | [Exports](./exports.md) | Download inventory, firewall logs and reports | The matching export permission |
-| [Admin](./admin.md) | Manage users, settings, alerts and system data | SuperAdmin, or a delegated administrative permission |
+| [Admin](../administer/index.md) | Manage users, settings, alerts and system data | SuperAdmin, or a delegated administrative permission |
 | [Profile](./profile.md) | Update your account, password, preferences and API keys | Everyone |
 
 Each permission is described on [Permissions](../administer/permissions.md).
@@ -64,5 +64,5 @@ At a viewport width of 760px or less, NetMap switches to a phone layout:
 
 - [First-Run Setup And Authentication](../installation/first-run-and-authentication.md)
 - [Profile](./profile.md)
-- [Admin](./admin.md)
+- [Admin](../administer/index.md)
 - [Glossary](../reference/glossary.md)

@@ -105,6 +105,6 @@ See [Authentication Problems](../troubleshooting/authentication-problems.md) for
 - [Installation Overview](./installation.md)
 - [OIDC SSO](../configuration/oidc-sso.md)
 - [Profile](../using-netmap/profile.md)
-- [Administration](../using-netmap/admin.md)
+- [Administration](../administer/index.md)
 - [API Authentication](../api/authentication.md)
 - [Authentication Problems](../troubleshooting/authentication-problems.md)

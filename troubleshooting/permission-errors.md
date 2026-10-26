@@ -48,4 +48,4 @@ Some actions require SuperAdmin regardless of named permissions, including role 
 
 - [Permissions](../administer/permissions.md)
 - [API Permissions](../api/permissions.md)
-- [Administration](../using-netmap/admin.md)
+- [Administration](../administer/index.md)

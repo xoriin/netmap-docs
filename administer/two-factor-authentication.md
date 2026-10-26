@@ -113,7 +113,7 @@ To complete a two-factor sign-in from a script, see [Sessions](../api/authentica
 ## Related Pages
 
 - [Profile](../using-netmap/profile.md)
-- [Admin](../using-netmap/admin.md)
+- [Admin](./index.md)
 - [Authentication Problems](../troubleshooting/authentication-problems.md)
 - [OIDC SSO](../configuration/oidc-sso.md)
 - [API Authentication](../api/authentication.md)

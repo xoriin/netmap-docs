@@ -6,7 +6,7 @@ keywords: [roles, permissions, SuperAdmin, NetworkAdmin, SecurityAnalyst, Viewer
 
 # Permissions
 
-NetMap controls access with roles. Each role holds a set of named permissions, and every protected request checks the live role of the signed-in user or API-key owner. This page is the reference for roles and permissions; you change role mappings on the **Groups** tab in [Admin](../using-netmap/admin.md).
+NetMap controls access with roles. Each role holds a set of named permissions, and every protected request checks the live role of the signed-in user or API-key owner. This page is the reference for roles and permissions; you change them on the [Groups](./groups.md) tab in Admin.
 
 ## Built-In Roles
 
@@ -74,7 +74,7 @@ API keys have the live permissions of the user who owns them; see [API Permissio
 
 ## Related Pages
 
-- [Admin](../using-netmap/admin.md)
+- [Admin](./index.md)
 - [Status Pages](../using-netmap/status-pages.md)
 - [API Permissions](../api/permissions.md)
 - [Security Overview](../security/index.md)

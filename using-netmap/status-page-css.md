@@ -74,4 +74,4 @@ The built-in style is driven by custom properties you can override on `:root`: `
 ## Related Pages
 
 - [Status Pages](./status-pages.md)
-- [Admin](./admin.md)
+- [Admin](../administer/index.md)

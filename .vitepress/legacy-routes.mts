@@ -45,7 +45,6 @@ export const legacyDocumentationRoutes = {
   "using-netmap/security-events.md": "using-netmap/security-events.md",
   "using-netmap/tools.md": "using-netmap/tools.md",
   "using-netmap/exports.md": "using-netmap/exports.md",
-  "using-netmap/admin.md": "using-netmap/admin.md",
   "using-netmap/profile.md": "using-netmap/profile.md",
   "guides/add-device.md": "guides/add-device.md",
   "guides/import-devices.md": "guides/import-devices.md",
@@ -145,4 +144,5 @@ export const movedDocumentationRoutes: Record<string, string> = {
   "introduction/terminology.md": "reference/glossary.md",
   "using-netmap/user-guide.md": "using-netmap/interface-overview.md",
   "user-guide.md": "using-netmap/interface-overview.md",
+  "using-netmap/admin.md": "administer/index.md",
 };
