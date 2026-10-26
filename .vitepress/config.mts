@@ -268,7 +268,7 @@ export default defineConfig({
       { icon: "github", link: "https://github.com/xoriin/netmap" }
     ],
     footer: {
-      message: "Based on NetMap v1.7.0 at the time of writing.",
+      message: "NetMap documentation",
       copyright: "NetMap"
     }
   },
