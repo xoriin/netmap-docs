@@ -59,6 +59,7 @@
   - [Integration Patterns](./guides/integration-patterns.md)
 - API
   - [API Overview](./api/api-overview.md)
+  - [API Quick Start](./api/quick-start.md)
   - [API Authentication](./api/authentication.md)
   - [API Permissions](./api/permissions.md)
   - [API Errors](./api/errors.md)

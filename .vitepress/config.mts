@@ -190,6 +190,7 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: "API Overview", link: "/api/api-overview" },
+          { text: "API Quick Start", link: "/api/quick-start" },
           { text: "API Authentication", link: "/api/authentication" },
           { text: "API Permissions", link: "/api/permissions" },
           { text: "API Errors", link: "/api/errors" },
