@@ -1,47 +1,68 @@
 ---
 title: VLANs And Groups
 sidebar_position: 5
-keywords: [VLANs, groups]
+keywords: [VLANs, groups, subnets, IPAM]
 ---
 
 # VLANs And Groups
 
-Groups organise topology and can carry VLAN metadata. The workspace provides a summary, searchable/resizable table, and editor. Write actions require `topology_write`.
+Groups organise your devices on the topology map and can carry VLAN and subnet details. Open **VLANs** in the sidebar; the page is titled **Groups & VLANs**. Anyone signed in can view it, and creating, editing or deleting groups needs `topology_write`.
 
-## Group fields
+## The Groups & VLANs Page
 
-Create or edit a group with an internal name, display name, optional VLAN ID, CIDR/IP range, gateway, DHCP start/end, DNS servers, description, and colour. VLAN IDs are numeric when supplied; ranges and gateways must be valid addresses/CIDRs. An explicit colour is used for chips and topology zones; without one, the stable entity-colour palette is derived from the canonical name.
+**Devices by VLAN** is a column chart of how many devices each group or VLAN holds, largest first. Each column is labelled with the group's display name and VLAN ID and uses the group's colour. Select a column to open IPAM with that group's subnet selected; NetMap matches the subnet by CIDR first, then by VLAN ID.
 
-## Assignments and reset
+Beside the chart are four cards:
 
-Assign devices from Inventory, Device Details, Topology bulk selection, or discovery. An explicit `topology_group_id` is distinct from an inferred group label supplied by topology relationships. **Reset device assignments** clears explicit assignments for the selected group after confirmation; it does not delete the group, devices, or inferred relationship labels.
+- **Groups**, with how many lack a VLAN ID;
+- **Devices assigned**, with how many devices are ungrouped;
+- **Usable addresses**, summed across every group subnet;
+- **Largest subnet**, with its group and usable address count.
 
-The table can search by name, display name, VLAN ID, range, gateway, or DNS text and sort its available columns. Drag a column divider to resize it; double-click to restore default widths. The widths are browser-local preferences.
+## Find A Group
 
-## IPAM synchronisation
+Search with **Search groups…** to match names, display names, VLAN IDs, subnets, gateways, DNS servers or descriptions. The table shows **Name**, **VLAN**, **Subnet** (with its usable address count), **Gateway**, **DNS** and **Devices**, and you can sort by name, VLAN, subnet or devices.
 
-VLAN metadata can be imported into IPAM as subnet suggestions. When a group edit matches multiple subnet rows by CIDR and VLAN, the canonical row already using that group CIDR wins. This prevents a DNS-only edit from violating the unique CIDR constraint. Review the resulting IPAM row rather than assuming every matching row was changed.
+Rows marked **inferred** come from group labels on devices that have no saved group yet. Drag a column divider to resize it, double-click a divider to reset all columns, or use **Reset columns**.
 
-## Delete and troubleshoot
+## Create Or Edit A Group
 
-Deleting a group requires confirmation. Devices are not deleted, but their explicit group assignment is cleared and topology/IPAM relationships may change. Before deleting, review assigned devices and matching subnets.
+1. Select **+ New group**, or **Edit** on a row.
+2. Enter a **Name**. **Display name**, **VLAN ID**, **Subnet (CIDR)**, **Gateway**, **DNS servers** and **Description** are optional.
+3. Select **Create group** or **Save changes**.
+
+Editing an inferred row opens a new group prefilled with its name. Group colours are set in Admin under [Devices And Icons](../administer/devices-and-icons.md).
+
+## Assign Devices
+
+Assign devices to a group from Inventory, the device details window, Topology bulk selection or discovery. See [Inventory](./inventory.md#columns-and-selection) for bulk assignment.
+
+## Delete A Group
+
+Select **Delete** on a row and confirm with **Delete group**. Devices are not deleted, but their group assignment is cleared, so review the assigned devices and any matching IPAM subnets first.
+
+## Use Groups In IPAM
+
+In IPAM, **Import from VLANs** offers every group with a valid subnet as a new subnet, and marks those already imported. See [IPAM](./ipam.md#vlan-suggestions-and-performance).
+
+## Troubleshooting
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| cannot save group | missing `topology_write` | update role permissions |
-| IPAM suggestion missing | group lacks a valid range/CIDR | correct the group range and retry |
-| device appears ungrouped | no explicit assignment | assign it from Inventory, Details, or Topology |
-| duplicate CIDR warning | multiple matching subnet rows | retain the canonical row and merge/remove the duplicate through IPAM |
+| You cannot save a group | Your role lacks `topology_write` | Ask a SuperAdmin to update your role |
+| A group is missing from **Import from VLANs** | The group has no valid subnet | Add a CIDR in **Subnet (CIDR)** and try again |
+| A device appears ungrouped | It has no group assignment | Assign it from Inventory, device details or Topology |
+| Selecting a column opens IPAM with nothing selected | No IPAM subnet matches the group's CIDR or VLAN ID | Import or create the subnet in IPAM |
 
-## API equivalents
+## Use The API
 
 - `GET /api/v1/topology/groups`
 - `POST /api/v1/topology/groups`
 - `PATCH /api/v1/topology/groups/{group_id}`
 - `DELETE /api/v1/topology/groups/{group_id}`
-- `POST /api/v1/topology/groups/reset-device-assignments`
+- `POST /api/v1/topology/groups/reset-device-assignments` clears the group assignment of every device; the web app does not offer this action.
 
-## Related pages
+## Related Pages
 
 - [IPAM](./ipam.md)
 - [Topology](./topology.md)
