@@ -58,7 +58,7 @@
 - Administer
   - [Administration](./using-netmap/admin.md)
   - [Permissions](./administer/permissions.md)
-  - [Two-Factor Authentication](./security/two-factor-authentication.md)
+  - [Two-Factor Authentication](./administer/two-factor-authentication.md)
   - [Configuration Reference](./configuration/configuration.md)
   - [Environment Variables](./configuration/environment-variables.md)
   - [Storage](./configuration/storage.md)

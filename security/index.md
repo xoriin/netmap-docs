@@ -25,7 +25,7 @@ NetMap assumes you control the host, the Docker daemon, the persistent data dire
 | Refresh cookie | Renewing a browser session | The refresh token is kept in the HttpOnly `netmap_refresh` cookie. |
 | API key | REST automation | Sent only in `X-API-Key` and resolved to the user who owns it. See [API Authentication](../api/authentication.md). |
 
-Failed-sign-in thresholds, progressive delay, lockouts, password-reset expiry, and the optional idle timeout limit credential abuse. Lockout responses include `Retry-After`; see [Sign-In Lockout](../api/rate-limits.md#sign-in-lockout). Two-factor authentication is covered on [Two-Factor Authentication](./two-factor-authentication.md).
+Failed-sign-in thresholds, progressive delay, lockouts, password-reset expiry, and the optional idle timeout limit credential abuse. Lockout responses include `Retry-After`; see [Sign-In Lockout](../api/rate-limits.md#sign-in-lockout). Two-factor authentication is covered on [Two-Factor Authentication](../administer/two-factor-authentication.md).
 
 ## Authorization
 
@@ -85,7 +85,7 @@ To report a vulnerability, see [Vulnerability Reporting](./vulnerability-reporti
 ## Related Pages
 
 - [Permissions](../administer/permissions.md)
-- [Two-Factor Authentication](./two-factor-authentication.md)
+- [Two-Factor Authentication](../administer/two-factor-authentication.md)
 - [Secrets Management](./secrets-management.md)
 - [Network Exposure](./network-exposure.md)
 - [API Authentication](../api/authentication.md)

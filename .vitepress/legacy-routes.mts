@@ -142,4 +142,5 @@ export const movedDocumentationRoutes: Record<string, string> = {
   "security.md": "security/index.md",
   "security/security-model.md": "security/index.md",
   "security/permissions.md": "administer/permissions.md",
+  "security/two-factor-authentication.md": "administer/two-factor-authentication.md",
 };

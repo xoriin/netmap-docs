@@ -20,7 +20,7 @@ Device icon packs include built-ins and custom packs stored in browser local sto
 
 ## Two-factor authentication
 
-Local accounts can turn on an authenticator-app code for sign-in, save one-time recovery codes, generate a new set, or turn it off (unless an administrator requires it). SSO-only accounts do not see this row. See [Two-Factor Authentication](../security/two-factor-authentication.md).
+Local accounts can turn on an authenticator-app code for sign-in, save one-time recovery codes, generate a new set, or turn it off (unless an administrator requires it). SSO-only accounts do not see this row. See [Two-Factor Authentication](../administer/two-factor-authentication.md).
 
 ## Personal API keys
 
@@ -38,7 +38,7 @@ The list shows each active key's name, a mask with its last four characters, and
 
 ## Related pages
 
-- [Two-Factor Authentication](../security/two-factor-authentication.md)
+- [Two-Factor Authentication](../administer/two-factor-authentication.md)
 - [API Keys](../api/authentication.md#api-keys)
 - [API Authentication](../api/authentication.md)
 - [API-Key Problems](../troubleshooting/api-key-problems.md)

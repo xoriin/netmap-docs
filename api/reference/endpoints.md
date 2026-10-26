@@ -75,7 +75,7 @@ Once any user exists, `POST /api/v1/setup/admin` returns `409` (`Initial setup i
 | DELETE | `/api/v1/auth/me/chart-views/{chart_id}` | Signed in | Reset one chart view |
 | DELETE | `/api/v1/auth/me/chart-views` | Signed in | Reset all your chart views |
 
-`DELETE /api/v1/auth/me/totp` needs your `password` and a current `code`. It returns `403` `Two-factor authentication is required for your role` when an administrator requires two-factor authentication for your role; see [Two-Factor Authentication](../../security/two-factor-authentication.md#require-it-for-users-superadmin).
+`DELETE /api/v1/auth/me/totp` needs your `password` and a current `code`. It returns `403` `Two-factor authentication is required for your role` when an administrator requires two-factor authentication for your role; see [Two-Factor Authentication](../../administer/two-factor-authentication.md#require-it-for-users-superadmin).
 
 `chart_id` must match `[a-z][a-z0-9._-]{0,119}`; anything else returns `422`.
 

@@ -46,7 +46,7 @@ POST /api/v1/auth/users/{user_id}/unlock-login
 - **Authenticator lost:** sign in with a saved recovery code, or ask a SuperAdmin to use **Reset 2FA** in Admin → Users.
 - **Only SuperAdmin locked out:** run `docker exec <container> netmap-admin reset-2fa <username>` on the host.
 
-See [Two-Factor Authentication](../security/two-factor-authentication.md).
+See [Two-Factor Authentication](../administer/two-factor-authentication.md).
 
 ## Require SSO
 

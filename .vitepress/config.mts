@@ -190,7 +190,7 @@ export default defineConfig({
         items: [
           { text: "Administration", link: "/using-netmap/admin" },
           { text: "Permissions", link: "/administer/permissions" },
-          { text: "Two-Factor Authentication", link: "/security/two-factor-authentication" },
+          { text: "Two-Factor Authentication", link: "/administer/two-factor-authentication" },
           { text: "Configuration Reference", link: "/configuration/configuration" },
           { text: "Environment Variables", link: "/configuration/environment-variables" },
           { text: "Storage", link: "/configuration/storage" },
