@@ -68,6 +68,6 @@ http://127.0.0.1:8080/api/docs
 
 ## Related Pages
 
-- [Endpoint Reference](./endpoint-reference.md)
+- [Endpoint Reference](./reference/endpoints.md)
 - [API Authentication](./authentication.md)
 - [API Errors](./errors.md)

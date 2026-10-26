@@ -77,7 +77,6 @@ export const legacyDocumentationRoutes = {
   "api/openapi-swagger.md": "api/openapi-swagger.md",
   "api/capability-matrix.md": "api/capability-matrix.md",
   "api/reference/endpoints.md": "api-reference.md",
-  "api/endpoint-reference.md": "api/endpoint-reference.md",
   "operations/operations.md": "operations.md",
   "operations/health-checks.md": "operations/health-checks.md",
   "operations/logging.md": "operations/logging.md",
@@ -136,4 +135,5 @@ export const retiredDocumentationRoutes = [
 // canonical source file that replaced them. Numbered section variants are derived too.
 export const movedDocumentationRoutes: Record<string, string> = {
   "api/api-reference.md": "api/reference/endpoints.md",
+  "api/endpoint-reference.md": "api/reference/endpoints.md",
 };

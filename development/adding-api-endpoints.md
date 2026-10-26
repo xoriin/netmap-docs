@@ -52,4 +52,4 @@ Update:
 
 - [Backend Development](./backend-development.md)
 - [API Authentication](../api/authentication.md)
-- [Endpoint Reference](../api/endpoint-reference.md)
+- [Endpoint Reference](../api/reference/endpoints.md)
