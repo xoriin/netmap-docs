@@ -33,7 +33,7 @@ All paths are under `/api/v1/status-integrations`.
 | `PATCH /maintenance/{id}` | Change a window this token created |
 | `DELETE /maintenance/{id}` | Delete a window this token created |
 
-## Scope rules
+## Scope Rules
 
 - A token may name only pages it was granted. Naming another page returns `403`.
 - A token can update or resolve only the incidents it created, and only while every page in that incident's audience is still within its scope. It cannot touch incidents opened by NetMap or by a person, or other tokens' notices.
@@ -41,7 +41,7 @@ All paths are under `/api/v1/status-integrations`.
 - Unknown IDs and IDs outside the token's reach return the same `404`, so IDs cannot be probed.
 - Item references are `{"device": 12}`, `{"monitor": 3}` or `{"device": 12, "service_check": 7}`. They must be items shown on at least one page the token is allowed to use, and the incident or window is published on exactly the pages that show them. The editor shows each item's ID.
 
-## Common behaviour
+## Common Behaviour
 
 | | |
 |---|---|
@@ -134,7 +134,7 @@ curl -X DELETE https://netmap.example.com/api/v1/status-integrations/maintenance
   -H "Authorization: Bearer nmsp_abc123def456_REPLACE_WITH_SECRET"
 ```
 
-## Fields and limits
+## Fields And Limits
 
 | Field | Limit |
 |---|---|
@@ -160,7 +160,7 @@ curl -X DELETE https://netmap.example.com/api/v1/status-integrations/maintenance
 | `422` | Invalid body, or the `Idempotency-Key` was already used with a different body |
 | `429` | Over 60 writes a minute (with `Retry-After`), or too many failed token attempts |
 
-## Related pages
+## Related Pages
 
 - [Status Pages](../../using-netmap/status-pages.md)
 - [Permissions](../../security/permissions.md)
