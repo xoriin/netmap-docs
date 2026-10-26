@@ -336,7 +336,7 @@ NetworkAdmin can always change monitors. Other roles need `monitoring_write`, ot
 | GET | `/api/v1/alerts/deliveries` | `alert_write` | Recent notification deliveries |
 | GET | `/api/v1/alerts/events` | Signed in | Alert events |
 
-Alert rules carry two status page fields: `open_incident` and `incident_min_failures` (1 to 20, default 3). See [Create An Alert Rule](../../guides/create-alert-rule.md).
+Alert rules carry two status page fields: `open_incident` and `incident_min_failures` (1 to 20, default 3). If you omit `open_incident` when you create a rule, it takes the default for the event type. It is always stored as `false` for `device_online`, `any_status_change` and `device_expected_state_restored`, even if you send `true`. See [Create An Alert Rule](../../guides/create-alert-rule.md).
 
 ## IPAM
 
