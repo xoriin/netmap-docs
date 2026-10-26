@@ -272,7 +272,7 @@ Layouts belong to the user who saved them. Another user's layout ID returns `404
 | POST | `/api/v1/discovery/observations/{observation_id}/apply` | `discovery_manage` and `topology_write` | Apply an observation to inventory |
 | POST | `/api/v1/discovery/import` | `discovery_manage` and `topology_write` | Import scan results into inventory |
 
-`GET /api/v1/discovery/observations/summary` accepts `days` (default 14; values outside 1 to 90 are clamped) and returns `days`, one entry per day with `date`, `new_device`, `ip_change`, `disappeared` and `other` counts, plus `open` (open and acknowledged observations) and `resolved` totals.
+`GET /api/v1/discovery/observations/summary` accepts `days` (default 14; values outside 1 to 90 are clamped) and returns `days`, one entry per day with `date`, `new_device`, `ip_change`, `disappeared` and `other` counts, plus `open` (open and acknowledged) and `resolved` counts across all observations, not only the period.
 
 `POST /api/v1/discovery/schedules/{schedule_id}/run` returns `409` when the schedule is disabled or a scan for it is already running.
 
