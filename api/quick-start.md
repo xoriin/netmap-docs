@@ -114,4 +114,4 @@ Any signed-in user can list devices. Creating or changing one needs `topology_wr
 
 - [API Authentication](./authentication.md) for rotating and revoking keys.
 - [Endpoint Reference](./reference/endpoints.md) for every endpoint and the permission it needs.
-- [Automation](../guides/automation-with-api-keys.md) for scripting patterns.
+- [Automation](./guides/automation.md) for scripting patterns.

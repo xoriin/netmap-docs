@@ -180,9 +180,7 @@ export default defineConfig({
           { text: "Import DHCP Leases", link: "/guides/import-dhcp-leases" },
           { text: "Create An IP Reservation", link: "/guides/create-ip-reservation" },
           { text: "Search Syslog Events", link: "/guides/search-syslog" },
-          { text: "Export Data", link: "/guides/export-data" },
-          { text: "Automation With API Keys", link: "/guides/automation-with-api-keys" },
-          { text: "Integration Patterns", link: "/guides/integration-patterns" }
+          { text: "Export Data", link: "/guides/export-data" }
         ]
       },
       {
@@ -195,6 +193,7 @@ export default defineConfig({
           { text: "API Permissions", link: "/api/permissions" },
           { text: "API Errors", link: "/api/errors" },
           { text: "Rate Limits", link: "/api/rate-limits" },
+          { text: "Automation", link: "/api/guides/automation" },
           { text: "OpenAPI And Swagger", link: "/api/reference/openapi" },
           { text: "Endpoint Reference", link: "/api/reference/endpoints" }
         ]

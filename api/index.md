@@ -61,7 +61,7 @@ All endpoints are under `/api/v1`. NetMap does not publish a deprecation policy,
 | [API Permissions](./permissions.md) | See what each role can do. |
 | [API Errors](./errors.md) | Look up a status code or error message. |
 | [Rate Limits](./rate-limits.md) | Plan request volume. |
-| [Automation](../guides/automation-with-api-keys.md) | Build scripts and integrations. |
+| [Automation](./guides/automation.md) | Build scripts and integrations. |
 | [Status Page Integrations](../using-netmap/status-page-integrations.md) | Post incidents and maintenance from other tools. |
 | [Endpoint Reference](./reference/endpoints.md) | Find an endpoint and the permission it needs. |
 | [OpenAPI And Swagger](./reference/openapi.md) | Read request and response schemas, and try calls. |

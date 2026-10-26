@@ -63,7 +63,6 @@ export const legacyDocumentationRoutes = {
   "guides/create-ip-reservation.md": "guides/create-ip-reservation.md",
   "guides/search-syslog.md": "guides/search-syslog.md",
   "guides/export-data.md": "guides/export-data.md",
-  "guides/automation-with-api-keys.md": "guides/automation-with-api-keys.md",
   "api/authentication.md": "api/authentication.md",
   "api/errors.md": "api/errors.md",
   "api/rate-limits.md": "api/rate-limits.md",
@@ -138,4 +137,6 @@ export const movedDocumentationRoutes: Record<string, string> = {
   "security/api-key-security.md": "api/authentication.md",
   "api-overview.md": "api/index.md",
   "api/api-overview.md": "api/index.md",
+  "guides/automation-with-api-keys.md": "api/guides/automation.md",
+  "guides/integration-patterns.md": "api/guides/automation.md",
 };

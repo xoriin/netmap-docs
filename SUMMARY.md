@@ -55,8 +55,6 @@
   - [Create An IP Reservation](./guides/create-ip-reservation.md)
   - [Search Syslog Events](./guides/search-syslog.md)
   - [Export Data](./guides/export-data.md)
-  - [Automation With API Keys](./guides/automation-with-api-keys.md)
-  - [Integration Patterns](./guides/integration-patterns.md)
 - API
   - [API Overview](./api/index.md)
   - [API Quick Start](./api/quick-start.md)
@@ -64,6 +62,7 @@
   - [API Permissions](./api/permissions.md)
   - [API Errors](./api/errors.md)
   - [Rate Limits](./api/rate-limits.md)
+  - [Automation](./api/guides/automation.md)
   - [OpenAPI And Swagger](./api/reference/openapi.md)
   - [Endpoint Reference](./api/reference/endpoints.md)
 - Operations
