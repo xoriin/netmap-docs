@@ -6,25 +6,13 @@ keywords: [inventory, devices]
 
 # Inventory
 
-Inventory is the authoritative, searchable device table. It combines the fleet summary, filters, a resizable device grid, a details drawer, and write actions for users with `topology_write`.
+Inventory is the searchable table of every device NetMap knows about. Any signed-in user can view it; creating, editing, importing, bulk editing and deleting need `topology_write`.
 
-API equivalents:
-
-- `GET /api/v1/topology/devices`
-- `POST /api/v1/topology/devices`
-- `PATCH /api/v1/topology/devices/{device_id}`
-- `DELETE /api/v1/topology/devices/{device_id}`
-- `POST /api/v1/topology/devices/import`
-
-## Who Can Access It
-
-Any authenticated user can view inventory. Create, update, delete, import, and bulk-edit actions require `topology_write`.
-
-## Workspace tour
+## Workspace Tour
 
 The header contains the device total and refresh state. The toolbar provides search, status/favourite/group/site/type filters, Add device, Scan, Import, and the bulk-actions menu. The grid shows identity, health, type, group/VLAN, location, and monitoring information; select a row to open its overview drawer. Pagination and page size are local browser preferences.
 
-## Search, filters, and sorting
+## Search, Filters And Sorting
 
 Search matches rendered identity fields, including display name, hostname, IP address, MAC address, vendor, and operating-system text. Filters can be combined:
 
@@ -36,7 +24,7 @@ Search matches rendered identity fields, including display name, hostname, IP ad
 
 Click a sortable header to change direction. IP columns use numeric address ordering rather than lexical string ordering.
 
-## Typical workflow
+## Typical Workflow
 
 1. Open Inventory.
 2. Search or filter the device list.
@@ -45,51 +33,48 @@ Click a sortable header to change direction. IP columns use numeric address orde
 5. Use import for bulk onboarding.
 6. Move to Topology when relationships or layout need attention.
 
-## Columns and selection
+## Columns And Selection
 
-Drag a column divider to resize one column. The first drag freezes the currently rendered widths; widths are saved in `netmap.inv_col_widths_v1`. Double-click a divider to reset the flexible defaults. Wide grids scroll horizontally without shrinking row backgrounds. Select individual rows or use the header selection control; the bulk menu appears when at least one row is selected.
+Drag a column divider to resize one column; your widths are saved in this browser. Double-click a divider to reset the defaults. Wide grids scroll sideways. Select individual rows or use the header selection control; the bulk menu appears when at least one row is selected.
 
 Bulk actions can assign a group/VLAN, device type, or location (including clearing a value), pause or resume monitoring, and delete devices. Every destructive operation asks for confirmation. Bulk edits require `topology_write`; deleting a device also removes or detaches related records according to the API device-delete rules.
 
-## Details drawer and manual editing
+## Details Drawer And Manual Editing
 
 Selecting a row opens the device overview drawer. It includes health, heartbeat/RTT information, identity and metadata, favourite state, monitoring controls, and links to related security activity when the user has security permission. Double-click editable fields, press Enter to save, Escape to cancel, or leave the field to blur-save. Use [Add A Device](../guides/add-device.md) for the complete field workflow.
 
-## Import and export
+## Import And Export
 
 Import accepts `.csv` and `.json`. The modal parses the file locally, previews rows, marks invalid rows, and enables import only for valid records. Correct rejected rows and upload again rather than assuming a partial import succeeded. See [Import Devices](../guides/import-devices.md) for the column contract and duplicate handling.
 
 Inventory export is available from the Exports workspace for supported formats and permissions; use the direct inventory view for interactive filtering before exporting.
 
-## Colours, icons, and permissions
+## Colours And Icons
 
-Group/VLAN, location, and device-type values render as stable entity chips. Explicit configured colours win; otherwise a stable name hash selects a palette colour. The Profile → Preferences **Colour-coded entities** setting can disable tinting while preserving icons and layout. Built-in device types use standard icons; custom types use their configured icon. Native option colours are not relied on, so pickers use the same swatch component as the table.
+Group/VLAN, location, and device-type values render as stable entity chips. Explicit configured colours win; otherwise a stable name hash selects a palette colour. The Profile → Preferences **Colour-coded entities** setting can disable tinting while preserving icons and layout. Built-in device types use standard icons; custom types use their configured icon.
 
-Viewing requires authentication. Creating, editing, bulk updating, importing, and deleting require `topology_write`; security summaries additionally require the security-view permission. A hidden action is normally a permission or lifecycle restriction, not a failed save.
+Security summaries in the drawer also need `security_view`. A missing action usually means a permission or lifecycle restriction, not a failed save.
 
-## Cloud assets
+## Cloud Assets
 
-**Inventory → Cloud assets** (`/inventory#cloud-assets`) lists saved cloud resources together with External IPs addresses, with provider, location, type, monitoring, and favourite filters, and search. It opens with a **Cloud Assets by Type** ring beside the **Cloud assets**, **Linked devices**, **Offline**, and **Not linked** cards; select **Offline** or **Not linked** to filter the list. Monitoring and latency come from the linked Inventory device; an unlinked row shows **Not monitored**. Manage addresses themselves in [External IPs](./external-ipam.md).
+The **Cloud assets** tab lists saved cloud resources alongside your external IP addresses; see [Cloud Assets](./cloud-assets.md).
 
-- **Add cloud asset** (requires `ipam_write`) records a name, type, provider, account, region, and description. Names are unique per provider account.
-- **Types:** built-in types are Server, Load balancer, Database, Storage, Network, and Other. **Add type…** in the type picker creates a custom type; a name that matches an existing type reuses it.
-- **Add to Inventory** is on by default when you also have `topology_write`: after saving, the device form opens prefilled from the asset, and the new device is linked. Turn it off to pick an existing device or leave the asset unlinked.
-- **Asset Overview:** select a row, then double-click a field to edit it (`ipam_write`). **Link device**, **Unlink**, **Add to Inventory**, **Open device**, and **Show in Devices** manage and follow the device link. Creating a device for an address that an existing device already uses offers to link that device instead.
-- Cloud assets cannot be deleted from the workspace or the API.
-
-API equivalents: `GET`/`POST /api/v1/ipam/external/assets`, `PATCH /api/v1/ipam/external/assets/{asset_id}`, `GET`/`POST /api/v1/ipam/external/asset-types`.
-
-## Example: List Devices
+## Use The API
 
 ```bash
-API_URL="https://netmap.example.com"
-API_KEY="<api-key>"
-
 curl --fail-with-body \
-  --url "${API_URL}/api/v1/topology/devices" \
-  --header "X-API-Key: ${API_KEY}" \
+  --url "${NETMAP_URL}/api/v1/topology/devices" \
+  --header "X-API-Key: ${NETMAP_API_KEY}" \
   --header "Accept: application/json"
 ```
+
+Other device endpoints:
+
+- `GET /api/v1/topology/devices`
+- `POST /api/v1/topology/devices`
+- `PATCH /api/v1/topology/devices/{device_id}`
+- `DELETE /api/v1/topology/devices/{device_id}`
+- `POST /api/v1/topology/devices/import`
 
 ## Common Problems
 

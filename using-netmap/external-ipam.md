@@ -74,7 +74,7 @@ Before 1.7.0, External IPs were organised as **Provider → Cloud service/area �
 
 The upgrade checks that every address it should carry forward was written. If the counts do not match, the whole upgrade is rolled back and the database is left as it was.
 
-**Inventory → Cloud assets** lists these addresses alongside saved cloud resources, each with an optional Inventory device link. See [Inventory → Cloud assets](./inventory.md#cloud-assets).
+**Inventory → Cloud assets** lists these addresses alongside saved cloud resources, each with an optional Inventory device link. See [Inventory → Cloud assets](./cloud-assets.md).
 
 ## Ownership conventions
 

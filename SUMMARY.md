@@ -19,6 +19,7 @@
   - [Dashboard](./using-netmap/dashboard.md)
   - [Topology](./using-netmap/topology.md)
   - [Inventory](./using-netmap/inventory.md)
+  - [Cloud Assets](./using-netmap/cloud-assets.md)
   - [Device Details](./using-netmap/device-details.md)
   - [VLANs And Groups](./using-netmap/vlans.md)
   - [Locations](./using-netmap/locations.md)

@@ -136,6 +136,7 @@ export default defineConfig({
           { text: "Dashboard", link: "/using-netmap/dashboard" },
           { text: "Topology", link: "/using-netmap/topology" },
           { text: "Inventory", link: "/using-netmap/inventory" },
+          { text: "Cloud Assets", link: "/using-netmap/cloud-assets" },
           { text: "Device Details", link: "/using-netmap/device-details" },
           { text: "VLANs And Groups", link: "/using-netmap/vlans" },
           { text: "Locations", link: "/using-netmap/locations" },
