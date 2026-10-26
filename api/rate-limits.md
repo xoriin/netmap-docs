@@ -15,7 +15,6 @@ Rate limits protect expensive network tools, login, discovery, and API-key authe
 | Tools | 20 calls per 60 seconds |
 | Discovery | 60 seconds between scans |
 | Login failures | 5 failures, then 15 minutes |
-
 | Public status page reads | 600 requests per 60 seconds per client IP, 6000 per 60 seconds overall |
 | Status integration token writes | 60 writes per 60 seconds per token |
 
