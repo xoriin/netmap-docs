@@ -1,6 +1,7 @@
 import { defineConfig } from "vitepress";
 import {
   legacyDocumentationRoutes,
+  movedDocumentationRoutes,
   numberedDocumentationSections,
   retiredDocumentationRoutes,
 } from "./legacy-routes.mts";
@@ -24,7 +25,7 @@ export default defineConfig({
           const emitRedirect = (sourcePath: string, legacyPath: string) => {
             if (sourcePath === legacyPath || emittedPaths.has(legacyPath)) return;
 
-            const target = `/${sourcePath.replace(/\.md$/, "")}`;
+            const target = `/${sourcePath.replace(/(^|\/)index\.md$/, "$1").replace(/\.md$/, "")}`;
             const fileName = legacyPath === "index.md"
               ? "index.html"
               : legacyPath.replace(/\.md$/, ".html");
@@ -47,6 +48,17 @@ export default defineConfig({
               section as keyof typeof numberedDocumentationSections
             ];
             if (numberedSection) {
+              emitRedirect(sourcePath, `${numberedSection}/${relativePath.join("/")}`);
+            }
+          }
+
+          for (const [legacyPath, sourcePath] of Object.entries(movedDocumentationRoutes)) {
+            emitRedirect(sourcePath, legacyPath);
+            const [section, ...relativePath] = legacyPath.split("/");
+            const numberedSection = numberedDocumentationSections[
+              section as keyof typeof numberedDocumentationSections
+            ];
+            if (numberedSection && relativePath.length > 0) {
               emitRedirect(sourcePath, `${numberedSection}/${relativePath.join("/")}`);
             }
           }

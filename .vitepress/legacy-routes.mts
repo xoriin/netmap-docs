@@ -131,3 +131,8 @@ export const retiredDocumentationRoutes = [
   "about-documentation/reporting-documentation-problems.md",
   "about-documentation/coverage-report.md",
 ] as const;
+
+// Former routes of pages that were moved or merged into another page, mapped to the
+// canonical source file that replaced them. Numbered section variants are derived too.
+export const movedDocumentationRoutes: Record<string, string> = {
+};
