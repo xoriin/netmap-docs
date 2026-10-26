@@ -61,6 +61,7 @@ Validation errors return `422` with a list of problems:
 | `401` | `Invalid or expired token` | Sign in again. If you sent an API key as `Authorization: Bearer`, use `X-API-Key` instead. |
 | `401` | `Invalid or inactive user` | The account that owns the key is disabled or deleted. |
 | `403` | `CSRF token required` | A browser-session request changed data without the `X-CSRF-Token` header. Scripts should use an API key. |
+| `403` | `Two-factor authentication is required for your role` | Two-factor authentication cannot be turned off while the sign-in policy requires it for your role. |
 | `429` | `API key rate limit exceeded` | Slow down and retry after the window. |
 | `429` | `Too many failed API key attempts; try again later` | Fix the key, then wait for the lockout to end. |
 
