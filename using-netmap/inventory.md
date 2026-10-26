@@ -67,6 +67,18 @@ Group/VLAN, location, and device-type values render as stable entity chips. Expl
 
 Viewing requires authentication. Creating, editing, bulk updating, importing, and deleting require `topology_write`; security summaries additionally require the security-view permission. A hidden action is normally a permission or lifecycle restriction, not a failed save.
 
+## Cloud assets
+
+**Inventory → Cloud assets** (`/inventory#cloud-assets`) lists saved cloud resources together with External IPs addresses, with a type breakdown, linked/offline/not-linked counts, provider, location, type, monitoring, and favourite filters, and search. Monitoring and latency come from the linked Inventory device; an unlinked row shows **Not monitored**. Manage addresses themselves in [External IPs](./external-ipam.md).
+
+- **Add cloud asset** (requires `ipam_write`) records a name, type, provider, account, region, and description. Names are unique per provider account.
+- **Types:** built-in types are Server, Load balancer, Database, Storage, Network, and Other. **Add type…** in the type picker creates a custom type; a name that matches an existing type reuses it.
+- **Add to Inventory** is on by default when you also have `topology_write`: after saving, the device form opens prefilled from the asset, and the new device is linked. Turn it off to pick an existing device or leave the asset unlinked.
+- **Asset Overview:** select a row, then double-click a field to edit it (`ipam_write`). **Link device**, **Unlink**, **Add to Inventory**, **Open device**, and **Show in Devices** manage and follow the device link. Creating a device for an address that an existing device already uses offers to link that device instead.
+- Cloud assets cannot be deleted from the workspace or the API.
+
+API equivalents: `GET`/`POST /api/v1/ipam/external/assets`, `PATCH /api/v1/ipam/external/assets/{asset_id}`, `GET`/`POST /api/v1/ipam/external/asset-types`.
+
 ## Example: List Devices
 
 ```bash

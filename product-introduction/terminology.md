@@ -201,7 +201,9 @@ External IP tracking is for administrators and operators who manage provider-ass
 
 External IPAM is a flat register: each row is one public **address** with a status (**in use**, **reserved**, or **available**), an optional **purpose**, owner, URL, tags, notes, and an optional link to the Inventory device holding it. An address can optionally sit in a **location** — a region, datacentre, or site — and a location can optionally belong to a **provider account** under a cloud or ISP **provider**. None of these are required: an address with no location is listed under **Unassigned**.
 
-Releases before 1.7.0 used a Provider → Cloud service/area → Allocation → Address hierarchy and an **Inventory → Cloud assets** view; upgrading flattens them automatically into this register.
+Releases before 1.7.0 used a Provider → Cloud service/area → Allocation → Address hierarchy; upgrading flattens it automatically into this register.
+
+A **cloud asset** is a saved cloud resource (for example a server, load balancer, or database) with an optional provider, account, region, description, and Inventory device link. **Inventory → Cloud assets** lists cloud assets and external addresses together; see [Inventory → Cloud assets](../using-netmap/inventory.md#cloud-assets).
 
 ### Validation rules
 
