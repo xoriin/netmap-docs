@@ -21,7 +21,7 @@ This page separates implemented protections from deployment responsibilities.
 | Sessions | Access tokens are short-lived; refresh tokens are stored in HttpOnly cookies. |
 | Login abuse | Persistent per-account throttling is combined with a higher source-IP threshold to remain safer for shared NATs; lockouts return `Retry-After`. |
 | CSRF | Double-submit CSRF middleware protects cookie-authenticated mutating requests. `X-API-Key` and bearer requests are exempt. |
-| API keys | Plaintext shown once; prefix stored; full key HMAC-SHA256 digest stored. |
+| API keys | Plaintext shown once; lookup prefix and last four characters stored; full key stored as an HMAC-SHA256 digest. |
 | API-key auth order | `X-API-Key` is checked before bearer/cookie auth. |
 | API-key rate limiting | Per-key fixed-window calls and per-source-IP invalid lookup lockout. |
 | Roles | `SuperAdmin`, `NetworkAdmin`, `SecurityAnalyst`, `Viewer`, plus custom roles. SuperAdmin bypasses permission checks. |

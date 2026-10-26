@@ -24,9 +24,9 @@ Local accounts can turn on an authenticator-app code for sign-in, save one-time 
 
 ## Personal API keys
 
-Create a key with a name and optional expiry (never, 30, 90, or 365 days). The full `nm_<prefix>_<secret>` value is shown exactly once. Store it in a secret manager immediately. NetMap stores only the plaintext prefix and an HMAC-SHA256 digest, so the secret cannot be displayed later.
+Create a key with a name and optional expiry (never, 30, 90, or 365 days). The full `nm_<prefix>_<secret>` value is shown exactly once. Store it in a secret manager immediately. NetMap stores only the lookup prefix, the last four characters and an HMAC-SHA256 digest, so the secret cannot be displayed later.
 
-The list shows prefix/suffix, creation, expiry, last use, and revocation state. Revoke keys you no longer need; a lost secret cannot be recovered, so revoke it and create a replacement. Key permissions inherit the owner's current role and deactivation immediately prevents use.
+The list shows each active key's name, a mask with its last four characters, and its created, expiry and last-used dates. Revoked keys are not listed. Revoke keys you no longer need; a lost secret cannot be recovered, so revoke it and create a replacement. Key permissions inherit the owner's current role and deactivation immediately prevents use.
 
 ## API equivalents
 

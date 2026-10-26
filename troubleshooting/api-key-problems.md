@@ -44,7 +44,7 @@ In the UI:
 
 1. Sign in as the key owner.
 2. Open Profile.
-3. Review API key name, prefix, expiry, revoked state, last-used time, and last-used IP.
+3. Review the key name, its last four characters, created and expiry dates, and last-used time. Revoked keys are not listed.
 
 SuperAdmins can review all keys from Admin.
 

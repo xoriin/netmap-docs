@@ -30,8 +30,8 @@ API keys are secrets. Never commit them to source control, place them in client-
 | Do role permissions apply? | Yes. The key resolves to its owning `User`; all existing role checks apply live. |
 | Are administrator keys different? | No separate key type. A SuperAdmin-owned key has SuperAdmin access because the owner does. |
 | Is the full key shown once? | Yes, only in `ApiKeyCreateResponse.key`. |
-| What is visible later in the UI? | Only a password-style mask. Profile and Admin never reveal an existing key or its stored lookup prefix. |
-| Storage format | Prefix stored in plaintext; full key stored as HMAC-SHA256 digest using `signing_secret()`. |
+| What is visible later in the UI? | A mask with the key's last four characters (`•••• •••• •••• WXyz`). Keys created before NetMap stored this ending show a full mask until their next successful use. Profile and Admin never show the full key or its lookup prefix. |
+| Storage format | Prefix and last four characters stored in plaintext; full key stored as an HMAC-SHA256 digest using `signing_secret()`. |
 | Header name | `X-API-Key`. Header lookup is case-insensitive through FastAPI/Starlette. |
 | Header format | `nm_<12-character-prefix>_<43-character-secret>`. Prefix and secret are alphanumeric. |
 | Bearer format? | No. Do not send API keys as bearer tokens. |
@@ -80,6 +80,7 @@ Successful response:
   "id": 1,
   "name": "automation",
   "prefix": "AbCdEf123456",
+  "suffix": "CTED",
   "created_at": "2026-07-24T00:00:00Z",
   "expires_at": "2026-10-22T00:00:00Z",
   "last_used_at": null,
