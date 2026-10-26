@@ -63,7 +63,7 @@ Validation errors return `422` with a list of problems:
 | `429` | `API key rate limit exceeded` | Slow down and retry after the window. |
 | `429` | `Too many failed API key attempts; try again later` | Fix the key, then wait for the lockout to end. |
 
-A `403` `detail` names the action that was refused, for example `Topology write access is not permitted for your role`. See [Permissions](../security/permissions.md) for what each role can do.
+A `403` `detail` names the action that was refused, for example `Topology write access is not permitted for your role`. See [API Permissions](./permissions.md) for what each role can do.
 
 ## Related Pages
 

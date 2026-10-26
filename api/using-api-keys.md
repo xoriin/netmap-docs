@@ -64,5 +64,5 @@ with httpx.Client(
 ## Related Pages
 
 - [API Authentication](./authentication.md)
-- [API-Key Permissions](./api-key-permissions.md)
+- [API Permissions](./permissions.md)
 - [Rate Limits](./rate-limits.md)

@@ -62,5 +62,5 @@ Reverse proxies must preserve `X-API-Key`. If direct requests work but proxied r
 ## Related Pages
 
 - [Generating API Keys](./generating-api-keys.md)
-- [API-Key Permissions](./api-key-permissions.md)
+- [API Permissions](./permissions.md)
 - [API Errors](./errors.md)

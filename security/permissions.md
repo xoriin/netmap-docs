@@ -71,6 +71,6 @@ A missing permission returns `403`. Missing or invalid authentication returns `4
 ## Related Pages
 
 - [Status Pages](../using-netmap/status-pages.md)
-- [API-Key Permissions](../api/api-key-permissions.md)
+- [API Permissions](../api/permissions.md)
 - [Permission Errors](../troubleshooting/permission-errors.md)
 - [Security Model](./security-model.md)

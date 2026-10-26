@@ -56,5 +56,5 @@ If `/api/v1/auth/me` works but a feature endpoint returns `403`, the key is vali
 
 - [API Keys](../api/api-keys.md)
 - [API Authentication](../api/authentication.md)
-- [API-Key Permissions](../api/api-key-permissions.md)
+- [API Permissions](../api/permissions.md)
 - [Reverse Proxy Problems](./reverse-proxy-problems.md)

@@ -194,13 +194,12 @@ export default defineConfig({
           { text: "API Authentication", link: "/api/authentication" },
           { text: "Generating API Keys", link: "/api/generating-api-keys" },
           { text: "Using API Keys", link: "/api/using-api-keys" },
-          { text: "API-Key Permissions", link: "/api/api-key-permissions" },
+          { text: "API Permissions", link: "/api/permissions" },
           { text: "Rotating API Keys", link: "/api/rotating-api-keys" },
           { text: "Revoking API Keys", link: "/api/revoking-api-keys" },
           { text: "API Errors", link: "/api/errors" },
           { text: "Rate Limits", link: "/api/rate-limits" },
           { text: "OpenAPI And Swagger", link: "/api/reference/openapi" },
-          { text: "Capability Matrix", link: "/api/capability-matrix" },
           { text: "Endpoint Reference", link: "/api/reference/endpoints" }
         ]
       },

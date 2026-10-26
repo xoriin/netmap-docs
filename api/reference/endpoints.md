@@ -21,7 +21,7 @@ The **Access** column shows what a request needs:
 | A permission, such as `topology_write` | Signed in, and the user's role has that permission. |
 | SuperAdmin | Signed in as a SuperAdmin. |
 
-SuperAdmin passes every permission check except where a row says otherwise. Role defaults are in [API-Key Permissions](../api-key-permissions.md), and error responses are in [Errors](../errors.md).
+SuperAdmin passes every permission check except where a row says otherwise. Role defaults are in [API Permissions](../permissions.md), and error responses are in [Errors](../errors.md).
 
 ## Health And Version
 

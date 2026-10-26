@@ -47,5 +47,5 @@ Some actions require SuperAdmin regardless of named permissions, including role 
 ## Related Pages
 
 - [Permissions](../security/permissions.md)
-- [API-Key Permissions](../api/api-key-permissions.md)
+- [API Permissions](../api/permissions.md)
 - [Administration](../using-netmap/admin.md)
