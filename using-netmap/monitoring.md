@@ -12,6 +12,8 @@ Monitoring has **Devices**, **Endpoints**, and **Status pages** views; **Status 
 
 The Devices view provides summary cards, searchable/filterable/paginated rows, a details panel, heartbeat history, service-check results, uptime, latency, packet loss, last-check time, incidents, and analysis. Sortable columns can be resized and reset; the table keeps fixed widths so one divider does not redistribute other columns.
 
+The view opens with **Fleet Health**, a ring of the devices matching your filters split into **Healthy**, **Unexpected**, **Unknown**, and **Paused**. Beside it are the **Monitored**, **Healthy**, **Unexpected**, **Avg RTT**, **Monitored ports**, and **Live ping** cards. Select **Healthy** or **Unexpected** to filter the table, **Monitored** to clear those filters, or **Monitored ports** to manage service checks.
+
 Above the device table, **Highest Latency** ranks up to six devices by average RTT. **Devices by VLAN** counts every matching device by its VLAN, including **No VLAN** for unassigned devices. Both start as horizontal bars and follow the device table filters across all matching pages. Changing the table page does not change chart membership.
 
 Use the sliders icon in either chart header to change its graphic style. Devices by VLAN supports ring, pie, bars, columns, stacked bar, line, area, dot plot, treemap, gauge, number and data table. **Save my view** remembers your choice, **Cancel** restores the saved choice, and **Reset this chart** restores bars. The controls stay available when the filtered dataset is empty. Highest latency offers the graphic styles appropriate to ranked measurements. Hover or focus a mark to read its full label and value.
@@ -53,6 +55,8 @@ The list can be kept in automatic alphabetical order or switched to manual order
 A DHCP check sends `DHCPINFORM` to UDP 67 and requires a matching `DHCPACK`. It never requests, renews, reserves, or releases a lease. The image grants only low-port bind capability for the UDP 68 reply. Microsoft DHCP commonly ignores an inform whose `ciaddr` is outside a served scope, so Docker bridge mode often needs `network_mode: host`.
 
 ## Standalone HTTP/HTTPS monitors
+
+The **Endpoints** view opens with **Average Response, Last 24 h**, which ranks endpoints by average response time, beside the **Endpoints**, **Up**, **Down**, and **Avg response** cards. Below the list, **Recent Outages** shows up to five endpoints that are down or under 100% uptime in the last 24 hours. **Certificates Expiring** shows the five certificates that expire soonest, with the days left.
 
 Monitors have their own name, URL, interval, timeout, retry count/interval, enabled/paused state, tags, description, and upside-down mode (a failed request is healthy when failure is expected). Methods support redirect following, maximum redirects, cache busting, and request headers. Bodies may be JSON, form, plain text, or XML subject to the request method and size limits.
 
