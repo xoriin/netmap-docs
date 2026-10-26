@@ -1,30 +1,21 @@
 # Summary
 
 - [NetMap](./NetMap.md)
-- Product Introduction
+- Get Started
   - [What Is NetMap?](./product-introduction/what-is-netmap.md)
   - [How NetMap Works](./product-introduction/architecture.md)
-  - [NetMap Data Model](./product-introduction/terminology.md)
-  - [Operating Boundaries and Administration](./product-introduction/limitations-and-capacity-planning.md)
-- Installation
-  - [Installation](./installation/installation.md)
+  - [Operating Boundaries And Administration](./product-introduction/limitations-and-capacity-planning.md)
   - [Quick Start](./installation/quick-start.md)
+  - [First-Run Setup And Authentication](./installation/first-run-and-authentication.md)
+- Install And Upgrade
+  - [Installation Overview](./installation/installation.md)
   - [Docker Compose](./installation/docker-compose.md)
   - [Docker](./installation/docker.md)
-  - [First-Run Setup and Authentication](./installation/first-run-and-authentication.md)
   - [Native Installation](./installation/native-installation.md)
   - [Reverse Proxy And HTTPS](./installation/reverse-proxy.md)
   - [Upgrading](./installation/upgrading.md)
-  - [Backup And Restore](./installation/backup-and-restore.md)
-- Configuration
-  - [Configuration Reference](./configuration/configuration.md)
-  - [Environment Variables](./configuration/environment-variables.md)
-  - [Storage](./configuration/storage.md)
-  - [Ports](./configuration/ports.md)
-  - [OIDC SSO](./configuration/oidc-sso.md)
-  - [Syslog](./configuration/syslog.md)
-- Using NetMap
-  - [Using The Application](./using-netmap/user-guide.md)
+- Use NetMap
+  - [User Guide](./using-netmap/user-guide.md)
   - [Interface Overview](./using-netmap/interface-overview.md)
   - [Dashboard](./using-netmap/dashboard.md)
   - [Topology](./using-netmap/topology.md)
@@ -34,15 +25,14 @@
   - [Locations](./using-netmap/locations.md)
   - [Monitoring](./using-netmap/monitoring.md)
   - [IPAM](./using-netmap/ipam.md)
-  - [External IPAM](./using-netmap/external-ipam.md)
+  - [External IPs](./using-netmap/external-ipam.md)
   - [Security Events](./using-netmap/security-events.md)
   - [Tools](./using-netmap/tools.md)
   - [Exports](./using-netmap/exports.md)
-  - [Administration](./using-netmap/admin.md)
   - [Status Pages](./using-netmap/status-pages.md)
   - [Profile](./using-netmap/profile.md)
-  - [Personal chart views](./using-netmap/chart-views.md)
-- Guides
+  - [Personal Chart Views](./using-netmap/chart-views.md)
+- How-To Guides
   - [Add A Device](./guides/add-device.md)
   - [Import Devices](./guides/import-devices.md)
   - [Run Discovery](./guides/run-discovery.md)
@@ -65,10 +55,27 @@
   - [Status Page Integrations](./api/guides/status-page-integrations.md)
   - [Endpoint Reference](./api/reference/endpoints.md)
   - [OpenAPI And Swagger](./api/reference/openapi.md)
-- Operations
-  - [Operations](./operations/operations.md)
+- Administer
+  - [Administration](./using-netmap/admin.md)
+  - [Permissions](./security/permissions.md)
+  - [Two-Factor Authentication](./security/two-factor-authentication.md)
+  - [Configuration Reference](./configuration/configuration.md)
+  - [Environment Variables](./configuration/environment-variables.md)
+  - [Storage](./configuration/storage.md)
+  - [Ports](./configuration/ports.md)
+  - [OIDC SSO](./configuration/oidc-sso.md)
+  - [Syslog](./configuration/syslog.md)
+- Security
+  - [Security Overview](./security/security.md)
+  - [Security Model](./security/security-model.md)
+  - [Secrets Management](./security/secrets-management.md)
+  - [Network Exposure](./security/network-exposure.md)
+  - [Vulnerability Reporting](./security/vulnerability-reporting.md)
+- Operate
+  - [Operations Overview](./operations/operations.md)
   - [Health Checks](./operations/health-checks.md)
   - [Logging](./operations/logging.md)
+  - [Backup And Restore](./installation/backup-and-restore.md)
   - [Backups](./operations/backups.md)
   - [Restores](./operations/restores.md)
   - [Database Migrations](./operations/database-migrations.md)
@@ -84,15 +91,15 @@
   - [Reverse Proxy Problems](./troubleshooting/reverse-proxy-problems.md)
   - [Container Problems](./troubleshooting/container-problems.md)
   - [Diagnostic Information](./troubleshooting/diagnostic-information.md)
-- Security
-  - [Security Overview](./security/security.md)
-  - [Security Model](./security/security-model.md)
-  - [Two-Factor Authentication](./security/two-factor-authentication.md)
-  - [Permissions](./security/permissions.md)
-  - [Secrets Management](./security/secrets-management.md)
-  - [Network Exposure](./security/network-exposure.md)
-  - [Vulnerability Reporting](./security/vulnerability-reporting.md)
-- Development
+- Reference
+  - [Reference Appendices](./reference/reference-appendices.md)
+  - [Default Values](./reference/default-values.md)
+  - [File And Directory Paths](./reference/file-paths.md)
+  - [Ports](./reference/ports.md)
+  - [NetMap Data Model](./product-introduction/terminology.md)
+  - [Glossary](./reference/glossary.md)
+  - [Changelog](./reference/changelog.md)
+- Contributing
   - [Developer Guide](./development/development.md)
   - [Local Development](./development/local-development.md)
   - [Repository Structure](./development/repository-structure.md)
@@ -103,10 +110,3 @@
   - [Database Changes](./development/database-changes.md)
   - [Contributing Workflow](./development/contributing-workflow.md)
   - [Documentation Style Guide](./development/style-guide.md)
-- Reference
-  - [Reference Appendices](./reference/reference-appendices.md)
-  - [Default Values](./reference/default-values.md)
-  - [File And Directory Paths](./reference/file-paths.md)
-  - [Ports](./reference/ports.md)
-  - [Glossary](./reference/glossary.md)
-  - [Changelog](./reference/changelog.md)

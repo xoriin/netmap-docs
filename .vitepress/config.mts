@@ -96,7 +96,8 @@ export default defineConfig({
       { text: "Guide", link: "/NetMap" },
       { text: "Install", link: "/installation/quick-start" },
       { text: "API", link: "/api/" },
-      { text: "Operations", link: "/operations/health-checks" },
+      { text: "Administer", link: "/using-netmap/admin" },
+      { text: "Operate", link: "/operations/health-checks" },
       { text: "Reference", link: "/reference/default-values" }
     ],
     sidebar: [
@@ -105,44 +106,30 @@ export default defineConfig({
         link: "/NetMap"
       },
       {
-        text: "Product Introduction",
+        text: "Get Started",
         collapsed: false,
         items: [
           { text: "What Is NetMap?", link: "/product-introduction/what-is-netmap" },
           { text: "How NetMap Works", link: "/product-introduction/architecture" },
-          { text: "NetMap Data Model", link: "/product-introduction/terminology" },
-          { text: "Operating Boundaries And Administration", link: "/product-introduction/limitations-and-capacity-planning" }
+          { text: "Operating Boundaries And Administration", link: "/product-introduction/limitations-and-capacity-planning" },
+          { text: "Quick Start", link: "/installation/quick-start" },
+          { text: "First-Run Setup And Authentication", link: "/installation/first-run-and-authentication" }
         ]
       },
       {
-        text: "Installation",
+        text: "Install And Upgrade",
         collapsed: true,
         items: [
           { text: "Installation Overview", link: "/installation/installation" },
-          { text: "Quick Start", link: "/installation/quick-start" },
           { text: "Docker Compose", link: "/installation/docker-compose" },
           { text: "Docker", link: "/installation/docker" },
-          { text: "First-Run Setup And Authentication", link: "/installation/first-run-and-authentication" },
           { text: "Native Installation", link: "/installation/native-installation" },
           { text: "Reverse Proxy And HTTPS", link: "/installation/reverse-proxy" },
-          { text: "Upgrading", link: "/installation/upgrading" },
-          { text: "Backup And Restore", link: "/installation/backup-and-restore" }
+          { text: "Upgrading", link: "/installation/upgrading" }
         ]
       },
       {
-        text: "Configuration",
-        collapsed: true,
-        items: [
-          { text: "Configuration Reference", link: "/configuration/configuration" },
-          { text: "Environment Variables", link: "/configuration/environment-variables" },
-          { text: "Storage", link: "/configuration/storage" },
-          { text: "Ports", link: "/configuration/ports" },
-          { text: "OIDC SSO", link: "/configuration/oidc-sso" },
-          { text: "Syslog", link: "/configuration/syslog" }
-        ]
-      },
-      {
-        text: "Using NetMap",
+        text: "Use NetMap",
         collapsed: true,
         items: [
           { text: "User Guide", link: "/using-netmap/user-guide" },
@@ -159,14 +146,13 @@ export default defineConfig({
           { text: "Security Events", link: "/using-netmap/security-events" },
           { text: "Tools", link: "/using-netmap/tools" },
           { text: "Exports", link: "/using-netmap/exports" },
-          { text: "Administration", link: "/using-netmap/admin" },
           { text: "Status Pages", link: "/using-netmap/status-pages" },
           { text: "Profile", link: "/using-netmap/profile" },
           { text: "Personal Chart Views", link: "/using-netmap/chart-views" }
         ]
       },
       {
-        text: "Guides",
+        text: "How-To Guides",
         collapsed: true,
         items: [
           { text: "Add A Device", link: "/guides/add-device" },
@@ -199,12 +185,39 @@ export default defineConfig({
         ]
       },
       {
-        text: "Operations",
+        text: "Administer",
+        collapsed: true,
+        items: [
+          { text: "Administration", link: "/using-netmap/admin" },
+          { text: "Permissions", link: "/security/permissions" },
+          { text: "Two-Factor Authentication", link: "/security/two-factor-authentication" },
+          { text: "Configuration Reference", link: "/configuration/configuration" },
+          { text: "Environment Variables", link: "/configuration/environment-variables" },
+          { text: "Storage", link: "/configuration/storage" },
+          { text: "Ports", link: "/configuration/ports" },
+          { text: "OIDC SSO", link: "/configuration/oidc-sso" },
+          { text: "Syslog", link: "/configuration/syslog" }
+        ]
+      },
+      {
+        text: "Security",
+        collapsed: true,
+        items: [
+          { text: "Security Overview", link: "/security/security" },
+          { text: "Security Model", link: "/security/security-model" },
+          { text: "Secrets Management", link: "/security/secrets-management" },
+          { text: "Network Exposure", link: "/security/network-exposure" },
+          { text: "Vulnerability Reporting", link: "/security/vulnerability-reporting" }
+        ]
+      },
+      {
+        text: "Operate",
         collapsed: true,
         items: [
           { text: "Operations Overview", link: "/operations/operations" },
           { text: "Health Checks", link: "/operations/health-checks" },
           { text: "Logging", link: "/operations/logging" },
+          { text: "Backup And Restore", link: "/installation/backup-and-restore" },
           { text: "Backups", link: "/operations/backups" },
           { text: "Restores", link: "/operations/restores" },
           { text: "Database Migrations", link: "/operations/database-migrations" },
@@ -228,20 +241,20 @@ export default defineConfig({
         ]
       },
       {
-        text: "Security",
+        text: "Reference",
         collapsed: true,
         items: [
-          { text: "Security Overview", link: "/security/security" },
-          { text: "Security Model", link: "/security/security-model" },
-          { text: "Two-Factor Authentication", link: "/security/two-factor-authentication" },
-          { text: "Permissions", link: "/security/permissions" },
-          { text: "Secrets Management", link: "/security/secrets-management" },
-          { text: "Network Exposure", link: "/security/network-exposure" },
-          { text: "Vulnerability Reporting", link: "/security/vulnerability-reporting" }
+          { text: "Reference Appendices", link: "/reference/reference-appendices" },
+          { text: "Default Values", link: "/reference/default-values" },
+          { text: "File And Directory Paths", link: "/reference/file-paths" },
+          { text: "Ports", link: "/reference/ports" },
+          { text: "NetMap Data Model", link: "/product-introduction/terminology" },
+          { text: "Glossary", link: "/reference/glossary" },
+          { text: "Changelog", link: "/reference/changelog" }
         ]
       },
       {
-        text: "Development",
+        text: "Contributing",
         collapsed: true,
         items: [
           { text: "Developer Guide", link: "/development/development" },
@@ -254,18 +267,6 @@ export default defineConfig({
           { text: "Database Changes", link: "/development/database-changes" },
           { text: "Contributing Workflow", link: "/development/contributing-workflow" },
           { text: "Documentation Style Guide", link: "/development/style-guide" }
-        ]
-      },
-      {
-        text: "Reference",
-        collapsed: true,
-        items: [
-          { text: "Reference Appendices", link: "/reference/reference-appendices" },
-          { text: "Default Values", link: "/reference/default-values" },
-          { text: "File And Directory Paths", link: "/reference/file-paths" },
-          { text: "Ports", link: "/reference/ports" },
-          { text: "Glossary", link: "/reference/glossary" },
-          { text: "Changelog", link: "/reference/changelog" }
         ]
       }
     ],
