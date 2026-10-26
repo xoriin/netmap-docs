@@ -32,7 +32,7 @@ Administrators configure enablement, interval in hours, retention count, and the
 2. Confirm the image version and original `SECRET_KEY`, `MASTER_KEY`, signing secret, and OIDC secret files.
 3. Validate the selected backup with the restore-validation endpoint.
 4. Stop the container or schedule downtime.
-5. Restore through the API or the filesystem procedure in [Backups](../operations/backups.md).
+5. Restore through the API or the filesystem procedure in [Backup And Restore](../operations/backup-and-restore.md).
 6. Start NetMap and verify health, login, devices/topology, IPAM, syslog history, API keys, and scheduled backups.
 
 ## API equivalents

@@ -67,5 +67,4 @@ Then sign in and check the affected workspace.
 ## Related Pages
 
 - [Storage](../configuration/storage.md)
-- [Backups](../operations/backups.md)
-- [Restores](../operations/restores.md)
+- [Backup And Restore](../operations/backup-and-restore.md)

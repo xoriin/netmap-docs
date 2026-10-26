@@ -215,9 +215,7 @@ export default defineConfig({
           { text: "Operations Overview", link: "/operations/operations" },
           { text: "Health Checks", link: "/operations/health-checks" },
           { text: "Logging", link: "/operations/logging" },
-          { text: "Backup And Restore", link: "/installation/backup-and-restore" },
-          { text: "Backups", link: "/operations/backups" },
-          { text: "Restores", link: "/operations/restores" },
+          { text: "Backup And Restore", link: "/operations/backup-and-restore" },
           { text: "Database Migrations", link: "/operations/database-migrations" },
           { text: "Monitoring NetMap", link: "/operations/monitoring-netmap" },
           { text: "Disaster Recovery", link: "/operations/disaster-recovery" }

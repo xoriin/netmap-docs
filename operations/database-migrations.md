@@ -54,5 +54,5 @@ If startup fails after an upgrade, stop and preserve the current `data/` directo
 Related pages:
 
 - [Storage](../configuration/storage.md)
-- [Backups](./backups.md)
+- [Backup And Restore](./backup-and-restore.md)
 - [Database Problems](../troubleshooting/database-problems.md)

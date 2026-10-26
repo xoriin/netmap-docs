@@ -106,7 +106,6 @@ SuperAdmins can also check `/api/v1/system/diagnostics` for database file sizes.
 
 ## Related Pages
 
-- [Backups](../operations/backups.md)
-- [Restores](../operations/restores.md)
+- [Backup And Restore](../operations/backup-and-restore.md)
 - [File And Directory Paths](../reference/file-paths.md)
 - [Database Problems](../troubleshooting/database-problems.md)

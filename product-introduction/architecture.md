@@ -57,7 +57,7 @@ At startup NetMap validates the data directory and required production secrets, 
 
 The firewall database has targeted recovery behavior: a damaged FTS index is rebuilt, while confirmed whole-database corruption causes `firewall.db` and its sidecars to be recreated, losing stored firewall history but preserving `netmap.db`. Always keep backups and inspect container logs after an unexpected rebuild.
 
-For network exposure and probe requirements, see [Network Access and Capabilities](#network-access-and-capabilities). For operational backup and recovery procedures, see [Exports](../using-netmap/exports.md) and [Backups](../operations/backups.md).
+For network exposure and probe requirements, see [Network Access and Capabilities](#network-access-and-capabilities). For operational backup and recovery procedures, see [Exports](../using-netmap/exports.md) and [Backups](../operations/backup-and-restore.md).
 
 ## Network Access and Capabilities
 

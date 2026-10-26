@@ -61,5 +61,5 @@ curl --fail-with-body \
 ## Related Pages
 
 - [Exports](../using-netmap/exports.md)
-- [Backups](../operations/backups.md)
+- [Backup And Restore](../operations/backup-and-restore.md)
 - [API Authentication](../api/authentication.md)

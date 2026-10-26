@@ -48,6 +48,5 @@ Use a database backup from before the upgrade. Do not assume that a database mig
 
 ## Related Pages
 
-- [Backups](./backups.md)
-- [Restores](./restores.md)
+- [Backup And Restore](./backup-and-restore.md)
 - [Upgrading](../installation/upgrading.md)

@@ -35,7 +35,7 @@ This is the NetMap documentation homepage. It links the product overview, instal
 | Put NetMap behind HTTPS | [Reverse Proxy and HTTPS](./installation/reverse-proxy.md) |
 | Upgrade an existing instance | [Upgrading](./installation/upgrading.md) |
 | Check application health | [Health Checks](./operations/health-checks.md) |
-| Back up or restore data | [Backups](./operations/backups.md) and [Restores](./operations/restores.md) |
+| Back up or restore data | [Backup And Restore](./operations/backup-and-restore.md) |
 | Recover from a larger failure | [Disaster Recovery](./operations/disaster-recovery.md) |
 
 ## Build and monitor your network

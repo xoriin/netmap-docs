@@ -71,7 +71,7 @@ Confirm that:
 - [Docker](./docker.md) — direct image execution;
 - [Reverse Proxy and HTTPS](./reverse-proxy.md) — TLS termination and forwarded headers;
 - [Upgrading](./upgrading.md) — pull, backup, migrate, and verify; and
-- [Backup and Restore](./backup-and-restore.md) — preserving or recovering application state.
+- [Backup And Restore](../operations/backup-and-restore.md) — preserving or recovering application state.
 
 ## Related concepts
 

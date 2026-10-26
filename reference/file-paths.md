@@ -74,6 +74,5 @@ docker compose exec netmap sh -c 'test -f /app/VERSION && cat /app/VERSION'
 ## Related Pages
 
 - [Storage](../configuration/storage.md)
-- [Backups](../operations/backups.md)
-- [Restores](../operations/restores.md)
+- [Backup And Restore](../operations/backup-and-restore.md)
 - [Docker Compose](../installation/docker-compose.md)

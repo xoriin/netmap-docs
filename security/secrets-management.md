@@ -57,5 +57,5 @@ API keys are rotated separately by creating a new key and revoking the old one.
 ## Related Pages
 
 - [Keeping API Keys Safe](../api/authentication.md#keeping-keys-safe)
-- [Backups](../operations/backups.md)
+- [Backup And Restore](../operations/backup-and-restore.md)
 - [Installation Problems](../troubleshooting/installation-problems.md)
