@@ -16,6 +16,10 @@ Configure a firewall, router, switch, or host to forward syslog to the NetMap ho
 
 NetMap accepts common RFC-style and firewall log formats. Parsed fields include timestamp, source/destination addresses and ports, action, protocol, interface, rule, and reason. Unrecognised messages remain available as raw logs rather than being discarded. Syslog over TLS settings may exist in deployments, but the current published listener support must be verified against the image before promising a TLS sender configuration; use UDP/TCP unless TLS support is confirmed.
 
+## Traffic Mix and Top Sources
+
+The workspace opens with **Traffic Mix** and **Top Sources** beside the **Stored events**, **Received packets**, **Unparsed packets**, and **Denied senders** cards. Both charts use the events currently loaded in the table, so they follow your filters and live events. **Traffic Mix** splits them into **Blocked** (block, reject, or drop actions), **Passed** (pass or allow), and **Other**, with the blocked share in the ring. **Top Sources** ranks the five source IPs with the most events and shows how many of each were blocked.
+
 ## Search and filters
 
 Search raw text with full-text matching or combine structured filters for address, port, protocol, action, interface, rule, reason, and time range. The FTS5 mirror indexes `firewall_events.raw_log`; field filters continue to use the parsed columns. Saved searches are named filters owned by the creating user; apply or delete them from the workspace.
