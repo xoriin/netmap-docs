@@ -145,7 +145,8 @@ export default defineConfig({
           { text: "Administration", link: "/using-netmap/admin" },
           { text: "Status Pages", link: "/using-netmap/status-pages" },
           { text: "Status Page Integrations", link: "/using-netmap/status-page-integrations" },
-          { text: "Profile", link: "/using-netmap/profile" }
+          { text: "Profile", link: "/using-netmap/profile" },
+          { text: "Personal Chart Views", link: "/using-netmap/chart-views" }
         ]
       },
       {
@@ -256,24 +257,13 @@ export default defineConfig({
           { text: "Glossary", link: "/reference/glossary" },
           { text: "Changelog", link: "/reference/changelog" }
         ]
-      },
-      {
-        text: "About This Documentation",
-        collapsed: true,
-        items: [
-          { text: "Documentation Coverage Report", link: "/about-documentation/coverage-report" },
-          { text: "How To Use These Docs", link: "/about-documentation/how-to-use-this-documentation" },
-          { text: "Versions And Compatibility", link: "/about-documentation/documentation-version-compatibility" },
-          { text: "Documentation Changelog", link: "/about-documentation/documentation-changelog" },
-          { text: "Report A Documentation Problem", link: "/about-documentation/reporting-documentation-problems" }
-        ]
       }
     ],
     socialLinks: [
       { icon: "github", link: "https://github.com/xoriin/netmap" }
     ],
     footer: {
-      message: "Based on NetMap v1.5.0 at the time of writing.",
+      message: "Based on NetMap v1.7.0 at the time of writing.",
       copyright: "NetMap"
     }
   },
