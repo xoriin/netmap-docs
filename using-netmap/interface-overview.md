@@ -42,7 +42,7 @@ Authentication is required for every workspace. The sidebar hides areas the curr
 
 ## Themes, loading, and empty states
 
-Choose light or dark mode from Profile → Appearance. The selection persists per browser. Loading skeletons indicate an in-flight request; an empty state means the request succeeded but there is no matching data. If a workspace error boundary appears, retry the workspace or navigate away and return after checking the service health endpoint.
+Switch between light and dark mode with **Light mode**/**Dark mode** at the foot of the sidebar (in **More** on phones). Choose the dark style, **Slate** (cool blue-grey) or **Zinc** (neutral charcoal), in Profile → Preferences → **Dark mode style**. Both choices persist per browser. Loading skeletons indicate an in-flight request; an empty state means the request succeeded but there is no matching data. If a workspace error boundary appears, retry the workspace or navigate away and return after checking the service health endpoint.
 
 ## Related pages
 

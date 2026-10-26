@@ -63,7 +63,7 @@ Inventory export is available from the Exports workspace for supported formats a
 
 ## Colours, icons, and permissions
 
-Group/VLAN, location, and device-type values render as stable entity chips. Explicit configured colours win; otherwise a stable name hash selects a palette colour. The Profile appearance preference can disable tinting while preserving icons and layout. Built-in device types use standard icons; custom types use their configured icon. Native option colours are not relied on, so pickers use the same swatch component as the table.
+Group/VLAN, location, and device-type values render as stable entity chips. Explicit configured colours win; otherwise a stable name hash selects a palette colour. The Profile → Preferences **Colour-coded entities** setting can disable tinting while preserving icons and layout. Built-in device types use standard icons; custom types use their configured icon. Native option colours are not relied on, so pickers use the same swatch component as the table.
 
 Viewing requires authentication. Creating, editing, bulk updating, importing, and deleting require `topology_write`; security summaries additionally require the security-view permission. A hidden action is normally a permission or lifecycle restriction, not a failed save.
 
@@ -99,7 +99,7 @@ curl --fail-with-body \
 | duplicate-looking devices | discovery/import created separate records | merge manually or correct import data |
 | device missing from topology | hidden group/filter or missing graph refresh | check topology filters and reload |
 | type filter is empty | no device currently uses that type | clear the filter or add a device of that type |
-| colours differ from a screenshot | entity-colour preference is disabled | re-enable colours in Profile → Appearance |
+| colours differ from a screenshot | entity-colour preference is disabled | re-enable **Colour-coded entities** in Profile → Preferences |
 | import shows rejected rows | invalid field, duplicate, or unsupported alias | correct the listed row errors and retry |
 
 ## Related Pages
