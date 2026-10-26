@@ -77,7 +77,7 @@ Once any user exists, `POST /api/v1/setup/admin` returns `409` (`Initial setup i
 
 `chart_id` must match `[a-z][a-z0-9._-]{0,119}`; anything else returns `422`.
 
-## API keys
+## API Keys
 
 | Method | Path | Access | Purpose |
 |---|---|---|---|
@@ -86,6 +86,8 @@ Once any user exists, `POST /api/v1/setup/admin` returns `409` (`Initial setup i
 | DELETE | `/api/v1/api-keys/admin/{key_id}` | SuperAdmin | Revoke any API key |
 | GET | `/api/v1/api-keys/admin/all` | SuperAdmin | List every user's API keys |
 | DELETE | `/api/v1/api-keys/{key_id}` | Signed in | Revoke one of your API keys |
+
+See [API Authentication](../authentication.md#api-keys) for creating, rotating and revoking keys.
 
 ## Users
 
@@ -456,7 +458,7 @@ Database backups are implemented for SQLite only; other databases return `501`. 
 |---|---|---|---|
 | GET | `/api/v1/public/status-pages/{slug}` | Public | Read a Public page |
 
-Private and unknown slugs both return `404`. While a page is being built the response is `503` with `Retry-After`. A matching `If-None-Match` returns `304`. Over the per-IP limit the response is `429`; see [Rate Limits](../rate-limits.md).
+Unknown slugs and pages that are not public both return `404`. While a page is being built the response is `503` with `Retry-After`. A matching `If-None-Match` returns `304`. Over the per-IP limit the response is `429`; see [Rate Limits](../rate-limits.md).
 
 ## Status Page Integrations
 
