@@ -62,26 +62,14 @@ Administrators are responsible for:
 
 ## API-Key Security
 
-Use API keys only in server-side automation, CI/CD secret stores, environment variables, or dedicated secret managers.
-
-Do not:
-
-- Put keys in frontend/browser code.
-- Include keys in URLs.
-- Send keys as bearer tokens.
-- Store keys in git.
-- Paste keys into logs, tickets, or screenshots.
-
-For least privilege, create a dedicated user with only the permissions required for the automation. Because keys have no per-key scopes, the owning user role is the security boundary.
+See [Keeping API Keys Safe](../api/authentication.md#keeping-keys-safe) for storage, least-privilege automation users and what to do if a key is exposed.
 
 ## Known Limitations
 
-- API keys do not support per-key scopes.
-- API keys do not support per-key IP allowlists.
-- API keys do not authenticate the syslog live WebSocket.
+- API keys have no per-key scopes or IP allowlists, and do not work on the live syslog stream. See [API Permissions](../api/permissions.md).
 - ReDoc is not configured.
 - The OpenAPI schema applies `ApiKeyAuth` and `BearerAuth` to protected operations, but many route details still rely on FastAPI defaults and dependency names rather than hand-authored descriptions.
-- Documentation gap: no explicit public API stability, deprecation, or request-id policy exists in source.
+- NetMap does not publish an API deprecation policy. See [Versioning](../api/index.md#versioning).
 
 ## Vulnerability Reporting
 

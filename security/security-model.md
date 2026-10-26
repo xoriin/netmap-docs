@@ -53,9 +53,7 @@ Delegated administrative permissions never allow a user to grant or manage Super
 
 ## API-Key Security Boundary
 
-API keys do not have scopes. A key has the live permissions of the user that owns it. Disabling the user disables the key. Changing the user's role changes what the key can do.
-
-Use separate automation users for separate integrations.
+API keys have the live permissions of the user who owns them. See [API Permissions](../api/permissions.md) and [Keeping API Keys Safe](../api/authentication.md#keeping-keys-safe).
 
 ## Browser Protections
 

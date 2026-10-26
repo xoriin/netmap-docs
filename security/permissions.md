@@ -55,14 +55,7 @@ Role/permission administration, OIDC/SSO security configuration, global secrets/
 
 ## API Keys And Permissions
 
-API keys inherit the live permissions of the owning user. There are no per-key scopes.
-
-This means:
-
-- disabling a user disables that user's keys;
-- demoting a user reduces existing key access;
-- promoting a user expands existing key access;
-- custom role changes affect existing keys.
+API keys have the live permissions of the user who owns them. See [API Permissions](../api/permissions.md).
 
 ## Permission Errors
 
