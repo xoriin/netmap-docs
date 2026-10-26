@@ -16,7 +16,7 @@ sudo mkdir -p "$INSTALL_DIR/data"
 sudo chown -R "$(id -u):$(id -g)" "$INSTALL_DIR"
 ```
 
-Create `$INSTALL_DIR/netmap.env` using the secret-generation procedure in the [Quick Start](./quick-start.md#2-generate-the-required-secrets):
+Create `$INSTALL_DIR/netmap.env` using the secret-generation procedure in the [Five-Minute Quick Start](./quick-start.md#_2-generate-the-required-secrets):
 
 ```dotenv
 APP_ENV=production
