@@ -34,7 +34,7 @@ API keys are secrets. Never commit them to source control, place them in client-
 | Storage format | Prefix and last four characters stored in plaintext; full key stored as an HMAC-SHA256 digest using `signing_secret()`. |
 | Header name | `X-API-Key`. Header lookup is case-insensitive through FastAPI/Starlette. |
 | Header format | `nm_<12-character-prefix>_<43-character-secret>`. Prefix and secret are alphanumeric. |
-| Bearer format? | No. Do not send API keys as bearer tokens. |
+| Bearer format? | No. Keys work only in `X-API-Key`; a key sent as `Authorization: Bearer` returns `401`. |
 | Query-string keys? | Not supported. |
 | Expiry choices | `null`, `30`, `90`, or `365` days. |
 | Revocation | Owner can revoke own keys. SuperAdmin can revoke any key. |

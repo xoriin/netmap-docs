@@ -42,7 +42,7 @@ The schema title is `NetMap API`, and its version is read from the same installe
 REST endpoints accept:
 
 - `X-API-Key: nm_<prefix>_<secret>` for API-key clients.
-- `Authorization: Bearer <access-token>` for browser/session clients and tooling that has a token.
+- `Authorization: Bearer <access-token>` for session access tokens from sign-in. An API key sent as a Bearer token returns `401`. The only other Bearer tokens are `nmsp_` status page integration tokens, accepted only under `/api/v1/status-integrations`.
 - `netmap_access` cookie where present.
 
 `get_current_user` checks the `X-API-Key` header first. API-key requests are exempt from CSRF middleware.

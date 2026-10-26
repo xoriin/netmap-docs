@@ -18,7 +18,7 @@ X-API-Key: nm_<prefix>_<secret>
 
 API keys are checked before bearer tokens or cookies. They authenticate as the owning user and inherit that user's current permissions.
 
-Do not send API keys in query strings or as bearer tokens.
+API keys work only in the `X-API-Key` header. A key sent as `Authorization: Bearer` returns `401` (`Invalid or expired token`), and keys in query strings are ignored.
 
 ## First Test Request
 

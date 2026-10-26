@@ -36,7 +36,7 @@ Do not use:
 Authorization: Bearer <api-key>
 ```
 
-API keys are not bearer tokens.
+API keys are not bearer tokens. NetMap returns `401` (`Invalid or expired token`) for a key sent this way; send it in `X-API-Key`.
 
 ## Check Key State
 

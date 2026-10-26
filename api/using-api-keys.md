@@ -56,7 +56,7 @@ with httpx.Client(
 
 ## Common Mistakes
 
-- Sending the key as a bearer token.
+- Sending the key as a bearer token (returns `401`).
 - Putting the key in a query string.
 - Embedding the key in frontend code.
 - Forgetting that proxy rules must preserve `X-API-Key`.
