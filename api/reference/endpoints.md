@@ -181,7 +181,15 @@ See [API Authentication](../authentication.md#api-keys) for creating, rotating a
 | GET | `/api/v1/audit/logs` | `audit_view` | Search audit logs |
 | GET | `/api/v1/audit/logs/export` | `audit_view` | Download sign-in history as CSV |
 
-`GET /api/v1/audit/summary` accepts `days` from 1 to 90 (default 14).
+`GET /api/v1/audit/summary` accepts `days` from 1 to 90 (default 14; anything else returns `422`) and returns:
+
+| Field | Holds |
+|---|---|
+| `days` | One entry per day, oldest first: `date`, `signed_in` and `failed` sign-in counts |
+| `by_action` | The 8 most frequent actions: `action`, `count` |
+| `by_actor` | The 5 most active users: `actor_user_id`, `username`, `count` |
+| `total` | Audit events in the period |
+| `failed_total` | Failed or blocked sign-ins in the period |
 
 ## Dashboard
 
@@ -263,6 +271,8 @@ Layouts belong to the user who saved them. Another user's layout ID returns `404
 | POST | `/api/v1/discovery/observations/resolve-all` | `discovery_manage` | Resolve all open observations |
 | POST | `/api/v1/discovery/observations/{observation_id}/apply` | `discovery_manage` and `topology_write` | Apply an observation to inventory |
 | POST | `/api/v1/discovery/import` | `discovery_manage` and `topology_write` | Import scan results into inventory |
+
+`GET /api/v1/discovery/observations/summary` accepts `days` (default 14; values outside 1 to 90 are clamped) and returns `days`, one entry per day with `date`, `new_device`, `ip_change`, `disappeared` and `other` counts, plus `open` (open and acknowledged observations) and `resolved` totals.
 
 `POST /api/v1/discovery/schedules/{schedule_id}/run` returns `409` when the schedule is disabled or a scan for it is already running.
 
