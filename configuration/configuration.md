@@ -63,8 +63,8 @@ Most changes require a container restart because settings are loaded at process 
 | `AUTH_IP_MAX_FAILED_ATTEMPTS` | No | `50` | integer | No | Yes | Source-IP threshold; intentionally higher than the account threshold for shared NATs. |
 | `API_KEY_RATE_LIMIT_MAX_CALLS` | No | `120` | integer | No | Yes | Per-key fixed-window request limit. |
 | `API_KEY_RATE_LIMIT_WINDOW_SECONDS` | No | `60` | integer seconds | No | Yes | API-key rate-limit window. |
-| `API_KEY_MAX_FAILED_LOOKUPS` | No | `10` | integer | No | Yes | Invalid-key attempts before source IP lockout. |
-| `API_KEY_LOOKUP_LOCKOUT_MINUTES` | No | `15` | integer minutes | No | Yes | Invalid-key source-IP lockout duration. |
+| `API_KEY_MAX_FAILED_LOOKUPS` | No | `10` | integer | No | Yes | Invalid-key attempts from a client address before lockout. |
+| `API_KEY_LOOKUP_LOCKOUT_MINUTES` | No | `15` | integer minutes | No | Yes | Invalid-key client-address lockout duration. |
 | `DISCOVERY_SCAN_TIMEOUT_SECONDS` | No | `60` | integer seconds | No | Yes | nmap discovery timeout. |
 | `DISCOVERY_RATE_LIMIT_SECONDS` | No | `60` | integer seconds | No | Yes | Discovery scan rate limit. |
 | `DISCOVERY_MAX_HOSTS_WITHOUT_CONFIRMATION` | No | `256` | integer | No | Yes | Host-count threshold requiring confirmation. |

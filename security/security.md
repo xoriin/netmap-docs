@@ -23,7 +23,7 @@ This page separates implemented protections from deployment responsibilities.
 | CSRF | Double-submit CSRF middleware protects cookie-authenticated mutating requests. `X-API-Key` and bearer requests are exempt. |
 | API keys | Plaintext shown once; lookup prefix and last four characters stored; full key stored as an HMAC-SHA256 digest. |
 | API-key auth order | `X-API-Key` is checked before bearer/cookie auth. |
-| API-key rate limiting | Per-key fixed-window calls and per-source-IP invalid lookup lockout. |
+| API-key rate limiting | Per-key fixed-window calls and a lockout after repeated invalid lookups from a client address. |
 | Roles | `SuperAdmin`, `NetworkAdmin`, `SecurityAnalyst`, `Viewer`, plus custom roles. SuperAdmin bypasses permission checks. |
 | Permissions | Named permissions gate topology writes, security view, tools, exports, IPAM writes, monitoring writes, and alerts. |
 | OIDC | Authorization Code + PKCE, state/nonce rows, JWKS validation, local SuperAdmin downgrade guard rails. |

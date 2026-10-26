@@ -84,7 +84,7 @@ Implemented rate limits:
 | Area | Default | Source |
 |---|---|---|
 | API-key calls | 120 calls per 60 seconds per key | `API_KEY_RATE_LIMIT_MAX_CALLS`, `API_KEY_RATE_LIMIT_WINDOW_SECONDS` |
-| Invalid API-key lookups | 10 failures then 15 minute source-IP lockout | `API_KEY_MAX_FAILED_LOOKUPS`, `API_KEY_LOOKUP_LOCKOUT_MINUTES` |
+| Invalid API-key lookups | 10 failures then 15 minute client-address lockout | `API_KEY_MAX_FAILED_LOOKUPS`, `API_KEY_LOOKUP_LOCKOUT_MINUTES` |
 | Tools | 20 calls per 60 seconds | `TOOL_RATE_LIMIT_MAX_CALLS`, `TOOL_RATE_LIMIT_WINDOW_SECONDS` |
 | Discovery | 60 second scan rate limit | `DISCOVERY_RATE_LIMIT_SECONDS` |
 | Login failures | 5 attempts then 15 minute lockout | `AUTH_MAX_FAILED_ATTEMPTS`, `AUTH_LOCKOUT_MINUTES` |

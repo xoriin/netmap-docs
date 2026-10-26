@@ -206,6 +206,6 @@ Fix: verify UDP/TCP port reachability, `SYSLOG_ENABLED`, protocol-specific flags
 
 ### API key returns 429
 
-Likely causes: per-key rate limit or invalid-key source-IP lockout.
+Likely causes: per-key rate limit or invalid-key lockout for the client address.
 
 Fix: reduce request rate, correct bad secrets, wait for the lockout window, or tune API-key rate-limit settings and restart.

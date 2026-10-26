@@ -39,10 +39,10 @@ API keys are secrets. Never commit them to source control, place them in client-
 | Expiry choices | `null`, `30`, `90`, or `365` days. |
 | Revocation | Owner can revoke own keys. SuperAdmin can revoke any key. |
 | Rotation | Create replacement key, update clients, verify, then revoke old key. No in-place rotation endpoint exists. |
-| Last-used tracking | `last_used_at` and `last_used_ip` update after successful authentication. |
+| Last-used tracking | `last_used_at` updates after successful authentication. `last_used_ip` records the resolved client address and stays empty when none is available. |
 | Audit events | `apikey.created`, `apikey.revoked`, and thresholded `apikey.auth_failed`. |
-| Rate limits | 120 calls per 60 seconds per key by default; invalid lookup lockout after 10 failures per IP for 15 minutes. |
-| IP restrictions | No per-key allowlist. Invalid lookup lockout is per source IP. |
+| Rate limits | 120 calls per 60 seconds per key by default; invalid lookup lockout after 10 failures from a client address for 15 minutes. See [Rate Limits](./rate-limits.md#invalid-api-key-lookup-lockout). |
+| IP restrictions | No per-key allowlist. |
 | Unsupported actions | Syslog live WebSocket API-key auth is not supported. |
 
 ## Generating An API Key
@@ -183,7 +183,7 @@ curl --fail-with-body \
 | `401 Invalid or inactive user` | Owner account disabled or deleted | Check Admin users | Reactivate user or move automation to another account. |
 | `403` | Owner role lacks required permission | Check Admin role permissions | Grant permission or use a more appropriate service account. |
 | `429 API key rate limit exceeded` | Per-key request cap exceeded | Check automation rate | Back off or raise `API_KEY_RATE_LIMIT_MAX_CALLS`. |
-| `429 Too many failed API key attempts` | Source IP lockout after invalid attempts | Check key value and proxy source IP | Wait for lockout or fix secret handling. |
+| `429 Too many failed API key attempts` | Client-address lockout after invalid attempts | Check the key value and the address NetMap sees behind your proxy | Wait for lockout or fix secret handling. |
 | Works directly but not through proxy | Proxy strips `X-API-Key` | Compare backend logs and proxy config | Preserve custom headers. |
 | Browser CORS failure | Origin not in `CORS_ORIGINS` | Browser developer tools | Add exact origin and restart. |
 
