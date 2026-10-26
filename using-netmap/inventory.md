@@ -69,7 +69,7 @@ Viewing requires authentication. Creating, editing, bulk updating, importing, an
 
 ## Cloud assets
 
-**Inventory → Cloud assets** (`/inventory#cloud-assets`) lists saved cloud resources together with External IPs addresses, with a type breakdown, linked/offline/not-linked counts, provider, location, type, monitoring, and favourite filters, and search. Monitoring and latency come from the linked Inventory device; an unlinked row shows **Not monitored**. Manage addresses themselves in [External IPs](./external-ipam.md).
+**Inventory → Cloud assets** (`/inventory#cloud-assets`) lists saved cloud resources together with External IPs addresses. It opens with a **Cloud Assets by Type** ring beside the **Cloud assets**, **Linked devices**, **Offline**, and **Not linked** cards; select **Offline** or **Not linked** to filter the list. The list has provider, location, type, monitoring, and favourite filters, and search. Monitoring and latency come from the linked Inventory device; an unlinked row shows **Not monitored**. Manage addresses themselves in [External IPs](./external-ipam.md).
 
 - **Add cloud asset** (requires `ipam_write`) records a name, type, provider, account, region, and description. Names are unique per provider account.
 - **Types:** built-in types are Server, Load balancer, Database, Storage, Network, and Other. **Add type…** in the type picker creates a custom type; a name that matches an existing type reuses it.
