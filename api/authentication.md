@@ -34,7 +34,7 @@ Keys look like `nm_<12-character prefix>_<43-character secret>`. NetMap shows th
 5. Select **Create key**.
 6. Select **Copy to clipboard**, store the key in your secret store, then select **Done**.
 
-The **API Access** table lists your keys with their name, the last four characters of the key, and when each was created, expires and was last used. Keys created before NetMap stored the last four characters show them after their next successful use.
+The **API Access** table lists your keys with their name, last four characters, and when each was created, expires and was last used.
 
 ### Create A Key With The API
 
@@ -43,7 +43,7 @@ Any signed-in user can create keys for their own account, including with an exis
 ```bash
 curl --fail-with-body \
   --request POST \
-  --url "https://netmap.example.com/api/v1/api-keys" \
+  --url "${NETMAP_URL}/api/v1/api-keys" \
   --header "X-API-Key: ${NETMAP_API_KEY}" \
   --header "Content-Type: application/json" \
   --data '{"name":"automation","expires_in_days":90}'
@@ -52,67 +52,31 @@ curl --fail-with-body \
 `name` is required, 1 to 100 characters. `expires_in_days` is `30`, `90`, `365` or `null` for no expiry. The response is `201`, and `key` is the only time the full key is returned:
 
 ```json
-{
-  "id": 7,
-  "name": "automation",
-  "prefix": "AbCdEf123456",
-  "suffix": "Wxyz",
-  "created_at": "2026-10-26T10:15:14.019866",
-  "expires_at": "2027-01-24T10:15:14.019449",
-  "last_used_at": null,
-  "last_used_ip": null,
-  "revoked_at": null,
-  "key": "nm_AbCdEf123456_<secret>"
-}
+{"id":7,"name":"automation","prefix":"AbCdEf123456","suffix":"Wxyz","expires_at":"2027-01-24T10:15:14.019449","key":"nm_AbCdEf123456_<secret>"}
 ```
 
-`GET /api/v1/api-keys` lists your keys without the `key` field.
+The response also includes `created_at`, `last_used_at`, `last_used_ip` and `revoked_at`. `GET /api/v1/api-keys` lists your keys without the `key` field.
 
 ### Use A Key
 
-Keep the key out of your scripts:
+Keep the key in an environment variable rather than in your scripts:
 
 ```bash
-export NETMAP_URL="https://netmap.example.com"
-export NETMAP_API_KEY="<api-key>"
-
 curl --fail-with-body \
   --url "${NETMAP_URL}/api/v1/topology/devices" \
   --header "X-API-Key: ${NETMAP_API_KEY}" \
   --header "Accept: application/json"
 ```
 
-```python
-import os
-import httpx
-
-with httpx.Client(
-    base_url=os.environ["NETMAP_URL"],
-    headers={"X-API-Key": os.environ["NETMAP_API_KEY"]},
-    timeout=30.0,
-) as client:
-    response = client.get("/api/v1/topology/devices")
-    response.raise_for_status()
-    print(response.json())
-```
-
 Each successful request updates the key's last-used time and client address. Each key can make 120 requests per 60 seconds by default; see [Rate Limits](./rate-limits.md).
 
 ### What A Key Can Do
 
-A key has no scopes. It can call every REST endpoint its owner can, and it follows changes to the owner's role on the next request. A key owned by a SuperAdmin has SuperAdmin access. See [API Permissions](./permissions.md).
-
-API keys do not work on the live syslog stream.
+A key has no scopes: it can call every REST endpoint its owner can, and follows changes to the owner's role on the next request. API keys don't work on the live syslog stream. See [API Permissions](./permissions.md).
 
 ### Rotate A Key
 
-NetMap has no rotate endpoint. Replace the key instead:
-
-1. Create a key with a new name.
-2. Deploy it to your automation.
-3. Confirm the automation works, for example with `GET /api/v1/auth/me`.
-4. Revoke the old key.
-5. Confirm the old key returns `401`.
+NetMap has no rotate endpoint. Create a key with a new name, deploy it, confirm your automation works, then revoke the old key and check that it returns `401`.
 
 ### Revoke A Key
 
@@ -121,7 +85,7 @@ Revoke one of your own keys by its `id`. The response is `204`:
 ```bash
 curl --fail-with-body \
   --request DELETE \
-  --url "https://netmap.example.com/api/v1/api-keys/7" \
+  --url "${NETMAP_URL}/api/v1/api-keys/7" \
   --header "X-API-Key: ${NETMAP_API_KEY}"
 ```
 
@@ -178,38 +142,19 @@ Changing or resetting a user's password, or resetting their two-factor authentic
 
 ## Keeping Keys Safe
 
-Store keys in:
+Store keys in a secret manager, CI/CD secret variables, environment variables or files readable only by the service account. Never put them in source control, browser code, URLs, shell history, logs, screenshots or tickets.
 
-- a secret manager or CI/CD secret variables;
-- server environment variables;
-- deployment files readable only by the service account.
-
-Never put keys in source control, browser code, URLs, shell history, logs, screenshots, tickets or shared notes.
-
-Give each integration its own NetMap user with only the permissions it needs:
-
-| Integration | Permissions |
-|---|---|
-| Inventory export | `inventory_export` |
-| Syslog search and export | `security_view`, `firewall_export` |
-| IPAM sync | `ipam_write` |
-| Discovery | `discovery_manage`, plus `automation_manage` for schedules and `topology_write` to apply results |
-| Service check management | `monitoring_write` |
+Give each integration its own NetMap user with only the permissions it needs; [API Permissions](./permissions.md#what-each-action-needs) lists what each action requires.
 
 Ten invalid keys from one client address lock that address out of API key sign-in for 15 minutes; see [Rate Limits](./rate-limits.md#invalid-api-key-lookup-lockout).
 
 ### If A Key Is Exposed
 
-1. Revoke the key.
-2. Review the audit log for `apikey.created`, `apikey.revoked` and `apikey.auth_failed` events, and for the owner's recent activity.
-3. Rotate any other secrets that were exposed with it.
-4. Create a replacement key after the cause is fixed.
+Revoke the key, then check the audit log for `apikey.created`, `apikey.revoked` and `apikey.auth_failed` events and the owner's recent activity. Rotate any other secrets exposed with it, and create a replacement once the cause is fixed.
 
 ## Proxies And Browsers
 
-Reverse proxies must pass the `X-API-Key` header through. If a key works against NetMap directly but returns `401` through a proxy, check the proxy first.
-
-Browser apps on another origin need that origin in `CORS_ORIGINS`. Do not put API keys in browser code.
+Reverse proxies must pass the `X-API-Key` header through, so if a key works directly but returns `401` through a proxy, check the proxy. Browser apps on another origin need that origin in `CORS_ORIGINS`.
 
 ## Related Pages
 
