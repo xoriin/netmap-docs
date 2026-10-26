@@ -95,7 +95,7 @@ export default defineConfig({
     nav: [
       { text: "Guide", link: "/NetMap" },
       { text: "Install", link: "/installation/quick-start" },
-      { text: "API", link: "/api/authentication" },
+      { text: "API", link: "/api/" },
       { text: "Operations", link: "/operations/health-checks" },
       { text: "Reference", link: "/reference/default-values" }
     ],
@@ -189,7 +189,7 @@ export default defineConfig({
         text: "API",
         collapsed: true,
         items: [
-          { text: "API Overview", link: "/api/api-overview" },
+          { text: "API Overview", link: "/api/" },
           { text: "API Quick Start", link: "/api/quick-start" },
           { text: "API Authentication", link: "/api/authentication" },
           { text: "API Permissions", link: "/api/permissions" },

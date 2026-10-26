@@ -58,7 +58,7 @@
   - [Automation With API Keys](./guides/automation-with-api-keys.md)
   - [Integration Patterns](./guides/integration-patterns.md)
 - API
-  - [API Overview](./api/api-overview.md)
+  - [API Overview](./api/index.md)
   - [API Quick Start](./api/quick-start.md)
   - [API Authentication](./api/authentication.md)
   - [API Permissions](./api/permissions.md)
