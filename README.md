@@ -41,6 +41,12 @@ npm run build
 
 Generated output is written to `.vitepress/dist/` and is excluded from version control.
 
+The build does not check links between pages. After building, check relative links, their anchors, and that `SUMMARY.md` matches the sidebar:
+
+```bash
+npm run check-links
+```
+
 ## Contribute a correction
 
 Use the [documentation issue tracker](https://github.com/xoriin/netmap-docs/issues) for inaccurate, missing, unclear, or broken documentation. Remove credentials, private addresses, database contents, and raw syslog data before sharing examples or screenshots.
