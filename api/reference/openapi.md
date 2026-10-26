@@ -1,70 +1,33 @@
 ---
 title: OpenAPI And Swagger
-sidebar_position: 9
+sidebar_position: 11
 keywords: [OpenAPI, Swagger]
 ---
 
 # OpenAPI And Swagger
 
-OpenAPI JSON:
+NetMap publishes a generated OpenAPI schema and a Swagger UI. Both are public and need no authentication.
 
-```text
-/api/openapi.json
-```
+| Resource | Path |
+|---|---|
+| OpenAPI JSON | `/api/openapi.json` |
+| Swagger UI | `/api/docs` |
 
-Swagger UI:
-
-```text
-/api/docs
-```
-
-ReDoc is not configured in `backend/app/main.py`.
-
-Swagger UI assets are bundled with the NetMap image. Opening `/api/docs` does not
-depend on a public JavaScript CDN and remains compatible with NetMap's default
-content-security policy.
-
-Use generated OpenAPI as schema reference, and this documentation for workflow and security context. Select **Authorize** in Swagger to send a registered NetMap API key with test requests.
-
-## What OpenAPI Is Good For
-
-Use OpenAPI to inspect:
-
-- request body schema names;
-- response model names;
-- path and query parameters;
-- validation constraints;
-- generated operation IDs;
-- available HTTP methods.
-
-Protected operations show a lock and accept either `ApiKeyAuth` or `BearerAuth`.
-Public operations, such as health and login, remain unlocked.
-
-## What This Documentation Adds
-
-The generated schema does not fully explain:
-
-- operational workflows;
-- security consequences;
-- role intent;
-- API-key lifecycle;
-- reverse proxy requirements;
-- backup and restore context;
-- known limitations.
-
-Use both sources together.
-
-## Local Check
+ReDoc is not enabled.
 
 ```bash
-curl --fail http://127.0.0.1:8080/api/openapi.json
+curl --fail-with-body https://netmap.example.com/api/openapi.json
 ```
 
-Swagger UI:
+The schema is titled `NetMap API` and its version is the installed NetMap version. Operations are grouped by NetMap capability.
 
-```text
-http://127.0.0.1:8080/api/docs
-```
+## Using Swagger UI
+
+Open `/api/docs`, select **Authorize**, and enter an API key under `ApiKeyAuth` to send test requests as the key's owner. Protected operations show a lock and accept `ApiKeyAuth` or `BearerAuth`; public operations such as health and sign-in have no lock.
+
+The Swagger UI files ship with NetMap, so the page works without a public CDN and within NetMap's default content security policy.
+
+Use the schema for request and response fields, parameters and validation rules. Use the [Endpoint Reference](./endpoints.md) for the permission each endpoint needs.
 
 ## Related Pages
 
