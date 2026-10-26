@@ -11,7 +11,7 @@ Internal networks manages summary cards, conflict review, VLAN suggestions, subn
 DHCP leases, and address maps. External IPs keeps a register of public addresses; see
 [External IPAM](./external-ipam.md). Write actions require `ipam_write`.
 
-## Summary and subnet list
+## Summary And Subnet List
 
 The summary reports subnet count, total/used/free addresses, utilisation, conflicts, imported leases, and reservations. Subnet rows can be searched, sorted, and inspected for CIDR, site/VLAN, gateway, DHCP range, DNS, device/lease/reservation counts, and utilisation. Counting uses indexed IPv4/IPv6 membership, so large inventories do not require a full scan for every row.
 
@@ -21,7 +21,7 @@ Editing a subnet updates metadata and synchronises supported VLAN fields. Deleti
 
 The page opens with an **Address space** gauge (used and free hosts across all subnets) beside the summary cards. A **Busiest Subnets** card lists the five subnets with the highest utilisation, each with a usage bar and percentage. Chart choices are saved per user; see [Personal Chart Views](./chart-views.md).
 
-## Address map and allocation
+## Address Map And Allocation
 
 Open a subnet to see its used, free, utilisation, gateway, and DHCP range figures, and a usage bar split into device, DHCP lease, reserved, gateway, and free addresses. The **All**, **Devices**, **DHCP**, **Reserved**, and **Free** tabs filter the addresses.
 
@@ -39,11 +39,11 @@ Open an existing reservation and select **Convert to device** beside the close b
 
 Conflicts identify duplicate addresses, overlapping subnets, gateway/DHCP-range collisions, and reservation/lease/device disagreements. Open the source records from the conflict row, correct the underlying device/subnet/lease/reservation, then refresh. A conflict is not resolved by hiding it or deleting a current lease without understanding its source.
 
-## DHCP leases
+## DHCP Leases
 
 Import supported plain-text lease exports from the DHCP server. Parsed fields include IP address, MAC, hostname, expiry, active state, and source. Preview/import reports accepted and rejected rows; duplicate/current records are updated according to the importer rather than creating a second active lease. **Clear imported leases** is destructive to imported rows only; re-import from the authoritative server when needed.
 
-## VLAN suggestions and performance
+## VLAN Suggestions And Performance
 
 Import VLAN/group ranges as subnet suggestions. Select the desired suggestions and review duplicates before creating rows. When several rows match a group by CIDR/VLAN, the canonical row already using the group CIDR wins, preventing unique-CIDR failures during metadata synchronisation.
 
@@ -57,7 +57,7 @@ Import VLAN/group ranges as subnet suggestions. Select the desired suggestions a
 | utilisation looks stale | device/lease/reservation data changed | refresh IPAM and re-import authoritative leases |
 | address map or list is not exhaustive | large IPv4/IPv6 range | use filters/search and summary counts; do not expect every address to render |
 
-## API equivalents
+## API Equivalents
 
 - `/api/v1/ipam/summary`
 - `/api/v1/ipam/subnets`
@@ -66,7 +66,7 @@ Import VLAN/group ranges as subnet suggestions. Select the desired suggestions a
 - `/api/v1/ipam/conflicts`
 - `/api/v1/ipam/vlan-suggestions`
 
-## Related pages
+## Related Pages
 
 - [Create An IP Reservation](../guides/create-ip-reservation.md)
 - [Import DHCP Leases](../guides/import-dhcp-leases.md)

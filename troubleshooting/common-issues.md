@@ -8,7 +8,7 @@ keywords: [troubleshooting, diagnostics, recovery]
 
 Use this page as the first triage pass. Record the installed version/channel, reproduce once, identify whether the failure is container, proxy, authentication, database, network, workspace, or provider related, then collect the smallest safe diagnostic set. Do not delete databases or rotate keys before preserving a backup and logs.
 
-## First checks
+## First Checks
 
 ```bash
 docker compose ps
@@ -19,7 +19,7 @@ docker compose exec netmap sh -c 'test -w /app/data && ls -lh /app/data'
 
 Confirm the image tag and `/app/VERSION`, data-directory ownership, free disk, reverse-proxy URL/origins, and whether the issue reproduces with a direct local request. Redact passwords, API keys, OIDC/client secrets, webhook URLs, private keys, and sensitive raw logs before sharing diagnostics.
 
-## Triage by symptom
+## Triage By Symptom
 
 | Symptom | First place to look | Next action |
 |---|---|---|
@@ -36,11 +36,11 @@ Confirm the image tag and `/app/VERSION`, data-directory ownership, free disk, r
 | syslog absent/live stream stale | [Security Events](../using-netmap/security-events.md#troubleshooting) | verify listeners, mappings, allowlist, WebSocket proxy, connection cap, and parser |
 | topology/IPAM/layout issue | [Topology](../using-netmap/topology.md#troubleshooting) or [IPAM](../using-netmap/ipam.md#troubleshooting) | clear filters, validate relationships/CIDRs, and check database locks |
 
-## Safe escalation package
+## Safe Escalation Package
 
 Collect health output, relevant redacted logs, container status, version/tag, environment variable names (not values), data-directory file sizes, request path/status, timestamp with timezone, and reproduction steps. For database problems include the result of restore validation rather than uploading a live database. For security incidents preserve logs first and follow [Security Incident Response](../security/index.md#incident-response).
 
-## Related pages
+## Related Pages
 
 - [Diagnostic Information](./diagnostic-information.md)
 - [Installation Problems](./installation-problems.md)

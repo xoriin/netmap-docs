@@ -13,7 +13,7 @@ keywords:
 
 Compose is the recommended way to run NetMap because the service definition keeps the image, persistent data, environment, capabilities, restart policy, and log rotation together. Use [Five-Minute Quick Start](./quick-start.md) for the shortest working deployment; this page explains the choices you make when adapting it.
 
-## Published image
+## Published Image
 
 Use a fixed production tag when you need a reproducible deployment. `latest` is convenient for a first install but changes when a new release is published.
 
@@ -25,7 +25,7 @@ services:
 
 Keep `/app/data` on a persistent host bind mount. It contains both SQLite databases, WAL/SHM sidecars, application backups, and other state required across container recreation.
 
-## Production-shaped service
+## Production-Shaped Service
 
 This is the essential shape of the repository's published-image Compose file. Replace the host data path, secrets, URL, and trusted hosts for your environment.
 
@@ -77,7 +77,7 @@ services:
 
 Prefer `env_file: ./.env` instead of placing secrets directly in the Compose YAML. Do not commit `.env` or a file containing either master secret.
 
-## Bridge networking or host networking
+## Bridge Networking Or Host Networking
 
 The published Compose file uses Docker bridge networking with explicit port mappings. It is the least surprising choice when you want container isolation and only need routed network access.
 
@@ -89,7 +89,7 @@ network_mode: host
 
 Host networking means the container binds directly to the host. The host ports must be free, and the `ports:` section must be removed because Docker does not publish ports for a host-networked container. See [How NetMap Works](../product-introduction/architecture.md#network-access-and-capabilities) for the security and capability implications.
 
-## Capabilities and nmap
+## Capabilities And nmap
 
 The service drops all Linux capabilities and adds only:
 
@@ -98,7 +98,7 @@ The service drops all Linux capabilities and adds only:
 
 Do not add `no-new-privileges` when using discovery. The image grants the `netmap` user narrowly scoped passwordless sudo access to `/usr/bin/nmap`; blocking that transition prevents privileged nmap discovery. Avoid adding broad capabilities or running the container as root as a workaround.
 
-## Syslog mappings
+## Syslog Mappings
 
 Keep the UDP and TCP mappings only for protocols you intend to receive. NetMap's default container listener is port `1514`, not the privileged traditional port `514`.
 
@@ -110,7 +110,7 @@ ports:
 
 Configure devices to send to the host's published port, or use a host firewall/NAT rule to translate port 514 to 1514. Restrict senders with `SYSLOG_SENDER_ALLOWLIST` when the deployment receives traffic from a known set of devices. See [Syslog configuration](../configuration/syslog.md).
 
-## Read-only root and temporary storage
+## Read-Only Root And Temporary Storage
 
 The source-build Compose file uses a read-only container root and a `/tmp` tmpfs. Keep `/app/data` writable; startup needs it for SQLite and application state, while the runtime socket and temporary files belong in `/tmp`.
 
@@ -122,7 +122,7 @@ tmpfs:
 
 If a hardened environment changes these settings, verify startup, health checks, database writes, discovery, and exports before deploying it broadly.
 
-## Validate and operate the service
+## Validate And Operate The Service
 
 Before starting or changing a Compose file:
 
@@ -145,7 +145,7 @@ docker compose down
 
 `docker compose down` removes the container and network but leaves a bind-mounted `./data` directory in place. Back up the data directory and environment file before changing secrets, storage paths, or image versions.
 
-## Build from source
+## Build From Source
 
 The repository's `docker-compose.build.yml` is for maintainers and local validation. It builds `docker/aio.Dockerfile` instead of pulling Docker Hub:
 
@@ -158,7 +158,7 @@ curl --fail http://127.0.0.1:8080/api/health
 
 Run these commands from the repository root. The source-build file mounts `./data`, drops all capabilities before adding the two required capabilities, uses a read-only root, and defaults trusted hosts and CORS for local access. It is not the end-user installation file; use the published-image Compose file for a normal production deployment.
 
-## Related pages
+## Related Pages
 
 - [Installation Overview](./installation.md)
 - [Five-Minute Quick Start](./quick-start.md)

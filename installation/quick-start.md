@@ -12,7 +12,7 @@ keywords:
 
 This procedure starts the published NetMap image with Docker Compose and the default bridge network. It is suitable for a first local deployment. For ARP/MAC discovery or Microsoft DHCP checks that need the host's LAN address, switch to host networking after reading [Docker Compose](./docker-compose.md).
 
-## Before you begin
+## Before You Begin
 
 You need:
 
@@ -22,7 +22,7 @@ You need:
 
 Do not expose the initial setup page directly to the public internet. Put NetMap behind an HTTPS reverse proxy or restrict the port with your firewall before inviting users.
 
-## 1. Create the installation directory
+## 1. Create The Installation Directory
 
 ```bash
 mkdir -p "$PWD/netmap/data"
@@ -31,7 +31,7 @@ cd "$PWD/netmap"
 
 The `data/` directory will contain `netmap.db`, `firewall.db`, their SQLite sidecars, and application backups. Do not delete it when recreating the container.
 
-## 2. Generate the required secrets
+## 2. Generate The Required Secrets
 
 Run these commands on a machine with Python 3:
 
@@ -100,7 +100,7 @@ services:
 
 The syslog mappings are optional. Remove them if this installation will not receive syslog. Keep `NET_RAW` for ICMP/network tools and `NET_BIND_SERVICE` for low-port operations such as DHCP checks.
 
-## 5. Validate and start
+## 5. Validate And Start
 
 ```bash
 docker compose config
@@ -117,7 +117,7 @@ The health request should return:
 
 If the container is still starting, wait a few seconds and repeat the health request. Check logs with `docker compose logs --tail=200 netmap` if it does not become healthy.
 
-## 6. Complete first-run setup
+## 6. Complete First-Run Setup
 
 Open `http://localhost:8080/` and complete the setup form. The first account becomes the initial SuperAdmin. Then:
 
@@ -126,7 +126,7 @@ Open `http://localhost:8080/` and complete the setup form. The first account bec
 3. Add a test device in Inventory and run a safe monitoring check.
 4. Configure a backup before adding production data.
 
-## 7. Optional API smoke test
+## 7. Optional API Smoke Test
 
 Create an API key from Profile → API keys. Copy it immediately; the plaintext secret is shown only once.
 
@@ -140,7 +140,7 @@ curl --fail-with-body \
 
 The response should identify the account that owns the key. See [API Keys](../api/authentication.md#api-keys) before using keys in automation.
 
-## Stop, start, and remove
+## Stop, Start, And Remove
 
 Stop the service without deleting data:
 
@@ -162,7 +162,7 @@ docker compose down
 
 Do not run `docker compose down -v` for this bind-mounted installation unless you have deliberately reviewed what else the Compose project owns.
 
-## Next steps
+## Next Steps
 
 - [Docker Compose](./docker-compose.md) for host networking, ports, logging, and source builds;
 - [Choose a Data Directory](../configuration/storage.md) for ownership and backup planning;

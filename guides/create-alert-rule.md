@@ -8,13 +8,13 @@ keywords: [alerts, notifications, monitoring]
 
 Alert rules are evaluated by the background alert worker. A rule selects an event type, target scope, optional threshold/service/monitor, enabled state, cooldown, and notification methods. Changes require `alert_write`. The incident option is in **Admin → Alerts**, in the rule form.
 
-## Supported event types
+## Supported Event Types
 
 Device rules cover offline, online recovery, warning, any status change, unexpected state, expected state restored, RTT above a threshold, packet loss above a percentage, and flapping (four or more status changes in the last hour). Service rules cover one/all service checks down or slow above a response threshold. Standalone monitor rules cover endpoint down, slow response, and certificate expiry within the monitor's configured lead days.
 
 Expected-status rules compare observed health with the device's expected state, so an intentionally offline device does not create an unexpected outage. Down/online and service transitions are edge-triggered; thresholds can repeat after cooldown. Cooldowns suppress duplicate notifications but do not erase the underlying event.
 
-## Open an incident on status pages
+## Open An Incident On Status Pages
 
 Each rule has an **Open an incident on status pages** switch and a **Consecutive breaching checks** count (1 to 20, default 3), stored as `open_incident` and `incident_min_failures` in the [alert-rule API](../api/reference/endpoints.md#alerts). When the switch is on and the rule's condition holds for that many checks in a row, every [status page](../using-netmap/status-pages.md) that shows the affected device, service check or monitor gets an incident, published immediately. Endpoint monitors also wait for their own retry count; the larger of the two applies.
 
@@ -42,7 +42,7 @@ Disabled notification profiles are skipped. A rule can target all devices/checks
 | test returns `422` | required threshold missing | set RTT/service/slow threshold for that rule type |
 | expected-offline alert | expected status is online or rule is raw-status based | set expected offline or use the expected-state rule |
 
-## API equivalents
+## API Equivalents
 
 - `GET/POST /api/v1/alerts/rules`
 - `PATCH/DELETE /api/v1/alerts/rules/{rule_id}`

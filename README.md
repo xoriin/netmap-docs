@@ -9,7 +9,7 @@ Source-backed documentation for [NetMap](https://github.com/xoriin/netmap), a se
 
 GitBook navigation is defined in [SUMMARY.md](./SUMMARY.md). The VitePress sidebar and local search are configured in `.vitepress/config.mts`.
 
-## Repository structure
+## Repository Structure
 
 Reader content is grouped into descriptive, unnumbered folders. Folder names do not control publication order: `SUMMARY.md` controls GitBook navigation, and `.vitepress/config.mts` controls the VitePress sidebar.
 
@@ -22,7 +22,7 @@ reference/
 
 Internal planning prompts, authoring checklists, installed dependencies, and generated site output are kept outside this repository.
 
-## Preview locally
+## Preview Locally
 
 From the repository root:
 
@@ -45,7 +45,7 @@ The build does not check links between pages. After building, check relative lin
 npm run check-links
 ```
 
-## Contribute a correction
+## Contribute A Correction
 
 Use the [documentation issue tracker](https://github.com/xoriin/netmap-docs/issues) for inaccurate, missing, unclear, or broken documentation. Remove credentials, private addresses, database contents, and raw syslog data before sharing examples or screenshots.
 

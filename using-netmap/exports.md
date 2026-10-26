@@ -8,7 +8,7 @@ keywords: [exports, backup, report]
 
 The Exports workspace groups inventory and PDF report downloads above the firewall export controls. On wide screens, a separate information column shows available row counts, recent export activity, the last download time, and a CSV/JSON/PDF format guide. The page has a maximum width for readability; smaller screens stack these sections. Only download panels and format guidance permitted for your role are shown. Export permissions are separate: `inventory_export`, `firewall_export`, and `report_export`. Database backup/restore and scheduled-backup administration require SuperAdmin.
 
-## Data exports
+## Data Exports
 
 Inventory CSV includes identity, status, type, icon/colour, VLAN/group, subnet, tags, notes, and UTC timestamps. Inventory JSON uses the same fields with arrays/null values preserved for automation. Filenames include a UTC timestamp; CSV is UTF-8 and formula-like text is prefixed so spreadsheets treat it as text rather than executable formulas.
 
@@ -22,11 +22,11 @@ The primary manual workflow creates a portable `.nmbak` encrypted and authentica
 
 Before restore, upload the file to `/api/v1/exports/restore/validate`, passing an encrypted backup's passphrase in `X-NetMap-Backup-Passphrase`. Validation checks authenticated encryption or the legacy signature, expected tables, SQLite integrity, size, and row counts without touching the live database. Uploads stop at 256 MB. Restore is a destructive replacement after confirmation and requires downtime/verification.
 
-## Scheduled backups
+## Scheduled Backups
 
 Administrators configure enablement, interval in hours, retention count, and the persistent data backup directory. The background service writes signed but unencrypted `netmap-backup-<timestamp>.db` files and prunes the oldest files beyond the retention count. Use an encrypted host volume/filesystem for that directory. The UI/API can list, download, or delete individual scheduled files; filenames are constrained to the backup directory to prevent path traversal.
 
-## Recovery runbook
+## Recovery Runbook
 
 1. Preserve the current data directory and logs.
 2. Confirm the image version and original `SECRET_KEY`, `MASTER_KEY`, signing secret, and OIDC secret files.
@@ -35,7 +35,7 @@ Administrators configure enablement, interval in hours, retention count, and the
 5. Restore through the API or the filesystem procedure in [Backup And Restore](../operations/backup-and-restore.md).
 6. Start NetMap and verify health, login, devices/topology, IPAM, syslog history, API keys, and scheduled backups.
 
-## API equivalents
+## API Equivalents
 
 - `GET /api/v1/exports/summary`
 - `GET /api/v1/exports/inventory?format=csv|json`

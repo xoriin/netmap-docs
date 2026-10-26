@@ -1,5 +1,5 @@
 ---
-title: First-Run Setup and Authentication
+title: First-Run Setup And Authentication
 sidebar_position: 5
 keywords:
   - setup
@@ -9,11 +9,11 @@ keywords:
   - sessions
 ---
 
-# First-Run Setup and Authentication
+# First-Run Setup And Authentication
 
 This page covers the browser authentication lifecycle after the container is healthy. The first account created through setup becomes the initial SuperAdmin; later users and roles are managed from Admin.
 
-## First-run setup
+## First-Run Setup
 
 The setup screen appears while the application has no users. The API reports this state through `GET /api/v1/setup/status` as `{ "needs_setup": true }`. Complete setup before exposing the service to other users.
 
@@ -24,7 +24,7 @@ The setup screen appears while the application has no users. The API reports thi
 
 Setup is not a general user-registration flow. After the first account exists, new users must be created by an authorized administrator.
 
-## First-login checklist
+## First-Login Checklist
 
 After signing in as the initial SuperAdmin:
 
@@ -37,7 +37,7 @@ After signing in as the initial SuperAdmin:
 7. Configure syslog, notifications, discovery, and SSO only when each is required.
 8. Create API keys from Profile only for server-side automation, then store each plaintext key immediately.
 
-## Local sign-in and sign-out
+## Local Sign-In And Sign-Out
 
 Login branding uses a brief text-reveal entrance. Your system’s Reduce motion preference disables the animation and shows the text immediately. The sign-in fields remain available while the animation plays.
 
@@ -45,7 +45,7 @@ Local sign-in uses the username and password created during setup or by an admin
 
 Use the Sign out control to revoke the current refresh session. If the access token expires while the browser is idle, NetMap attempts a refresh; a failed refresh returns the browser to the login screen.
 
-## Session lifetime and idle timeout
+## Session Lifetime And Idle Timeout
 
 Defaults are:
 
@@ -58,7 +58,7 @@ The SPA proactively refreshes the access token before its one-hour expiry. Reloa
 
 Inactivity logout is optional and is set under **Admin → System**. With **Log out inactive users** turned off — the default on new installations from 1.7.0 — users stay signed in until they sign out, their refresh session expires, their password changes, or an administrator revokes the session. Turn it on and set **Idle session timeout (minutes)** (1–480) to sign users out after that long without mouse, keyboard, touch, or scroll activity in NetMap. Installations upgraded from an earlier release keep the timeout they already had, which was 15 minutes unless changed.
 
-## Forgot and reset password
+## Forgot And Reset Password
 
 Use **Forgot password** on the login screen and enter the account email. The response does not reveal whether an account exists. If SMTP is configured, NetMap sends a time-limited reset link based on `APP_URL`.
 
@@ -72,23 +72,23 @@ Relevant endpoints:
 
 Never paste reset tokens into tickets, screenshots, or chat. If a link is expired, request a new one rather than reusing it.
 
-## Change your password
+## Change Your Password
 
 An authenticated user can change a local password from Profile. The current password is required. A wrong current password returns `401`; a successful change invalidates pending password-reset tokens and protects the account from stale reset links.
 
 OIDC-only users may not have a local password to change; manage their credentials at the identity provider.
 
-## Login lockouts
+## Login Lockouts
 
 Failed local sign-ins are throttled per username. The defaults are five failed attempts followed by a 15-minute lockout, with a short progressive delay during failed-login handling. Administrators can adjust `AUTH_MAX_FAILED_ATTEMPTS`, `AUTH_LOCKOUT_MINUTES`, and `AUTH_PROGRESSIVE_DELAY_SECONDS`.
 
 IP-level throttling is enabled by default with a separate 50-failure threshold (`AUTH_IP_MAX_FAILED_ATTEMPTS`) so one account does not immediately lock users behind the same NAT. A SuperAdmin can unlock a user's account-level state from Admin → Users; the source-IP state expires after the configured lockout window. Do not repeatedly retry a locked account; verify the password or use the administrator recovery path.
 
-## OIDC single sign-on
+## OIDC Single Sign-On
 
 OIDC is an additional browser sign-in method, not a replacement for the emergency SuperAdmin local login. See [OIDC SSO](../configuration/oidc-sso.md) for provider setup, linking, role mapping, callback errors, and the Require SSO safeguard.
 
-## Troubleshooting checklist
+## Troubleshooting Checklist
 
 - **Setup does not appear:** check whether a user already exists and confirm `GET /api/v1/setup/status`.
 - **Login returns `401`:** verify the username, password, active state, and lockout status.
@@ -99,7 +99,7 @@ OIDC is an additional browser sign-in method, not a replacement for the emergenc
 
 See [Authentication Problems](../troubleshooting/authentication-problems.md) for recovery commands and proxy-specific checks.
 
-## Related pages
+## Related Pages
 
 - [Installation Overview](./installation.md)
 - [OIDC SSO](../configuration/oidc-sso.md)

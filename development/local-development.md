@@ -39,7 +39,7 @@ node node_modules/vite/bin/vite.js build
 
 After validation, commit the change to your feature branch, merge it into your fork's `test` branch, and push `origin test` as described in the contributor workflow.
 
-## Related pages
+## Related Pages
 
 - [Contributing Workflow](./contributing-workflow.md)
 - [Testing](./testing.md)

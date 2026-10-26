@@ -8,7 +8,7 @@ keywords: [OIDC, SSO, authentication, PKCE]
 
 NetMap supports generic OpenID Connect Authorization Code + PKCE login beside local authentication. OIDC is configured by a SuperAdmin and should be tested before it is required for users.
 
-## Provider prerequisites
+## Provider Prerequisites
 
 Create a confidential OIDC client with:
 
@@ -38,7 +38,7 @@ OIDC_ALLOW_UNVERIFIED_EMAIL=false
 
 SuperAdmin-managed settings in Admin → Security → Single Sign-On override environment values for managed fields. The client secret is encrypted with `MASTER_KEY` and is write-only after saving. Do not expect it to be returned by the settings API.
 
-## Test before enabling required SSO
+## Test Before Enabling Required SSO
 
 1. Configure the issuer, client, callback, and scopes.
 2. Use the provider-test action in Admin → Security → Single Sign-On.
@@ -49,19 +49,19 @@ SuperAdmin-managed settings in Admin → Security → Single Sign-On override en
 
 Enable **Require SSO** only after the provider test passes and an active SuperAdmin exists. Non-SuperAdmin local login is then restricted, but SuperAdmin local login remains the emergency recovery path.
 
-## Linking and provisioning
+## Linking And Provisioning
 
 NetMap links an account by `(issuer, subject)` first. On a first sign-in it may link to an existing account by verified email when `OIDC_LINK_BY_EMAIL=true`; it does not use an unverified email unless explicitly allowed. With `OIDC_AUTO_PROVISION=true`, an otherwise unmatched identity can create a local account with `OIDC_DEFAULT_ROLE`.
 
 The default role must never be SuperAdmin. Use explicit, reviewed role mappings for elevated access.
 
-## Claims and roles
+## Claims And Roles
 
 Role claim mapping is opt-in. Configure the group claim and mappings only after confirming the provider's actual token shape. Local roles win by default; enabling provider-managed roles allows claims to change non-SuperAdmin roles. Local SuperAdmins are protected from claim-based downgrade.
 
 Relevant settings include `OIDC_GROUP_CLAIM`, `OIDC_ROLE_MAPPINGS`, `OIDC_MANAGE_ROLES`, `OIDC_DEFAULT_ROLE`, and `OIDC_ALLOW_SUPER_ADMIN`.
 
-## Security behavior
+## Security Behaviour
 
 - State, nonce, and PKCE verifier records are single-use and time-limited.
 - The browser transaction is bound to a SameSite=Lax `netmap_oidc_txn` cookie so the cross-site top-level callback can complete.
@@ -78,7 +78,7 @@ Relevant settings include `OIDC_GROUP_CLAIM`, `OIDC_ROLE_MAPPINGS`, `OIDC_MANAGE
 - **Unexpected role:** disable provider-managed roles, review the claim mapping, and restore the local role from Admin.
 - **Provider unreachable:** test issuer discovery and JWKS reachability from inside the NetMap network namespace.
 
-## API endpoints
+## API Endpoints
 
 - `GET /api/v1/auth/oidc/status`
 - `GET /api/v1/auth/oidc/login`
@@ -87,7 +87,7 @@ Relevant settings include `OIDC_GROUP_CLAIM`, `OIDC_ROLE_MAPPINGS`, `OIDC_MANAGE
 - `PUT /api/v1/admin/oidc-settings`
 - `POST /api/v1/admin/oidc-settings/test`
 
-## Related pages
+## Related Pages
 
 - [First-Run Setup and Authentication](../installation/first-run-and-authentication.md)
 - [Authentication Problems](../troubleshooting/authentication-problems.md)

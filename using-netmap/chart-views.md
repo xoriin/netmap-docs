@@ -1,17 +1,17 @@
 ---
-title: Personal chart views
+title: Personal Chart Views
 keywords: [charts, visuals, display, preferences]
 ---
 
-# Personal chart views
+# Personal Chart Views
 
 Use the sliders icon in a chart's header to open **Visual options**. Chart choices are available across NetMap's workspace and Admin charts, including response history in monitoring details. Each chart remembers its own view for your signed-in account, across browsers and devices. Other users keep their own choices.
 
-## Choose a visual
+## Choose A Visual
 
 The gallery includes ring, pie, bars, columns, stacked bar, line, area, dot plot, treemap, gauge, number and data table. Choices that do not fit the chart's data are disabled. For example, time series retain chronological order, and overlapping measurements cannot become parts of a total. Changing a visual changes its presentation; it does not change the underlying records or your permissions.
 
-## Choose the elements
+## Choose The Elements
 
 Use **Elements** to show the chart and optionally add Bars or a text legend. Bars already include names and values, so **Show legend** is hidden while bars are visible. Selecting Bars as the main chart uses one labelled bar list. At least one element remains visible.
 
@@ -27,11 +27,11 @@ A gauge shows the named category's share of the total; it does not infer an upti
 
 Monitoring’s Highest latency and Devices by VLAN start as horizontal bars. Devices by VLAN supports all twelve graphic styles and includes No VLAN for unassigned devices. Your saved chart choice still takes priority, and Reset returns to bars. Visual options stays available when no devices match the filters.
 
-## Filter device visuals
+## Filter Device Visuals
 
 Inventory’s Devices by type and Monitoring’s Fleet health, Highest latency and Devices by VLAN follow the filters in their device table. Select a VLAN/group, device type, location, status or favourites, or search for a device, to update the visual to the matching devices. Combined filters apply together. Charts include all matching results across pages; changing the table page does not change their data. Clear the filters to restore the full device view. Your saved visual type and display options still apply to the filtered data.
 
-## Save, cancel and reset
+## Save, Cancel And Reset
 
 - Changes preview immediately. **Save my view** saves that chart's type and display options to your account.
 - **Cancel** restores the saved view and closes the options. Closing with the X or sliders icon keeps the current preview until you cancel, save or leave the page.

@@ -8,7 +8,7 @@ keywords: [Docker, docker run, container, deployment]
 
 Docker Compose is easier to maintain, but `docker run` is useful for a quick test or an environment that already manages containers outside Compose. This page keeps the direct-container path distinct from [Docker Compose](./docker-compose.md).
 
-## Prepare the host
+## Prepare The Host
 
 ```bash
 INSTALL_DIR=/srv/netmap
@@ -40,7 +40,7 @@ Protect this file because it contains both master secrets:
 chmod 600 "$INSTALL_DIR/netmap.env"
 ```
 
-## Start with bridge networking
+## Start With Bridge Networking
 
 This variant publishes the web and syslog ports explicitly:
 
@@ -50,7 +50,7 @@ docker run -d --name netmap --restart unless-stopped --env-file "$INSTALL_DIR/ne
 
 Remove the syslog publish options if this installation will not receive syslog. Use a fixed image tag instead of `latest` when reproducible upgrades are required.
 
-## Start with host networking
+## Start With Host Networking
 
 Use host networking when NetMap needs Layer-2 access for ARP/MAC discovery or must use the host's LAN address for DHCP checks. Replace the bridge command's publish options with `--network host`:
 
@@ -60,7 +60,7 @@ docker run -d --name netmap --restart unless-stopped --network host --env-file "
 
 Do not combine `--network host` with `--publish`; Docker does not publish ports for a host-networked container. Ensure ports 8080 and 1514 are free on the host.
 
-## Verify and inspect
+## Verify And Inspect
 
 ```bash
 docker ps --filter name=netmap
@@ -70,7 +70,7 @@ docker logs --tail=200 netmap
 
 The health request should return `{"status":"ok"}`. Open `http://localhost:8080/` to complete first-run setup. If it fails, inspect logs for invalid secrets, an unwritable data directory, port conflicts, or migration errors.
 
-## Lifecycle and updates
+## Lifecycle And Updates
 
 ```bash
 docker stop netmap
@@ -95,7 +95,7 @@ docker rm -f netmap
 
 Keep `SECRET_KEY`, `MASTER_KEY`, and `/app/data` unchanged. Startup applies registered database migrations. See [Upgrading](./upgrading.md) for release and rollback guidance.
 
-## Related pages
+## Related Pages
 
 - [Installation Overview](./installation.md)
 - [Five-Minute Quick Start](./quick-start.md)

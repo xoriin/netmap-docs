@@ -6,7 +6,7 @@ keywords: [install, startup]
 
 # Installation Problems
 
-## Container exits immediately
+## Container Exits Immediately
 
 Likely causes: missing production secrets, placeholder secrets, invalid Fernet `MASTER_KEY`, unwritable `DATA_DIR`, invalid retention values.
 

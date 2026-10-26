@@ -36,7 +36,7 @@ The root `documentation/` directory contains the public documentation source and
 
 The `docs/` directory contains project notes that may be useful to contributors but are not the public documentation site.
 
-## Contributor checkout
+## Contributor Checkout
 
 Create a GitHub fork and clone that fork into any working directory:
 

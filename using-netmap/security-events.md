@@ -16,23 +16,23 @@ Configure a firewall, router, switch, or host to forward syslog to the NetMap ho
 
 NetMap accepts common RFC-style and firewall log formats. Parsed fields include timestamp, source/destination addresses and ports, action, protocol, interface, rule, and reason. Unrecognised messages remain available as raw logs rather than being discarded. Syslog over TLS settings may exist in deployments, but the current published listener support must be verified against the image before promising a TLS sender configuration; use UDP/TCP unless TLS support is confirmed.
 
-## Traffic Mix and Top Sources
+## Traffic Mix And Top Sources
 
 The workspace opens with **Traffic Mix** and **Top Sources** beside the **Stored events**, **Received packets**, **Unparsed packets**, and **Denied senders** cards. Both charts use the events currently loaded in the table, so they follow your filters and live events. **Traffic Mix** splits them into **Blocked** (block, reject, or drop actions), **Passed** (pass or allow), and **Other**, with the blocked share in the ring. **Top Sources** ranks the five source IPs with the most events and shows how many of each were blocked.
 
-## Search and filters
+## Search And Filters
 
 Search raw text with full-text matching or combine structured filters for address, port, protocol, action, interface, rule, reason, and time range. The FTS5 mirror indexes `firewall_events.raw_log`; field filters continue to use the parsed columns. Saved searches are named filters owned by the creating user; apply or delete them from the workspace.
 
-## Live events and device correlation
+## Live Events And Device Correlation
 
 The live stream uses an authenticated WebSocket and reconnects when the connection drops, subject to `SYSLOG_WS_MAX_CONNECTIONS`; after reconnecting it reloads the event list so events received while offline are not missed, and the topbar shows whether the stream is connecting, connected, reconnecting, or paused. With **Auto-scroll** on, the table follows new events to the top. Event table columns can be resized by dragging their dividers; widths are remembered per browser, and **Reset columns** (or double-clicking a divider) restores the default layout. API-key authentication is intentionally not supported for this WebSocket; use a browser session or the polling API. Selecting a device activity view correlates events by the device IP and returns an isolated empty/error result if the firewall database is unavailable; it does not make topology perform a broad log aggregation.
 
-## Export and retention
+## Export And Retention
 
 Export the current filtered result as CSV or JSON with `firewall_export`; limits and active filters are included in the request. `FIREWALL_LOG_RETENTION_DAYS` controls retention (default 7). Cleanup deletes rows in committed batches, and FTS maintenance/rebuild runs after startup so large databases do not delay health checks. Plan disk space for raw logs plus the FTS index.
 
-## Corruption recovery
+## Corruption Recovery
 
 Schema-level corruption of `firewall.db` triggers controlled disposal, removal of the firewall database/WAL/SHM sidecars, and recreation. FTS shadow-table corruption is handled separately by rebuilding the FTS index without deleting the main event table. Treat automatic recovery as data loss for unrecovered raw events; restore from an external backup when required.
 
@@ -47,7 +47,7 @@ Schema-level corruption of `firewall.db` triggers controlled disposal, removal o
 | live stream disconnects | WebSocket limit, proxy upgrade, or expired session | verify proxy WebSocket support and reconnect with a browser session |
 | `403` | missing `security_view`/`firewall_export` | update the role or API-key owner permissions |
 
-## API equivalents
+## API Equivalents
 
 - `GET /api/v1/syslog/status`
 - `GET /api/v1/syslog/events`
@@ -55,7 +55,7 @@ Schema-level corruption of `firewall.db` triggers controlled disposal, removal o
 - `DELETE /api/v1/syslog/searches/{search_id}`
 - WebSocket live stream (browser session authentication)
 
-## Related pages
+## Related Pages
 
 - [Syslog](../configuration/syslog.md)
 - [Search Syslog Events](../guides/search-syslog.md)

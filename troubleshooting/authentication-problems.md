@@ -6,13 +6,13 @@ keywords: [auth, login, SSO]
 
 # Authentication Problems
 
-## Local login rejected
+## Local Login Rejected
 
 Likely causes: wrong password, inactive user, lockout, Require SSO for non-SuperAdmin users.
 
 Fix: use a SuperAdmin account to unlock/reactivate the user or review SSO settings.
 
-## Session expires
+## Session Expires
 
 Access tokens are short-lived. Refresh tokens are held in an HttpOnly cookie. If refresh fails, sign in again.
 

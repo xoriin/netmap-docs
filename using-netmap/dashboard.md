@@ -77,7 +77,7 @@ Favourited devices and favourited standalone HTTP/HTTPS monitors appear in one s
 - **Slowest Devices** ranks the five monitored devices with the highest average RTT over the last 24 hours.
 - **Endpoints** counts endpoints that are **Up**, **Down**, and **Paused**; **All** opens Monitoring → Endpoints.
 
-## Freshness and empty states
+## Freshness And Empty States
 
 Overview loads summary data and monitoring data separately. Summary cards can appear before detailed rows finish loading. A loading skeleton means a request is in flight; “No monitoring data yet” means the monitoring summary has not produced rows, while “No favourites found” means the current search matches nothing. Re-enter the workspace to refresh stale data, then check Monitoring if the fleet data remains old.
 

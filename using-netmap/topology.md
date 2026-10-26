@@ -8,11 +8,11 @@ keywords: [topology, graph, layouts, relationships]
 
 Topology turns inventory records into an interactive map of devices, group zones, sites, and relationships. Viewing requires authentication; changing graph data or layouts requires `topology_write`.
 
-## Workspace tour
+## Workspace Tour
 
 The canvas occupies the centre, with a toolbar/ribbon for search, fit, layout, display preferences, Path mode, exports, and named layouts. The entity list can search and select devices, links, and groups. The mini-map shows the current model extent; the details panel edits the selected entity. Site filtering, online/offline counts, and a live refresh indicator describe the current graph view rather than the entire database.
 
-## Canvas navigation and display
+## Canvas Navigation And Display
 
 Drag empty canvas space to pan, use the wheel or trackpad to zoom, select a node or edge to open details, and use Fit to frame visible elements. The mini-map viewport rectangle can be clicked to pan without changing zoom. Search accepts a device name, hostname, or IP; selecting a result centres it and briefly pulses the match. The location filter offers **All Sites** or one site. Device icons, labels, group visibility, and hidden-group search are independent display preferences and persist with the autosaved layout.
 
@@ -20,21 +20,21 @@ Group zones contain their member devices; a relationship can connect devices, gr
 
 Status changes produce a short pulse on the affected node. Online/offline counts update with the graph refresh and respect the active site/group filters.
 
-## Entity lists and bulk assignment
+## Entity Lists And Bulk Assignment
 
 Use the Devices, Links, and Groups lists to search, hover, select, and toggle visibility. Shift-drag an empty canvas area to box-select devices; ordinary drag still pans. The floating bulk bar assigns the selected devices to a group/VLAN or site, including clearing an assignment. Bulk changes require `topology_write` and are confirmed before submission.
 
-## Devices, links, and relationship editing
+## Devices, Links, And Relationship Editing
 
 Add a device from the topology toolbar to create it and place it immediately. Discovery opens the scan/review flow; import only the reviewed rows. To create a link, choose source and target endpoints, relationship type, direction, optional link speed, and notes. The endpoint picker searches by IP, hostname, or display name and supports keyboard navigation. Edit or delete a selected link from the details panel; direction controls determine whether source-to-target, target-to-source, or both states are allowed. Link speed presets are shown in the edge label and influence edge width; speed is presentation metadata, not a bandwidth test.
 
-## Layout controls and persistence
+## Layout Controls And Persistence
 
 Fit frames the current graph, Reset returns the default view, and Auto-arrange recalculates positions. Auto-arrange and group-shape controls can change saved positions, so save deliberately. Group layout supports rows or rings, with device spacing and devices-per-row/ring limits. Node size, label size, group-zone opacity, and edge-label size are display preferences; Reset one group restores that group's layout without deleting its devices or links.
 
 Autosave is debounced while dragging. The server-side `__autosave__` layout wins over local storage when its timestamp is newer, and the initial load is completed before saves are enabled. Named layouts are independent snapshots: create, load, or delete them from the Layouts modal; loading immediately applies and autosaves the canvas state. The autosave layout cannot be shared or deleted.
 
-## Sharing layouts
+## Sharing Layouts
 
 Owners can generate a 12-character share code, copy it, revoke it, or import a code. A preview endpoint shows the snapshot before import. Import creates an independent copy for the importing user; a name collision receives an automatic suffix. Revoking a code prevents future imports but does not alter copies already imported.
 
@@ -52,7 +52,7 @@ PNG exports a raster image for quick sharing, SVG exports a scalable graph with 
 | path shows no route | no drawn edge or membership hop connects endpoints | create the missing relationship or select connected endpoints |
 | shared layout cannot be imported | code revoked, expired by policy, or mistyped | request a fresh code from the owner |
 
-## Related pages
+## Related Pages
 
 - [Inventory](./inventory.md)
 - [Device Details](./device-details.md)

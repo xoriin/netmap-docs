@@ -8,17 +8,17 @@ keywords: [discovery, nmap, scan, inventory]
 
 Discovery runs nmap against private targets and presents detected devices for review before import. Running scans and reviewing results requires `discovery_manage`; applying or importing results into inventory also requires `topology_write`. NetMap does not silently overwrite inventory from an ad-hoc scan.
 
-## Requirements and safety
+## Requirements And Safety
 
 The all-in-one image includes nmap and grants the `netmap` user passwordless sudo for `/usr/bin/nmap`. MAC/ARP discovery requires host networking because ARP does not cross a Docker bridge. Only scan networks you own or are authorised to test. Public and special-purpose targets are rejected; administrator settings control confirmation thresholds and maximum scan size.
 
-## Target formats and scan modes
+## Target Formats And Scan Modes
 
 Targets may be a single IPv4/IPv6 address, CIDR, comma-separated addresses/ranges, or a private `start-end` range. NetMap preserves the entered range for display but normalises it to CIDR arguments before invoking nmap. **Ping sweep** discovers responsive hosts and reverse-DNS names without scanning ports. **Basic port detection** adds the configured lightweight port probe and takes longer.
 
 Large ranges show an estimate before confirmation. Host-count limits, discovery rate limits, and `discovery_process_timeout_seconds` protect the scheduler and container; reverse DNS time counts against the timeout. A scan that exceeds a configured maximum must be reduced rather than forced through the UI.
 
-## Start a scan
+## Start A Scan
 
 1. Open Topology or the Discovery workspace and choose **Discover**.
 2. Enter the target(s), choose ping sweep or basic port detection, and select an optional group and location.
@@ -29,19 +29,19 @@ Large ranges show an estimate before confirmation. Host-count limits, discovery 
 
 The result identifies IP, reverse-DNS hostname, MAC/vendor when available, open-port data for port scans, and whether a row matches an existing device.
 
-## MAC, vendor, and SNMP enrichment
+## MAC, Vendor, And SNMP Enrichment
 
 ARP/MAC results require host networking. In bridge mode, discovery can still find IPs but MAC/vendor fields may be empty; enter them manually or rerun with host networking. SNMP can enrich supported network devices and may suggest ARP-derived fields. Saved profile credentials remain protected; preview proposed changes before applying them.
 
-## Review and import behavior
+## Review And Import Behaviour
 
 Existing-device matching uses available identity data such as IP/MAC. You can select **new devices only**, import selected rows, fill missing fields on existing records, or explicitly allow selected field overrides. Fill-missing is non-destructive; override can replace existing metadata and should be reviewed field by field. Skipped duplicates and validation failures remain visible in the result summary.
 
-## Scheduled discovery
+## Scheduled Discovery
 
 Create a schedule with target, mode, interval, optional group/location, and a saved notification profile. Schedules can be edited, paused, run immediately, or deleted by users with write permission. Scheduled runs create review-only observations rather than mutating inventory. See [Review Discovery Observations](./scheduled-discovery-observations.md) for apply/resolve workflows and Wi-Fi churn suppression.
 
-## History and troubleshooting
+## History And Troubleshooting
 
 Discovery history records status, timestamps, target/mode, result counts, and errors for completed and failed scans. Retention follows the application's configured history policy.
 
@@ -54,7 +54,7 @@ Discovery history records status, timestamps, target/mode, result counts, and er
 | `sudo`/nmap error | image or host dependency/capability issue | inspect container logs and verify `/usr/bin/nmap` and the permitted sudo rule |
 | hostname is missing | no PTR response | configure reverse DNS or treat the IP as the identity |
 
-## API equivalents
+## API Equivalents
 
 - `POST /api/v1/discovery/scans`
 - `GET /api/v1/discovery/scans`

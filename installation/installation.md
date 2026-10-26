@@ -15,7 +15,7 @@ NetMap is distributed as a self-hosted all-in-one Docker image. The image contai
 
 This page helps you choose a deployment path. Use [Quick Start](./quick-start.md) when you want a minimal working Compose installation; use the linked pages below when you need to tune the deployment.
 
-## Choose a deployment path
+## Choose A Deployment Path
 
 | Goal | Recommended path | Notes |
 | --- | --- | --- |
@@ -35,13 +35,13 @@ This page helps you choose a deployment path. Use [Quick Start](./quick-start.md
 
 The first start creates the database schema and applies registered migrations. Keep the data directory and secret values when upgrading.
 
-## Decide how the container reaches the network
+## Decide How The Container Reaches The Network
 
 Use the default Docker bridge network when you want normal port publishing and clear container isolation. Use `network_mode: host` when the container must use the host's LAN address for ARP/MAC discovery or for DHCP checks against a server whose scopes do not include the Docker bridge address.
 
 Host networking changes the port model: the container binds directly to the host, so `ports:` mappings are not used and host ports must be available. See [How NetMap Works](../product-introduction/architecture.md#network-access-and-capabilities) and [Docker Compose](./docker-compose.md) before changing this setting.
 
-## Installation sequence
+## Installation Sequence
 
 1. Choose a host directory and create a persistent `data/` subdirectory.
 2. Generate and protect `SECRET_KEY` and `MASTER_KEY`.
@@ -51,7 +51,7 @@ Host networking changes the port model: the container binds directly to the host
 6. Complete first-run setup and create the initial SuperAdmin.
 7. Review [the installation security checklist](../security/network-exposure.md), create backups, and configure only the network access your use case needs.
 
-## After the first start
+## After The First Start
 
 Confirm that:
 
@@ -63,7 +63,7 @@ Confirm that:
 - syslog ports are published only if you intend to receive syslog; and
 - a backup procedure protects both SQLite databases and the secret material.
 
-## What this section covers next
+## What This Section Covers Next
 
 - [Five-Minute Quick Start](./quick-start.md) — the shortest supported Compose path;
 - [Docker Compose](./docker-compose.md) — production-shaped options and source builds;
@@ -72,7 +72,7 @@ Confirm that:
 - [Upgrading](./upgrading.md) — pull, backup, migrate, and verify; and
 - [Backup And Restore](../operations/backup-and-restore.md) — preserving or recovering application state.
 
-## Related concepts
+## Related Concepts
 
 - [How NetMap Works](../product-introduction/architecture.md#the-all-in-one-image-and-persistent-databases)
 - [How NetMap Works](../product-introduction/architecture.md#network-access-and-capabilities)
