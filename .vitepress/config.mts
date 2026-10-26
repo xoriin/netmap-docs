@@ -252,7 +252,8 @@ export default defineConfig({
           { text: "Testing", link: "/development/testing" },
           { text: "Adding API Endpoints", link: "/development/adding-api-endpoints" },
           { text: "Database Changes", link: "/development/database-changes" },
-          { text: "Contributing Workflow", link: "/development/contributing-workflow" }
+          { text: "Contributing Workflow", link: "/development/contributing-workflow" },
+          { text: "Documentation Style Guide", link: "/development/style-guide" }
         ]
       },
       {

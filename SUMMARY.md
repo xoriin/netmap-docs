@@ -102,6 +102,7 @@
   - [Adding API Endpoints](./development/adding-api-endpoints.md)
   - [Database Changes](./development/database-changes.md)
   - [Contributing Workflow](./development/contributing-workflow.md)
+  - [Documentation Style Guide](./development/style-guide.md)
 - Reference
   - [Reference Appendices](./reference/reference-appendices.md)
   - [Default Values](./reference/default-values.md)
