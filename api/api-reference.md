@@ -46,6 +46,10 @@ Authentication column:
 | GET | `/api/v1/auth/me` | Read current user | Authenticated · response `UserRead` |
 | PATCH | `/api/v1/auth/me` | Update profile | Authenticated · `ProfileUpdateRequest` → `UserRead` |
 | POST | `/api/v1/auth/me/acknowledge-whats-new` | Acknowledge installed version notes | Authenticated · `WhatsNewAckRequest` → `UserRead` |
+| GET | `/api/v1/auth/me/chart-views` | List own saved chart views | Authenticated · response `dict[chart_id, ChartViewOptions]`; stored views that no longer validate are omitted |
+| PUT | `/api/v1/auth/me/chart-views/{chart_id}` | Save own view for one chart | Authenticated · `ChartViewOptions` → `ChartViewOptions`; `chart_id` must match `[a-z][a-z0-9._-]{0,119}` or `422` |
+| DELETE | `/api/v1/auth/me/chart-views/{chart_id}` | Reset one chart to its default | Authenticated · response 204 |
+| DELETE | `/api/v1/auth/me/chart-views` | Reset all own chart views | Authenticated · response 204 |
 | POST | `/api/v1/auth/change-password` | Change own password | Authenticated · `PasswordChangeRequest` → 204 |
 | GET | `/api/v1/api-keys` | List own API keys | Authenticated · response `list[ApiKeyRead]` |
 | POST | `/api/v1/api-keys` | Create own API key | Authenticated · `ApiKeyCreateRequest` → `ApiKeyCreateResponse` |
@@ -76,6 +80,7 @@ All endpoints in this section require SuperAdmin unless noted.
 | GET/PUT/POST | `/api/v1/admin/oidc-settings`, `/test` | Manage/test SSO | `OidcSettingsUpdate` → OIDC schemas |
 | GET | `/api/v1/api-keys/admin/all` | List all API keys | none → `list[ApiKeyAdminRead]` |
 | DELETE | `/api/v1/api-keys/admin/{key_id}` | Revoke any API key | none → 204 |
+| GET | `/api/v1/audit/summary` | Audit activity summary | `audit_view` · query `days` (1–90, default 14) → `AuditSummary` (`days[]` with `date`, `signed_in`, `failed`; top 8 `by_action`; top 5 `by_actor`; `total`; `failed_total`) |
 | GET | `/api/v1/audit/logs` | Search audit logs | query → `AuditLogList` |
 | GET | `/api/v1/audit/logs/export` | Export audit logs | query → file |
 | GET | `/api/v1/system/diagnostics` | Diagnostics | none → object |
@@ -113,6 +118,7 @@ Manual scans, scan history, observations, and imports require `discovery_manage`
 | GET/POST/PATCH/DELETE | `/api/v1/discovery/schedules*` | schedule schemas → `DiscoveryScheduleRead`/204 |
 | POST | `/api/v1/discovery/schedules/{schedule_id}/run` | none → `DiscoveryScanRead` |
 | GET/PATCH | `/api/v1/discovery/observations*` | `DiscoveryObservationUpdate` → observation schemas |
+| GET | `/api/v1/discovery/observations/summary` | query `days` (clamped to 1–90, default 14) → `ObservationSummary` (`days[]` with `date`, `new_device`, `ip_change`, `disappeared`, `other`; `open` includes acknowledged; `resolved`) |
 | POST | `/api/v1/discovery/observations/resolve-all` | none → count object |
 | POST | `/api/v1/discovery/observations/{observation_id}/apply` | none → `DiscoveryObservationRead` |
 | POST | `/api/v1/discovery/import` | `DiscoveryImportRequest` → `DiscoveryImportResult` |
@@ -129,6 +135,8 @@ Manual scans, scan history, observations, and imports require `discovery_manage`
 | IPAM write | subnet/reservation/DHCP import and delete endpoints | `ipam_write` |
 | External IPAM read | `/api/v1/ipam/external/summary`, `/addresses` (filter by status, location, search), `/accounts`, `/locations`, `/providers`, `/migration-report` | Authenticated |
 | External IPAM write | `POST /api/v1/ipam/external/addresses` (one address, CIDR, or range; up to 256 addresses per call), `PATCH`/`DELETE /addresses/{id}`, account and location create/update/delete, `DELETE /migration-report` | `ipam_write` |
+| Cloud assets read | `GET /api/v1/ipam/external/assets` → `list[SavedCloudAssetOut]` (`id`, `name`, `kind`, `provider_id`, `account`, `region`, `device_id`, `description`); `GET /api/v1/ipam/external/asset-types` → `list[CloudAssetTypeOut]` (`id`, `value`, `label`, `is_builtin`; built-in types first) | Authenticated |
+| Cloud assets write | `POST /api/v1/ipam/external/assets` (`name` required; `409` for a duplicate name in the same provider account), `PATCH /assets/{asset_id}` (sparse update), `POST /asset-types` (`label` up to 80 characters; `201`, or `200` with the existing type when the name matches one). No delete endpoint | `ipam_write` |
 | Cloud provider catalogue | `/api/v1/admin/cloud-providers*` | `device_catalog_manage` |
 | Syslog/security | `/api/v1/syslog/status`, `/events`, `/searches` | `security_view` |
 | Passive tools | DNS, reverse DNS, subnet calculator, LLDP neighbours | `tools_passive` |
