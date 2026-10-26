@@ -32,7 +32,6 @@ export const legacyDocumentationRoutes = {
   "installation/reverse-proxy.md": "installation/reverse-proxy.md",
   "installation/upgrading.md": "installation/upgrading.md",
   "configuration/configuration.md": "configuration.md",
-  "configuration/environment-variables.md": "configuration/environment-variables.md",
   "configuration/storage.md": "configuration/storage.md",
   "configuration/oidc-sso.md": "configuration/oidc-sso.md",
   "configuration/syslog.md": "configuration/syslog.md",
@@ -143,4 +142,5 @@ export const movedDocumentationRoutes: Record<string, string> = {
   "installation/backup-and-restore.md": "operations/backup-and-restore.md",
   "operations/backups.md": "operations/backup-and-restore.md",
   "operations/restores.md": "operations/backup-and-restore.md",
+  "configuration/environment-variables.md": "configuration/configuration.md",
 };

@@ -44,5 +44,4 @@ API-key rate limiting defaults to 120 calls per 60 seconds per key. Increase cau
 ## Related Pages
 
 - [Configuration Reference](../configuration/configuration.md)
-- [Environment Variables](../configuration/environment-variables.md)
 - [Ports](./ports.md)

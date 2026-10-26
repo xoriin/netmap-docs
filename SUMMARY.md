@@ -60,7 +60,6 @@
   - [Permissions](./administer/permissions.md)
   - [Two-Factor Authentication](./administer/two-factor-authentication.md)
   - [Configuration Reference](./configuration/configuration.md)
-  - [Environment Variables](./configuration/environment-variables.md)
   - [Storage](./configuration/storage.md)
   - [OIDC SSO](./configuration/oidc-sso.md)
   - [Syslog](./configuration/syslog.md)

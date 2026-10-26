@@ -167,6 +167,6 @@ Do not run `docker compose down -v` for this bind-mounted installation unless yo
 
 - [Docker Compose](./docker-compose.md) for host networking, ports, logging, and source builds;
 - [Choose a Data Directory](../configuration/storage.md) for ownership and backup planning;
-- [Configure Environment Variables](../configuration/environment-variables.md);
+- [Configure Environment Variables](../configuration/configuration.md);
 - [Add a Device](../guides/add-device.md); and
 - [Verify a New Installation](../operations/health-checks.md).

@@ -11,23 +11,19 @@ keywords:
 
 # Configuration Reference
 
-NetMap reads environment variables through `backend/app/core/config.py`. The settings class also loads `.env` and `/etc/netmap/.env`. Docker environment variables override file values.
+NetMap reads its settings from environment variables at startup. It also loads `.env` from the working directory and `/etc/netmap/netmap.env`. Environment variables set by Docker override values from those files, and most changes need a container restart.
 
-Most changes require a container restart because settings are loaded at process startup.
+Ports are listed on [Ports](../reference/ports.md), and database and data locations on [File Paths](../reference/file-paths.md).
 
-## Ports And Paths
+## Required For Production
 
-| Item | Default | Source |
-|---|---|---|
-| Web application port | `8080` in all-in-one image via `APP_PORT` | `docker/aio.Dockerfile`, `docker/aio-nginx.conf.template` |
-| FastAPI internal socket | `/tmp/uvicorn.sock` | `docker/aio-entrypoint.sh` |
-| Health endpoint | `/api/health` and `/api/v1/health` | `backend/app/main.py`, `api/v1/router.py` |
-| Swagger UI | `/api/docs` | `backend/app/main.py` |
-| OpenAPI schema | `/api/openapi.json` | `backend/app/main.py` |
-| ReDoc | Not configured | `backend/app/main.py` |
-| Main database | `/app/data/netmap.db` | `DATABASE_URL` default |
-| Syslog database | `/app/data/firewall.db` | `db/firewall_session.py` |
-| Syslog UDP/TCP | `1514` | `SYSLOG_UDP_PORT`, `SYSLOG_TCP_PORT` |
+Set these before you expose NetMap to users:
+
+- `APP_ENV=production`, which turns on the stricter startup checks
+- `SECRET_KEY` and `MASTER_KEY`
+- `APP_URL`, `CORS_ORIGINS` and `TRUSTED_HOSTS` for the public URL
+- `AUTH_COOKIE_SECURE` and `SECURE_HSTS_ENABLED` for HTTPS
+- `DATA_DIR` and `DATABASE_URL` if you don't use the defaults
 
 ## Environment Variables
 
@@ -80,7 +76,7 @@ Most changes require a container restart because settings are loaded at process 
 | `SYSLOG_HOST` | No | `0.0.0.0` | bind address | No | Yes | Syslog bind host. |
 | `SYSLOG_UDP_PORT` | No | `1514` | port | No | Yes | UDP syslog port. |
 | `SYSLOG_TCP_PORT` | No | `1514` | port | No | Yes | TCP syslog port. |
-| `SYSLOG_TLS_ENABLED` | No | `false` | boolean | No | Yes | TLS syslog flag. Documentation gap: listener behavior needs verification in `services/syslog/server.py`. |
+| `SYSLOG_TLS_ENABLED` | No | `false` | boolean | No | Yes | Turns on the TLS syslog listener. It doesn't start unless `SYSLOG_TLS_CERTFILE` and `SYSLOG_TLS_KEYFILE` are set. |
 | `SYSLOG_TLS_PORT` | No | `6514` | port | No | Yes | TLS syslog port setting. |
 | `SYSLOG_TLS_CERTFILE` | No | `None` | path | No | Yes | TLS certificate path. |
 | `SYSLOG_TLS_KEYFILE` | No | `None` | path | Yes | Yes | TLS private key path. |
@@ -108,36 +104,8 @@ Most changes require a container restart because settings are loaded at process 
 | `OIDC_ALLOW_SUPER_ADMIN` | No | `false` | boolean | No | Yes, unless overridden in DB | Allows OIDC mapping to SuperAdmin. |
 | `LOG_LEVEL` | No | `info` | `debug`, `info`, `warning`, `error`, `critical` | No | Yes | uvicorn log level. |
 
-`APP_CHANNEL` and `/app/VERSION_CHANNEL` identify dev/test channels when baked into those images. `PUID`, `PGID`, and `FORWARDED_ALLOW_IPS` are entrypoint/uvicorn deployment variables rather than Pydantic application settings; document them with the container deployment examples.
+`APP_CHANNEL` and `/app/VERSION_CHANNEL` identify dev/test channels when baked into those images. The container also reads three start-up variables. `PUID` and `PGID` set the user and group IDs NetMap runs as, so it can write to your data directory; see [Docker](../installation/docker.md). `FORWARDED_ALLOW_IPS` lists the proxy addresses whose forwarded headers are trusted, and defaults to `127.0.0.1`.
 
-## Reverse Proxy Requirements
+## Reverse Proxy
 
-NetMap’s bundled nginx proxies `/api/` to FastAPI and serves the SPA for every other path. If you put another reverse proxy in front:
-
-- Preserve `Host`.
-- Preserve `X-Forwarded-For` and `X-Forwarded-Proto`.
-- Preserve WebSocket upgrade headers for API WebSocket endpoints.
-- Do not strip `X-API-Key`.
-- Set `APP_URL`, `CORS_ORIGINS`, `TRUSTED_HOSTS`, and `AUTH_COOKIE_SECURE` for the public URL.
-
-Minimal nginx example:
-
-```nginx
-server {
-    listen 443 ssl http2;
-    server_name netmap.example.com;
-
-    location / {
-        proxy_pass http://127.0.0.1:8080;
-        proxy_http_version 1.1;
-        proxy_set_header Host $host;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection $connection_upgrade;
-        proxy_read_timeout 600s;
-    }
-}
-```
-
-Documentation gap: Caddy, Traefik, and Nginx Proxy Manager examples were not verified from source-specific deployment files. They should preserve the same headers and WebSocket behavior.
+The headers and settings a reverse proxy needs are covered on [Reverse Proxy And HTTPS](../installation/reverse-proxy.md).

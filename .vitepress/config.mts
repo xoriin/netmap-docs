@@ -192,7 +192,6 @@ export default defineConfig({
           { text: "Permissions", link: "/administer/permissions" },
           { text: "Two-Factor Authentication", link: "/administer/two-factor-authentication" },
           { text: "Configuration Reference", link: "/configuration/configuration" },
-          { text: "Environment Variables", link: "/configuration/environment-variables" },
           { text: "Storage", link: "/configuration/storage" },
           { text: "OIDC SSO", link: "/configuration/oidc-sso" },
           { text: "Syslog", link: "/configuration/syslog" }

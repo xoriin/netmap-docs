@@ -97,7 +97,6 @@ Back up before changing retention or deleting expired records, and verify host t
 ### Related pages
 
 - [Configuration Reference](../configuration/configuration.md)
-- [Environment Variables](../configuration/environment-variables.md)
 - [Secrets Management](../security/secrets-management.md)
 - [How NetMap Works](./architecture.md#the-all-in-one-image-and-persistent-databases)
 - [Default Values](../reference/default-values.md)
