@@ -75,7 +75,7 @@ All endpoints in this section require SuperAdmin unless noted.
 | DELETE | `/api/v1/admin/roles/{name}` | Delete custom role | none → `RolePermissionsResponse` |
 | GET/POST/PATCH | `/api/v1/auth/users` and `/{user_id}` | User administration | user schemas → `UserRead` |
 | POST | `/api/v1/auth/users/{user_id}/unlock-login` | Clear login lockout | none → 204 |
-| POST | `/api/v1/auth/users/{user_id}/reset-password` | Admin password reset | `AdminPasswordResetRequest` → 204 |
+| POST | `/api/v1/auth/users/{user_id}/reset-password` | Admin password reset; signs the user out of all sessions | `AdminPasswordResetRequest` (`new_password`, 12–256 characters) → `AdminPasswordResetResult` (`email_status`: `sent`, `failed`, `not_configured` or `no_email`, for the email sent to the user) |
 | DELETE | `/api/v1/auth/users/{user_id}/sessions` | Revoke user sessions | none → 204 |
 | GET/PUT/POST | `/api/v1/admin/oidc-settings`, `/test` | Manage/test SSO | `OidcSettingsUpdate` → OIDC schemas |
 | GET | `/api/v1/api-keys/admin/all` | List all API keys | none → `list[ApiKeyAdminRead]` |
