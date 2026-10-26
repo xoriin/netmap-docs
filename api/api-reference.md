@@ -144,6 +144,13 @@ Manual scans, scan history, observations, and imports require `discovery_manage`
 | SNMP profile management | `/api/v1/tools/snmp/profiles*` write endpoints | SuperAdmin |
 | Exports | inventory/firewall/report | `inventory_export`, `firewall_export`, `report_export` |
 
+Alert rules (`AlertRuleCreate`, `AlertRuleUpdate`, `AlertRuleRead`) include two status-page incident fields:
+
+| Field | Type | Behaviour |
+|---|---|---|
+| `open_incident` | boolean | Open a status-page incident when the rule's condition holds. Omitted on create: `true` for `device_offline`, `device_unexpected_state`, `service_down` and `monitor_down`, otherwise `false`. Always stored as `false` for `device_online`, `any_status_change` and `device_expected_state_restored`. `null` in a `PATCH` is ignored. |
+| `incident_min_failures` | integer, 1–20, default 3 | Consecutive breaching checks before the incident opens. For `monitor_down`, the larger of this and the monitor's retries + 1 applies. `null` in a `PATCH` is ignored. |
+
 ## Status Pages
 
 Editor endpoints require `status_page_manage` and an ordinary NetMap session or API key, except `/status-pages/{slug}/view`, which any signed-in user may call. All paths are under `/api/v1`.
