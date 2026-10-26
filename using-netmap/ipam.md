@@ -19,7 +19,7 @@ Create an IPv4 or IPv6 subnet with CIDR, name, gateway, DHCP start/end, VLAN/gro
 
 Editing a subnet updates metadata and synchronises supported VLAN fields. Deleting requires confirmation and checks dependent reservations/assignments first; it does not silently delete unrelated devices or imported lease data.
 
-The page opens with an **Address space** gauge (used and free hosts across all subnets) beside the summary cards. A **Busiest subnets** card lists the five subnets with the highest utilisation. Chart choices are saved per user; see [Personal Chart Views](./chart-views.md).
+The page opens with an **Address space** gauge (used and free hosts across all subnets) beside the summary cards. A **Busiest Subnets** card lists the five subnets with the highest utilisation, each with a usage bar and percentage. Chart choices are saved per user; see [Personal Chart Views](./chart-views.md).
 
 ## Address map and allocation
 
