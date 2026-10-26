@@ -163,7 +163,7 @@ Run these commands from the repository root. The source-build file mounts `./dat
 
 - [Installation Overview](./installation.md)
 - [Five-Minute Quick Start](./quick-start.md)
-- [Ports](../configuration/ports.md)
+- [Ports](../reference/ports.md)
 - [Environment Variables](../configuration/environment-variables.md)
 - [Storage](../configuration/storage.md)
 - [Reverse Proxy and HTTPS](./reverse-proxy.md)

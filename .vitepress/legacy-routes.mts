@@ -35,7 +35,6 @@ export const legacyDocumentationRoutes = {
   "configuration/configuration.md": "configuration.md",
   "configuration/environment-variables.md": "configuration/environment-variables.md",
   "configuration/storage.md": "configuration/storage.md",
-  "configuration/ports.md": "configuration/ports.md",
   "configuration/oidc-sso.md": "configuration/oidc-sso.md",
   "configuration/syslog.md": "configuration/syslog.md",
   "using-netmap/user-guide.md": "user-guide.md",
@@ -143,4 +142,5 @@ export const movedDocumentationRoutes: Record<string, string> = {
   "security/security-model.md": "security/index.md",
   "security/permissions.md": "administer/permissions.md",
   "security/two-factor-authentication.md": "administer/two-factor-authentication.md",
+  "configuration/ports.md": "reference/ports.md",
 };

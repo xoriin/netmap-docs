@@ -62,7 +62,6 @@
   - [Configuration Reference](./configuration/configuration.md)
   - [Environment Variables](./configuration/environment-variables.md)
   - [Storage](./configuration/storage.md)
-  - [Ports](./configuration/ports.md)
   - [OIDC SSO](./configuration/oidc-sso.md)
   - [Syslog](./configuration/syslog.md)
 - Security

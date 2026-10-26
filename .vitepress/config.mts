@@ -194,7 +194,6 @@ export default defineConfig({
           { text: "Configuration Reference", link: "/configuration/configuration" },
           { text: "Environment Variables", link: "/configuration/environment-variables" },
           { text: "Storage", link: "/configuration/storage" },
-          { text: "Ports", link: "/configuration/ports" },
           { text: "OIDC SSO", link: "/configuration/oidc-sso" },
           { text: "Syslog", link: "/configuration/syslog" }
         ]

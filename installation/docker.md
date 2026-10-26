@@ -101,7 +101,7 @@ Keep `SECRET_KEY`, `MASTER_KEY`, and `/app/data` unchanged. Startup applies regi
 - [Installation Overview](./installation.md)
 - [Five-Minute Quick Start](./quick-start.md)
 - [Docker Compose](./docker-compose.md)
-- [Ports](../configuration/ports.md)
+- [Ports](../reference/ports.md)
 - [Storage](../configuration/storage.md)
 - [How NetMap Works](../product-introduction/architecture.md#network-access-and-capabilities)
 - [Container Problems](../troubleshooting/container-problems.md)
