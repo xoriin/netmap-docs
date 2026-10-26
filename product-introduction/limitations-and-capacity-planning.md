@@ -175,7 +175,7 @@ Built-in roles are **SuperAdmin**, **NetworkAdmin**, **SecurityAnalyst**, and **
 
 ### Sessions and API keys
 
-Browser authentication uses a refresh cookie and an in-memory access token. A session can be revoked or expire. API keys are separate machine credentials: the plaintext is shown once, stored as a digest, and sent in `X-API-Key`. Keys inherit the owner's current role and permissions at request time; they do not have independent scopes.
+Browser authentication uses a refresh cookie and a short-lived access token, held in memory and also set as the HttpOnly `netmap_access` cookie. A session can be revoked or expire. API keys are separate machine credentials: the plaintext is shown once, stored as a digest, and sent in `X-API-Key`. Keys inherit the owner's current role and permissions at request time; they do not have independent scopes.
 
 SuperAdmins can revoke any key, while ordinary users can revoke only their own. API keys do not authenticate the syslog live WebSocket. Key use is rate-limited, failed lookups can trigger an IP lockout, and lifecycle actions are audited.
 
