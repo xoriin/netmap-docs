@@ -62,3 +62,11 @@ server {
 ```
 
 Documentation gap: this behaviour could not be verified from the current source for Caddy, Traefik, and Nginx Proxy Manager-specific examples.
+
+## Caching
+
+The all-in-one image sends `Cache-Control: public, max-age=31536000, immutable` for the hashed
+files under `/assets/` and `Cache-Control: no-cache` for `index.html` and other app routes, so
+browsers keep app files for a year but always revalidate the page and pick up a new release.
+Proxies and CDNs in front of NetMap should honour these headers and must not cache `index.html`
+or `/api/` responses. Asset file names include a content hash, so `/assets/` needs no purge after an upgrade.
