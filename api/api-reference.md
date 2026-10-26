@@ -138,6 +138,8 @@ Manual scans, scan history, observations, and imports require `discovery_manage`
 |---|---|---|
 | Monitoring read | `/api/v1/monitoring/summary`, `/devices`, history, analysis, service checks list | Authenticated |
 | Configure service checks | `POST/DELETE /api/v1/monitoring/service-checks*` and `/port-targets*` | `monitoring_write` |
+| HTTP monitors read | `GET /api/v1/monitors`, `/favourites`, `/{monitor_id}/history`; `PATCH /{monitor_id}/favourite` | Authenticated |
+| HTTP monitors write | `POST /api/v1/monitors`, `PATCH`/`DELETE /api/v1/monitors/{monitor_id}` | `monitoring_write`; NetworkAdmin is always allowed |
 | Alert rule CRUD/test and deliveries | `/api/v1/alerts/rules*`, `/deliveries` | `alert_write` |
 | Alert event read | `/api/v1/alerts/events` | Authenticated |
 | IPAM read | `/api/v1/ipam/summary`, `/subnets`, addresses, next available, conflicts, DHCP leases | Authenticated |
@@ -224,6 +226,6 @@ Token scope rules, request fields, `curl` examples and error codes are in [Statu
 | Export inventory/firewall/report | Yes | Yes | export-specific permissions | `/api/v1/exports/*` |
 | Download and manage DB backups | Yes | Yes | `backup_manage` | `/api/v1/exports/backup*`, `/scheduled-backups*` |
 | Validate and restore DB backups | Yes | Yes | SuperAdmin | `/api/v1/exports/restore*` |
-| Live syslog WebSocket | Yes | No | JWT-first-frame, `security_view` | WebSocket in `syslog.py` |
+| Live syslog WebSocket | Yes | No | JWT-first-frame, `security_view` (no SuperAdmin bypass) | `/api/v1/syslog/events/live` |
 
 For request and response schema details, use `/api/docs` or `/api/openapi.json`.

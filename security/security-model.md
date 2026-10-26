@@ -23,7 +23,7 @@ This page focuses on how those controls fit together. The broader overview is al
 
 ## Authorization
 
-Routes use dependencies in `backend/app/api/deps.py`. SuperAdmin bypasses named permission checks. Other roles are evaluated against the permission cache in `backend/app/services/rbac/permissions.py`.
+Routes use dependencies in `backend/app/api/deps.py`. SuperAdmin bypasses named permission checks, except on the live syslog stream, which checks `security_view` on the role itself. HTTP monitor writes always allow NetworkAdmin as well as roles with `monitoring_write`. Other roles are evaluated against the permission cache in `backend/app/services/rbac/permissions.py`.
 
 Named permissions include:
 

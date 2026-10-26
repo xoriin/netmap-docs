@@ -30,7 +30,9 @@ Permission keys:
 - `discovery_manage`
 - `status_page_manage`
 
-SuperAdmin bypasses permission checks.
+SuperAdmin bypasses permission checks, with one exception: the live syslog stream checks `security_view` on the role itself, so the bypass does not apply there.
+
+HTTP monitor writes (`POST`, `PATCH` and `DELETE` on `/api/v1/monitors`) need `monitoring_write`, but NetworkAdmin is always allowed, even if `monitoring_write` is removed from that role.
 
 ## Built-In Roles
 
