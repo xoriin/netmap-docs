@@ -53,7 +53,7 @@ Use at most two callouts (`::: warning`, `::: tip`) per page. Keep them for real
 
 ## Links, Moves, And Redirects
 
-- Link with relative paths to the `.md` file, for example `[Monitoring](../using-netmap/monitoring.md#endpoints)`.
+- Link with relative paths to the `.md` file, for example `[Monitoring](../using-netmap/monitoring.md#health-model)`.
 - When you add, move, merge, or delete a page, update `SUMMARY.md` and the sidebar in `.vitepress/config.mts` in the same commit.
 - When you move or remove a page, add its old path to `.vitepress/legacy-routes.mts` so old links redirect. Older numbered paths, such as `10-security/…`, are derived from it.
 
