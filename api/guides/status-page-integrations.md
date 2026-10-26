@@ -53,11 +53,18 @@ All paths are under `/api/v1/status-integrations`.
 
 ## Examples
 
+The examples read your NetMap address from `$NETMAP_URL` and the full integration token from `$NETMAP_STATUS_TOKEN`:
+
+```bash
+export NETMAP_URL="https://netmap.example.com"
+export NETMAP_STATUS_TOKEN="nmsp_<prefix>_<secret>"
+```
+
 Set a notice, clearing and replacing this token's previous notice on the page:
 
 ```bash
-curl -X PUT https://netmap.example.com/api/v1/status-integrations/pages/main/notice \
-  -H "Authorization: Bearer nmsp_abc123def456_REPLACE_WITH_SECRET" \
+curl -X PUT "${NETMAP_URL}/api/v1/status-integrations/pages/main/notice" \
+  -H "Authorization: Bearer ${NETMAP_STATUS_TOKEN}" \
   -H "Idempotency-Key: nightly-backup-2026-10-19" \
   -H "Content-Type: application/json" \
   -d '{"level": "warning", "title": "Nightly backup running", "body": "Reports may be slow until 03:00.", "link": "https://example.com/backups", "expires_at": "2026-10-20T03:00:00Z"}'
@@ -66,15 +73,15 @@ curl -X PUT https://netmap.example.com/api/v1/status-integrations/pages/main/not
 Clear this token's notice on the page:
 
 ```bash
-curl -X DELETE https://netmap.example.com/api/v1/status-integrations/pages/main/notice \
-  -H "Authorization: Bearer nmsp_abc123def456_REPLACE_WITH_SECRET"
+curl -X DELETE "${NETMAP_URL}/api/v1/status-integrations/pages/main/notice" \
+  -H "Authorization: Bearer ${NETMAP_STATUS_TOKEN}"
 ```
 
 Open an incident against items (published on the pages showing them):
 
 ```bash
-curl -X POST https://netmap.example.com/api/v1/status-integrations/incidents \
-  -H "Authorization: Bearer nmsp_abc123def456_REPLACE_WITH_SECRET" \
+curl -X POST "${NETMAP_URL}/api/v1/status-integrations/incidents" \
+  -H "Authorization: Bearer ${NETMAP_STATUS_TOKEN}" \
   -H "Idempotency-Key: ticket-INC-1042-open" \
   -H "Content-Type: application/json" \
   -d '{"title": "Email delivery delayed", "severity": "partial", "message": "We are investigating delayed mail.", "items": [{"device": 12, "service_check": 7}, {"monitor": 3}], "ticket_url": "https://tickets.example.com/INC-1042", "ticket_label": "Ticket INC-1042"}'
@@ -83,8 +90,8 @@ curl -X POST https://netmap.example.com/api/v1/status-integrations/incidents \
 Open an incident with no items by naming pages instead (give `items` or `pages`, not both):
 
 ```bash
-curl -X POST https://netmap.example.com/api/v1/status-integrations/incidents \
-  -H "Authorization: Bearer nmsp_abc123def456_REPLACE_WITH_SECRET" \
+curl -X POST "${NETMAP_URL}/api/v1/status-integrations/incidents" \
+  -H "Authorization: Bearer ${NETMAP_STATUS_TOKEN}" \
   -H "Idempotency-Key: isp-outage-open" \
   -H "Content-Type: application/json" \
   -d '{"title": "ISP outage", "severity": "major", "message": "Our provider reports an outage.", "pages": ["main"]}'
@@ -95,8 +102,8 @@ The response (`201`) contains the incident `id`, `status`, `severity`, `opened_a
 Add an update and change the status (set `"is_public": false` for an update only Private pages show):
 
 ```bash
-curl -X POST https://netmap.example.com/api/v1/status-integrations/incidents/41/updates \
-  -H "Authorization: Bearer nmsp_abc123def456_REPLACE_WITH_SECRET" \
+curl -X POST "${NETMAP_URL}/api/v1/status-integrations/incidents/41/updates" \
+  -H "Authorization: Bearer ${NETMAP_STATUS_TOKEN}" \
   -H "Idempotency-Key: ticket-INC-1042-update-1" \
   -H "Content-Type: application/json" \
   -d '{"message": "A fix is being rolled out.", "status": "identified"}'
@@ -105,8 +112,8 @@ curl -X POST https://netmap.example.com/api/v1/status-integrations/incidents/41/
 Resolve an incident:
 
 ```bash
-curl -X POST https://netmap.example.com/api/v1/status-integrations/incidents/41/resolve \
-  -H "Authorization: Bearer nmsp_abc123def456_REPLACE_WITH_SECRET" \
+curl -X POST "${NETMAP_URL}/api/v1/status-integrations/incidents/41/resolve" \
+  -H "Authorization: Bearer ${NETMAP_STATUS_TOKEN}" \
   -H "Idempotency-Key: ticket-INC-1042-resolve" \
   -H "Content-Type: application/json" \
   -d '{"reason": "Mail queue drained."}'
@@ -115,8 +122,8 @@ curl -X POST https://netmap.example.com/api/v1/status-integrations/incidents/41/
 Schedule presentation-only maintenance (times must include a UTC offset):
 
 ```bash
-curl -X POST https://netmap.example.com/api/v1/status-integrations/maintenance \
-  -H "Authorization: Bearer nmsp_abc123def456_REPLACE_WITH_SECRET" \
+curl -X POST "${NETMAP_URL}/api/v1/status-integrations/maintenance" \
+  -H "Authorization: Bearer ${NETMAP_STATUS_TOKEN}" \
   -H "Idempotency-Key: switch-firmware-2026-10-24" \
   -H "Content-Type: application/json" \
   -d '{"title": "Core switch firmware upgrade", "description": "Expect a short interruption.", "starts_at": "2026-10-24T22:00:00+10:00", "ends_at": "2026-10-24T22:30:00+10:00", "items": [{"device": 12}], "pages": ["main"]}'
@@ -125,13 +132,13 @@ curl -X POST https://netmap.example.com/api/v1/status-integrations/maintenance \
 Change or remove a window this token created:
 
 ```bash
-curl -X PATCH https://netmap.example.com/api/v1/status-integrations/maintenance/8 \
-  -H "Authorization: Bearer nmsp_abc123def456_REPLACE_WITH_SECRET" \
+curl -X PATCH "${NETMAP_URL}/api/v1/status-integrations/maintenance/8" \
+  -H "Authorization: Bearer ${NETMAP_STATUS_TOKEN}" \
   -H "Content-Type: application/json" \
   -d '{"ends_at": "2026-10-24T23:00:00+10:00"}'
 
-curl -X DELETE https://netmap.example.com/api/v1/status-integrations/maintenance/8 \
-  -H "Authorization: Bearer nmsp_abc123def456_REPLACE_WITH_SECRET"
+curl -X DELETE "${NETMAP_URL}/api/v1/status-integrations/maintenance/8" \
+  -H "Authorization: Bearer ${NETMAP_STATUS_TOKEN}"
 ```
 
 ## Fields And Limits
