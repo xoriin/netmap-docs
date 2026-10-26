@@ -31,15 +31,12 @@ Version check:
 curl --fail http://127.0.0.1:8080/api/v1/system/version
 ```
 
-SuperAdmin diagnostics through the API:
+Runtime diagnostics through the API need `diagnostics_view`, which NetworkAdmin and SuperAdmin have by default:
 
 ```bash
-API_URL="https://netmap.example.com"
-API_KEY="<superadmin-api-key>"
-
 curl --fail-with-body \
-  --url "${API_URL}/api/v1/system/diagnostics" \
-  --header "X-API-Key: ${API_KEY}"
+  --url "${NETMAP_URL}/api/v1/system/diagnostics" \
+  --header "X-API-Key: ${NETMAP_API_KEY}"
 ```
 
 ## Redaction Checklist

@@ -16,7 +16,7 @@ NetMap publishes a generated OpenAPI schema and a Swagger UI. Both are public an
 ReDoc is not enabled.
 
 ```bash
-curl --fail-with-body https://netmap.example.com/api/openapi.json
+curl --fail-with-body "${NETMAP_URL}/api/openapi.json"
 ```
 
 The schema is titled `NetMap API` and its version is the installed NetMap version. Operations are grouped by NetMap capability.

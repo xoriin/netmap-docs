@@ -122,12 +122,10 @@ curl --fail http://127.0.0.1:8080/api/health
 Authenticated syslog status check:
 
 ```bash
-API_URL="https://netmap.example.com"
-API_KEY="<security-view-api-key>"
-
+# Use a key whose owner has security_view.
 curl --fail-with-body \
-  --url "${API_URL}/api/v1/syslog/status" \
-  --header "X-API-Key: ${API_KEY}"
+  --url "${NETMAP_URL}/api/v1/syslog/status" \
+  --header "X-API-Key: ${NETMAP_API_KEY}"
 ```
 
 ## Troubleshooting

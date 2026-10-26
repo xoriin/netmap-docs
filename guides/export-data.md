@@ -41,12 +41,10 @@ text as a formula. JSON exports preserve the original value.
 ## Example
 
 ```bash
-API_URL="https://netmap.example.com"
-API_KEY="<inventory-export-api-key>"
-
+# Use a key whose owner has inventory_export.
 curl --fail-with-body \
-  --url "${API_URL}/api/v1/exports/inventory" \
-  --header "X-API-Key: ${API_KEY}" \
+  --url "${NETMAP_URL}/api/v1/exports/inventory" \
+  --header "X-API-Key: ${NETMAP_API_KEY}" \
   --output inventory-export
 ```
 

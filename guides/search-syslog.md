@@ -37,12 +37,10 @@ Confirm syslog is enabled and senders are forwarding to the NetMap host. If send
 ## API Example
 
 ```bash
-API_URL="https://netmap.example.com"
-API_KEY="<security-view-api-key>"
-
+# Use a key whose owner has security_view.
 curl --fail-with-body \
-  --url "${API_URL}/api/v1/syslog/events?q=blocked" \
-  --header "X-API-Key: ${API_KEY}" \
+  --url "${NETMAP_URL}/api/v1/syslog/events?q=blocked" \
+  --header "X-API-Key: ${NETMAP_API_KEY}" \
   --header "Accept: application/json"
 ```
 

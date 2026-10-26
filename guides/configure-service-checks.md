@@ -43,12 +43,9 @@ Checks can be edited without deleting and recreating them. The form reports vali
 ## Verify
 
 ```bash
-API_URL="https://netmap.example.com"
-API_KEY="<api-key>"
-
 curl --fail-with-body \
-  --url "${API_URL}/api/v1/monitoring/service-checks" \
-  --header "X-API-Key: ${API_KEY}"
+  --url "${NETMAP_URL}/api/v1/monitoring/service-checks" \
+  --header "X-API-Key: ${NETMAP_API_KEY}"
 ```
 
 ## Common Problems

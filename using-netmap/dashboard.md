@@ -84,12 +84,9 @@ Overview loads summary data and monitoring data separately. Summary cards can ap
 ## API Equivalent
 
 ```bash
-API_URL="https://netmap.example.com"
-API_KEY="<api-key>"
-
 curl --fail-with-body \
-  --url "${API_URL}/api/v1/dashboard/summary" \
-  --header "X-API-Key: ${API_KEY}"
+  --url "${NETMAP_URL}/api/v1/dashboard/summary" \
+  --header "X-API-Key: ${NETMAP_API_KEY}"
 ```
 
 ## Common Problems

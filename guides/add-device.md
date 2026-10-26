@@ -28,13 +28,10 @@ The device appears in Inventory and can be used in topology relationships.
 ## API Equivalent
 
 ```bash
-API_URL="https://netmap.example.com"
-API_KEY="<api-key>"
-
 curl --fail-with-body \
   --request POST \
-  --url "${API_URL}/api/v1/topology/devices" \
-  --header "X-API-Key: ${API_KEY}" \
+  --url "${NETMAP_URL}/api/v1/topology/devices" \
+  --header "X-API-Key: ${NETMAP_API_KEY}" \
   --header "Content-Type: application/json" \
   --data '{"name":"core-switch","ip_address":"192.168.1.2"}'
 ```

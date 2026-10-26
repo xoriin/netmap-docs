@@ -51,12 +51,10 @@ This conversion requires both `topology_write` and `ipam_reservation_claim`. Net
 Check the exact reservation fields in `/api/docs` before you automate this.
 
 ```bash
-API_URL="https://netmap.example.com"
-API_KEY="<ipam-write-api-key>"
-
+# Use a key whose owner has ipam_write.
 curl --fail-with-body \
-  --url "${API_URL}/api/v1/ipam/reservations" \
-  --header "X-API-Key: ${API_KEY}"
+  --url "${NETMAP_URL}/api/v1/ipam/reservations" \
+  --header "X-API-Key: ${NETMAP_API_KEY}"
 ```
 
 ## Related Pages

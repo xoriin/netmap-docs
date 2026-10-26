@@ -38,14 +38,12 @@ Authentication is required. Layout ownership rules are enforced by the topology 
 ## Example Import
 
 ```bash
-API_URL="https://netmap.example.com"
-API_KEY="<api-key>"
 SHARE_CODE="<share-code>"
 
 curl --fail-with-body \
   --request POST \
-  --url "${API_URL}/api/v1/topology/layouts/import" \
-  --header "X-API-Key: ${API_KEY}" \
+  --url "${NETMAP_URL}/api/v1/topology/layouts/import" \
+  --header "X-API-Key: ${NETMAP_API_KEY}" \
   --header "Content-Type: application/json" \
   --data "{\"code\":\"${SHARE_CODE}\"}"
 ```
