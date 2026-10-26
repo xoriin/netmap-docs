@@ -15,7 +15,7 @@ API equivalents:
 - `POST /api/v1/discovery/observations/{observation_id}/apply`
 - `POST /api/v1/discovery/observations/resolve-all`
 
-Required permission: `topology_write`.
+Required permission: `discovery_manage`. Applying a change also needs `topology_write`.
 
 ## What This Does
 
@@ -34,11 +34,11 @@ Hosts that reappear can auto-resolve disappeared observations. Resolving a new-d
 
 ## Steps
 
-1. Open the discovery observations surface in the UI.
-2. Review each observation type and details.
-3. Apply observations that should update inventory.
-4. Resolve observations that are expected or not useful.
-5. Use resolve-all only after reviewing the impact.
+1. On Overview or Inventory, find the bar that reads *N network changes detected*, with a count for each type, and select **Review**.
+2. In **Network changes**, read each row's type, summary, address details, and proposed field values. Select a row to go to Inventory, or to Monitoring for a disappeared host.
+3. Select **Add to inventory** for a new device, or **Apply to device** for an IP or field change, to make the change.
+4. Select **Acknowledge** (green label) to mark a change as seen and keep it listed, or **Clear** (red label) to dismiss it permanently.
+5. Select **Clear all** only after reviewing every row. With five or more changes, type `clear` to confirm.
 
 ## Common Problems
 
