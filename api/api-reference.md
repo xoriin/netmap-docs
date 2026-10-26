@@ -30,7 +30,7 @@ Authentication column:
 | GET | `/api/v1/admin/settings/public` | Sign-in page settings | Public · response `PublicSettingsRead` (`app_name`, `login_message`, `announcement`, `support_email`, `support_url`) |
 | GET | `/api/v1/setup/status` | Whether initial setup is needed | Public · response `SetupStatus` |
 | POST | `/api/v1/setup/admin` | Create first admin before setup is complete | Public until first user exists · `AdminCreate` → `UserRead` |
-| POST | `/api/v1/auth/login` | Local login | Public · `LoginRequest` → `TokenPair` |
+| POST | `/api/v1/auth/login` | Local login | Public · `LoginRequest` → `TokenPair` (`access_token`, `token_type`), or `MfaChallengeResponse` (`mfa_required`, `mfa_setup_required`, `challenge`) when the account must enter or enrol a two-factor code |
 | POST | `/api/v1/auth/refresh` | Refresh session token | Public cookie/body token · `RefreshRequest` → `TokenPair` |
 | POST | `/api/v1/auth/logout` | Revoke refresh session | Public with refresh input · `LogoutRequest` → 204 |
 | POST | `/api/v1/auth/forgot-password` | Start password reset | Public · `ForgotPasswordRequest` → 204 |
