@@ -11,7 +11,7 @@ Rate limits protect expensive network tools, sign-in, discovery, and API-key aut
 | Area | Default | `Retry-After` |
 |---|---|---|
 | API key calls | 120 calls per 60 seconds per key | No |
-| Invalid API-key lookup lockout | 10 failures, then 15 minutes per client address | No |
+| Invalid API-key or status integration token lockout | 10 failures, then 15 minutes per client address | No |
 | Tools | 20 calls per 60 seconds per user | No |
 | Discovery | 60 seconds between scans per user | No |
 | Login failures | 5 failures, then 15 minutes | Yes, seconds until the lockout ends |
@@ -37,7 +37,7 @@ When exceeded, NetMap returns:
 
 ## Invalid API-Key Lookup Lockout
 
-Invalid API-key attempts are counted against the client address NetMap resolves for the request: the direct peer, or the rightmost `X-Forwarded-For` entry when the peer is a trusted proxy. If no client address is available, no failure is recorded. Default:
+Invalid API-key attempts are counted against the client address NetMap resolves for the request: the direct peer, or the rightmost `X-Forwarded-For` entry when the peer is a trusted proxy. If no client address is available, no failure is recorded. Invalid status integration tokens count toward the same total, and while an address is locked, both API keys and integration tokens from it are refused, even valid ones. Default:
 
 ```dotenv
 API_KEY_MAX_FAILED_LOOKUPS=10

@@ -46,7 +46,7 @@ Validation errors return `422` with a list of problems:
 | `409` | Conflict | Setup already complete, a discovery schedule is disabled or already running, an address is reserved, or a name is already used. |
 | `413` | Too large | Backup upload exceeds the size limit. |
 | `422` | Validation failed | Missing or invalid field, path or query value, including an oversized avatar. |
-| `429` | Too many requests | API-key call limit, failed API-key lookup lockout, sign-in lockout, tool or discovery limit, or public status page limit. See [Rate Limits](./rate-limits.md). |
+| `429` | Too many requests | API-key call limit, failed API-key or integration token lockout, sign-in lockout, tool or discovery limit, public status page limit, or status integration write limit. See [Rate Limits](./rate-limits.md). |
 | `500` | Server error | Unexpected failure. Check the container logs. |
 | `501` | Not implemented | Database backup or restore on a database other than SQLite. |
 | `503` | Unavailable | A network tool is not available in the container, single sign-on is unavailable, or a status page is still being prepared. |
