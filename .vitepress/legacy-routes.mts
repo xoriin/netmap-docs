@@ -34,7 +34,6 @@ export const legacyDocumentationRoutes = {
   "configuration/storage.md": "configuration/storage.md",
   "configuration/oidc-sso.md": "configuration/oidc-sso.md",
   "configuration/syslog.md": "configuration/syslog.md",
-  "using-netmap/user-guide.md": "user-guide.md",
   "using-netmap/interface-overview.md": "using-netmap/interface-overview.md",
   "using-netmap/dashboard.md": "using-netmap/dashboard.md",
   "using-netmap/topology.md": "using-netmap/topology.md",
@@ -144,4 +143,6 @@ export const movedDocumentationRoutes: Record<string, string> = {
   "configuration/environment-variables.md": "configuration/configuration.md",
   "product-introduction/terminology.md": "reference/glossary.md",
   "introduction/terminology.md": "reference/glossary.md",
+  "using-netmap/user-guide.md": "using-netmap/interface-overview.md",
+  "user-guide.md": "using-netmap/interface-overview.md",
 };

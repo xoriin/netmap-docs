@@ -89,4 +89,4 @@ The REST API is served under `/api/v1`, with an OpenAPI document and Swagger UI.
 - Deleting records, restoring backups, changing security configuration, and applying observations can alter or remove data; follow the specific guide and confirm the target.
 - NetMap is not a clustered monitoring or SIEM platform. See [Product Limitations and Capacity Planning](./limitations-and-capacity-planning.md).
 
-Continue with [Using NetMap](../using-netmap/user-guide.md) or start with the [Quick Start](../installation/quick-start.md).
+Continue with the [Interface Tour](../using-netmap/interface-overview.md) or start with the [Quick Start](../installation/quick-start.md).

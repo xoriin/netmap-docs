@@ -15,8 +15,7 @@
   - [Reverse Proxy And HTTPS](./installation/reverse-proxy.md)
   - [Upgrading](./installation/upgrading.md)
 - Use NetMap
-  - [User Guide](./using-netmap/user-guide.md)
-  - [Interface Overview](./using-netmap/interface-overview.md)
+  - [Interface Tour](./using-netmap/interface-overview.md)
   - [Dashboard](./using-netmap/dashboard.md)
   - [Topology](./using-netmap/topology.md)
   - [Inventory](./using-netmap/inventory.md)

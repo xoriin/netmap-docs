@@ -132,8 +132,7 @@ export default defineConfig({
         text: "Use NetMap",
         collapsed: true,
         items: [
-          { text: "User Guide", link: "/using-netmap/user-guide" },
-          { text: "Interface Overview", link: "/using-netmap/interface-overview" },
+          { text: "Interface Tour", link: "/using-netmap/interface-overview" },
           { text: "Dashboard", link: "/using-netmap/dashboard" },
           { text: "Topology", link: "/using-netmap/topology" },
           { text: "Inventory", link: "/using-netmap/inventory" },
