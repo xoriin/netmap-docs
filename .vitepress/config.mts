@@ -194,8 +194,8 @@ export default defineConfig({
           { text: "Rate Limits", link: "/api/rate-limits" },
           { text: "Automation", link: "/api/guides/automation" },
           { text: "Status Page Integrations", link: "/api/guides/status-page-integrations" },
-          { text: "OpenAPI And Swagger", link: "/api/reference/openapi" },
-          { text: "Endpoint Reference", link: "/api/reference/endpoints" }
+          { text: "Endpoint Reference", link: "/api/reference/endpoints" },
+          { text: "OpenAPI And Swagger", link: "/api/reference/openapi" }
         ]
       },
       {

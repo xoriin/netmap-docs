@@ -63,8 +63,8 @@
   - [Rate Limits](./api/rate-limits.md)
   - [Automation](./api/guides/automation.md)
   - [Status Page Integrations](./api/guides/status-page-integrations.md)
-  - [OpenAPI And Swagger](./api/reference/openapi.md)
   - [Endpoint Reference](./api/reference/endpoints.md)
+  - [OpenAPI And Swagger](./api/reference/openapi.md)
 - Operations
   - [Operations](./operations/operations.md)
   - [Health Checks](./operations/health-checks.md)
