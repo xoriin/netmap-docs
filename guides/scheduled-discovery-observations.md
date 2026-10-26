@@ -23,7 +23,7 @@ This workflow lets you review what scheduled discovery found before NetMap chang
 
 ## Observation Types
 
-Verified behavior includes observations for:
+Scheduled discovery raises observations for:
 
 - new devices;
 - MAC-matched IP moves;
