@@ -40,8 +40,8 @@ Expected result: JSON describing the user that owns the key.
 The backend also supports:
 
 - `Authorization: Bearer <access-token>`;
-- `netmap_access` cookie;
-- refresh-token cookie for `/api/v1/auth/refresh`;
+- the `netmap_access` cookie: an HttpOnly, `SameSite=Strict` access-token cookie set at sign-in for `/api/` paths. Mutating requests that rely on it must also send the `X-CSRF-Token` header matching the `netmap_csrf` cookie;
+- the `netmap_refresh` HttpOnly cookie for `/api/v1/auth/refresh`;
 - local login at `/api/v1/auth/login`;
 - OIDC browser login endpoints under `/api/v1/auth/oidc/*`.
 

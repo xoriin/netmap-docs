@@ -18,7 +18,7 @@ This page separates implemented protections from deployment responsibilities.
 | Area | Behavior |
 |---|---|
 | Passwords | Local passwords are hashed by backend security code. |
-| Sessions | Access tokens are short-lived; refresh tokens are stored in HttpOnly cookies. |
+| Sessions | Access tokens are short-lived and are also set as the HttpOnly `netmap_access` cookie; refresh tokens are stored in the HttpOnly `netmap_refresh` cookie. |
 | Login abuse | Persistent per-account throttling is combined with a higher source-IP threshold to remain safer for shared NATs; lockouts return `Retry-After`. |
 | CSRF | Double-submit CSRF middleware protects cookie-authenticated mutating requests. `X-API-Key` and bearer requests are exempt. |
 | API keys | Plaintext shown once; lookup prefix and last four characters stored; full key stored as an HMAC-SHA256 digest. |
@@ -91,7 +91,7 @@ Documentation gap: no source-backed security reporting address or policy file wa
 
 NetMap assumes the operator controls the host, Docker daemon, persistent data directory, reverse proxy, and networks reachable by active probes. The trust boundary includes browser users, API clients, syslog senders, configured OIDC/notification providers, and devices being probed. Deploy behind HTTPS, restrict exposed ports and syslog senders, use exact trusted hosts/origins, and keep the image and host current.
 
-Local passwords are Argon2-hashed. Access tokens are short-lived in React memory; refresh tokens are HttpOnly cookies. CSRF uses a double-submit cookie for cookie-authenticated mutating requests; safe methods are unaffected, while bearer/API-key requests are exempt because they carry explicit credentials. Secure cookies require HTTPS. Failed-login thresholds, progressive delay, user/IP lockouts, password-reset expiry, and session idle timeout limit credential abuse.
+Local passwords are Argon2-hashed. Access tokens are short-lived; the app holds one in memory and the backend also sets it as the HttpOnly `netmap_access` cookie. Refresh tokens are HttpOnly cookies. CSRF uses a double-submit cookie for cookie-authenticated mutating requests; safe methods are unaffected, while bearer/API-key requests are exempt because they carry explicit credentials. Secure cookies require HTTPS. Failed-login thresholds, progressive delay, user/IP lockouts, password-reset expiry, and session idle timeout limit credential abuse.
 
 Authorization is evaluated at the route and ownership boundary. Hidden navigation is not a security control by itself: APIs return `403` when the live role lacks permission, and users can revoke only their own keys unless SuperAdmin. Role and key changes apply to subsequent requests immediately.
 

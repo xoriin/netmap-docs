@@ -18,6 +18,7 @@ This page focuses on how those controls fit together. The broader overview is al
 | OIDC SSO | Browser login through an external identity provider | Authorization Code + PKCE, state/nonce tracking, JWKS validation. |
 | Refresh cookie | Browser session renewal | Refresh token is stored in an HttpOnly cookie. |
 | Bearer access token | Browser/API session calls | Access token is short-lived and can be sent in `Authorization: Bearer`. |
+| Access cookie | Browser session calls | Sign-in also sets the access token as the HttpOnly, `SameSite=Strict` `netmap_access` cookie for `/api/`. Mutating cookie requests need the CSRF header. |
 | API key | External REST automation | Sent in `X-API-Key`, resolved to an owning user. |
 
 ## Authorization
