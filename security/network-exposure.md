@@ -70,4 +70,4 @@ ACTIVE_NETWORK_PUBLIC_TARGETS_ENABLED=false
 - [Reverse Proxy And HTTPS](../installation/reverse-proxy.md)
 - [Ports](../reference/ports.md)
 - [Syslog](../configuration/syslog.md)
-- [Permissions](./permissions.md)
+- [Permissions](../administer/permissions.md)

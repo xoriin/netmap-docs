@@ -246,7 +246,7 @@ Outside systems (a backup server, a ticketing tool, a deployment pipeline) can s
 
 - [Monitoring](./monitoring.md)
 - [Create An Alert Rule](../guides/create-alert-rule.md)
-- [Permissions](../security/permissions.md)
+- [Permissions](../administer/permissions.md)
 - [Status Page Integrations](../api/guides/status-page-integrations.md)
 - [Endpoint Inventory](../api/reference/endpoints.md)
 - [Rate Limits](../api/rate-limits.md)

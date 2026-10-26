@@ -45,7 +45,7 @@ Keep paragraphs to four sentences or fewer and under about 600 characters. When 
 
 ## One Fact, One Page
 
-Each fact lives on one page. Elsewhere, link to it instead of repeating it. For example, roles and permissions live on [Permissions](../security/permissions.md), and key handling lives on [API Authentication](../api/authentication.md).
+Each fact lives on one page. Elsewhere, link to it instead of repeating it. For example, roles and permissions live on [Permissions](../administer/permissions.md), and key handling lives on [API Authentication](../api/authentication.md).
 
 ## Callouts
 

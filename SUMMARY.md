@@ -57,7 +57,7 @@
   - [OpenAPI And Swagger](./api/reference/openapi.md)
 - Administer
   - [Administration](./using-netmap/admin.md)
-  - [Permissions](./security/permissions.md)
+  - [Permissions](./administer/permissions.md)
   - [Two-Factor Authentication](./security/two-factor-authentication.md)
   - [Configuration Reference](./configuration/configuration.md)
   - [Environment Variables](./configuration/environment-variables.md)

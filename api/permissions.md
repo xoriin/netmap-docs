@@ -21,7 +21,7 @@ A request without the permission returns `403`. See [API Errors](./errors.md).
 | SecurityAnalyst | `security_view`, `tools_passive`, `firewall_export` |
 | Viewer | `tools_passive` |
 
-A SuperAdmin can change the permissions of each role and create custom roles. See [Permissions](../security/permissions.md).
+A SuperAdmin can change the permissions of each role and create custom roles. See [Permissions](../administer/permissions.md).
 
 ## What Each Action Needs
 

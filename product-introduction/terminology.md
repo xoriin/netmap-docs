@@ -65,7 +65,7 @@ For exact API fields, see the [Endpoint Inventory](../api/reference/endpoints.md
 - [Internal IPAM Data Model](#internal-ipam)
 - [Monitoring and Discovery Data Model](#monitoring-and-discovery)
 - [Security Events and Notifications](#security-events-and-notifications)
-- [Access-Control Model](../security/permissions.md)
+- [Access-Control Model](../administer/permissions.md)
 - [Configuration, Time, Retention, and Expiry](../configuration/configuration.md)
 
 ## Device Records and State

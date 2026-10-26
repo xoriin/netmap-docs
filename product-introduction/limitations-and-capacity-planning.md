@@ -201,7 +201,7 @@ Use a dedicated automation account with only the required permissions. Store API
 
 ### Related pages
 
-- [Permissions](../security/permissions.md)
+- [Permissions](../administer/permissions.md)
 - [Security Overview](../security/index.md)
 - [API Keys](../api/authentication.md#api-keys)
 - [OIDC SSO](../configuration/oidc-sso.md)
