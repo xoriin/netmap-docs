@@ -26,15 +26,13 @@ A default all-in-one install listens on `http://127.0.0.1:8080`.
 
 Use an API key in the `X-API-Key` header:
 
-```bash
-curl --fail-with-body \
-  --url "https://netmap.example.com/api/v1/auth/me" \
-  --header "X-API-Key: ${NETMAP_API_KEY}"
+```text
+X-API-Key: nm_<prefix>_<secret>
 ```
 
 API keys work only in `X-API-Key`. A key sent as `Authorization: Bearer` returns `401`. A key acts as the user who created it, with that user's permissions.
 
-Health, version, setup status, sign-in and public status pages need no authentication. See [API Authentication](./authentication.md).
+Health, version, setup status, sign-in and public status pages need no authentication. To make a first call, follow the [API Quick Start](./quick-start.md); for keys and sessions, see [API Authentication](./authentication.md).
 
 ## Requests And Responses
 
