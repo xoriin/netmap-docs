@@ -8,17 +8,17 @@ keywords: [rate limits, 429]
 
 Rate limits protect expensive network tools, sign-in, discovery, and API-key authentication. These are the defaults. The environment variables below change them; the status page limits are fixed.
 
-| Area | Default |
-|---|---|
-| API key calls | 120 calls per 60 seconds per key |
-| Invalid API-key lookup lockout | 10 failures, then 15 minutes per client address |
-| Tools | 20 calls per 60 seconds per user |
-| Discovery | 60 seconds between scans per user |
-| Login failures | 5 failures, then 15 minutes |
-| Public status page reads | 600 requests per 60 seconds per client IP, 6000 per 60 seconds overall |
-| Status integration token writes | 60 writes per 60 seconds per token |
+| Area | Default | `Retry-After` |
+|---|---|---|
+| API key calls | 120 calls per 60 seconds per key | No |
+| Invalid API-key lookup lockout | 10 failures, then 15 minutes per client address | No |
+| Tools | 20 calls per 60 seconds per user | No |
+| Discovery | 60 seconds between scans per user | No |
+| Login failures | 5 failures, then 15 minutes | Yes, seconds until the lockout ends |
+| Public status page reads | 600 requests per 60 seconds per client IP, 6000 per 60 seconds overall | Yes, 60 seconds |
+| Status integration token writes | 60 writes per 60 seconds per token | Yes, seconds until another write is allowed |
 
-Every limit returns `429`; see [API Errors](./errors.md). Sign-in and status page limits also send a `Retry-After` header; see [Status Pages](../using-netmap/status-pages.md) and [Status Page Integrations](./guides/status-page-integrations.md).
+Every limit returns `429`; see [API Errors](./errors.md). Where there is no `Retry-After` header, wait for the window or lockout to end before you retry. Status page limits are covered in [Status Pages](../using-netmap/status-pages.md) and [Status Page Integrations](./guides/status-page-integrations.md).
 
 ## API-Key Call Limit
 
