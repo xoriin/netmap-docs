@@ -68,7 +68,7 @@
   - [Revoking API Keys](./api/revoking-api-keys.md)
   - [API Errors](./api/errors.md)
   - [Rate Limits](./api/rate-limits.md)
-  - [OpenAPI And Swagger](./api/openapi-swagger.md)
+  - [OpenAPI And Swagger](./api/reference/openapi.md)
   - [Capability Matrix](./api/capability-matrix.md)
   - [Endpoint Reference](./api/reference/endpoints.md)
 - Operations

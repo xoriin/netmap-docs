@@ -10,7 +10,7 @@ keywords:
 
 # Endpoint Reference
 
-Every NetMap REST endpoint, grouped by resource. Paths are relative to the NetMap origin, for example `https://netmap.example.com`. For request and response fields, open `/api/docs` on your instance; see [OpenAPI And Swagger](../openapi-swagger.md).
+Every NetMap REST endpoint, grouped by resource. Paths are relative to the NetMap origin, for example `https://netmap.example.com`. For request and response fields, open `/api/docs` on your instance; see [OpenAPI And Swagger](./openapi.md).
 
 The **Access** column shows what a request needs:
 

@@ -74,7 +74,6 @@ export const legacyDocumentationRoutes = {
   "api/revoking-api-keys.md": "api/revoking-api-keys.md",
   "api/errors.md": "api/errors.md",
   "api/rate-limits.md": "api/rate-limits.md",
-  "api/openapi-swagger.md": "api/openapi-swagger.md",
   "api/capability-matrix.md": "api/capability-matrix.md",
   "api/reference/endpoints.md": "api-reference.md",
   "operations/operations.md": "operations.md",
@@ -136,4 +135,5 @@ export const retiredDocumentationRoutes = [
 export const movedDocumentationRoutes: Record<string, string> = {
   "api/api-reference.md": "api/reference/endpoints.md",
   "api/endpoint-reference.md": "api/reference/endpoints.md",
+  "api/openapi-swagger.md": "api/reference/openapi.md",
 };

@@ -199,7 +199,7 @@ export default defineConfig({
           { text: "Revoking API Keys", link: "/api/revoking-api-keys" },
           { text: "API Errors", link: "/api/errors" },
           { text: "Rate Limits", link: "/api/rate-limits" },
-          { text: "OpenAPI And Swagger", link: "/api/openapi-swagger" },
+          { text: "OpenAPI And Swagger", link: "/api/reference/openapi" },
           { text: "Capability Matrix", link: "/api/capability-matrix" },
           { text: "Endpoint Reference", link: "/api/reference/endpoints" }
         ]

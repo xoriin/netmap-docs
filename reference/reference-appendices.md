@@ -18,7 +18,7 @@ The documentation is intentionally split by audience. This page is the index for
 | Terms and abbreviations | [Glossary](./glossary.md), [Terminology](../product-introduction/terminology.md) |
 | Release history | [Release changelog](./changelog.md) |
 | Known constraints | [Limitations and capacity planning](../product-introduction/limitations-and-capacity-planning.md) |
-| API routes and schemas | [API reference](../api/reference/endpoints.md), [OpenAPI and Swagger](../api/openapi-swagger.md) |
+| API routes and schemas | [API reference](../api/reference/endpoints.md), [OpenAPI and Swagger](../api/reference/openapi.md) |
 | Permissions and roles | [Administration](../using-netmap/admin.md#users-sessions-and-roles), [Security](../security/security.md#role-defaults) |
 
 ## State and data-model references
