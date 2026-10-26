@@ -52,8 +52,9 @@ At a viewport width of 760px or less, NetMap switches to a phone layout:
 - **More** opens a sheet with the remaining workspaces, the light/dark mode switch, Docs, and **Sign out**;
 - Inventory, Monitoring, IPAM, and Admin show their sections as a switcher above the workspace;
 - Inventory and Monitoring filters fold behind a **Filters** button that shows the number of active filters;
-- the Monitoring device and monitor tables and the Status pages list become card lists; and
-- the device monitoring pop-up fills the screen, and other dialogs open as sheets from the bottom of the screen.
+- the Monitoring device and endpoint tables, the Status pages list, and the VLANs list become card lists;
+- the Tools tabs sit in one row that you swipe sideways; and
+- the device and endpoint monitoring pop-ups fill the screen, and other dialogs open as sheets from the bottom of the screen.
 
 ## Related pages
 
