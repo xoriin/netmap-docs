@@ -146,6 +146,9 @@ export default defineConfig({
           { text: "Tools", link: "/using-netmap/tools" },
           { text: "Exports", link: "/using-netmap/exports" },
           { text: "Status Pages", link: "/using-netmap/status-pages" },
+          { text: "Status Page Groups And Items", link: "/using-netmap/status-page-items" },
+          { text: "Status Page Incidents And Maintenance", link: "/using-netmap/status-page-incidents" },
+          { text: "Status Page Custom CSS", link: "/using-netmap/status-page-css" },
           { text: "Profile", link: "/using-netmap/profile" },
           { text: "Personal Chart Views", link: "/using-netmap/chart-views" }
         ]

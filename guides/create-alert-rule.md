@@ -28,7 +28,7 @@ The switch is on by default for device offline, unexpected state, service down a
 4. Pause/resume or edit the rule as conditions change; delete only after confirmation.
 5. Review alert events and delivery history for status, target, result, detail, and timestamps.
 
-Scheduled maintenance windows can suppress a rule's notifications for the items they cover, when the window has **Suppress monitoring alerts** on. That setting needs both Manage status pages and `alert_write`; see [Status Pages](../using-netmap/status-pages.md#suppress-monitoring-alerts).
+Scheduled maintenance windows can suppress a rule's notifications for the items they cover, when the window has **Suppress monitoring alerts** on. That setting needs both Manage status pages and `alert_write`; see [Status Pages](../using-netmap/status-page-incidents.md#suppress-monitoring-alerts).
 
 Disabled notification profiles are skipped. A rule can target all devices/checks/monitors or one selected resource where supported. Recovery events are separate deliveries when the condition clears.
 

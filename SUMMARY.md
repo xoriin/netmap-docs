@@ -29,6 +29,9 @@
   - [Tools](./using-netmap/tools.md)
   - [Exports](./using-netmap/exports.md)
   - [Status Pages](./using-netmap/status-pages.md)
+  - [Status Page Groups And Items](./using-netmap/status-page-items.md)
+  - [Status Page Incidents And Maintenance](./using-netmap/status-page-incidents.md)
+  - [Status Page Custom CSS](./using-netmap/status-page-css.md)
   - [Profile](./using-netmap/profile.md)
   - [Personal Chart Views](./using-netmap/chart-views.md)
 - How-To Guides
