@@ -84,8 +84,6 @@ export const legacyDocumentationRoutes = {
   "troubleshooting/reverse-proxy-problems.md": "troubleshooting/reverse-proxy-problems.md",
   "troubleshooting/container-problems.md": "troubleshooting/container-problems.md",
   "troubleshooting/diagnostic-information.md": "troubleshooting/diagnostic-information.md",
-  "security/security.md": "security.md",
-  "security/security-model.md": "security/security-model.md",
   "security/permissions.md": "security/permissions.md",
   "security/secrets-management.md": "security/secrets-management.md",
   "security/network-exposure.md": "security/network-exposure.md",
@@ -141,4 +139,7 @@ export const movedDocumentationRoutes: Record<string, string> = {
   "guides/integration-patterns.md": "api/guides/automation.md",
   "using-netmap/status-page-integrations.md": "api/guides/status-page-integrations.md",
   "reference/reference-appendices.md": "reference/default-values.md",
+  "security/security.md": "security/index.md",
+  "security.md": "security/index.md",
+  "security/security-model.md": "security/index.md",
 };

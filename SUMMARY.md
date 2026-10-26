@@ -66,8 +66,7 @@
   - [OIDC SSO](./configuration/oidc-sso.md)
   - [Syslog](./configuration/syslog.md)
 - Security
-  - [Security Overview](./security/security.md)
-  - [Security Model](./security/security-model.md)
+  - [Security Overview](./security/index.md)
   - [Secrets Management](./security/secrets-management.md)
   - [Network Exposure](./security/network-exposure.md)
   - [Vulnerability Reporting](./security/vulnerability-reporting.md)

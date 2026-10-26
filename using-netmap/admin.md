@@ -83,6 +83,6 @@ Audit logs record actor, action, target, category, timestamp, and detail for aut
 ## Related pages
 
 - [OIDC SSO](../configuration/oidc-sso.md)
-- [Security Model](../security/security-model.md)
+- [Security Overview](../security/index.md)
 - [Exports](./exports.md)
 - [Profile](./profile.md)

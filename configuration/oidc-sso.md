@@ -92,5 +92,5 @@ Relevant settings include `OIDC_GROUP_CLAIM`, `OIDC_ROLE_MAPPINGS`, `OIDC_MANAGE
 
 - [First-Run Setup and Authentication](../installation/first-run-and-authentication.md)
 - [Authentication Problems](../troubleshooting/authentication-problems.md)
-- [Security Model](../security/security-model.md)
+- [Security Overview](../security/index.md)
 - [Secrets Management](../security/secrets-management.md)

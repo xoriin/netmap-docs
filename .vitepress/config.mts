@@ -203,8 +203,7 @@ export default defineConfig({
         text: "Security",
         collapsed: true,
         items: [
-          { text: "Security Overview", link: "/security/security" },
-          { text: "Security Model", link: "/security/security-model" },
+          { text: "Security Overview", link: "/security/" },
           { text: "Secrets Management", link: "/security/secrets-management" },
           { text: "Network Exposure", link: "/security/network-exposure" },
           { text: "Vulnerability Reporting", link: "/security/vulnerability-reporting" }

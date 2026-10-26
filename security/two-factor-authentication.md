@@ -120,4 +120,4 @@ The command must run as root inside the container, which is the `docker exec` de
 - [Administration](../using-netmap/admin.md)
 - [Authentication Problems](../troubleshooting/authentication-problems.md)
 - [OIDC SSO](../configuration/oidc-sso.md)
-- [Security Model](./security-model.md)
+- [Security Overview](./index.md)

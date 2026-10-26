@@ -38,7 +38,7 @@ Confirm the image tag and `/app/VERSION`, data-directory ownership, free disk, r
 
 ## Safe escalation package
 
-Collect health output, relevant redacted logs, container status, version/tag, environment variable names (not values), data-directory file sizes, request path/status, timestamp with timezone, and reproduction steps. For database problems include the result of restore validation rather than uploading a live database. For security incidents preserve logs first and follow [Security Incident Response](../security/security.md#incident-response).
+Collect health output, relevant redacted logs, container status, version/tag, environment variable names (not values), data-directory file sizes, request path/status, timestamp with timezone, and reproduction steps. For database problems include the result of restore validation rather than uploading a live database. For security incidents preserve logs first and follow [Security Incident Response](../security/index.md#incident-response).
 
 ## Related pages
 

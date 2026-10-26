@@ -57,7 +57,7 @@ This is the NetMap documentation homepage. It links the product overview, instal
 | Manage users and instance settings | [Administration](./using-netmap/admin.md) |
 | Understand roles and access | [Permissions](./security/permissions.md) |
 | Configure OIDC sign-in | [OIDC SSO](./configuration/oidc-sso.md) |
-| Secure the deployment | [Security Overview](./security/security.md) |
+| Secure the deployment | [Security Overview](./security/index.md) |
 | Automate through the REST API | [API Overview](./api/index.md) |
 | Find an endpoint | [Endpoint Inventory](./api/reference/endpoints.md) |
 | Contribute to NetMap | [Developer Guide](./development/development.md) |

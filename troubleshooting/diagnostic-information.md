@@ -59,4 +59,4 @@ Remove:
 
 - [Logging](../operations/logging.md)
 - [Common Issues](./common-issues.md)
-- [Security Model](../security/security-model.md)
+- [Security Overview](../security/index.md)

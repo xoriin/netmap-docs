@@ -66,4 +66,4 @@ If login works on HTTP but fails behind HTTPS, check:
 
 - [OIDC SSO](../configuration/oidc-sso.md)
 - [Reverse Proxy Problems](./reverse-proxy-problems.md)
-- [Security Model](../security/security-model.md)
+- [Security Overview](../security/index.md)
