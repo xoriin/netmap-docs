@@ -242,7 +242,6 @@ export default defineConfig({
           { text: "Default Values", link: "/reference/default-values" },
           { text: "File And Directory Paths", link: "/reference/file-paths" },
           { text: "Ports", link: "/reference/ports" },
-          { text: "NetMap Data Model", link: "/product-introduction/terminology" },
           { text: "Glossary", link: "/reference/glossary" },
           { text: "Changelog", link: "/reference/changelog" }
         ]

@@ -90,7 +90,6 @@
   - [Default Values](./reference/default-values.md)
   - [File And Directory Paths](./reference/file-paths.md)
   - [Ports](./reference/ports.md)
-  - [NetMap Data Model](./product-introduction/terminology.md)
   - [Glossary](./reference/glossary.md)
   - [Changelog](./reference/changelog.md)
 - Contributing

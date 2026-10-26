@@ -22,7 +22,6 @@ export const legacyDocumentationRoutes = {
   "product-introduction/features.md": "introduction/features.md",
   "product-introduction/architecture.md": "introduction/architecture.md",
   "product-introduction/supported-use-cases.md": "introduction/supported-use-cases.md",
-  "product-introduction/terminology.md": "introduction/terminology.md",
   "installation/installation.md": "installation.md",
   "installation/quick-start.md": "installation/quick-start.md",
   "installation/docker-compose.md": "installation/docker-compose.md",
@@ -143,4 +142,6 @@ export const movedDocumentationRoutes: Record<string, string> = {
   "operations/backups.md": "operations/backup-and-restore.md",
   "operations/restores.md": "operations/backup-and-restore.md",
   "configuration/environment-variables.md": "configuration/configuration.md",
+  "product-introduction/terminology.md": "reference/glossary.md",
+  "introduction/terminology.md": "reference/glossary.md",
 };

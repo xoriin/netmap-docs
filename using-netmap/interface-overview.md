@@ -60,5 +60,5 @@ At a viewport width of 760px or less, NetMap switches to a phone layout:
 
 - [Using the Application](./user-guide.md)
 - [First-Run Setup and Authentication](../installation/first-run-and-authentication.md)
-- [Entity Colors and Icons](../product-introduction/terminology.md#device-records-and-state)
+- [Entity Colors and Icons](../reference/glossary.md#device-records-and-state)
 - [Administration](./admin.md)
