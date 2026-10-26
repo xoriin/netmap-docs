@@ -54,16 +54,10 @@ AUTH_COOKIE_SECURE=true
 ## Verify
 
 ```bash
-curl --fail https://netmap.example.com/api/health
+curl --fail "${NETMAP_URL}/api/health"
 ```
 
-Then test API-key auth through the proxy:
-
-```bash
-curl --fail-with-body \
-  --url "https://netmap.example.com/api/v1/auth/me" \
-  --header "X-API-Key: <api-key>"
-```
+Then run the [Check Who You Are](../api/quick-start.md#_3-check-who-you-are) request with `$NETMAP_URL` set to your proxy address. If it works directly but not through the proxy, the proxy is dropping the `X-API-Key` header.
 
 ## Related Pages
 

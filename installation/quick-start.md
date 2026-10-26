@@ -128,17 +128,7 @@ Open `http://localhost:8080/` and complete the setup form. The first account bec
 
 ## 7. Optional API Smoke Test
 
-Create an API key from Profile → API keys. Copy it immediately; the plaintext secret is shown only once.
-
-```bash
-API_KEY='<paste-the-api-key>'
-curl --fail-with-body \
-  --url http://localhost:8080/api/v1/auth/me \
-  --header "X-API-Key: ${API_KEY}" \
-  --header 'Accept: application/json'
-```
-
-The response should identify the account that owns the key. See [API Keys](../api/authentication.md#api-keys) before using keys in automation.
+To check that the API works, create a key and run the first requests in [API Quick Start](../api/quick-start.md). Read [API Keys](../api/authentication.md#api-keys) before you use keys in automation.
 
 ## Stop, Start, And Remove
 

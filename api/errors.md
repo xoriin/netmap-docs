@@ -9,7 +9,7 @@ keywords: [API, errors, status codes, 401, 403, 429]
 NetMap returns errors as JSON with a `detail` field:
 
 ```bash
-curl --silent --url "https://netmap.example.com/api/v1/auth/me" \
+curl --silent --url "${NETMAP_URL}/api/v1/auth/me" \
   --header "X-API-Key: nm_wrong_key"
 ```
 

@@ -26,19 +26,7 @@ Check Admin role permissions for:
 
 `401` means NetMap did not accept the authentication. Check the session, bearer token, or API key.
 
-`403` means authentication worked, but the role does not allow the action.
-
-## API-Key Example
-
-If this succeeds:
-
-```bash
-curl --fail-with-body \
-  --url "https://netmap.example.com/api/v1/auth/me" \
-  --header "X-API-Key: <api-key>"
-```
-
-but a feature endpoint returns `403`, update the owning user's role or permissions.
+`403` means authentication worked, but the role does not allow the action. For an API key, if [Check Who You Are](../api/quick-start.md#_3-check-who-you-are) succeeds but a feature endpoint returns `403`, update the key owner's role or use a different automation user.
 
 ## SuperAdmin-Only Actions
 
