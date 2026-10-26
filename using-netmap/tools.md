@@ -21,7 +21,7 @@ The Tools workspace runs one-off network checks from the NetMap host. Passive to
 - **Port Check** tests whether a TCP or UDP service can be reached, with a protocol, port and timeout. UDP silence can mean filtered or simply no reply, and an open port does not prove the application is healthy.
 - **SNMP Probe** queries an SNMP-enabled device with a saved SNMP profile or a manual community string. Profiles are managed on the [SNMP Profiles](../administer/snmp-profiles.md) tab in Admin.
 
-By default, active tools only reach private targets. To allow public IP addresses and hostnames for ping, traceroute and port checks, an administrator turns on **Allow public active network targets** in [System](../administer/system.md) settings.
+By default, active tools only reach private targets. To allow public IP addresses and hostnames for ping, traceroute and port checks, an administrator turns on **Allow public active network targets** in **App Settings** on the [System](../administer/system.md) tab in Admin.
 
 ## Recent Checks
 
