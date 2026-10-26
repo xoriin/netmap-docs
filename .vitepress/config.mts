@@ -201,7 +201,7 @@ export default defineConfig({
           { text: "Rate Limits", link: "/api/rate-limits" },
           { text: "OpenAPI And Swagger", link: "/api/openapi-swagger" },
           { text: "Capability Matrix", link: "/api/capability-matrix" },
-          { text: "Endpoint Inventory", link: "/api/reference/endpoints" }
+          { text: "Endpoint Reference", link: "/api/reference/endpoints" }
         ]
       },
       {
