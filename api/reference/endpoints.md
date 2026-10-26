@@ -103,6 +103,15 @@ See [API Authentication](../authentication.md#api-keys) for creating, rotating a
 | DELETE | `/api/v1/auth/users/{user_id}/sessions` | `user_manage` | Revoke a user's sessions |
 | DELETE | `/api/v1/auth/users/{user_id}/totp` | SuperAdmin | Reset a user's two-factor and sign them out |
 
+`POST /api/v1/auth/users/{user_id}/reset-password` takes `{"new_password": "..."}` (12 to 256 characters), sets it, and emails the user a reset link. The response reports the email, for example `{"email_status":"no_email"}`:
+
+| `email_status` | Meaning |
+|---|---|
+| `sent` | The reset email was sent. |
+| `no_email` | The user has no email address. |
+| `not_configured` | No email was sent: `APP_URL` or an enabled email notification profile is missing. |
+| `failed` | Sending the email failed. |
+
 ## Roles And Permissions
 
 | Method | Path | Access | Purpose |
