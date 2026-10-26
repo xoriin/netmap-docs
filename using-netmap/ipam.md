@@ -8,7 +8,7 @@ keywords: [IPAM, subnet, reservations, DHCP]
 
 The IPAM section separates **Internal networks** from **External IPs** in its sidebar navigation.
 Internal networks manages summary cards, conflict review, VLAN suggestions, subnets, reservations,
-DHCP leases, and address grids. External IPs keeps a register of public addresses; see
+DHCP leases, and address maps. External IPs keeps a register of public addresses; see
 [External IPAM](./external-ipam.md). Write actions require `ipam_write`.
 
 ## Summary and subnet list
@@ -19,9 +19,15 @@ Create an IPv4 or IPv6 subnet with CIDR, name, gateway, DHCP start/end, VLAN/gro
 
 Editing a subnet updates metadata and synchronises supported VLAN fields. Deleting requires confirmation and checks dependent reservations/assignments first; it does not silently delete unrelated devices or imported lease data.
 
-## Address grid and allocation
+The page opens with an **Address space** gauge (used and free hosts across all subnets) beside the summary cards. A **Busiest subnets** card lists the five subnets with the highest utilisation. Chart choices are saved per user; see [Personal Chart Views](./chart-views.md).
 
-Open a subnet to browse addresses. Filters and labels distinguish network/broadcast or reserved addresses, known devices, active DHCP leases, conflicts, and free addresses; tooltips show the source record. Large subnets are paginated/virtualised rather than rendered as an unbounded grid. **Next available** accepts the subnet and optional exclusions but is a suggestion, not a reservation until saved.
+## Address map and allocation
+
+Open a subnet to see its used, free, utilisation, gateway, and DHCP range figures, and a usage bar split into device, DHCP lease, reserved, gateway, and free addresses. The **All**, **Devices**, **DHCP**, **Reserved**, and **Free** tabs filter the addresses.
+
+With **All** selected and up to 256 addresses, the subnet is shown as an address map: 16 square tiles per row, with the last-octet offset of each row and column numbers across the top. Tiles are coloured by status (device, DHCP lease, free DHCP pool, reserved, gateway, free, network/broadcast). Select a tile to show the address in the panel beside the map, with its status, name, MAC, and vendor; free addresses offer **Reserve this address** to users with `ipam_write`. Other filters and larger subnets use a table. Subnets with more than 1,024 hosts are not enumerated address by address.
+
+**Reserve next IP** in the subnet header finds the next free address and opens a prefilled reservation; nothing is held until you save it.
 
 ## Reservations
 
