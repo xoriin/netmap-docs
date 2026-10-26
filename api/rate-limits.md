@@ -6,19 +6,19 @@ keywords: [rate limits, 429]
 
 # Rate Limits
 
-Rate limits protect expensive network tools, login, discovery, and API-key authentication. The values below are defaults from `backend/app/core/config.py`.
+Rate limits protect expensive network tools, sign-in, discovery, and API-key authentication. These are the defaults. The environment variables below change them; the status page limits are fixed.
 
 | Area | Default |
 |---|---|
 | API key calls | 120 calls per 60 seconds per key |
 | Invalid API-key lookup lockout | 10 failures, then 15 minutes per client address |
-| Tools | 20 calls per 60 seconds |
-| Discovery | 60 seconds between scans |
+| Tools | 20 calls per 60 seconds per user |
+| Discovery | 60 seconds between scans per user |
 | Login failures | 5 failures, then 15 minutes |
 | Public status page reads | 600 requests per 60 seconds per client IP, 6000 per 60 seconds overall |
 | Status integration token writes | 60 writes per 60 seconds per token |
 
-API-key rate limits return `429`. Status page limits also return `429` with a `Retry-After` header; see [Status Pages](../using-netmap/status-pages.md) and [Status Page Integrations](./guides/status-page-integrations.md).
+Every limit returns `429`; see [API Errors](./errors.md). Sign-in and status page limits also send a `Retry-After` header; see [Status Pages](../using-netmap/status-pages.md) and [Status Page Integrations](./guides/status-page-integrations.md).
 
 ## API-Key Call Limit
 
@@ -58,6 +58,15 @@ Network tools and discovery can generate traffic from the NetMap host, so they h
 TOOL_RATE_LIMIT_MAX_CALLS=20
 TOOL_RATE_LIMIT_WINDOW_SECONDS=60
 DISCOVERY_RATE_LIMIT_SECONDS=60
+```
+
+## Sign-In Lockout
+
+After repeated failed username and password sign-ins, NetMap locks sign-in for the account:
+
+```dotenv
+AUTH_MAX_FAILED_ATTEMPTS=5
+AUTH_LOCKOUT_MINUTES=15
 ```
 
 ## Operational Guidance
