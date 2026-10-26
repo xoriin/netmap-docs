@@ -4,7 +4,7 @@
 - Get Started
   - [What Is NetMap?](./product-introduction/what-is-netmap.md)
   - [How NetMap Works](./product-introduction/architecture.md)
-  - [Operating Boundaries And Administration](./product-introduction/limitations-and-capacity-planning.md)
+  - [Limitations And Capacity Planning](./product-introduction/limitations-and-capacity-planning.md)
   - [Quick Start](./installation/quick-start.md)
   - [First-Run Setup And Authentication](./installation/first-run-and-authentication.md)
 - Install And Upgrade
