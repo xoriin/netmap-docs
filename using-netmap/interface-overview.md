@@ -44,6 +44,17 @@ Authentication is required for every workspace. The sidebar hides areas the curr
 
 Switch between light and dark mode with **Light mode**/**Dark mode** at the foot of the sidebar (in **More** on phones). Choose the dark style, **Slate** (cool blue-grey) or **Zinc** (neutral charcoal), in Profile → Preferences → **Dark mode style**. Both choices persist per browser. Loading skeletons indicate an in-flight request; an empty state means the request succeeded but there is no matching data. If a workspace error boundary appears, retry the workspace or navigate away and return after checking the service health endpoint.
 
+## Phone layout
+
+At a viewport width of 760px or less, NetMap switches to a phone layout:
+
+- the sidebar is replaced by bottom tabs for **Home**, **Inventory**, **Monitor**, and **Map**, plus **More**; the Inventory tab shows the open discovery observation count;
+- **More** opens a sheet with the remaining workspaces, the light/dark mode switch, Docs, and **Sign out**;
+- Inventory, Monitoring, IPAM, and Admin show their sections as a switcher above the workspace;
+- Inventory and Monitoring filters fold behind a **Filters** button that shows the number of active filters;
+- the Monitoring device and monitor tables and the Status pages list become card lists; and
+- the device monitoring pop-up fills the screen, and other dialogs open as sheets from the bottom of the screen.
+
 ## Related pages
 
 - [Using the Application](./user-guide.md)
