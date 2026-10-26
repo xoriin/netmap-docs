@@ -69,6 +69,8 @@ AUTH_MAX_FAILED_ATTEMPTS=5
 AUTH_LOCKOUT_MINUTES=15
 ```
 
+Wrong two-factor codes at sign-in count toward the same lockout, as do wrong passwords or codes when you set up two-factor authentication, replace recovery codes or turn it off. A user with `user_manage` can clear an account's lockout with `POST /api/v1/auth/users/{user_id}/unlock-login`.
+
 ## Operational Guidance
 
 - Back off on `429`; do not retry in a tight loop.
