@@ -6,7 +6,7 @@ keywords: [monitoring, health, service checks, HTTP monitors]
 
 # Monitoring
 
-Monitoring has separate **Devices** and **Monitors** views. Devices represent inventory records and their observed health; Monitors are independent HTTP/HTTPS endpoints. Changes require `monitoring_write`.
+Monitoring has **Devices**, **Endpoints**, and **Status pages** views; **Status pages** needs `status_page_manage`. Devices represent inventory records and their observed health; endpoints are independent HTTP/HTTPS monitors. Changes require `monitoring_write`.
 
 ## Devices workspace
 
