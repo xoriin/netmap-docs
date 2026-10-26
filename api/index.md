@@ -1,149 +1,67 @@
 ---
 title: API Overview
-sidebar_position: 6
+sidebar_position: 1
 keywords:
   - API
+  - REST
   - OpenAPI
-  - Swagger
-  - errors
-  - rate limits
+  - automation
 ---
 
 # API Overview
 
-NetMap exposes a FastAPI REST API under `/api/v1`. The all-in-one container serves the SPA and proxies `/api/` to FastAPI through nginx.
+NetMap has a JSON REST API. Everything the web app does goes through it, so scripts and integrations can read and change the same data.
 
 ## Base URL
 
-Use the same origin as the web UI:
+The API is on the same origin as the web app, under `/api/v1`:
 
 ```text
 https://netmap.example.com/api/v1
 ```
 
-Local default for the all-in-one image:
+A default all-in-one install listens on `http://127.0.0.1:8080`.
 
-```text
-http://127.0.0.1:8080/api/v1
-```
+## Authentication
 
-## OpenAPI
-
-| Resource | Path |
-|---|---|
-| OpenAPI JSON | `/api/openapi.json` |
-| Swagger UI | `/api/docs` |
-| ReDoc | Not configured |
-
-The schema title is `NetMap API`, and its version is read from the same installed `VERSION` file used by the application. Swagger groups operations by NetMap capability and marks protected routes with API-key and bearer authentication options.
-
-## Authentication Methods
-
-REST endpoints accept:
-
-- `X-API-Key: nm_<prefix>_<secret>` for API-key clients.
-- `Authorization: Bearer <access-token>` for session access tokens from sign-in. An API key sent as a Bearer token returns `401`. The only other Bearer tokens are `nmsp_` status page integration tokens, accepted only under `/api/v1/status-integrations`.
-- `netmap_access` cookie where present.
-
-`get_current_user` checks the `X-API-Key` header first. API-key requests are exempt from CSRF middleware.
-
-Public endpoints include health, setup status, initial admin setup while no user exists, login, refresh, logout, forgot/reset password, public settings, OIDC status/login/callback, and system version.
-
-## Request And Response Format
-
-JSON request bodies use `application/json`. File/backup endpoints use upload or binary response handling as implemented in `exports.py`.
-
-Date and time fields are serialized as JSON strings with Pydantic/FastAPI date-time formatting.
-
-Most application errors use FastAPI's default envelope:
-
-```json
-{
-  "detail": "Authentication required"
-}
-```
-
-Validation errors use FastAPI/Pydantic's validation envelope:
-
-```json
-{
-  "detail": [
-    {
-      "loc": ["body", "name"],
-      "msg": "Field required",
-      "type": "missing"
-    }
-  ]
-}
-```
-
-## Rate Limits
-
-Implemented rate limits:
-
-| Area | Default | Source |
-|---|---|---|
-| API-key calls | 120 calls per 60 seconds per key | `API_KEY_RATE_LIMIT_MAX_CALLS`, `API_KEY_RATE_LIMIT_WINDOW_SECONDS` |
-| Invalid API-key lookups | 10 failures then 15 minute client-address lockout | `API_KEY_MAX_FAILED_LOOKUPS`, `API_KEY_LOOKUP_LOCKOUT_MINUTES` |
-| Tools | 20 calls per 60 seconds | `TOOL_RATE_LIMIT_MAX_CALLS`, `TOOL_RATE_LIMIT_WINDOW_SECONDS` |
-| Discovery | 60 second scan rate limit | `DISCOVERY_RATE_LIMIT_SECONDS` |
-| Login failures | 5 attempts then 15 minute lockout | `AUTH_MAX_FAILED_ATTEMPTS`, `AUTH_LOCKOUT_MINUTES` |
-
-## Pagination, Filtering, Sorting, Search
-
-Filtering and pagination are endpoint-specific. Examples:
-
-- `GET /api/v1/syslog/events` supports search and filters implemented in `syslog.py`.
-- `GET /api/v1/audit/logs` supports audit log filters implemented in `audit.py`.
-- Many list endpoints return complete arrays without a general pagination contract.
-
-Documentation gap: there is no global pagination, sorting, idempotency, stability, or deprecation policy in source.
-
-## Common Status Codes
-
-| Status | Meaning in NetMap | Common cause | Resolution |
-|---|---|---|---|
-| `200` | Successful read/update/action | Request accepted | Use response body. |
-| `201` | Resource created | Create endpoint succeeded | Store returned ID; for API keys, store the plaintext key immediately. |
-| `204` | Successful action with no body | Delete, revoke, logout, restore | Treat as success. |
-| `400` | Invalid operation | Bad backup, invalid observation action, invalid tool input | Read `detail` and correct request. |
-| `401` | Authentication failed | Missing token, invalid JWT, invalid/expired/revoked API key | Reauthenticate or replace key. |
-| `403` | Permission denied | Role lacks permission or SuperAdmin required | Use an account/key with the required role or update permissions. |
-| `404` | Resource not found | Wrong ID or ownership-hidden key | Verify ID and ownership. |
-| `409` | Conflict | Setup already complete, discovery schedule already running | Retry after resolving conflict. |
-| `413` | Payload too large | Avatar or backup upload exceeds limit | Reduce file size. |
-| `422` | Schema validation failed | Missing/invalid field or path/query value | Match the Pydantic schema. |
-| `429` | Rate limit/lockout | API-key calls or failed lookups exceeded limit | Wait for the window/lockout to expire. |
-| `500` | Internal server error | Unexpected server failure | Check container logs and diagnostics. |
-| `501` | Not implemented | Backup/restore unsupported for DB type | Use supported SQLite deployment or filesystem backup. |
-| `503` | Tool unavailable | Missing raw network capability or command unavailable | Check container capabilities and packages. |
-| `504` | Tool timeout | DNS, ping, traceroute, SNMP timeout | Increase timeout where supported or check network reachability. |
-
-## First API Request
+Use an API key in the `X-API-Key` header:
 
 ```bash
-API_URL="https://netmap.example.com"
-API_KEY="<api-key>"
-
 curl --fail-with-body \
-  --request GET \
-  --url "${API_URL}/api/v1/auth/me" \
-  --header "X-API-Key: ${API_KEY}" \
-  --header "Accept: application/json"
+  --url "https://netmap.example.com/api/v1/auth/me" \
+  --header "X-API-Key: ${NETMAP_API_KEY}"
 ```
 
-## Client quick starts
+API keys work only in `X-API-Key`. A key sent as `Authorization: Bearer` returns `401`. A key acts as the user who created it, with that user's permissions.
 
-Python clients should keep the API key in an environment variable, use a bounded timeout, call `raise_for_status()`, and treat `401/403/429` according to the error table. For downloads, write the response bytes and preserve the server filename/content type rather than decoding as JSON. PowerShell uses the same header and JSON contracts:
+Health, version, setup status, sign-in and public status pages need no authentication. See [API Authentication](./authentication.md).
 
-```powershell
-$headers = @{ "X-API-Key" = $env:NETMAP_API_KEY; Accept = "application/json" }
-$device = Invoke-RestMethod -Uri "$env:NETMAP_URL/api/v1/auth/me" -Headers $headers
-$device | ConvertTo-Json -Depth 8
-```
+## Requests And Responses
 
-For automation, create a dedicated least-privilege user/key, list and match records by stable IDs or normalised IP/MAC, use explicit fields in `PATCH` requests, back off on `429`, and verify a create/update with a follow-up `GET`. Inventory export, IP reservation, discovery polling/import, and monitoring summary are the preferred recipes; do not retry destructive deletes blindly because the API has no universal idempotency key.
+Send JSON with `Content-Type: application/json`. Responses are JSON, except file downloads such as exports, backups and the PDF report.
 
-## Compatibility and security boundaries
+Errors return a `detail` field and a standard status code; see [API Errors](./errors.md).
 
-The stable base path is `/api/v1`; compatibility aliases are called out in the endpoint inventory. There is no source-backed global deprecation or backward-compatibility SLA, so pin the product image/version and review release notes before upgrading. API keys are REST-only; the live syslog WebSocket requires browser/session authentication. Use HTTPS, preserve `X-API-Key` through proxies, validate inputs server-side, and keep request/response logs free of secrets.
+Paging is set per endpoint. Syslog events and audit logs take `limit` (default 100, up to 500) and `offset`; many other lists return every item. Each endpoint's parameters are in the [OpenAPI schema](./reference/openapi.md).
+
+## Limits
+
+Each API key can make 120 requests per 60 seconds by default. Network tools, discovery and public status pages have their own limits. See [Rate Limits](./rate-limits.md).
+
+## Versioning
+
+All endpoints are under `/api/v1`. NetMap does not publish a deprecation policy, so pin the NetMap version your automation uses and read the release notes before you upgrade.
+
+## In This Section
+
+| Page | Use it to |
+|---|---|
+| [API Quick Start](./quick-start.md) | Create a key and make your first calls. |
+| [API Authentication](./authentication.md) | Create, use, rotate and revoke keys, and understand sessions. |
+| [API Permissions](./permissions.md) | See what each role can do. |
+| [API Errors](./errors.md) | Look up a status code or error message. |
+| [Rate Limits](./rate-limits.md) | Plan request volume. |
+| [Automation](../guides/automation-with-api-keys.md) | Build scripts and integrations. |
+| [Status Page Integrations](../using-netmap/status-page-integrations.md) | Post incidents and maintenance from other tools. |
+| [Endpoint Reference](./reference/endpoints.md) | Find an endpoint and the permission it needs. |
+| [OpenAPI And Swagger](./reference/openapi.md) | Read request and response schemas, and try calls. |
