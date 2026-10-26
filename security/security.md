@@ -85,7 +85,7 @@ For least privilege, create a dedicated user with only the permissions required 
 
 ## Vulnerability Reporting
 
-Documentation gap: no source-backed security reporting address or policy file was found during this pass. Maintainers should add a `SECURITY.md` or equivalent and link it from this page.
+See [Vulnerability Reporting](./vulnerability-reporting.md).
 
 ## Security model and hardening
 
