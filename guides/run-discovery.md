@@ -48,7 +48,8 @@ Discovery history records status, timestamps, target/mode, result counts, and er
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | no MAC addresses | Docker bridge or missing raw-network capability | use `network_mode: host` and verify the image capabilities |
-| empty result | target is unreachable, filtered, or outside the private range | verify routing and target format, then retry a small CIDR |
+| "Public IP scanning is blocked by default" | part of the target lies outside the private, loopback and link-local ranges | keep every address inside `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`, `127.0.0.0/8`, `169.254.0.0/16`, `fc00::/7`, `fe80::/10` or `::1` |
+| empty result | target is unreachable or filtered | verify routing and target format, then retry a small CIDR |
 | scan times out | reverse DNS, oversized range, or slow probes | reduce the range, use ping sweep, or increase the administrator timeout carefully |
 | `429` | discovery rate limit | wait for the window to clear |
 | `sudo`/nmap error | image or host dependency/capability issue | inspect container logs and verify `/usr/bin/nmap` and the permitted sudo rule |
