@@ -168,7 +168,7 @@ All three are `SameSite=Strict`. A request that changes data with the session co
 
 `POST /api/v1/auth/refresh` exchanges the refresh token for a new access token and a new refresh token. `POST /api/v1/auth/logout` ends the session.
 
-Five failed sign-ins lock sign-in for 15 minutes, with `429` and a `Retry-After` header.
+Repeated failed sign-ins lock the account; see [Sign-In Lockout](./rate-limits.md#sign-in-lockout).
 
 ## Two-Factor Authentication And API Keys
 
