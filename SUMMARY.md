@@ -23,6 +23,7 @@
   - [VLANs And Groups](./using-netmap/vlans.md)
   - [Locations](./using-netmap/locations.md)
   - [Monitoring](./using-netmap/monitoring.md)
+  - [HTTP Endpoint Monitors](./using-netmap/endpoint-monitors.md)
   - [IPAM](./using-netmap/ipam.md)
   - [External IPs](./using-netmap/external-ipam.md)
   - [Security Events](./using-netmap/security-events.md)

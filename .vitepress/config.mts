@@ -140,6 +140,7 @@ export default defineConfig({
           { text: "VLANs And Groups", link: "/using-netmap/vlans" },
           { text: "Locations", link: "/using-netmap/locations" },
           { text: "Monitoring", link: "/using-netmap/monitoring" },
+          { text: "HTTP Endpoint Monitors", link: "/using-netmap/endpoint-monitors" },
           { text: "IPAM", link: "/using-netmap/ipam" },
           { text: "External IPs", link: "/using-netmap/external-ipam" },
           { text: "Security Events", link: "/using-netmap/security-events" },

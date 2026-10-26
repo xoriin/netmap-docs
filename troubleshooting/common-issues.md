@@ -32,7 +32,7 @@ Confirm the image tag and `/app/VERSION`, data-directory ownership, free disk, r
 | discovery/tools find nothing | [Run Discovery](../guides/run-discovery.md) and [Network Tools](../using-netmap/tools.md) | check target scope, capabilities, host networking, routing, DNS, and public-target policy |
 | SNMP/LLDP empty | [Administration](../administer/snmp-profiles.md) | verify UDP 161, credentials, ACLs, device support, and Layer-2 visibility |
 | monitoring status stale/wrong | [Monitoring](../using-netmap/monitoring.md#health-model) | check expected/paused/lifecycle state, cache freshness, interval, worker, and ping capability |
-| service/HTTP check fails | [Monitoring](../using-netmap/monitoring.md#endpoint-history-and-troubleshooting) | inspect protocol, DNS, proxy, TLS, auth, assertion, timeout, and scope details |
+| service/HTTP check fails | [Monitoring](../using-netmap/endpoint-monitors.md#endpoint-history-and-troubleshooting) | inspect protocol, DNS, proxy, TLS, auth, assertion, timeout, and scope details |
 | syslog absent/live stream stale | [Security Events](../using-netmap/security-events.md#troubleshooting) | verify listeners, mappings, allowlist, WebSocket proxy, connection cap, and parser |
 | topology/IPAM/layout issue | [Topology](../using-netmap/topology.md#troubleshooting) or [IPAM](../using-netmap/ipam.md#troubleshooting) | clear filters, validate relationships/CIDRs, and check database locks |
 
