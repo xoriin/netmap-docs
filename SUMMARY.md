@@ -40,7 +40,6 @@
   - [Exports](./using-netmap/exports.md)
   - [Administration](./using-netmap/admin.md)
   - [Status Pages](./using-netmap/status-pages.md)
-  - [Status Page Integrations](./using-netmap/status-page-integrations.md)
   - [Profile](./using-netmap/profile.md)
   - [Personal chart views](./using-netmap/chart-views.md)
 - Guides
@@ -63,6 +62,7 @@
   - [API Errors](./api/errors.md)
   - [Rate Limits](./api/rate-limits.md)
   - [Automation](./api/guides/automation.md)
+  - [Status Page Integrations](./api/guides/status-page-integrations.md)
   - [OpenAPI And Swagger](./api/reference/openapi.md)
   - [Endpoint Reference](./api/reference/endpoints.md)
 - Operations

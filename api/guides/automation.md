@@ -107,7 +107,7 @@ For an external uptime monitor, poll `GET /api/health`. It needs no authenticati
 
 ## Status Page Updates
 
-To post incidents and maintenance from another tool, use a status page integration token instead of an API key. See [Status Page Integrations](../../using-netmap/status-page-integrations.md).
+To post incidents and maintenance from another tool, use a status page integration token instead of an API key. See [Status Page Integrations](./status-page-integrations.md).
 
 ## Other Integrations
 

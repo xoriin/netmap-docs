@@ -162,7 +162,7 @@ curl -X DELETE https://netmap.example.com/api/v1/status-integrations/maintenance
 
 ## Related pages
 
-- [Status Pages](./status-pages.md)
-- [Permissions](../security/permissions.md)
-- [Endpoint Inventory](../api/reference/endpoints.md)
-- [Rate Limits](../api/rate-limits.md)
+- [Status Pages](../../using-netmap/status-pages.md)
+- [Permissions](../../security/permissions.md)
+- [Endpoint Reference](../reference/endpoints.md)
+- [Rate Limits](../rate-limits.md)

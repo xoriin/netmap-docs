@@ -161,7 +161,6 @@ export default defineConfig({
           { text: "Exports", link: "/using-netmap/exports" },
           { text: "Administration", link: "/using-netmap/admin" },
           { text: "Status Pages", link: "/using-netmap/status-pages" },
-          { text: "Status Page Integrations", link: "/using-netmap/status-page-integrations" },
           { text: "Profile", link: "/using-netmap/profile" },
           { text: "Personal Chart Views", link: "/using-netmap/chart-views" }
         ]
@@ -194,6 +193,7 @@ export default defineConfig({
           { text: "API Errors", link: "/api/errors" },
           { text: "Rate Limits", link: "/api/rate-limits" },
           { text: "Automation", link: "/api/guides/automation" },
+          { text: "Status Page Integrations", link: "/api/guides/status-page-integrations" },
           { text: "OpenAPI And Swagger", link: "/api/reference/openapi" },
           { text: "Endpoint Reference", link: "/api/reference/endpoints" }
         ]

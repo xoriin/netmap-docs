@@ -471,4 +471,4 @@ Private and unknown slugs both return `404`. While a page is being built the res
 | PATCH | `/api/v1/status-integrations/maintenance/{window_id}` | `nmsp_` token | Update a maintenance window |
 | DELETE | `/api/v1/status-integrations/maintenance/{window_id}` | `nmsp_` token | Delete a maintenance window |
 
-These endpoints take a page-scoped `nmsp_` token in `Authorization: Bearer`, not an API key. Writes need an `Idempotency-Key` header (`400` without one). See [Status Page Integrations](../../using-netmap/status-page-integrations.md).
+These endpoints take a page-scoped `nmsp_` token in `Authorization: Bearer`, not an API key. Writes need an `Idempotency-Key` header (`400` without one). See [Status Page Integrations](../guides/status-page-integrations.md).

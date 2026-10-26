@@ -139,4 +139,5 @@ export const movedDocumentationRoutes: Record<string, string> = {
   "api/api-overview.md": "api/index.md",
   "guides/automation-with-api-keys.md": "api/guides/automation.md",
   "guides/integration-patterns.md": "api/guides/automation.md",
+  "using-netmap/status-page-integrations.md": "api/guides/status-page-integrations.md",
 };
