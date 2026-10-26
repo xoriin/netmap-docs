@@ -139,7 +139,7 @@ curl --fail-with-body \
   --header 'Accept: application/json'
 ```
 
-The response should identify the account that owns the key. See [API Keys](../api/api-keys.md) before using keys in automation.
+The response should identify the account that owns the key. See [API Keys](../api/authentication.md#api-keys) before using keys in automation.
 
 ## Stop, start, and remove
 

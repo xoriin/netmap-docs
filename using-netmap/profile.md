@@ -39,7 +39,7 @@ The list shows each active key's name, a mask with its last four characters, and
 ## Related pages
 
 - [Two-Factor Authentication](../security/two-factor-authentication.md)
-- [API Keys](../api/api-keys.md)
+- [API Keys](../api/authentication.md#api-keys)
 - [API Authentication](../api/authentication.md)
 - [API-Key Problems](../troubleshooting/api-key-problems.md)
 

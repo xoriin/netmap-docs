@@ -70,5 +70,5 @@ DISCOVERY_RATE_LIMIT_SECONDS=60
 ## Related Pages
 
 - [API-Key Problems](../troubleshooting/api-key-problems.md)
-- [API Keys](./api-keys.md)
+- [API Authentication](./authentication.md)
 - [Configuration Reference](../configuration/configuration.md)

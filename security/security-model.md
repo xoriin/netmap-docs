@@ -77,6 +77,6 @@ Operators must still provide:
 ## Related Pages
 
 - [Permissions](./permissions.md)
-- [API-Key Security](./api-key-security.md)
+- [Keeping API Keys Safe](../api/authentication.md#keeping-keys-safe)
 - [Secrets Management](./secrets-management.md)
 - [Network Exposure](./network-exposure.md)

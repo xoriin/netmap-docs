@@ -190,13 +190,8 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: "API Overview", link: "/api/api-overview" },
-          { text: "API Keys", link: "/api/api-keys" },
           { text: "API Authentication", link: "/api/authentication" },
-          { text: "Generating API Keys", link: "/api/generating-api-keys" },
-          { text: "Using API Keys", link: "/api/using-api-keys" },
           { text: "API Permissions", link: "/api/permissions" },
-          { text: "Rotating API Keys", link: "/api/rotating-api-keys" },
-          { text: "Revoking API Keys", link: "/api/revoking-api-keys" },
           { text: "API Errors", link: "/api/errors" },
           { text: "Rate Limits", link: "/api/rate-limits" },
           { text: "OpenAPI And Swagger", link: "/api/reference/openapi" },
@@ -238,7 +233,6 @@ export default defineConfig({
         items: [
           { text: "Security Overview", link: "/security/security" },
           { text: "Security Model", link: "/security/security-model" },
-          { text: "API-Key Security", link: "/security/api-key-security" },
           { text: "Two-Factor Authentication", link: "/security/two-factor-authentication" },
           { text: "Permissions", link: "/security/permissions" },
           { text: "Secrets Management", link: "/security/secrets-management" },
