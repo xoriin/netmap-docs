@@ -20,10 +20,10 @@ Large ranges show an estimate before confirmation. Host-count limits, discovery 
 
 ## Start A Scan
 
-1. Open Topology or the Discovery workspace and choose **Discover**.
+1. Choose **Scan** in the Topology toolbar, Inventory or Overview to open **Discover devices**.
 2. Enter the target(s), choose ping sweep or basic port detection, and select an optional group and location.
 3. Choose optional SNMP enrichment: a saved profile or manual community where supported. Never paste secrets into notes.
-4. Confirm the estimate and start the scan.
+4. Confirm the estimate and choose **Start scan**.
 5. Watch progress: the dialog shows how many addresses have been scanned and the elapsed time, then the results. The scan runs in the background, so you can close the dialog and it keeps running. Only one manual scan runs at a time; starting another while one is running shows that scan's progress instead.
 6. Review each detected row before importing.
 
