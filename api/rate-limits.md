@@ -14,7 +14,10 @@ Rate limits protect expensive network tools, sign-in, discovery, and API-key aut
 | Invalid API-key or status integration token lockout | 10 failures, then 15 minutes per client address | No |
 | Tools | 20 calls per 60 seconds per user | No |
 | Discovery | 60 seconds between scans per user | No |
-| Login failures | 5 failures, then 15 minutes | Yes, seconds until the lockout ends |
+| Login failures | 5 failures, then 15 minutes per account | Yes, seconds until the lockout ends |
+| Login failures per client address | 50 failures, then 15 minutes | Yes, seconds until the lockout ends |
+| Forgot password | 5 requests per hour per client address and per account | Not applicable, always `204` |
+| SSO email change confirmation | 5 requests per 15 minutes per user | Yes |
 | Public status page reads | 600 requests per 60 seconds per client IP, 6000 per 60 seconds overall | Yes, 60 seconds |
 | Status integration token writes | 60 writes per 60 seconds per token | Yes, seconds until another write is allowed |
 
@@ -69,7 +72,22 @@ AUTH_MAX_FAILED_ATTEMPTS=5
 AUTH_LOCKOUT_MINUTES=15
 ```
 
-Wrong two-factor codes at sign-in count toward the same lockout, as do wrong passwords or codes when you set up two-factor authentication, replace recovery codes or turn it off. A user with `user_manage` can clear an account's lockout with `POST /api/v1/auth/users/{user_id}/unlock-login`.
+Wrong two-factor codes at sign-in count toward the same lockout, as do wrong current passwords when changing your password, and wrong passwords or codes when you set up two-factor authentication, replace recovery codes or turn it off. Failures older than the lockout window no longer count.
+
+Failures from one client address are also counted across accounts:
+
+```dotenv
+AUTH_IP_LOCKOUT_ENABLED=true
+AUTH_IP_MAX_FAILED_ATTEMPTS=50
+```
+
+Sign-ins for unknown and disabled users take the same time as real ones, so response times do not reveal which usernames exist.
+
+A user with `user_manage` can clear an account's lockout with `POST /api/v1/auth/users/{user_id}/unlock-login`. From the server, `netmap-admin unlock-login <username>` does the same; neither clears a client-address lockout.
+
+## Forgot Password
+
+`POST /api/v1/auth/forgot-password` always returns `204`, so it never reveals whether an account exists. Beyond 5 requests per hour from one client address or for one account, further requests are silently ignored. Requests without a known client address share one stricter limit.
 
 ## Operational Guidance
 
