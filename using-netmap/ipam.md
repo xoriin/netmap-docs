@@ -25,7 +25,7 @@ The page opens with an **Address space** gauge (used and free hosts across all s
 
 Open a subnet to see its used, free, utilisation, gateway, and DHCP range figures, and a usage bar split into device, DHCP lease, reserved, gateway, and free addresses. The **All**, **Devices**, **DHCP**, **Reserved**, and **Free** tabs filter the addresses.
 
-With **All** selected and up to 256 addresses, the subnet is shown as an address map: 16 square tiles per row, with the last-octet offset of each row and column numbers across the top. Tiles are coloured by status (device, DHCP lease, free DHCP pool, reserved, gateway, free, network/broadcast). Select a tile to show the address in the panel beside the map, with its status, name, MAC, and vendor; free addresses offer **Reserve this address** to users with `ipam_write`. Other filters and larger subnets use a table.
+With **All** selected and up to 256 addresses, the subnet is shown as an address map: 16 square tiles per row, with the last-octet offset of each row and column numbers across the top. Each tile shows its last octet, and hovering or focusing a tile shows the full address, its status and any name, vendor or MAC; on phones the numbers are hidden and selecting a tile shows the same details. Tiles are coloured by status (device, DHCP lease, free DHCP pool, reserved, gateway, free, network/broadcast). Select a tile to show the address in the panel beside the map, with its status, name, MAC, and vendor; free addresses offer **Reserve this address** to users with `ipam_write`. Other filters and larger subnets use a table.
 
 Subnets with more than 1,024 hosts are not enumerated address by address.
 
