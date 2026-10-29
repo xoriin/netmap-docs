@@ -16,7 +16,7 @@ The all-in-one image includes nmap and grants the `netmap` user passwordless sud
 
 Targets may be a single IPv4/IPv6 address, CIDR, comma-separated addresses/ranges, or a private `start-end` range. NetMap preserves the entered range for display but normalises it to CIDR arguments before invoking nmap. **Ping sweep** discovers responsive hosts and reverse-DNS names without scanning ports. **Basic port detection** adds the configured lightweight port probe and takes longer.
 
-Large ranges show an estimate before confirmation. Host-count limits, discovery rate limits, and `discovery_process_timeout_seconds` protect the scheduler and container; reverse DNS time counts against the timeout. A scan that exceeds a configured maximum must be reduced rather than forced through the UI.
+Large ranges show an estimate before confirmation. Host-count limits, discovery rate limits, and `discovery_process_timeout_seconds` protect the scheduler and container. Reverse DNS runs after the sweep, in parallel and within its own time budget, so a subnet without reverse DNS no longer runs into the scan timeout. A scan that exceeds a configured maximum must be reduced rather than forced through the UI.
 
 ## Start A Scan
 
@@ -24,7 +24,7 @@ Large ranges show an estimate before confirmation. Host-count limits, discovery 
 2. Enter the target(s), choose ping sweep or basic port detection, and select an optional group and location.
 3. Choose optional SNMP enrichment: a saved profile or manual community where supported. Never paste secrets into notes.
 4. Confirm the estimate and start the scan.
-5. Watch progress and wait for the results; cancel or close only when you accept losing the in-progress result.
+5. Watch progress: the dialog shows how many addresses have been scanned and the elapsed time, then the results. The scan runs in the background, so you can close the dialog and it keeps running. Only one manual scan runs at a time; starting another while one is running shows that scan's progress instead.
 6. Review each detected row before importing.
 
 The result identifies IP, reverse-DNS hostname, MAC/vendor when available, open-port data for port scans, and whether a row matches an existing device.
@@ -50,14 +50,15 @@ Discovery history records status, timestamps, target/mode, result counts, and er
 | no MAC addresses | Docker bridge or missing raw-network capability | use `network_mode: host` and verify the image capabilities |
 | "Public IP scanning is blocked by default" | part of the target lies outside the private, loopback and link-local ranges | keep every address inside `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`, `127.0.0.0/8`, `169.254.0.0/16`, `fc00::/7`, `fe80::/10` or `::1` |
 | empty result | target is unreachable or filtered | verify routing and target format, then retry a small CIDR |
-| scan times out | reverse DNS, oversized range, or slow probes | reduce the range, use ping sweep, or increase the administrator timeout carefully |
+| scan times out | oversized range or slow probes | reduce the range, use ping sweep, or increase the administrator timeout carefully |
 | `429` | discovery rate limit | wait for the window to clear |
 | `sudo`/nmap error | image or host dependency/capability issue | inspect container logs and verify `/usr/bin/nmap` and the permitted sudo rule |
-| hostname is missing | no PTR response | configure reverse DNS or treat the IP as the identity |
+| hostname is missing | no PTR response within the lookup budget | configure reverse DNS or treat the IP as the identity |
 
 ## API Equivalents
 
 - `POST /api/v1/discovery/scans`
+- `GET /api/v1/discovery/scans/{scan_id}`
 - `GET /api/v1/discovery/scans`
 - `POST /api/v1/discovery/schedules`
 - `PATCH /api/v1/discovery/schedules/{schedule_id}`
