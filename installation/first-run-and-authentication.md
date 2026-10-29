@@ -43,7 +43,19 @@ Login branding uses a brief text-reveal entrance. Your system’s Reduce motion 
 
 Local sign-in uses the username and password created during setup or by an administrator. The browser receives a short-lived access token in application memory and a refresh token in an HttpOnly cookie. The access token is not stored in localStorage.
 
-Use the Sign out control to revoke the current refresh session. If the access token expires while the browser is idle, NetMap attempts a refresh; a failed refresh returns the browser to the login screen.
+Use the Sign out control to revoke the current refresh session. If the access token expires while the browser is idle, NetMap attempts a refresh; a failed refresh returns the browser to the login screen with "Session expired. Sign in again."
+
+## Sessions
+
+Each sign-in is its own session, so signing out ends only that browser or device. NetMap ends sessions automatically when:
+
+| Event | Sessions ended |
+|---|---|
+| You change your password or two-factor settings | Your other sessions; this one stays signed in |
+| An administrator changes your role, status, password or two-factor | All of your sessions |
+| An old refresh token is reused | That sign-in's whole session |
+
+`POST /api/v1/auth/logout-all` signs you out everywhere at once, and `DELETE /api/v1/auth/users/{user_id}/sessions` does the same for another user. API keys are not affected; revoke them separately.
 
 ## Session Lifetime And Idle Timeout
 
