@@ -260,7 +260,8 @@ Layouts belong to the user who saved them. Another user's layout ID returns `404
 
 | Method | Path | Access | Purpose |
 |---|---|---|---|
-| POST | `/api/v1/discovery/scans` | `discovery_manage` | Start a discovery scan |
+| POST | `/api/v1/discovery/scans` | `discovery_manage` | Queue a discovery scan (`202`; `409` with `scan_id` while one is running) |
+| GET | `/api/v1/discovery/scans/{scan_id}` | `discovery_manage` | Read one scan, with its status and progress |
 | GET | `/api/v1/discovery/scans` | `discovery_manage` | List discovery scans |
 | GET | `/api/v1/discovery/schedules` | `automation_manage` | List discovery schedules |
 | POST | `/api/v1/discovery/schedules` | `automation_manage` | Create a discovery schedule |

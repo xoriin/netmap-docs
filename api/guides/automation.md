@@ -97,6 +97,8 @@ curl --fail-with-body \
 
 Targets over 256 addresses also need `"confirm_large_scan": true`, and a scan can cover at most 1,024 addresses by default.
 
+The request returns `202` with the scan queued. Poll `GET /api/v1/discovery/scans/{scan_id}` every few seconds until `status` is `completed` or `failed`; while it runs, `progress` holds `done` and `total` addresses and `started_at` is set. Only one manual scan runs at a time: a start request while one is queued or running returns `409` with that scan's `scan_id` in the body, so you can poll it instead. A scan that was still running when NetMap restarted ends as `failed`.
+
 Review the results with `GET /api/v1/discovery/observations` before applying them. Applying an observation or importing results also needs `topology_write`. Each user can start one scan per 60 seconds; a faster request returns `429`.
 
 Scheduled discovery needs `automation_manage`. Schedules collect observations for review and do not change inventory on their own. See [Run Discovery](../../guides/run-discovery.md).
