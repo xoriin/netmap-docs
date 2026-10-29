@@ -32,8 +32,9 @@ OIDC_REDIRECT_URL=https://netmap.example.com/api/v1/auth/oidc/callback
 OIDC_SCOPES="openid profile email"
 OIDC_PROVIDER_NAME=Company SSO
 OIDC_AUTO_PROVISION=false
-OIDC_LINK_BY_EMAIL=true
+OIDC_LINK_BY_EMAIL=false
 OIDC_ALLOW_UNVERIFIED_EMAIL=false
+OIDC_MFA_POLICY=local_totp
 ```
 
 SuperAdmin-managed settings in Admin → Security → Single Sign-On override environment values for managed fields. The client secret is encrypted with `MASTER_KEY` and is write-only after saving. Do not expect it to be returned by the settings API.
@@ -51,9 +52,30 @@ Enable **Require SSO** only after the provider test passes and an active SuperAd
 
 ## Linking And Provisioning
 
-NetMap links an account by `(issuer, subject)` first. On a first sign-in it may link to an existing account by verified email when `OIDC_LINK_BY_EMAIL=true`; it does not use an unverified email unless explicitly allowed. With `OIDC_AUTO_PROVISION=true`, an otherwise unmatched identity can create a local account with `OIDC_DEFAULT_ROLE`.
+NetMap links an account by `(issuer, subject)` first. With `OIDC_AUTO_PROVISION=true`, an otherwise unmatched identity can create a local account with `OIDC_DEFAULT_ROLE`. Users can also link their own account from [Profile](../using-netmap/profile.md#single-sign-on).
+
+### Link By Email
+
+With link by email on, a first SSO sign-in can attach to an existing NetMap account with the same provider-verified email. Admin accounts and accounts with two-factor authentication are never linked this way, and disabled accounts are never linked.
+
+| Installation | Default |
+|---|---|
+| New installation | Off |
+| Upgrade with SSO already configured | Kept on, with a SuperAdmin security notice |
+
+Settings in `.env` or `/etc/netmap/netmap.env` are honoured on upgrade, so an explicit `OIDC_LINK_BY_EMAIL=false` stays off.
+
+When link by email is off, signing in with an email that an unlinked account already uses is refused with the same generic "no linked account" message as any unknown identity. NetMap does not create a second account and does not reveal that the email is in use.
+
+### Acknowledge The Security Notice
+
+If you keep link by email on deliberately, a SuperAdmin can select **I understand, keep it on** in Admin → Security → Single Sign-On. The notice is hidden and the settings show who acknowledged it and when. It returns automatically if the issuer, client ID or link-by-email setting changes. The startup log warning is not affected.
 
 The default role must never be SuperAdmin. Use explicit, reviewed role mappings for elevated access.
+
+## Two-Factor Authentication With SSO
+
+SSO does not bypass NetMap two-factor authentication. After the provider sign-in, users who have two-factor authentication on, or whose role requires it, enter their NetMap authenticator code or set one up. To rely on the provider's own MFA instead, set `OIDC_MFA_POLICY=trust_idp`; any other value uses the default, `local_totp`.
 
 ## Claims And Roles
 
@@ -86,6 +108,11 @@ Relevant settings include `OIDC_GROUP_CLAIM`, `OIDC_ROLE_MAPPINGS`, `OIDC_MANAGE
 - `GET /api/v1/admin/oidc-settings`
 - `PUT /api/v1/admin/oidc-settings`
 - `POST /api/v1/admin/oidc-settings/test`
+- `POST /api/v1/admin/oidc/link-by-email/acknowledge`
+- `GET /api/v1/auth/me/identities`
+- `POST /api/v1/auth/me/identities/link`
+- `DELETE /api/v1/auth/me/identities/{identity_id}`
+- `POST /api/v1/auth/me/email/sso`
 
 ## Related Pages
 
