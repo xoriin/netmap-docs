@@ -22,7 +22,7 @@ A notice can be limited to certain NetMap versions and dates, so you only see no
 
 ## Privacy And Turning It Off
 
-The NetMap server reads one public file over https a minute after it starts and then every 6 hours. The request sends nothing about your installation: no ID, version, counts or settings. If the file cannot be reached, for example on an air-gapped network, nothing is shown and nothing else is affected.
+The NetMap server reads one public file over https a minute after it starts and then every hour. The request sends nothing about your installation: no ID, version, counts or settings. If the file cannot be reached, for example on an air-gapped network, nothing is shown and nothing else is affected.
 
 - Turn notices off under **Admin → System → Release Notices → Show notices from the NetMap project**.
 - **Check now** reads the file immediately and shows when it was last checked or why the last check failed.
@@ -30,7 +30,7 @@ The NetMap server reads one public file over https a minute after it starts and 
 
 ## The Feed File
 
-The default file is `notices.json` on the `main` branch of [xoriin/netmap-notices](https://github.com/xoriin/netmap-notices). Changes reach installations within about 6 hours.
+The default file is `notices.json` on the `main` branch of [xoriin/netmap-notices](https://github.com/xoriin/netmap-notices). Changes reach installations within about an hour; **Check now** fetches the file straight away.
 
 ```json
 {
