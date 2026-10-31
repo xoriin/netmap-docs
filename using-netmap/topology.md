@@ -34,7 +34,7 @@ Edit or delete a selected link from the details panel; direction controls determ
 
 ## Layout Controls And Persistence
 
-Fit frames the current graph, Reset returns the default view, and Auto-arrange recalculates positions. Auto-arrange and group-shape controls can change saved positions, so save deliberately. Group layout supports rows or rings, with device spacing and devices-per-row/ring limits. Node size, label size, group-zone opacity, and edge-label size are display preferences; Reset one group restores that group's layout without deleting its devices or links. **Reset to defaults**, at the bottom of the Display menu, returns the selected group's node size, spacing, shape, rings, devices per row and label size to the defaults and re-lays it out; background and link label sizes are shared by every group and stay as they are.
+Fit frames the current graph, Reset returns the default view, and Auto-arrange recalculates positions. Auto-arrange and group-shape controls can change saved positions, so save deliberately. Group layout supports rows or rings, with device spacing and devices-per-row/ring limits. Node size, label size, group-zone opacity, and edge-label size are display preferences; Reset one group restores that group's layout without deleting its devices or links. **Reset to defaults**, at the bottom of the Display menu, returns every slider to its default: the selected group's node size, spacing, devices per row or rings and device label size, plus the background and link label sizes, which apply to every group. Group positions and the Grid/Radial choice stay as they are.
 
 Device labels wrap onto more lines rather than being cut off, so long names stay readable on the map, in the Devices list and in the details panel.
 
