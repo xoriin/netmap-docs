@@ -97,7 +97,7 @@ curl --fail-with-body \
 
 Targets over 256 addresses also need `"confirm_large_scan": true`, and a scan can cover at most 1,024 addresses by default.
 
-The request returns `202` with the scan queued. Poll `GET /api/v1/discovery/scans/{scan_id}` every few seconds until `status` is `completed` or `failed`; while it runs, `progress` holds `done` and `total` addresses and `started_at` is set. Only one manual scan runs at a time: a start request while one is queued or running returns `409` with that scan's `scan_id` in the body, so you can poll it instead. A scan that was still running when NetMap restarted ends as `failed`.
+The request returns `202` with the scan queued. Poll `GET /api/v1/discovery/scans/{scan_id}` every few seconds until `status` is `completed`, `failed` or `cancelled`; while it runs, `progress` holds `done` and `total` addresses and `started_at` is set. Only one manual scan runs at a time: a start request while one is queued or running returns `409` with that scan's `scan_id` in the body, so you can poll it instead. A scan that was still running when NetMap restarted ends as `failed`. `POST /api/v1/discovery/scans/{scan_id}/cancel` stops a queued or running manual scan: it returns `202`, a queued scan is `cancelled` at once, and a running one becomes `cancelled` within a few seconds with no results. Cancelling a finished or scheduled scan returns `409`.
 
 Review the results with `GET /api/v1/discovery/observations` before applying them. Applying an observation or importing results also needs `topology_write`. Each user can start one scan per 60 seconds; a faster request returns `429`.
 
