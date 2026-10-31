@@ -66,6 +66,7 @@
   - [Groups And Roles](./administer/groups.md)
   - [Permissions](./administer/permissions.md)
   - [Two-Factor Authentication](./administer/two-factor-authentication.md)
+  - [New Sign-In Emails](./administer/new-sign-in-emails.md)
   - [Devices And Icons](./administer/devices-and-icons.md)
   - [Cloud Providers](./administer/cloud-providers.md)
   - [SNMP Profiles](./administer/snmp-profiles.md)

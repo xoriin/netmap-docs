@@ -198,6 +198,7 @@ export default defineConfig({
           { text: "Groups And Roles", link: "/administer/groups" },
           { text: "Permissions", link: "/administer/permissions" },
           { text: "Two-Factor Authentication", link: "/administer/two-factor-authentication" },
+          { text: "New Sign-In Emails", link: "/administer/new-sign-in-emails" },
           { text: "Devices And Icons", link: "/administer/devices-and-icons" },
           { text: "Cloud Providers", link: "/administer/cloud-providers" },
           { text: "SNMP Profiles", link: "/administer/snmp-profiles" },

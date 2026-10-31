@@ -22,7 +22,7 @@ Provider errors, TLS or credential failures, blocked private targets and disable
 
 ## Email Branding
 
-SMTP alerts and account emails, such as password resets and welcome emails, are sent as HTML with a plain-text copy. Account emails use the first enabled SMTP method.
+SMTP alerts and account emails, such as password resets, welcome emails and [new sign-in emails](./new-sign-in-emails.md), are sent as HTML with a plain-text copy. Account emails use the first enabled SMTP method.
 
 A SuperAdmin sets their look under **Email Branding**:
 
