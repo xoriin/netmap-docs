@@ -194,6 +194,7 @@ export default defineConfig({
         items: [
           { text: "Admin Workspace", link: "/administer/" },
           { text: "System", link: "/administer/system" },
+          { text: "Release Notices", link: "/administer/release-notices" },
           { text: "Users", link: "/administer/users" },
           { text: "Groups And Roles", link: "/administer/groups" },
           { text: "Permissions", link: "/administer/permissions" },

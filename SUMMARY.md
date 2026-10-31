@@ -62,6 +62,7 @@
 - Administer
   - [Admin Workspace](./administer/index.md)
   - [System](./administer/system.md)
+  - [Release Notices](./administer/release-notices.md)
   - [Users](./administer/users.md)
   - [Groups And Roles](./administer/groups.md)
   - [Permissions](./administer/permissions.md)

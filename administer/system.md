@@ -29,6 +29,10 @@ Every signed-in user sees the installed version in the expanded sidebar footer, 
 
 Some settings, such as listener ports and secrets, come from the environment instead; see the [Configuration Reference](../configuration/configuration.md).
 
+## Release Notices
+
+The **Release Notices** panel lists current notices from the NetMap project, shows when the feed was last checked, and turns the feed on or off. See [Release Notices](./release-notices.md).
+
 ## Storage, Syslog And Diagnostics
 
 The tab charts **Storage** use, **Device Status at Last Check** and **Backup Size, Last 10**. **Syslog Configuration** shows the listeners and intake, and **Runtime Diagnostics** shows database file sizes, monitoring and syslog counters and the process ID. Use these with the container logs when you investigate resource or start-up problems.
