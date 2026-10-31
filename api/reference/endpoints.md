@@ -471,7 +471,7 @@ Database backups are implemented for SQLite only; other databases return `501`. 
 | GET | `/api/v1/status-pages/{page_id}` | `status_page_manage` | Read a page |
 | PATCH | `/api/v1/status-pages/{page_id}` | `status_page_manage` | Update a page |
 | DELETE | `/api/v1/status-pages/{page_id}` | `status_page_manage` | Delete a page |
-| PUT | `/api/v1/status-pages/{page_id}/layout` | `status_page_manage` | Replace a page's layout |
+| PUT | `/api/v1/status-pages/{page_id}/layout` | `status_page_manage` | Replace a page's layout (each group may set `icon`, an icon name such as `database`, or `null` for the default) |
 
 - Saving `custom_css` that fails validation returns `422` with `css_errors` listing each problem.
 - Maintenance windows with `suppress_alerts` also need `alert_write`.

@@ -12,6 +12,8 @@ This page explains what a [status page](./status-pages.md) shows for each item: 
 
 A **group** is a named, collapsible section; groups and the items inside them can be reordered by dragging the handle or with the move up and down arrows. A group can be set to start collapsed.
 
+Each group has an icon, shown beside its name on the page. Select the icon button at the start of the group's header to choose one from NetMap's built-in icons or the full Tabler set; **Use default** returns it to the standard network icon. Icon packs you added yourself under Admin are not offered, because visitors' browsers do not have them.
+
 An **item** is one of:
 
 - a **device**,

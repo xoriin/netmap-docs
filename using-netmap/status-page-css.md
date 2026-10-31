@@ -42,7 +42,7 @@ These class names are stable. Select on them, and on the `data-*` attributes bel
 | Page and header | `sp-page`, `sp-header`, `sp-logo`, `sp-title` |
 | Summary | `sp-summary`, `sp-summary-dot`, `sp-summary-label` |
 | Notices, incident and maintenance lines | `sp-strip`, `sp-strip-title`, `sp-strip-meta`, `sp-strip-body`, `sp-notice`, `sp-pill` |
-| Groups | `sp-groups`, `sp-group`, `sp-group-name`, `sp-group-label`, `sp-group-state`, `sp-group-empty` |
+| Groups | `sp-groups`, `sp-group`, `sp-group-name`, `sp-panel-icon`, `sp-group-label`, `sp-group-state`, `sp-group-empty` |
 | Rows | `sp-row`, `sp-row-main`, `sp-row-more`, `sp-ident`, `sp-caret`, `sp-uptime`, `sp-row-name`, `sp-state` |
 | Heartbeats and graphs | `sp-graphs`, `sp-lane`, `sp-lane-label`, `sp-heartbeats`, `sp-beat`, `sp-beat--healthy`, `sp-beat--unhealthy`, `sp-beat--unknown`, `sp-beat--maintenance`, `sp-axis`, `sp-response`, `sp-response-area`, `sp-response-line`, `sp-response-point`, `sp-response-grid`, `sp-response-empty` |
 | Extras | `sp-stats`, `sp-stat` |
@@ -55,12 +55,20 @@ Attributes you can match:
 |---|---|---|
 | `data-state` | `operational`, `degraded`, `down`, `maintenance`, `unknown` | `sp-row` |
 | `data-state` | `empty`, `major`, `affected`, `unknown`, `maintenance`, `operational` | `sp-summary`, `sp-group` |
+| `data-group` | the group's ID, which stays the same when you rename or reorder it | `sp-group` |
+| `data-icon` | the chosen icon's name, such as `database`; absent when the group uses the default icon | `sp-group` |
 | `data-tone` | `good`, `warning`, `danger`, `neutral` | `sp-uptime` |
 | `data-tone` | `info`, `warning`, `danger`, `maintenance`, `neutral` | `sp-pill`, `sp-strip` |
 | `data-kind` | `incident`, `maintenance` | `sp-strip`, `sp-incident` |
 | `data-level` | `info`, `warning`, `critical` | `sp-notice` |
 | `data-severity` | `performance`, `partial`, `major` | `sp-incident` |
 | `data-internal` | `true` | `sp-update` |
+
+To style one group, select it by `data-group`. The ID is each group's `id` in the page's public data at `/api/v1/public/status-pages/<slug>`, or inspect the group in your browser's developer tools:
+
+```css
+.sp-group[data-group="7"] .sp-panel-icon { color: #d93025; }
+```
 
 The built-in style is driven by custom properties you can override on `:root`: `--sp-bg`, `--sp-surface`, `--sp-surface-soft`, `--sp-row-hover`, `--sp-border`, `--sp-text`, `--sp-text-muted`, `--sp-text-faint`, `--sp-accent`, `--sp-success`, `--sp-warning`, `--sp-danger`, `--sp-maintenance`, and the beat colours `--sp-beat-healthy`, `--sp-beat-unhealthy`, `--sp-beat-unknown` and `--sp-beat-maintenance`.
 
