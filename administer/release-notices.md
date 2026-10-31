@@ -14,7 +14,9 @@ NetMap can show short notices from the NetMap project, such as a warning about a
 |---|---|---|
 | Info | Everyone | Each user selects **Dismiss** |
 | Warning | Everyone | Each user selects **Dismiss** |
-| Breaking | SuperAdmins | A SuperAdmin selects **Acknowledge** (once, for everyone) |
+| Breaking | SuperAdmins | Each SuperAdmin selects **Acknowledge** for themselves |
+
+**Admin → System → Release Notices** shows how many SuperAdmins have acknowledged each breaking notice.
 
 A notice can be limited to certain NetMap versions and dates, so you only see notices that apply to the version you run. Notices are plain text with at most one https link.
 
@@ -71,5 +73,5 @@ At most 20 notices are read and the file may be up to 64 KB. An entry that break
 
 - `GET /api/v1/notices` — notices for the signed-in user
 - `POST /api/v1/notices/{id}/dismiss` — hide an info or warning notice for yourself
-- `POST /api/v1/notices/{id}/acknowledge` — acknowledge a breaking notice (SuperAdmin)
+- `POST /api/v1/notices/{id}/acknowledge` — acknowledge a breaking notice for yourself (SuperAdmin)
 - `GET /api/v1/admin/notices`, `POST /api/v1/admin/notices/refresh` — feed status and check now (SuperAdmin)
