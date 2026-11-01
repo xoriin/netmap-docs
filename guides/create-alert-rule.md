@@ -28,7 +28,7 @@ No incident opens for an item on a page while a maintenance window covers it. Ex
 2. Create a rule with the event type, target scope, threshold where required, cooldown, and enabled methods.
 3. Save and use **Test** to send a sample delivery.
 4. Pause/resume or edit the rule as conditions change; delete only after confirmation.
-5. Review alert events and delivery history for status, target, result, detail, and timestamps.
+5. Review alert events and **Delivery History** for status, target, result and timestamps; click a notification to see exactly what was sent.
 
 Scheduled maintenance windows can suppress a rule's notifications for the items they cover, when the window has **Suppress monitoring alerts** on. That setting needs both Manage status pages and `alert_write`; see [Status Pages](../using-netmap/status-page-incidents.md#suppress-monitoring-alerts).
 

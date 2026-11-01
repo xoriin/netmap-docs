@@ -29,7 +29,15 @@ A rule needs a **Rule name**, a **Trigger** and at least one notification channe
 
 ## Delivery History
 
-**Delivery History** lists each notification's **Sent** time, **Rule**, **Target** and **Result**. Use it to tell a rule that didn't fire from a notification that failed to send.
+**Delivery History** lists each notification's **Sent** time, **Rule**, **Device**, the line of the **Message** that says what happened, how it was **Sent via** and the **Result**. Use it to tell a rule that didn't fire from a notification that failed to send. **Failed only** narrows the list to notifications a provider rejected.
+
+Click a notification, or select it and press Enter, to open it:
+
+- **What Was Sent** shows the exact text, with **Copy**.
+- **Delivery** shows when it was sent, which notification method sent it, the provider's result or error, the rule and its trigger, and the device or endpoint.
+- **Same Alert, Other Methods** shows how the same alert went through your other methods, for example sent by email but rejected by Discord.
+
+Notifications are kept for 30 days. The message text is recorded from NetMap 1.8.0; older notifications show **Not recorded**.
 
 ## Related Pages
 
