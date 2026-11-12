@@ -61,10 +61,10 @@ Set these before you expose NetMap to users:
 | `API_KEY_RATE_LIMIT_WINDOW_SECONDS` | No | `60` | integer seconds | No | Yes | API-key rate-limit window. |
 | `API_KEY_MAX_FAILED_LOOKUPS` | No | `10` | integer | No | Yes | Invalid-key attempts from a client address before lockout. |
 | `API_KEY_LOOKUP_LOCKOUT_MINUTES` | No | `15` | integer minutes | No | Yes | Invalid-key client-address lockout duration. |
-| `DISCOVERY_SCAN_TIMEOUT_SECONDS` | No | `60` | integer seconds | No | Yes | nmap discovery timeout. |
+| `DISCOVERY_SCAN_TIMEOUT_SECONDS` | No | `60` | integer seconds | No | Yes | Base (and floor) for the nmap process deadline; the deadline then scales with host count up to about 4 hours (raising this above 14400 also raises the cap). |
 | `DISCOVERY_RATE_LIMIT_SECONDS` | No | `60` | integer seconds | No | Yes | Discovery scan rate limit. |
 | `DISCOVERY_MAX_HOSTS_WITHOUT_CONFIRMATION` | No | `256` | integer | No | Yes | Host-count threshold requiring confirmation. |
-| `DISCOVERY_MAX_HOSTS` | No | `1024` | integer | No | Yes | Maximum discovery hosts. |
+| `DISCOVERY_MAX_HOSTS` | No | `65536` | integer | No | Yes | Maximum discovery hosts (default covers a private /16; larger targets still need confirmation past `DISCOVERY_MAX_HOSTS_WITHOUT_CONFIRMATION`). |
 | `ACTIVE_NETWORK_PUBLIC_TARGETS_ENABLED` | No | `false` | boolean | No | Yes | Allows active tools to target public addresses when enabled. |
 | `TOOL_RATE_LIMIT_MAX_CALLS` | No | `20` | integer | No | Yes | Tool endpoint rate limit. |
 | `TOOL_RATE_LIMIT_WINDOW_SECONDS` | No | `60` | integer seconds | No | Yes | Tool rate-limit window. |
