@@ -22,6 +22,10 @@ An **item** is one of:
 
 The same source can sit on several pages, with a different display name and different extras on each.
 
+## Add Items
+
+Select **Add item** on a group to open the source picker. Search by name, address or ID, and narrow the list with **All sources**, **Devices**, **Service checks** or **Endpoints**. Tick as many rows as you need, or **Select all visible** to take everything the search shows; the footer counts how many are selected, and **Add *n* items** adds them to the group in one step. Sources already on the page are marked **On page** and cannot be picked again. Each new item still needs a display name before the page can be saved.
+
 ## Display Names Are Required
 
 Every item needs a **display name**, and visitors only ever see group names and display names. There is no fallback to the hostname or IP address, so a page cannot be saved with an unnamed item. The editor shows the real source (marked internal) beside each row, and an ID you can use with the [integration API](../api/guides/status-page-integrations.md).
