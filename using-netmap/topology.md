@@ -18,7 +18,7 @@ Drag empty canvas space to pan, use the wheel or trackpad to zoom, select a node
 
 Device icons, labels, group visibility, and hidden-group search are independent display preferences and persist with the autosaved layout.
 
-Group zones contain their member devices; a relationship can connect devices, groups, or a device to its parent zone. Path mode accounts for both drawn edges and membership hops, so a device-to-switch route can pass through a VLAN/group zone even when no direct edge is drawn. If no route exists, the endpoints remain selected and the UI reports no path.
+Group zones contain their member devices, and [cloud groups](./vlans.md#cloud-groups) are drawn with a dashed outline; a relationship can connect devices, groups, or a device to its parent zone. Path mode accounts for both drawn edges and membership hops, so a device-to-switch route can pass through a VLAN/group zone even when no direct edge is drawn. If no route exists, the endpoints remain selected and the UI reports no path.
 
 Status changes produce a short pulse on the affected node. Online/offline counts update with the graph refresh and respect the active site/group filters.
 

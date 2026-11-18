@@ -28,8 +28,13 @@ Rows marked **inferred** come from group labels on devices that have no saved gr
 ## Create Or Edit A Group
 
 1. Select **+ New group**, or **Edit** on a row.
-2. Enter a **Name**. **Display name**, **VLAN ID**, **Subnet (CIDR)**, **Gateway**, **DNS servers** and **Description** are optional.
-3. Select **Create group** or **Save changes**.
+2. Choose a **Type**: **Network** (the default) or **Cloud**.
+3. Enter a **Name**. For a network group, **Display name**, **VLAN ID**, **Subnet (CIDR)**, **Gateway**, **DNS servers** and **Description** are optional. For a cloud group, **Display name**, **Provider** (for example AWS) and **Description** are optional.
+4. Select **Create group** or **Save changes**.
+
+### Cloud Groups
+
+Use a cloud group for assets that do not share one IP range, such as instances spread across a cloud provider. A cloud group cannot carry a VLAN ID, subnet or DHCP range, so it is left out of the subnet totals and **Import from VLANs**. It shows a cloud icon in the group list and a dashed outline on the [topology map](./topology.md), and discovery import never sets a scan target on it.
 
 Editing an inferred row opens a new group prefilled with its name. Group colours are set in Admin under [Devices And Icons](../administer/devices-and-icons.md).
 
