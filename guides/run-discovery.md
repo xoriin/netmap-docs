@@ -39,7 +39,7 @@ Existing-device matching uses available identity data such as IP/MAC. You can se
 
 ## Scheduled Discovery
 
-Create a schedule with target, mode, interval, optional group/location, and a saved notification profile. Schedules can be edited, paused, run immediately, or deleted by users with write permission. Scheduled runs create review-only observations rather than mutating inventory. See [Review Discovery Observations](./scheduled-discovery-observations.md) for apply/resolve workflows and Wi-Fi churn suppression.
+Create a schedule with target, mode, interval, optional group/location, and a saved notification profile. Schedules can be edited, paused, run immediately, or deleted by users with write permission. A schedule whose target covers more than 256 addresses needs **Confirm large scan** ticked before it can be saved, the same as a manual scan. Scheduled runs create review-only observations rather than mutating inventory. See [Review Discovery Observations](./scheduled-discovery-observations.md) for apply/resolve workflows and Wi-Fi churn suppression.
 
 ## History And Troubleshooting
 
