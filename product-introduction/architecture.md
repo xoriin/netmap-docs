@@ -65,7 +65,7 @@ The image and example Compose files grant only what the network tools need: `NET
 
 ### Scan Scope
 
-Discovery accepts private IPv4 and IPv6 ranges. By default, scans of more than 256 hosts need confirmation and scans of more than 1,024 hosts are refused; you can change both in the [Configuration Reference](../configuration/configuration.md). Only scan networks you're authorised to scan, start small and watch fragile devices. See [Run Discovery](../guides/run-discovery.md) and [Network Exposure](../security/network-exposure.md).
+Discovery accepts private IPv4 and IPv6 ranges. By default, scans of more than 256 hosts need confirmation and scans of more than 4,096 hosts (a /20) are refused; you can change both in the [Configuration Reference](../configuration/configuration.md). Only scan networks you're authorised to scan, start small and watch fragile devices. See [Run Discovery](../guides/run-discovery.md) and [Network Exposure](../security/network-exposure.md).
 
 ## Production Images And Installed Versions
 

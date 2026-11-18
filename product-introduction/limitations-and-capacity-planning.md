@@ -28,7 +28,7 @@ Device count alone isn't a reliable measure. Capacity depends on how workload, r
 ## Defaults That Affect Planning
 
 - Monitoring history and firewall events are kept for **7 days**.
-- Discovery times out after **60 seconds**, asks for confirmation above **256** targets and refuses more than **1,024** targets per scan.
+- Discovery asks for confirmation above **256** targets and refuses more than **4,096** targets (a /20) per scan by default. Its time limit starts at **60 seconds** and grows with the target size, up to about four hours for the largest scans.
 - Syslog lines are limited to **8,192 bytes**.
 - TCP syslog and live syslog connections are each limited to **50**.
 - Each API key may make **120 calls per 60 seconds**.
