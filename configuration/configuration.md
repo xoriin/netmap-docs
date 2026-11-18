@@ -64,7 +64,7 @@ Set these before you expose NetMap to users:
 | `DISCOVERY_SCAN_TIMEOUT_SECONDS` | No | `60` | integer seconds | No | Yes | Base (and floor) for the nmap process deadline; the deadline then scales with host count up to about 4 hours (raising this above 14400 also raises the cap). |
 | `DISCOVERY_RATE_LIMIT_SECONDS` | No | `60` | integer seconds | No | Yes | Discovery scan rate limit. |
 | `DISCOVERY_MAX_HOSTS_WITHOUT_CONFIRMATION` | No | `256` | integer | No | Yes | Host-count threshold requiring confirmation. |
-| `DISCOVERY_MAX_HOSTS` | No | `65536` | integer | No | Yes | Maximum discovery hosts (default covers a private /16; larger targets still need confirmation past `DISCOVERY_MAX_HOSTS_WITHOUT_CONFIRMATION`). |
+| `DISCOVERY_MAX_HOSTS` | No | `4096` | integer | No | Yes | Maximum discovery hosts (default covers a /20; raise it for a wider target, which still needs confirmation past `DISCOVERY_MAX_HOSTS_WITHOUT_CONFIRMATION`). |
 | `ACTIVE_NETWORK_PUBLIC_TARGETS_ENABLED` | No | `false` | boolean | No | Yes | Allows active tools to target public addresses when enabled. |
 | `TOOL_RATE_LIMIT_MAX_CALLS` | No | `20` | integer | No | Yes | Tool endpoint rate limit. |
 | `TOOL_RATE_LIMIT_WINDOW_SECONDS` | No | `60` | integer seconds | No | Yes | Tool rate-limit window. |
