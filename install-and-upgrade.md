@@ -1,6 +1,6 @@
 ---
 title: Install And Upgrade
-description: Install NetMap with Docker, put it behind HTTPS, and upgrade an existing instance.
+description: "Install NetMap with Docker, put it behind HTTPS, and upgrade an existing instance."
 ---
 
 # Install And Upgrade

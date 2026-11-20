@@ -1,5 +1,5 @@
 ---
-description: Self-hosted inventory, topology, monitoring, and IP address management for your network.
+description: "Self-hosted inventory, topology, monitoring, and IP address management for your network."
 ---
 
 # NetMap

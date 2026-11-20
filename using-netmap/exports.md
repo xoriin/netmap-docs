@@ -1,6 +1,6 @@
 ---
 title: Exports
-description: Download inventory, firewall events, and PDF reports, or back up the NetMap database.
+description: "Download inventory, firewall events, and PDF reports, or back up the NetMap database."
 ---
 
 # Exports

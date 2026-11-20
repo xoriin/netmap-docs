@@ -1,6 +1,6 @@
 ---
 title: Get Started
-description: Learn what NetMap is, install it, and complete first-run setup.
+description: "Learn what NetMap is, install it, and complete first-run setup."
 ---
 
 # Get Started

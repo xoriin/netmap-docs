@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting
-description: Diagnose common NetMap installation, sign-in, API, and container problems.
+description: "Diagnose common NetMap installation, sign-in, API, and container problems."
 ---
 
 # Troubleshooting

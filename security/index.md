@@ -1,5 +1,5 @@
 ---
-description: How NetMap protects sign-in, sessions, and stored data, and what you must secure when you deploy it.
+description: "How NetMap protects sign-in, sessions, and stored data, and what you must secure when you deploy it."
 title: Security Overview
 sidebar_position: 1
 keywords:

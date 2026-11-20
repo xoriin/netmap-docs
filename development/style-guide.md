@@ -1,6 +1,6 @@
 ---
 title: Documentation Style Guide
-description: Voice, headings, GitBook callouts, front matter, and screenshot paths for NetMap docs.
+description: "Voice, headings, GitBook callouts, front matter, and screenshot paths for NetMap docs."
 ---
 
 # Documentation Style Guide

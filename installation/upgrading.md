@@ -1,6 +1,6 @@
 ---
 title: Upgrading
-description: Back up a NetMap instance, pull a new image, and verify that it is healthy.
+description: "Back up a NetMap instance, pull a new image, and verify that it is healthy."
 ---
 
 # Upgrading

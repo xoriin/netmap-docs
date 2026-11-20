@@ -1,5 +1,5 @@
 ---
-description: Run a deployed NetMap instance: health, logs, backups, migrations, and recovery.
+description: "Run a deployed NetMap instance: health, logs, backups, migrations, and recovery."
 title: Operations
 sidebar_position: 9
 keywords:

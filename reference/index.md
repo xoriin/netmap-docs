@@ -1,6 +1,6 @@
 ---
 title: Reference
-description: Defaults, paths, ports, glossary, and where release notes live.
+description: "Defaults, paths, ports, glossary, and where release notes live."
 ---
 
 # Reference

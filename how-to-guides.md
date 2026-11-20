@@ -1,6 +1,6 @@
 ---
 title: How-To Guides
-description: Short, step-by-step tasks for common work in NetMap.
+description: "Short, step-by-step tasks for common work in NetMap."
 ---
 
 # How-To Guides

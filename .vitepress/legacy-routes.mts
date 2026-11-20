@@ -56,7 +56,6 @@ export const legacyDocumentationRoutes = {
   "guides/import-dhcp-leases.md": "guides/import-dhcp-leases.md",
   "guides/create-ip-reservation.md": "guides/create-ip-reservation.md",
   "guides/search-syslog.md": "guides/search-syslog.md",
-  "using-netmap/exports.md": "guides/export-data.md",
   "api/authentication.md": "api/authentication.md",
   "api/errors.md": "api/errors.md",
   "api/rate-limits.md": "api/rate-limits.md",

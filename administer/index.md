@@ -1,5 +1,5 @@
 ---
-description: Manage users, roles, alerts, notifications, and other instance settings.
+description: "Manage users, roles, alerts, notifications, and other instance settings."
 title: Admin Workspace
 sidebar_position: 1
 keywords: [admin, administration, users, roles, settings, notifications, SNMP]

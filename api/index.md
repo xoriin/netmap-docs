@@ -1,5 +1,5 @@
 ---
-description: Authenticate to the NetMap REST API, understand permissions and errors, and find endpoints.
+description: "Authenticate to the NetMap REST API, understand permissions and errors, and find endpoints."
 title: API Overview
 sidebar_position: 1
 keywords:
