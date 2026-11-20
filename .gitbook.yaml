@@ -3,3 +3,8 @@ root: ./
 structure:
   readme: NetMap.md
   summary: SUMMARY.md
+
+redirects:
+  use-netmap/dashboard: using-netmap/overview.md
+  get-started/limitations-and-capacity-planning: product-introduction/what-is-netmap.md
+  how-to-guides/export-data: using-netmap/exports.md
