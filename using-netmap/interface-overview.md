@@ -12,7 +12,7 @@ NetMap has one workspace for each area of your network, listed in the sidebar. T
 
 | Workspace | What you do there | Who can use it |
 |---|---|---|
-| [Overview](./dashboard.md) | See live network health, inventory changes and device activity | Everyone; changes need `topology_write` |
+| [Overview](./overview.md) | See live network health, inventory changes and device activity | Everyone; changes need `topology_write` |
 | [Topology](./topology.md) | Map devices, groups, sites and relationships, and save layouts | Everyone; changes need `topology_write` |
 | [Inventory](./inventory.md) | Search, filter, import and update devices | Everyone; changes need `topology_write` |
 | [VLANs](./vlans.md) | Manage topology groups and VLANs | Everyone; changes need `topology_write` |

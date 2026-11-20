@@ -1,5 +1,5 @@
 ---
-title: Dashboard
+title: Overview
 sidebar_position: 2
 keywords: [dashboard, overview]
 ---

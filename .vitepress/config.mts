@@ -133,7 +133,7 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: "Interface Tour", link: "/using-netmap/interface-overview" },
-          { text: "Dashboard", link: "/using-netmap/dashboard" },
+          { text: "Overview", link: "/using-netmap/overview" },
           { text: "Topology", link: "/using-netmap/topology" },
           { text: "Inventory", link: "/using-netmap/inventory" },
           { text: "Cloud Assets", link: "/using-netmap/cloud-assets" },

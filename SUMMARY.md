@@ -16,7 +16,7 @@
   - [Upgrading](./installation/upgrading.md)
 - Use NetMap
   - [Interface Tour](./using-netmap/interface-overview.md)
-  - [Dashboard](./using-netmap/dashboard.md)
+  - [Overview](./using-netmap/overview.md)
   - [Topology](./using-netmap/topology.md)
   - [Inventory](./using-netmap/inventory.md)
   - [Cloud Assets](./using-netmap/cloud-assets.md)

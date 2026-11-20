@@ -35,7 +35,7 @@ export const legacyDocumentationRoutes = {
   "configuration/oidc-sso.md": "configuration/oidc-sso.md",
   "configuration/syslog.md": "configuration/syslog.md",
   "using-netmap/interface-overview.md": "using-netmap/interface-overview.md",
-  "using-netmap/dashboard.md": "using-netmap/dashboard.md",
+  "using-netmap/overview.md": "using-netmap/dashboard.md",
   "using-netmap/topology.md": "using-netmap/topology.md",
   "using-netmap/inventory.md": "using-netmap/inventory.md",
   "using-netmap/vlans.md": "using-netmap/vlans.md",
@@ -112,6 +112,7 @@ export const retiredDocumentationRoutes = [
 // Former routes of pages that were moved or merged into another page, mapped to the
 // canonical source file that replaced them. Numbered section variants are derived too.
 export const movedDocumentationRoutes: Record<string, string> = {
+  "using-netmap/dashboard.md": "using-netmap/overview.md",
   "api/api-reference.md": "api/reference/endpoints.md",
   "api/endpoint-reference.md": "api/reference/endpoints.md",
   "api/openapi-swagger.md": "api/reference/openapi.md",
