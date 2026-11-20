@@ -124,6 +124,7 @@ export default defineConfig({
       },
       {
         text: "Get Started",
+        link: "/get-started",
         collapsed: false,
         items: [
           { text: "What Is NetMap?", link: "/product-introduction/what-is-netmap" },
@@ -133,6 +134,7 @@ export default defineConfig({
       },
       {
         text: "Install And Upgrade",
+        link: "/install-and-upgrade",
         collapsed: true,
         items: [
           { text: "How NetMap Works", link: "/product-introduction/architecture" },
@@ -146,6 +148,7 @@ export default defineConfig({
       },
       {
         text: "Use NetMap",
+        link: "/use-netmap",
         collapsed: true,
         items: [
           { text: "Interface Tour", link: "/using-netmap/interface-overview" },
@@ -173,6 +176,7 @@ export default defineConfig({
       },
       {
         text: "How-To Guides",
+        link: "/how-to-guides",
         collapsed: true,
         items: [
           { text: "Add A Device", link: "/guides/add-device" },
@@ -190,9 +194,9 @@ export default defineConfig({
       },
       {
         text: "API",
+        link: "/api/",
         collapsed: true,
         items: [
-          { text: "API Overview", link: "/api/" },
           { text: "API Quick Start", link: "/api/quick-start" },
           { text: "API Authentication", link: "/api/authentication" },
           { text: "API Permissions", link: "/api/permissions" },
@@ -206,9 +210,9 @@ export default defineConfig({
       },
       {
         text: "Administer",
+        link: "/administer/",
         collapsed: true,
         items: [
-          { text: "Admin Workspace", link: "/administer/" },
           { text: "System", link: "/administer/system" },
           { text: "Release Notices", link: "/administer/release-notices" },
           { text: "Users", link: "/administer/users" },
@@ -231,9 +235,9 @@ export default defineConfig({
       },
       {
         text: "Security",
+        link: "/security/",
         collapsed: true,
         items: [
-          { text: "Security Overview", link: "/security/" },
           { text: "Secrets Management", link: "/security/secrets-management" },
           { text: "Network Exposure", link: "/security/network-exposure" },
           { text: "Vulnerability Reporting", link: "/security/vulnerability-reporting" }
@@ -241,9 +245,9 @@ export default defineConfig({
       },
       {
         text: "Operate",
+        link: "/operations/operations",
         collapsed: true,
         items: [
-          { text: "Operations Overview", link: "/operations/operations" },
           { text: "Health Checks", link: "/operations/health-checks" },
           { text: "Logging", link: "/operations/logging" },
           { text: "Backup And Restore", link: "/operations/backup-and-restore" },
@@ -254,6 +258,7 @@ export default defineConfig({
       },
       {
         text: "Troubleshooting",
+        link: "/troubleshooting/",
         collapsed: true,
         items: [
           { text: "Common Issues", link: "/troubleshooting/common-issues" },
@@ -269,6 +274,7 @@ export default defineConfig({
       },
       {
         text: "Reference",
+        link: "/reference/",
         collapsed: true,
         items: [
           { text: "Default Values", link: "/reference/default-values" },
@@ -280,9 +286,9 @@ export default defineConfig({
       },
       {
         text: "Contributing",
+        link: "/development/development",
         collapsed: true,
         items: [
-          { text: "Developer Guide", link: "/development/development" },
           { text: "Local Development", link: "/development/local-development" },
           { text: "Repository Structure", link: "/development/repository-structure" },
           { text: "Backend Development", link: "/development/backend-development" },

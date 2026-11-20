@@ -1,4 +1,5 @@
 ---
+description: Manage users, roles, alerts, notifications, and other instance settings.
 title: Admin Workspace
 sidebar_position: 1
 keywords: [admin, administration, users, roles, settings, notifications, SNMP]
@@ -7,6 +8,8 @@ keywords: [admin, administration, users, roles, settings, notifications, SNMP]
 # Admin Workspace
 
 **Admin** is where you manage NetMap itself: settings, users, roles, notification methods, alert rules, scheduled scans and the audit log. It's split into tabs, and each tab opens with summary cards and a chart before its forms and tables.
+
+This section of the documentation covers those tabs, plus configuration reference, storage, OIDC, and syslog. You need a role that grants the relevant administrative permission; a SuperAdmin sees every tab.
 
 ## Who Sees Each Tab
 

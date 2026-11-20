@@ -1,11 +1,11 @@
 # Summary
 
 - [NetMap](./NetMap.md)
-- Get Started
+- [Get Started](./get-started.md)
   - [What Is NetMap?](./product-introduction/what-is-netmap.md)
   - [Quick Start](./installation/quick-start.md)
   - [First-Run Setup And Authentication](./installation/first-run-and-authentication.md)
-- Install And Upgrade
+- [Install And Upgrade](./install-and-upgrade.md)
   - [How NetMap Works](./product-introduction/architecture.md)
   - [Installation Overview](./installation/installation.md)
   - [Docker Compose](./installation/docker-compose.md)
@@ -13,7 +13,7 @@
   - [Native Installation](./installation/native-installation.md)
   - [Reverse Proxy And HTTPS](./installation/reverse-proxy.md)
   - [Upgrading](./installation/upgrading.md)
-- Use NetMap
+- [Use NetMap](./use-netmap.md)
   - [Interface Tour](./using-netmap/interface-overview.md)
   - [Overview](./using-netmap/overview.md)
   - [Topology](./using-netmap/topology.md)
@@ -35,7 +35,7 @@
   - [Status Page Custom CSS](./using-netmap/status-page-css.md)
   - [Profile](./using-netmap/profile.md)
   - [Personal Chart Views](./using-netmap/chart-views.md)
-- How-To Guides
+- [How-To Guides](./how-to-guides.md)
   - [Add A Device](./guides/add-device.md)
   - [Import Devices](./guides/import-devices.md)
   - [Run Discovery](./guides/run-discovery.md)
@@ -47,8 +47,7 @@
   - [Create An IP Reservation](./guides/create-ip-reservation.md)
   - [Search Syslog Events](./guides/search-syslog.md)
   - [Export Data](./guides/export-data.md)
-- API
-  - [API Overview](./api/index.md)
+- [API](./api/index.md)
   - [API Quick Start](./api/quick-start.md)
   - [API Authentication](./api/authentication.md)
   - [API Permissions](./api/permissions.md)
@@ -58,8 +57,7 @@
   - [Status Page Integrations](./api/guides/status-page-integrations.md)
   - [Endpoint Reference](./api/reference/endpoints.md)
   - [OpenAPI And Swagger](./api/reference/openapi.md)
-- Administer
-  - [Admin Workspace](./administer/index.md)
+- [Administer](./administer/index.md)
   - [System](./administer/system.md)
   - [Release Notices](./administer/release-notices.md)
   - [Users](./administer/users.md)
@@ -78,20 +76,18 @@
   - [Storage](./configuration/storage.md)
   - [OIDC SSO](./configuration/oidc-sso.md)
   - [Syslog](./configuration/syslog.md)
-- Security
-  - [Security Overview](./security/index.md)
+- [Security](./security/index.md)
   - [Secrets Management](./security/secrets-management.md)
   - [Network Exposure](./security/network-exposure.md)
   - [Vulnerability Reporting](./security/vulnerability-reporting.md)
-- Operate
-  - [Operations Overview](./operations/operations.md)
+- [Operate](./operations/operations.md)
   - [Health Checks](./operations/health-checks.md)
   - [Logging](./operations/logging.md)
   - [Backup And Restore](./operations/backup-and-restore.md)
   - [Database Migrations](./operations/database-migrations.md)
   - [Monitoring NetMap](./operations/monitoring-netmap.md)
   - [Disaster Recovery](./operations/disaster-recovery.md)
-- Troubleshooting
+- [Troubleshooting](./troubleshooting/index.md)
   - [Common Issues](./troubleshooting/common-issues.md)
   - [Installation Problems](./troubleshooting/installation-problems.md)
   - [Authentication Problems](./troubleshooting/authentication-problems.md)
@@ -101,14 +97,13 @@
   - [Reverse Proxy Problems](./troubleshooting/reverse-proxy-problems.md)
   - [Container Problems](./troubleshooting/container-problems.md)
   - [Diagnostic Information](./troubleshooting/diagnostic-information.md)
-- Reference
+- [Reference](./reference/index.md)
   - [Default Values](./reference/default-values.md)
   - [File And Directory Paths](./reference/file-paths.md)
   - [Ports](./reference/ports.md)
   - [Glossary](./reference/glossary.md)
   - [Changelog](./reference/changelog.md)
-- Contributing
-  - [Developer Guide](./development/development.md)
+- [Contributing](./development/development.md)
   - [Local Development](./development/local-development.md)
   - [Repository Structure](./development/repository-structure.md)
   - [Backend Development](./development/backend-development.md)

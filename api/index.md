@@ -1,4 +1,5 @@
 ---
+description: Authenticate to the NetMap REST API, understand permissions and errors, and find endpoints.
 title: API Overview
 sidebar_position: 1
 keywords:
@@ -11,6 +12,8 @@ keywords:
 # API Overview
 
 NetMap has a JSON REST API. Everything the web app does goes through it, so scripts and integrations can read and change the same data.
+
+This section is the API documentation: a quick start, authentication, permissions, errors, rate limits, two guides, and the endpoint reference.
 
 ## Base URL
 

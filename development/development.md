@@ -1,4 +1,5 @@
 ---
+description: Repository layout, local development, tests, and how to contribute to NetMap.
 title: Developer Guide
 sidebar_position: 11
 keywords:

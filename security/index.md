@@ -1,4 +1,5 @@
 ---
+description: How NetMap protects sign-in, sessions, and stored data, and what you must secure when you deploy it.
 title: Security Overview
 sidebar_position: 1
 keywords:
@@ -14,6 +15,9 @@ keywords:
 This page explains how NetMap protects sign-in, sessions, and stored data, and what you are responsible for when you deploy it. Roles and permissions are covered on [Permissions](../administer/permissions.md).
 
 NetMap assumes you control the host, the Docker daemon, the persistent data directory, the reverse proxy, and the networks that active probes can reach. The trust boundary includes browser users, API clients, syslog senders, configured OIDC and notification providers, and the devices being probed.
+
+This section of the documentation also covers how to store secrets, how to expose NetMap safely, and how to report a vulnerability. Start here, then read [Secrets Management](./secrets-management.md), [Network Exposure](./network-exposure.md), and [Vulnerability Reporting](./vulnerability-reporting.md).
+
 
 ## Sign-In And Sessions
 
