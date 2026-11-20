@@ -56,7 +56,7 @@ export const legacyDocumentationRoutes = {
   "guides/import-dhcp-leases.md": "guides/import-dhcp-leases.md",
   "guides/create-ip-reservation.md": "guides/create-ip-reservation.md",
   "guides/search-syslog.md": "guides/search-syslog.md",
-  "guides/export-data.md": "guides/export-data.md",
+  "using-netmap/exports.md": "guides/export-data.md",
   "api/authentication.md": "api/authentication.md",
   "api/errors.md": "api/errors.md",
   "api/rate-limits.md": "api/rate-limits.md",
@@ -112,6 +112,7 @@ export const retiredDocumentationRoutes = [
 // Former routes of pages that were moved or merged into another page, mapped to the
 // canonical source file that replaced them. Numbered section variants are derived too.
 export const movedDocumentationRoutes: Record<string, string> = {
+  "guides/export-data.md": "using-netmap/exports.md",
   "product-introduction/limitations-and-capacity-planning.md": "product-introduction/what-is-netmap.md",
   "using-netmap/dashboard.md": "using-netmap/overview.md",
   "api/api-reference.md": "api/reference/endpoints.md",

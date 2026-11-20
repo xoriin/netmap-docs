@@ -188,8 +188,7 @@ export default defineConfig({
           { text: "Create An Alert Rule", link: "/guides/create-alert-rule" },
           { text: "Import DHCP Leases", link: "/guides/import-dhcp-leases" },
           { text: "Create An IP Reservation", link: "/guides/create-ip-reservation" },
-          { text: "Search Syslog Events", link: "/guides/search-syslog" },
-          { text: "Export Data", link: "/guides/export-data" }
+          { text: "Search Syslog Events", link: "/guides/search-syslog" }
         ]
       },
       {

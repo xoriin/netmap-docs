@@ -71,9 +71,9 @@ Each guide names the permission you need. Have a signed-in account with that per
       <td><a href="./guides/search-syslog.md">search-syslog</a></td>
     </tr>
     <tr>
-      <td><strong>Export Data</strong></td>
+      <td><strong>Exports</strong></td>
       <td>Download inventory, firewall events, reports, or a backup.</td>
-      <td><a href="./guides/export-data.md">export-data</a></td>
+      <td><a href="./using-netmap/exports.md">exports</a></td>
     </tr>
   </tbody>
 </table>

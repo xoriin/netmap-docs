@@ -46,7 +46,6 @@
   - [Import DHCP Leases](./guides/import-dhcp-leases.md)
   - [Create An IP Reservation](./guides/create-ip-reservation.md)
   - [Search Syslog Events](./guides/search-syslog.md)
-  - [Export Data](./guides/export-data.md)
 - [API](./api/index.md)
   - [API Quick Start](./api/quick-start.md)
   - [API Authentication](./api/authentication.md)
