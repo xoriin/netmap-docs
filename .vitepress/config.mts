@@ -1,3 +1,6 @@
+import { cpSync, createReadStream, existsSync, statSync } from "node:fs";
+import { extname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "vitepress";
 import {
   legacyDocumentationRoutes,
@@ -5,6 +8,16 @@ import {
   numberedDocumentationSections,
   retiredDocumentationRoutes,
 } from "./legacy-routes.mts";
+
+const gitbookRoot = resolve(fileURLToPath(new URL("../.gitbook", import.meta.url)));
+const gitbookAssetTypes: Record<string, string> = {
+  ".png": "image/png",
+  ".svg": "image/svg+xml",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".webp": "image/webp",
+  ".gif": "image/gif",
+};
 
 export default defineConfig({
   title: "NetMap",
@@ -98,6 +111,28 @@ export default defineConfig({
           emitRedirect("development/contributing-workflow.md", "maintenance-plan.md");
           emitRedirect("development/contributing-workflow.md", "reference/maintenance-plan.md");
           emitRedirect("development/contributing-workflow.md", "12-reference/maintenance-plan.md");
+        },
+      },
+      {
+        name: "gitbook-assets-for-vitepress",
+        configureServer(server) {
+          server.middlewares.use((req, res, next) => {
+            const url = (req.url ?? "").split("?")[0];
+            if (!url.startsWith("/.gitbook/")) return next();
+            const file = resolve(gitbookRoot, `.${url.slice("/.gitbook".length)}`);
+            if (!file.startsWith(gitbookRoot) || !existsSync(file) || !statSync(file).isFile()) {
+              res.statusCode = 404;
+              res.end();
+              return;
+            }
+            res.setHeader("Content-Type", gitbookAssetTypes[extname(file)] ?? "application/octet-stream");
+            createReadStream(file).pipe(res);
+          });
+        },
+        closeBundle() {
+          if (!existsSync(gitbookRoot)) return;
+          const outDir = resolve(fileURLToPath(new URL("./dist", import.meta.url)));
+          cpSync(gitbookRoot, join(outDir, ".gitbook"), { recursive: true });
         },
       },
     ],
