@@ -3,10 +3,10 @@
 - [NetMap](./NetMap.md)
 - Get Started
   - [What Is NetMap?](./product-introduction/what-is-netmap.md)
-  - [How NetMap Works](./product-introduction/architecture.md)
   - [Quick Start](./installation/quick-start.md)
   - [First-Run Setup And Authentication](./installation/first-run-and-authentication.md)
 - Install And Upgrade
+  - [How NetMap Works](./product-introduction/architecture.md)
   - [Installation Overview](./installation/installation.md)
   - [Docker Compose](./installation/docker-compose.md)
   - [Docker](./installation/docker.md)

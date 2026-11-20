@@ -110,7 +110,6 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: "What Is NetMap?", link: "/product-introduction/what-is-netmap" },
-          { text: "How NetMap Works", link: "/product-introduction/architecture" },
           { text: "Quick Start", link: "/installation/quick-start" },
           { text: "First-Run Setup And Authentication", link: "/installation/first-run-and-authentication" }
         ]
@@ -119,6 +118,7 @@ export default defineConfig({
         text: "Install And Upgrade",
         collapsed: true,
         items: [
+          { text: "How NetMap Works", link: "/product-introduction/architecture" },
           { text: "Installation Overview", link: "/installation/installation" },
           { text: "Docker Compose", link: "/installation/docker-compose" },
           { text: "Docker", link: "/installation/docker" },
