@@ -111,7 +111,6 @@ export default defineConfig({
         items: [
           { text: "What Is NetMap?", link: "/product-introduction/what-is-netmap" },
           { text: "How NetMap Works", link: "/product-introduction/architecture" },
-          { text: "Limitations And Capacity Planning", link: "/product-introduction/limitations-and-capacity-planning" },
           { text: "Quick Start", link: "/installation/quick-start" },
           { text: "First-Run Setup And Authentication", link: "/installation/first-run-and-authentication" }
         ]

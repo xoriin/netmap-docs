@@ -21,7 +21,7 @@ If you are evaluating NetMap, start with [What Is NetMap](./product-introduction
 | Tour the available workspaces | [Interface Tour](./using-netmap/interface-overview.md) |
 | Check whether NetMap fits your environment | [Where NetMap Fits](./product-introduction/what-is-netmap.md#where-netmap-fits) |
 | Understand deployment and data flow | [How NetMap Works](./product-introduction/architecture.md) |
-| Review limitations before deploying | [Limitations And Capacity Planning](./product-introduction/limitations-and-capacity-planning.md) |
+| Review limitations before deploying | [Limitations And Capacity Planning](./product-introduction/what-is-netmap.md#limitations-and-capacity-planning) |
 
 ## Install And Operate NetMap
 

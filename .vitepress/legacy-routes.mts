@@ -112,6 +112,7 @@ export const retiredDocumentationRoutes = [
 // Former routes of pages that were moved or merged into another page, mapped to the
 // canonical source file that replaced them. Numbered section variants are derived too.
 export const movedDocumentationRoutes: Record<string, string> = {
+  "product-introduction/limitations-and-capacity-planning.md": "product-introduction/what-is-netmap.md",
   "using-netmap/dashboard.md": "using-netmap/overview.md",
   "api/api-reference.md": "api/reference/endpoints.md",
   "api/endpoint-reference.md": "api/reference/endpoints.md",

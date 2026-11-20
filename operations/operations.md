@@ -50,7 +50,7 @@ Firewall search-index rebuilds and retention clean-up run in the background afte
 
 ## Capacity And Tuning
 
-Capacity depends on device count, monitoring interval and history, service checks, syslog volume, discovery ranges and backup retention. Tune intervals and retention before adding volume, and watch `/app/data`, container logs and firewall database growth. See [Limitations And Capacity Planning](../product-introduction/limitations-and-capacity-planning.md) for defaults.
+Capacity depends on device count, monitoring interval and history, service checks, syslog volume, discovery ranges and backup retention. Tune intervals and retention before adding volume, and watch `/app/data`, container logs and firewall database growth. See [Limitations And Capacity Planning](../product-introduction/what-is-netmap.md#limitations-and-capacity-planning) for defaults.
 
 ## Rotate Secrets And Move Hosts
 
