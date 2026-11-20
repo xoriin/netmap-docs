@@ -18,6 +18,23 @@ export default defineConfig({
   vite: {
     plugins: [
       {
+        name: "gitbook-blocks-for-vitepress",
+        enforce: "pre",
+        transform(code, id) {
+          if (!id.endsWith(".md") || id.includes("node_modules")) return;
+          const hint = { info: "info", warning: "warning", danger: "danger", success: "tip", tip: "tip" };
+          let next = code.replace(
+            /\{% hint style="(info|warning|danger|success|tip)" %\}([\s\S]*?)\{% endhint %\}/g,
+            (_match, style, body) => `::: ${hint[style]}\n${body.trim()}\n:::`,
+          );
+          next = next.replace(/\{% content-ref url="([^"]+)" %\}[\s\S]*?\{% endcontent-ref %\}/g, (_match, url) => {
+            return `[${url.replace(/^(?:\.\/)?/, "").replace(/\.md$/, "")}](${url})`;
+          });
+          next = next.replace(/\{% stepper %\}|\{% endstepper %\}|\{% step %\}|\{% endstep %\}/g, "");
+          return next === code ? undefined : next;
+        },
+      },
+      {
         name: "netmap-documentation-legacy-redirects",
         generateBundle() {
           const emittedPaths = new Set<string>();
