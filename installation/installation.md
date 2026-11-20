@@ -74,8 +74,6 @@ Confirm that:
 
 ## Related Concepts
 
-- [How NetMap Works](../product-introduction/architecture.md#the-all-in-one-image-and-persistent-databases)
-- [How NetMap Works](../product-introduction/architecture.md#network-access-and-capabilities)
-- [How NetMap Works](../product-introduction/architecture.md#production-images-and-installed-versions)
+- [How NetMap Works](../product-introduction/architecture.md) — the all-in-one image and databases, [network access and capabilities](../product-introduction/architecture.md#network-access-and-capabilities), and [production images and versions](../product-introduction/architecture.md#production-images-and-installed-versions)
 - [Configuration Reference](../configuration/configuration.md)
 - [Installation Problems](../troubleshooting/installation-problems.md)
