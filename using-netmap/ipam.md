@@ -13,6 +13,15 @@ DHCP leases, and address maps. External IPs keeps a register of public addresses
 
 ## Summary And Subnet List
 
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/ipam/ipam-address-space-dark.png" media="(prefers-color-scheme: dark)" />
+    <img src="../.gitbook/assets/screenshots/use-netmap/ipam/ipam-address-space-light.png" alt="The IPAM Address space view for Contoso Ltd, with a Used and Free gauge and Busiest Subnets including Auckland OT/Plant and Sydney HQ Corp." width="800" />
+  </picture>
+  <figcaption>Address space and busiest subnets for Contoso Ltd.</figcaption>
+</figure>
+
+
 The summary reports subnet count, total/used/free addresses, utilisation, conflicts, imported leases, and reservations. Subnet rows can be searched, sorted, and inspected for CIDR, site/VLAN, gateway, DHCP range, DNS, device/lease/reservation counts, and utilisation. Counting uses indexed IPv4/IPv6 membership, so large inventories do not require a full scan for every row.
 
 Create an IPv4 or IPv6 subnet with CIDR, name, gateway, DHCP start/end, VLAN/group, site, DNS servers, and notes. Validation rejects malformed addresses, impossible ranges, overlaps, and conflicting gateway/DHCP/reservation values. IPv6 displays address space and membership, but very large ranges are represented through calculated counts rather than rendering every address.
@@ -22,6 +31,15 @@ Editing a subnet updates metadata and synchronises supported VLAN fields. Deleti
 The page opens with an **Address space** gauge (used and free hosts across all subnets) beside the summary cards. A **Busiest Subnets** card lists the five subnets with the highest utilisation, each with a usage bar and percentage. Chart choices are saved per user; see [Personal Chart Views](./chart-views.md).
 
 ## Address Map And Allocation
+
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/ipam/ipam-subnet-hq-lan-dark.png" media="(prefers-color-scheme: dark)" />
+    <img src="../.gitbook/assets/screenshots/use-netmap/ipam/ipam-subnet-hq-lan-light.png" alt="The Sydney HQ Corp subnet 10.10.10.0/24 in IPAM, showing the usage bar and syd-prn-01.contoso.local at 10.10.10.40." width="800" />
+  </picture>
+  <figcaption>The Sydney HQ Corp subnet 10.10.10.0/24.</figcaption>
+</figure>
+
 
 Open a subnet to see its used, free, utilisation, gateway, and DHCP range figures, and a usage bar split into device, DHCP lease, reserved, gateway, and free addresses. The **All**, **Devices**, **DHCP**, **Reserved**, and **Free** tabs filter the addresses.
 

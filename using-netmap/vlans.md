@@ -8,6 +8,14 @@ keywords: [VLANs, groups, subnets, IPAM]
 
 Groups organise your devices on the topology map and can carry VLAN and subnet details. Open **VLANs** in the sidebar; the page is titled **Groups & VLANs**. Anyone signed in can view it, and creating, editing or deleting groups needs `topology_write`.
 
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/vlans/vlans-groups-dark.png" media="(prefers-color-scheme: dark)" />
+    <img src="../.gitbook/assets/screenshots/use-netmap/vlans/vlans-groups-light.png" alt="The VLANs and groups workspace for Contoso Ltd, showing function-based network groups such as Sydney HQ Corp and Auckland OT/Plant, plus the Azure and AWS cloud groups." width="800" />
+  </picture>
+  <figcaption>The VLANs and groups workspace for Contoso Ltd.</figcaption>
+</figure>
+
 ## The Groups & VLANs Page
 
 **Devices by VLAN** is a column chart of how many devices each group or VLAN holds, largest first. Each column is labelled with the group's display name and VLAN ID and uses the group's colour. Select a column to open IPAM with that group's subnet selected; NetMap matches the subnet by CIDR first, then by VLAN ID.

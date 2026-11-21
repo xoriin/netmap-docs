@@ -41,6 +41,14 @@ After signing in as the initial SuperAdmin:
 
 Login branding uses a brief text-reveal entrance. Your system’s Reduce motion preference disables the animation and shows the text immediately. The sign-in fields remain available while the animation plays.
 
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/screenshots/get-started/sign-in-dark.png" media="(prefers-color-scheme: dark)" />
+    <img src="../.gitbook/assets/screenshots/get-started/sign-in-light.png" alt="The NetMap sign-in screen, with the brand panel and username and password fields." width="800" />
+  </picture>
+  <figcaption>The NetMap sign-in screen.</figcaption>
+</figure>
+
 Local sign-in uses the username and password created during setup or by an administrator. The browser receives a short-lived access token in application memory and a refresh token in an HttpOnly cookie. The access token is not stored in localStorage.
 
 Use the Sign out control to revoke the current refresh session. If the access token expires while the browser is idle, NetMap attempts a refresh; a failed refresh returns the browser to the login screen with "Session expired. Sign in again."

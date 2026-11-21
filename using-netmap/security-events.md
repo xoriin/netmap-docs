@@ -8,6 +8,14 @@ keywords: [security, syslog, firewall, events]
 
 The Security workspace is the broad firewall/syslog search surface. It is separate from topology's selected-device activity view and stores events in `firewall.db` so log volume does not lock the main inventory database. Viewing requires `security_view`; filtered export requires `firewall_export`.
 
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/security-events/security-events-dark.png" media="(prefers-color-scheme: dark)" />
+    <img src="../.gitbook/assets/screenshots/use-netmap/security-events/security-events-light.png" alt="The Security events table, with syslog or firewall rows from syd-fw-01.contoso.local and an Auckland or London address." width="800" />
+  </picture>
+  <figcaption>The Security events table for Contoso Ltd.</figcaption>
+</figure>
+
 ## Ingestion
 
 Configure a firewall, router, switch, or host to forward syslog to the NetMap host and the enabled listener. Defaults are UDP `1514` and TCP `1514`; bridge mode requires publishing both protocol ports, while host mode binds them directly. UDP is lightweight but lossy; TCP provides a persistent stream with a configured connection limit. Messages are capped by `SYSLOG_MAX_LINE_BYTES` (default 8192), and `SYSLOG_MAX_TCP_CONNECTIONS` limits concurrent TCP senders.

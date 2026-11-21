@@ -8,7 +8,6 @@ NetMap is a self-hosted application for network inventory, topology, monitoring,
 
 This is the documentation home. If you are evaluating NetMap, start with [What Is NetMap](./product-introduction/what-is-netmap.md). If you want to run it now, go to [Quick Start](./installation/quick-start.md). The version you are running is shown on the **System** tab in Admin.
 
-<!-- Screenshot to add when Frontend shots land. Do not uncomment until the files exist.
 <figure>
   <picture>
     <source srcset=".gitbook/assets/screenshots/use-netmap/overview/overview-dark.png" media="(prefers-color-scheme: dark)" />
@@ -16,7 +15,7 @@ This is the documentation home. If you are evaluating NetMap, start with [What I
   </picture>
   <figcaption>Overview for Contoso Ltd, with 412 devices across Sydney HQ, the Melbourne, Singapore and London offices, the Auckland plant, and Brisbane DC. Current Outages shows akl-cam-yard-03.contoso.local.</figcaption>
 </figure>
--->
+
 
 ## Start Here
 

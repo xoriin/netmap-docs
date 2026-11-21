@@ -8,6 +8,14 @@ keywords: [monitoring, health, service checks, HTTP monitors]
 
 Monitoring has **Devices**, **Endpoints** and **Status pages** views. This page covers devices and their service checks; see [HTTP Endpoint Monitors](./endpoint-monitors.md) and [Status Pages](./status-pages.md) for the others. Changes need `monitoring_write`, and **Status pages** needs `status_page_manage`.
 
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/monitoring/monitoring-devices-dark.png" media="(prefers-color-scheme: dark)" />
+    <img src="../.gitbook/assets/screenshots/use-netmap/monitoring/monitoring-devices-light.png" alt="The Monitoring Devices view for Contoso Ltd, with syd-fw-01 Online, lon-ap-02 and bne-dc-ups-01 in Warning, and akl-cam-yard-03 Offline." width="800" />
+  </picture>
+  <figcaption>The Monitoring Devices view for Contoso Ltd.</figcaption>
+</figure>
+
 ## Devices View
 
 The Devices view lists your monitored devices with search, filters and pages, and opens a details window for each one with heartbeat history, service-check results, uptime, latency, packet loss, incidents and analysis. Drag a column divider to resize it, or double-click to reset all columns.

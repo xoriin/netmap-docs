@@ -8,6 +8,14 @@ keywords: [devices, details, inventory, monitoring]
 
 The device details view is the record-level editor used from Overview, Inventory, Topology, Monitoring, IPAM, and Security. The same device record is shared by those workspaces, so an edit is visible everywhere after refresh.
 
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/device-details/device-details-core-switch-dark.png" media="(prefers-color-scheme: dark)" />
+    <img src="../.gitbook/assets/screenshots/use-netmap/device-details/device-details-core-switch-light.png" alt="Device details for syd-core-sw-01.contoso.local, a core switch at 10.10.90.2 in Sydney HQ Mgmt, shown as Online." width="800" />
+  </picture>
+  <figcaption>Device details for syd-core-sw-01.contoso.local.</figcaption>
+</figure>
+
 ## Open And Edit A Record
 
 Select a device row, node, result, or linked IP. Users with `topology_write` can double-click an editable value, type a replacement, then press Enter or leave the field to save. Escape cancels. Read-only users see values but no edit affordance.

@@ -8,6 +8,22 @@ keywords: [topology, graph, layouts, relationships]
 
 Topology turns inventory records into an interactive map of devices, group zones, sites, and relationships. Viewing requires authentication; changing graph data or layouts requires `topology_write`.
 
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/topology/topology-overview-dark.png" media="(prefers-color-scheme: dark)" />
+    <img src="../.gitbook/assets/screenshots/use-netmap/topology/topology-overview-light.png" alt="Wide NetMap topology of Contoso Ltd showing all six locations — Sydney HQ, the Melbourne, Singapore and London offices, the Auckland plant, and Brisbane DC — plus the Auckland WAN link and dashed Azure and AWS cloud groups." width="800" />
+  </picture>
+  <figcaption>Topology of Contoso Ltd, showing all six sites, the Auckland WAN link, and the Azure and AWS cloud groups.</figcaption>
+</figure>
+
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/topology/topology-sites-dark.png" media="(prefers-color-scheme: dark)" />
+    <img src="../.gitbook/assets/screenshots/use-netmap/topology/topology-sites-light.png" alt="A NetMap topology map zoomed to Sydney HQ, showing the DMZ, Mgmt, Servers, CCTV, Wi-Fi and IoT groups, including syd-fw-01 and syd-core-sw-01." width="800" />
+  </picture>
+  <figcaption>Sydney HQ on the Topology map.</figcaption>
+</figure>
+
 ## Workspace Tour
 
 The canvas occupies the centre, with a toolbar/ribbon for search, fit, layout, display preferences, Path mode, exports, and named layouts. The entity list can search and select devices, links, and groups. The mini-map shows the current model extent; the details panel edits the selected entity. Site filtering, online/offline counts, and a live refresh indicator describe the current graph view rather than the entire database.

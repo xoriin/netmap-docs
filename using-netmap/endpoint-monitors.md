@@ -8,6 +8,14 @@ keywords: [monitoring, HTTP monitors, endpoints, assertions, certificates, OAuth
 
 Endpoint monitors check HTTP and HTTPS URLs on their own schedule, separately from devices. You find them under **Monitoring → Endpoints**, and you need `monitoring_write` to change them.
 
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/endpoint-monitors/monitoring-endpoints-dark.png" media="(prefers-color-scheme: dark)" />
+    <img src="../.gitbook/assets/screenshots/use-netmap/endpoint-monitors/monitoring-endpoints-light.png" alt="The Monitoring Endpoints view for Contoso Ltd, with intranet, portal and shop Up, vpn.contoso.example Down, and Certificates Expiring listing shop in 9 days, portal in 34, intranet in 120, and vpn in 300." width="800" />
+  </picture>
+  <figcaption>The Monitoring Endpoints view, with vpn.contoso.example Down.</figcaption>
+</figure>
+
 ## Endpoints View
 
 The **Endpoints** view opens with **Average Response, Last 24 h**, which ranks endpoints by average response time, beside the **Endpoints**, **Up**, **Down**, and **Avg response** cards. Below the list, **Recent Outages** shows up to five endpoints that are down or under 100% uptime in the last 24 hours. **Certificates Expiring** shows the five certificates that expire soonest, with the days left.

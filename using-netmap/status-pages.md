@@ -10,6 +10,14 @@ A status page is a small, read-only web page that shows whether the things you c
 
 Status pages are managed from **Monitoring → Status pages**. The tab appears only if you have **Manage status pages** (`status_page_manage`), and anyone with it can edit every page.
 
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/status-pages/status-page-public-dark.png" media="(prefers-color-scheme: dark)" />
+    <img src="../.gitbook/assets/screenshots/use-netmap/status-pages/status-page-public-light.png" alt="The public Contoso Service Status page, with Intranet, Portal and Shop operational and VPN down." width="800" />
+  </picture>
+  <figcaption>The public Contoso Service Status page.</figcaption>
+</figure>
+
 ## The Status Pages Tab
 
 The tab opens with an overview of every page:

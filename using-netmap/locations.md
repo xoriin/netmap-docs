@@ -8,6 +8,14 @@ keywords: [locations, sites, map, OpenStreetMap]
 
 Locations are the sites your devices and subnets belong to, such as an office or a datacentre. They scope Inventory, Topology and IPAM. Anyone signed in can view them, and creating, editing or deleting a location needs `topology_write`.
 
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/locations/locations-sites-dark.png" media="(prefers-color-scheme: dark)" />
+    <img src="../.gitbook/assets/screenshots/use-netmap/locations/locations-sites-light.png" alt="The Locations list for Contoso Ltd, showing Sydney HQ, the Melbourne, Singapore and London offices, the Auckland plant, and Brisbane DC." width="800" />
+  </picture>
+  <figcaption>The Locations list for Contoso Ltd.</figcaption>
+</figure>
+
 ## The Locations Page
 
 **Devices by Location** is a ring of how many devices each location holds. Beside it are four cards:

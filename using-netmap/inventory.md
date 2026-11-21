@@ -8,6 +8,14 @@ keywords: [inventory, devices]
 
 Inventory is the searchable table of every device NetMap knows about. Any signed-in user can view it; creating, editing, importing, bulk editing and deleting need `topology_write`.
 
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/inventory/inventory-devices-dark.png" media="(prefers-color-scheme: dark)" />
+    <img src="../.gitbook/assets/screenshots/use-netmap/inventory/inventory-devices-light.png" alt="The Inventory device table for Contoso Ltd, including the core switch, firewall, an offline Auckland camera, a London access point in warning, and a UPS in warning." width="800" />
+  </picture>
+  <figcaption>The Inventory device table for Contoso Ltd.</figcaption>
+</figure>
+
 ## Workspace Tour
 
 The header contains the device total and refresh state. The toolbar provides search, status/favourite/group/site/type filters, Add device, Scan, Import, and the bulk-actions menu. The grid shows identity, health, type, group/VLAN, location, and monitoring information; select a row to open its overview drawer. Pagination and page size are local browser preferences.

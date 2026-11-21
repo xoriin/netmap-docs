@@ -126,6 +126,16 @@ Open `http://localhost:8080/` and complete the setup form. The first account bec
 3. Add a test device in Inventory and run a safe monitoring check.
 4. Configure a backup before adding production data.
 
+After the first account exists, later visits use the sign-in screen.
+
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/screenshots/get-started/sign-in-dark.png" media="(prefers-color-scheme: dark)" />
+    <img src="../.gitbook/assets/screenshots/get-started/sign-in-light.png" alt="The NetMap sign-in screen, with the brand panel and username and password fields." width="800" />
+  </picture>
+  <figcaption>The NetMap sign-in screen.</figcaption>
+</figure>
+
 ## 7. Optional API Smoke Test
 
 To check that the API works, create a key and run the first requests in [API Quick Start](../api/quick-start.md). Read [API Keys](../api/authentication.md#api-keys) before you use keys in automation.
