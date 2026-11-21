@@ -10,8 +10,8 @@ The Security workspace is the broad firewall/syslog search surface. It is separa
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/screenshots/use-netmap/security-events/security-events-dark.png" media="(prefers-color-scheme: dark)" />
-    <img src="../.gitbook/assets/screenshots/use-netmap/security-events/security-events-light.png" alt="The Security events table, with syslog or firewall rows from syd-fw-01.contoso.local and an Auckland or London address." width="800" />
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/security-events/security-events-dark.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/screenshots/use-netmap/security-events/security-events-light.png" alt="The Security events table, with syslog or firewall rows from syd-fw-01.contoso.local and an Auckland or London address." width="800">
   </picture>
   <figcaption>The Security events table for Contoso Ltd.</figcaption>
 </figure>

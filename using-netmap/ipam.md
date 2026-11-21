@@ -15,8 +15,8 @@ DHCP leases, and address maps. External IPs keeps a register of public addresses
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/screenshots/use-netmap/ipam/ipam-address-space-dark.png" media="(prefers-color-scheme: dark)" />
-    <img src="../.gitbook/assets/screenshots/use-netmap/ipam/ipam-address-space-light.png" alt="The IPAM Address space view for Contoso Ltd, with a Used and Free gauge and Busiest Subnets including Auckland OT/Plant and Sydney HQ Corp." width="800" />
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/ipam/ipam-address-space-dark.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/screenshots/use-netmap/ipam/ipam-address-space-light.png" alt="The IPAM Address space view for Contoso Ltd, with a Used and Free gauge and Busiest Subnets including Auckland OT/Plant and Sydney HQ Corp." width="800">
   </picture>
   <figcaption>Address space and busiest subnets for Contoso Ltd.</figcaption>
 </figure>
@@ -34,8 +34,8 @@ The page opens with an **Address space** gauge (used and free hosts across all s
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/screenshots/use-netmap/ipam/ipam-subnet-hq-lan-dark.png" media="(prefers-color-scheme: dark)" />
-    <img src="../.gitbook/assets/screenshots/use-netmap/ipam/ipam-subnet-hq-lan-light.png" alt="The Sydney HQ Corp subnet 10.10.10.0/24 in IPAM, showing the usage bar and syd-prn-01.contoso.local at 10.10.10.40." width="800" />
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/ipam/ipam-subnet-hq-lan-dark.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/screenshots/use-netmap/ipam/ipam-subnet-hq-lan-light.png" alt="The Sydney HQ Corp subnet 10.10.10.0/24 in IPAM, showing the usage bar and syd-prn-01.contoso.local at 10.10.10.40." width="800">
   </picture>
   <figcaption>The Sydney HQ Corp subnet 10.10.10.0/24.</figcaption>
 </figure>

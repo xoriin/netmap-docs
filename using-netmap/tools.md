@@ -10,8 +10,8 @@ The Tools workspace runs one-off network checks from the NetMap host. Passive to
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/screenshots/use-netmap/tools/tools-ping-dark.png" media="(prefers-color-scheme: dark)" />
-    <img src="../.gitbook/assets/screenshots/use-netmap/tools/tools-ping-light.png" alt="The Tools workspace after a successful Ping Test to syd-core-sw-01.contoso.local at 10.10.90.2." width="800" />
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/tools/tools-ping-dark.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/screenshots/use-netmap/tools/tools-ping-light.png" alt="The Tools workspace after a successful Ping Test to syd-core-sw-01.contoso.local at 10.10.90.2." width="800">
   </picture>
   <figcaption>A successful Ping Test to 10.10.90.2, the address of syd-core-sw-01.contoso.local.</figcaption>
 </figure>

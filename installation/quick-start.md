@@ -130,8 +130,8 @@ After the first account exists, later visits use the sign-in screen.
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/screenshots/get-started/sign-in-dark.png" media="(prefers-color-scheme: dark)" />
-    <img src="../.gitbook/assets/screenshots/get-started/sign-in-light.png" alt="The NetMap sign-in screen, with the brand panel and username and password fields." width="800" />
+    <source srcset="../.gitbook/assets/screenshots/get-started/sign-in-dark.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/screenshots/get-started/sign-in-light.png" alt="The NetMap sign-in screen, with the brand panel and username and password fields." width="800">
   </picture>
   <figcaption>The NetMap sign-in screen.</figcaption>
 </figure>

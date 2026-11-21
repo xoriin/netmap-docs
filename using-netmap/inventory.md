@@ -10,8 +10,8 @@ Inventory is the searchable table of every device NetMap knows about. Any signed
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/screenshots/use-netmap/inventory/inventory-devices-dark.png" media="(prefers-color-scheme: dark)" />
-    <img src="../.gitbook/assets/screenshots/use-netmap/inventory/inventory-devices-light.png" alt="The Inventory device table for Contoso Ltd, including the core switch, firewall, an offline Auckland camera, a London access point in warning, and a UPS in warning." width="800" />
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/inventory/inventory-devices-dark.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/screenshots/use-netmap/inventory/inventory-devices-light.png" alt="The Inventory device table for Contoso Ltd, including the core switch, firewall, an offline Auckland camera, a London access point in warning, and a UPS in warning." width="800">
   </picture>
   <figcaption>The Inventory device table for Contoso Ltd.</figcaption>
 </figure>

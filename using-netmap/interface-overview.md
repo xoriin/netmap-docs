@@ -10,8 +10,8 @@ NetMap has one workspace for each area of your network, listed in the sidebar. T
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/screenshots/use-netmap/interface-overview/interface-tour-dark.png" media="(prefers-color-scheme: dark)" />
-    <img src="../.gitbook/assets/screenshots/use-netmap/interface-overview/interface-tour-light.png" alt="The NetMap application shell for Contoso Ltd, with the sidebar workspaces, top bar, and Overview showing a 412-device fleet." width="800" />
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/interface-overview/interface-tour-dark.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/screenshots/use-netmap/interface-overview/interface-tour-light.png" alt="The NetMap application shell for Contoso Ltd, with the sidebar workspaces, top bar, and Overview showing a 412-device fleet." width="800">
   </picture>
   <figcaption>The NetMap application shell, with Overview for Contoso Ltd.</figcaption>
 </figure>

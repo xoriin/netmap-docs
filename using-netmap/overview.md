@@ -10,8 +10,8 @@ The Overview workspace summarizes live network health, inventory changes, and de
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/screenshots/use-netmap/overview/overview-dark.png" media="(prefers-color-scheme: dark)" />
-    <img src="../.gitbook/assets/screenshots/use-netmap/overview/overview-light.png" alt="Overview in NetMap, showing Network Health and summary cards for Contoso Ltd. The fleet has 412 devices. Current Outages lists the offline camera akl-cam-yard-03 at the Auckland plant." width="800" />
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/overview/overview-dark.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/screenshots/use-netmap/overview/overview-light.png" alt="Overview in NetMap, showing Network Health and summary cards for Contoso Ltd. The fleet has 412 devices. Current Outages lists the offline camera akl-cam-yard-03 at the Auckland plant." width="800">
   </picture>
   <figcaption>Overview for Contoso Ltd after sign-in.</figcaption>
 </figure>

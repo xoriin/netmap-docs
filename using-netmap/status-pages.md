@@ -12,8 +12,8 @@ Status pages are managed from **Monitoring → Status pages**. The tab appears o
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/screenshots/use-netmap/status-pages/status-page-public-dark.png" media="(prefers-color-scheme: dark)" />
-    <img src="../.gitbook/assets/screenshots/use-netmap/status-pages/status-page-public-light.png" alt="The public Contoso Service Status page, with Intranet, Portal and Shop operational and VPN down." width="800" />
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/status-pages/status-page-public-dark.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/screenshots/use-netmap/status-pages/status-page-public-light.png" alt="The public Contoso Service Status page, with Intranet, Portal and Shop operational and VPN down." width="800">
   </picture>
   <figcaption>The public Contoso Service Status page.</figcaption>
 </figure>

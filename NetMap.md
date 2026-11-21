@@ -10,8 +10,8 @@ This is the documentation home. If you are evaluating NetMap, start with [What I
 
 <figure>
   <picture>
-    <source srcset=".gitbook/assets/screenshots/use-netmap/overview/overview-dark.png" media="(prefers-color-scheme: dark)" />
-    <img src=".gitbook/assets/screenshots/use-netmap/overview/overview-light.png" alt="Overview in NetMap, showing Network Health and summary cards for Contoso Ltd. The fleet has 412 devices. Current Outages lists the offline camera akl-cam-yard-03 at the Auckland plant." width="800" />
+    <source srcset=".gitbook/assets/screenshots/use-netmap/overview/overview-dark.png" media="(prefers-color-scheme: dark)">
+    <img src=".gitbook/assets/screenshots/use-netmap/overview/overview-light.png" alt="Overview in NetMap, showing Network Health and summary cards for Contoso Ltd. The fleet has 412 devices. Current Outages lists the offline camera akl-cam-yard-03 at the Auckland plant." width="800">
   </picture>
   <figcaption>Overview for Contoso Ltd, with 412 devices across Sydney HQ, the Melbourne, Singapore and London offices, the Auckland plant, and Brisbane DC. Current Outages shows akl-cam-yard-03.contoso.local.</figcaption>
 </figure>

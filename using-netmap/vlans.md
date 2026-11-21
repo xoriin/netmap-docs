@@ -10,8 +10,8 @@ Groups organise your devices on the topology map and can carry VLAN and subnet d
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/screenshots/use-netmap/vlans/vlans-groups-dark.png" media="(prefers-color-scheme: dark)" />
-    <img src="../.gitbook/assets/screenshots/use-netmap/vlans/vlans-groups-light.png" alt="The VLANs and groups workspace for Contoso Ltd, showing function-based network groups such as Sydney HQ Corp and Auckland OT/Plant, plus the Azure and AWS cloud groups." width="800" />
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/vlans/vlans-groups-dark.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/screenshots/use-netmap/vlans/vlans-groups-light.png" alt="The VLANs and groups workspace for Contoso Ltd, showing function-based network groups such as Sydney HQ Corp and Auckland OT/Plant, plus the Azure and AWS cloud groups." width="800">
   </picture>
   <figcaption>The VLANs and groups workspace for Contoso Ltd.</figcaption>
 </figure>

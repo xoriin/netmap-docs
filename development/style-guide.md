@@ -82,13 +82,13 @@ The canonical shot list, filenames, and alt text live in `/home/xrnrrl/docs-samp
 
 GitBook Git Sync resolves image paths relative to the Markdown file, not the repository root. From a page in `using-netmap/` or `installation/` use `../.gitbook/assets/screenshots/…`. From a page in `development/` use `../../.gitbook/assets/screenshots/…`. From the home page (`NetMap.md`) use `.gitbook/assets/screenshots/…`. The VitePress preview serves the same `.gitbook/assets/` tree at `/.gitbook/assets/`, so those relative paths work there too.
 
-For light and dark pairs, use a `<picture>` block wrapped in `<figure>`. Put `prefers-color-scheme: dark` on the dark `<source>`, and put the light file, the alt text, and `width="800"` on the `<img>`.
+For light and dark pairs, use GitBook's Git Sync `<picture>` syntax. Put the dark PNG on `<source srcset="…" media="(prefers-color-scheme: dark)">` and put the light PNG, the alt text, and `width="800"` on the `<img>`. GitBook shows the dark file when the visitor is in dark mode, including when they use the published site's theme control. The VitePress preview follows `prefers-color-scheme` the same way.
 
 ```html
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/screenshots/use-netmap/overview/overview-dark.png" media="(prefers-color-scheme: dark)" />
-    <img src="../.gitbook/assets/screenshots/use-netmap/overview/overview-light.png" alt="Overview for Contoso Ltd, with 412 devices and an offline camera at the Auckland plant." width="800" />
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/overview/overview-dark.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/screenshots/use-netmap/overview/overview-light.png" alt="Overview for Contoso Ltd, with 412 devices and an offline camera at the Auckland plant." width="800">
   </picture>
   <figcaption>Overview for Contoso Ltd after sign-in.</figcaption>
 </figure>
