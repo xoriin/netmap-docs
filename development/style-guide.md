@@ -78,7 +78,7 @@ Store screenshots under `.gitbook/assets/screenshots/<section>/<view>-<state>-li
 
 Capture each shot at 1920×1080 with `deviceScaleFactor` 2, so the committed PNG is 3840×2160. Losslessly compress with `oxipng -o 4 --strip safe` (or equivalent) before adding it. Display the image at `width="800"`, which fits the GitBook content column. Do not add a reference until the file exists in the repository.
 
-The canonical shot list, filenames, and alt text live in `/home/xrnrrl/docs-sample/SHOT-LIST.md` (outside this repository). Alt text describes the UI and the visible Contoso Ltd fact (a site, device, or state), not "screenshot of Overview".
+The canonical shot list, filenames, and alt text are kept with the screenshot capture tooling, outside this repository. Alt text describes the UI and the visible Contoso Ltd fact (a site, device, or state), not "screenshot of Overview".
 
 GitBook Git Sync resolves image paths relative to the Markdown file, not the repository root. From a page in `using-netmap/` or `installation/` use `../.gitbook/assets/screenshots/…`. From a page in `development/` use `../../.gitbook/assets/screenshots/…`. From the home page (`NetMap.md`) use `.gitbook/assets/screenshots/…`. The VitePress preview serves the same `.gitbook/assets/` tree at `/.gitbook/assets/`, so those relative paths work there too.
 
