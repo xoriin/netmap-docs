@@ -76,29 +76,23 @@ Store screenshots under `.gitbook/assets/screenshots/<section>/<view>-<state>-li
 - `.gitbook/assets/screenshots/use-netmap/security-events/`
 - `.gitbook/assets/screenshots/use-netmap/tools/`
 
-`.gitbook.yaml` has `root: ./`, so links are root-relative:
+Capture each shot at 1920×1080 with `deviceScaleFactor` 2, so the committed PNG is 3840×2160. Losslessly compress with `oxipng -o 4 --strip safe` (or equivalent) before adding it. Display the image at `width="800"`, which fits the GitBook content column. Do not add a reference until the file exists in the repository.
 
-```markdown
-![Overview for Contoso Ltd, with 412 devices and an offline camera at the Auckland plant.](.gitbook/assets/screenshots/use-netmap/overview/overview-light.png)
-```
+The canonical shot list, filenames, and alt text live in `/home/xrnrrl/docs-sample/SHOT-LIST.md` (outside this repository). Alt text describes the UI and the visible Contoso Ltd fact (a site, device, or state), not "screenshot of Overview".
 
-For light and dark pairs, use a `<picture>` block. Put `prefers-color-scheme: dark` on the dark `<source>`, and put the light file and the alt text on the `<img>`. Alt text describes the UI and the visible Contoso Ltd fact (a site, device, or state), not "screenshot of Overview".
+GitBook Git Sync resolves image paths relative to the Markdown file, not the repository root. From a page in `using-netmap/` or `installation/` use `../.gitbook/assets/screenshots/…`. From a page in `development/` use `../../.gitbook/assets/screenshots/…`. From the home page (`NetMap.md`) use `.gitbook/assets/screenshots/…`. The VitePress preview serves the same `.gitbook/assets/` tree at `/.gitbook/assets/`, so those relative paths work there too.
 
-Do not add image references until the file exists in the repository. The canonical shot list, filenames, and alt text live in `/home/xrnrrl/docs-sample/SHOT-LIST.md` (outside this repository) until the shots are committed here.
-
-Example light/dark block:
+For light and dark pairs, use a `<picture>` block wrapped in `<figure>`. Put `prefers-color-scheme: dark` on the dark `<source>`, and put the light file, the alt text, and `width="800"` on the `<img>`.
 
 ```html
 <figure>
   <picture>
-    <source srcset=".gitbook/assets/screenshots/use-netmap/overview/overview-dark.png" media="(prefers-color-scheme: dark)" />
-    <img src=".gitbook/assets/screenshots/use-netmap/overview/overview-light.png" alt="Overview for Contoso Ltd, with 412 devices and an offline camera at the Auckland plant." width="800" />
+    <source srcset="../.gitbook/assets/screenshots/use-netmap/overview/overview-dark.png" media="(prefers-color-scheme: dark)" />
+    <img src="../.gitbook/assets/screenshots/use-netmap/overview/overview-light.png" alt="Overview for Contoso Ltd, with 412 devices and an offline camera at the Auckland plant." width="800" />
   </picture>
   <figcaption>Overview for Contoso Ltd after sign-in.</figcaption>
 </figure>
 ```
-
-Prefer PNG, about 1600px wide, displayed at `width="800"`.
 
 ## Links, Moves, And Redirects
 
