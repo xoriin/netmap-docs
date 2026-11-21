@@ -1,7 +1,7 @@
 ---
 title: Tools
 sidebar_position: 10
-keywords: [tools, DNS, ping, traceroute, port check, SNMP, subnet calculator]
+keywords: [tools, DNS, ping, traceroute, port check, SNMP, subnet calculator, logs]
 ---
 
 # Network Tools
@@ -30,6 +30,19 @@ The Tools workspace runs one-off network checks from the NetMap host. Passive to
 - **SNMP Probe** queries an SNMP-enabled device with a saved SNMP profile or a manual community string. The profile list shows each profile's version (`v2c` or `v3`); a manual community is SNMPv2c only, so save an SNMPv3 profile to probe with SNMPv3. Profiles are managed on the [SNMP Profiles](../administer/snmp-profiles.md) tab in Admin.
 
 By default, active tools only reach private targets. To allow public IP addresses and hostnames for ping, traceroute and port checks, an administrator turns on **Allow public active network targets** in **App Settings** on the [System](../administer/system.md) tab in Admin.
+
+## Logs
+
+The **Logs** tab shows NetMap's own recent log entries, so you can see what the server is doing without shell access to the container. It appears only for users with the `diagnostics_view` permission (Read system diagnostics).
+
+- Filter by **Level**, **Source** (such as `monitors`, `discovery`, `snmp`, `auth` or `syslog`), **Text** in the message, logger or exception, and a **Since** and **Until** time. Times are shown in your browser's time zone.
+- New entries appear automatically every few seconds. Select **Pause** to stop following them and **Resume** to continue.
+- Select **Load older** to page back through earlier entries.
+- Select a row that has an exception to expand it and read the stored traceback.
+
+Entries include service start-up, monitor misses, monitor and device status changes, discovery and SNMP problems, and configuration changes. NetMap keeps them in memory only: the newest 5,000 by default, and the list starts empty after a restart. When older entries have been dropped to make room, the view shows **Some entries were dropped**. Passwords, tokens, keys, cookies and the password in a URL are replaced with `[REDACTED]` before an entry is stored.
+
+For longer history, read the container log instead (see [Logging](../operations/logging.md)). Administrators can change how many entries are kept and the lowest level stored with the `APP_LOG_*` settings in the [Configuration Reference](../configuration/configuration.md).
 
 ## Recent Checks
 

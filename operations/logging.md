@@ -34,6 +34,25 @@ Accepted values are the uvicorn log levels used by the entrypoint:
 
 Restart after changing `LOG_LEVEL`.
 
+## In-App Log
+
+**Tools → Logs** shows recent NetMap log entries in the browser for users with the `diagnostics_view` permission. It holds entries in memory only (5,000 by default) and starts empty after a restart, so use the container log for anything older. Secrets are redacted before an entry is stored. See [Tools](../using-netmap/tools.md#logs).
+
+Its settings are separate from `LOG_LEVEL`:
+
+```dotenv
+# Entries kept, 100–100000
+APP_LOG_CAPACITY=5000
+# Lowest level kept: DEBUG, INFO, WARNING, ERROR or CRITICAL
+APP_LOG_LEVEL=INFO
+# Longest stored message, 200–20000 characters
+APP_LOG_MAX_MESSAGE_CHARS=2000
+# Also keep HTTP access lines (fills the log quickly)
+APP_LOG_INCLUDE_ACCESS=false
+```
+
+Restart after changing them.
+
 ## Docker Log Rotation
 
 The repository Compose examples use Docker's `json-file` logging driver with size rotation. A production Compose file should keep this or an equivalent log rotation policy:

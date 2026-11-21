@@ -103,6 +103,10 @@ Set these before you expose NetMap to users:
 | `OIDC_DEFAULT_ROLE` | No | `Viewer` | role name | No | Yes, unless overridden in DB | Auto-provisioned default role. |
 | `OIDC_ALLOW_SUPER_ADMIN` | No | `false` | boolean | No | Yes, unless overridden in DB | Allows OIDC mapping to SuperAdmin. |
 | `LOG_LEVEL` | No | `info` | `debug`, `info`, `warning`, `error`, `critical` | No | Yes | uvicorn log level. |
+| `APP_LOG_CAPACITY` | No | `5000` | integer, 100–100000 | No | Yes | Entries kept in memory for **Tools → Logs**. |
+| `APP_LOG_LEVEL` | No | `INFO` | `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL` | No | Yes | Lowest level stored for **Tools → Logs**. Does not change the container log. |
+| `APP_LOG_MAX_MESSAGE_CHARS` | No | `2000` | integer, 200–20000 | No | Yes | Longest stored message; longer messages are cut. |
+| `APP_LOG_INCLUDE_ACCESS` | No | `false` | `true`, `false` | No | Yes | Also keep HTTP access lines. Busy instances fill the log quickly. |
 
 `APP_CHANNEL` and `/app/VERSION_CHANNEL` identify dev/test channels when baked into those images. The container also reads three start-up variables. `PUID` and `PGID` set the user and group IDs NetMap runs as, so it can write to your data directory; see [Docker](../installation/docker.md). `FORWARDED_ALLOW_IPS` lists the proxy addresses whose forwarded headers are trusted, and defaults to `127.0.0.1`.
 

@@ -417,6 +417,7 @@ API keys cannot open the live event stream. It takes a session access token in i
 | POST | `/api/v1/tools/port-check` | `tools_active` | TCP port check |
 | POST | `/api/v1/tools/subnet` | `tools_passive` | Subnet calculator |
 | POST | `/api/v1/tools/snmp/probe` | `tools_active` | SNMP probe |
+| GET | `/api/v1/tools/logs` | `diagnostics_view` | Recent in-memory application log, with level, source, text and time filters, polling (`since_id`) and paging (`before_id`) |
 | GET | `/api/v1/tools/snmp/profiles` | `snmp_profile_manage` | List SNMP profiles |
 | POST | `/api/v1/tools/snmp/profiles` | `snmp_profile_manage` | Create an SNMP profile |
 | PATCH | `/api/v1/tools/snmp/profiles/{profile_id}` | `snmp_profile_manage` | Update an SNMP profile |
