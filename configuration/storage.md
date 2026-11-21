@@ -63,6 +63,8 @@ volumes:
   - <install-dir>/data:/app/data
 ```
 
+Without `PUID` and `PGID`, a new install runs as `1000:1000`, and an existing data directory keeps its current owner (installs from before NetMap 1.8.2 ran as `100:101`). When `PUID` and `PGID` are set, NetMap makes `/app/data` belong to them at start-up.
+
 If NetMap cannot write to `/app/data`, startup fails or logs permission errors.
 
 Confirm host permissions:

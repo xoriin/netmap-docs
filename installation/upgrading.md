@@ -35,6 +35,17 @@ curl --fail http://127.0.0.1:8080/api/health
 - Check Inventory, Topology, Monitoring, IPAM, and Security if those features are in use.
 - Confirm scheduled discovery, alerts, syslog, and backups are running if configured.
 
+## Version Notes
+
+### 1.8.2: Container User
+
+New installs run as user and group `1000:1000`. An existing install keeps running as whoever already owns its data, so upgrading never changes file ownership:
+
+- With `PUID` and `PGID` set, NetMap runs as those IDs, as before.
+- Without them, NetMap runs as the owner of `data/netmap.db`. Installs from before 1.8.2 ran as `100:101`, so they keep that, and the log says so at start-up.
+
+Nothing needs changing to upgrade, and your Compose file can stay as it is. To move an older install to `1000:1000`, either set `PUID: 1000` and `PGID: 1000` (NetMap re-owns the data directory at the next start), or stop NetMap and run `sudo chown -R 1000:1000 <install-dir>/data` before starting it again.
+
 ## Next Steps
 
 If the health check fails or the UI does not load, start with [Common Issues](../troubleshooting/common-issues.md) and [Container Problems](../troubleshooting/container-problems.md).
