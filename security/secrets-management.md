@@ -12,7 +12,7 @@ Protect:
 - `MASTER_KEY`
 - `OIDC_CLIENT_SECRET`
 - notification secrets
-- SNMP community/profile secrets
+- SNMP community strings and SNMPv3 authentication and privacy keys
 - API keys
 
 Production startup requires `SECRET_KEY` and `MASTER_KEY` or their file variants.

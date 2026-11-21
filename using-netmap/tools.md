@@ -27,7 +27,7 @@ The Tools workspace runs one-off network checks from the NetMap host. Passive to
 - **Ping Test** measures reachability, packet loss and round-trip time.
 - **Traceroute** traces the network path to a target. Routers and firewalls that suppress replies show up as `*` hops.
 - **Port Check** tests whether a TCP or UDP service can be reached, with a protocol, port and timeout. UDP silence can mean filtered or simply no reply, and an open port does not prove the application is healthy.
-- **SNMP Probe** queries an SNMP-enabled device with a saved SNMP profile or a manual community string. Profiles are managed on the [SNMP Profiles](../administer/snmp-profiles.md) tab in Admin.
+- **SNMP Probe** queries an SNMP-enabled device with a saved SNMP profile or a manual community string. The profile list shows each profile's version (`v2c` or `v3`); a manual community is SNMPv2c only, so save an SNMPv3 profile to probe with SNMPv3. Profiles are managed on the [SNMP Profiles](../administer/snmp-profiles.md) tab in Admin.
 
 By default, active tools only reach private targets. To allow public IP addresses and hostnames for ping, traceroute and port checks, an administrator turns on **Allow public active network targets** in **App Settings** on the [System](../administer/system.md) tab in Admin.
 
