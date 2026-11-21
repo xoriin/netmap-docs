@@ -1,65 +1,139 @@
 ---
-title: NetMap
-keywords:
-  - NetMap documentation
-  - getting started
-  - network mapping
-  - monitoring
+description: Self-hosted inventory, topology, monitoring, and IP address management for your network.
 ---
 
 # NetMap
 
-NetMap is a self-hosted application for network inventory, topology, monitoring, IP address management, discovery, syslog, alerting, and administration.
+NetMap is a self-hosted application for network inventory, topology, monitoring, IP address management, discovery, syslog, alerting, and administration. You run it as a single Docker image on infrastructure you control.
 
-If you are evaluating NetMap, start with [What Is NetMap](./product-introduction/what-is-netmap.md). The version you are running is shown on the **System** tab in Admin.
+This is the documentation home. If you are evaluating NetMap, start with [What Is NetMap](./product-introduction/what-is-netmap.md). If you want to run it now, go to [Quick Start](./installation/quick-start.md). The version you are running is shown on the **System** tab in Admin.
 
-## Explore NetMap
+<!-- Screenshot to add when Frontend shots land. Do not uncomment until the files exist.
+<figure>
+  <picture>
+    <source srcset=".gitbook/assets/screenshots/use-netmap/overview/overview-dark.png" media="(prefers-color-scheme: dark)" />
+    <img src=".gitbook/assets/screenshots/use-netmap/overview/overview-light.png" alt="Overview in NetMap, showing Network Health and summary cards for Contoso Ltd. The fleet has 412 devices. Current Outages lists the offline camera akl-cam-yard-03 at the Auckland plant." width="800" />
+  </picture>
+  <figcaption>Overview for Contoso Ltd, with 412 devices across Sydney HQ, the Melbourne, Singapore and London offices, the Auckland plant, and Brisbane DC. Current Outages shows akl-cam-yard-03.contoso.local.</figcaption>
+</figure>
+-->
 
-| Goal | Start here |
-|---|---|
-| Understand the product and intended use | [What Is NetMap](./product-introduction/what-is-netmap.md) |
-| Tour the available workspaces | [Interface Tour](./using-netmap/interface-overview.md) |
-| Check whether NetMap fits your environment | [Where NetMap Fits](./product-introduction/what-is-netmap.md#where-netmap-fits) |
-| Understand deployment and data flow | [How NetMap Works](./product-introduction/architecture.md) |
-| Review limitations before deploying | [Limitations And Capacity Planning](./product-introduction/what-is-netmap.md#limitations-and-capacity-planning) |
+## Start Here
 
-## Install And Operate NetMap
+<table data-view="cards">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th data-hidden data-card-target data-type="content-ref"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>What Is NetMap?</strong></td>
+      <td>What it is for, who it suits, and where it is not the right tool.</td>
+      <td><a href="./product-introduction/what-is-netmap.md">what-is-netmap</a></td>
+    </tr>
+    <tr>
+      <td><strong>Quick Start</strong></td>
+      <td>Start the published image with Docker Compose and create the first administrator.</td>
+      <td><a href="./installation/quick-start.md">quick-start</a></td>
+    </tr>
+    <tr>
+      <td><strong>Interface Tour</strong></td>
+      <td>The workspaces you will use after you sign in.</td>
+      <td><a href="./using-netmap/interface-overview.md">interface-overview</a></td>
+    </tr>
+    <tr>
+      <td><strong>API Quick Start</strong></td>
+      <td>Create an API key and make your first request.</td>
+      <td><a href="./api/quick-start.md">api-quick-start</a></td>
+    </tr>
+  </tbody>
+</table>
 
-| Goal | Start here |
-|---|---|
-| Install with Docker Compose | [Five-Minute Quick Start](./installation/quick-start.md) |
-| Configure a complete deployment | [Docker Compose](./installation/docker-compose.md) |
-| Put NetMap behind HTTPS | [Reverse Proxy And HTTPS](./installation/reverse-proxy.md) |
-| Upgrade an existing instance | [Upgrading](./installation/upgrading.md) |
-| Check application health | [Health Checks](./operations/health-checks.md) |
-| Back up or restore data | [Backup And Restore](./operations/backup-and-restore.md) |
-| Recover from a larger failure | [Disaster Recovery](./operations/disaster-recovery.md) |
+{% hint style="warning" %}
+Do not expose the initial setup page directly to the public internet. Put NetMap behind an HTTPS reverse proxy, or restrict the port with your firewall, before inviting users. See [Reverse Proxy And HTTPS](./installation/reverse-proxy.md).
+{% endhint %}
 
-## Build And Monitor Your Network
+## Install And Operate
 
-| Goal | Start here |
-|---|---|
-| Add or import devices | [Add A Device](./guides/add-device.md) or [Import Devices](./guides/import-devices.md) |
-| Discover hosts | [Run Discovery](./guides/run-discovery.md) |
-| Build a network map | [Topology](./using-netmap/topology.md) |
-| Monitor devices and services | [Monitoring](./using-netmap/monitoring.md) |
-| Monitor websites and APIs | [HTTP Endpoint Monitors](./using-netmap/endpoint-monitors.md) |
-| Configure an alert | [Create An Alert Rule](./guides/create-alert-rule.md) |
-| Manage subnets and addresses | [IPAM](./using-netmap/ipam.md) |
-| Receive and search syslog | [Syslog](./configuration/syslog.md) and [Search Syslog Events](./guides/search-syslog.md) |
+<table data-view="cards">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th data-hidden data-card-target data-type="content-ref"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Docker Compose</strong></td>
+      <td>Ports, host networking, capabilities, and a production-shaped Compose file.</td>
+      <td><a href="./installation/docker-compose.md">docker-compose</a></td>
+    </tr>
+    <tr>
+      <td><strong>Reverse Proxy And HTTPS</strong></td>
+      <td>Put NetMap behind TLS and set the public URL, origins, and cookies.</td>
+      <td><a href="./installation/reverse-proxy.md">reverse-proxy</a></td>
+    </tr>
+    <tr>
+      <td><strong>Upgrading</strong></td>
+      <td>Back up, pull the new image, and verify the installation.</td>
+      <td><a href="./installation/upgrading.md">upgrading</a></td>
+    </tr>
+    <tr>
+      <td><strong>Backup And Restore</strong></td>
+      <td>Protect the data directory and restore a backup.</td>
+      <td><a href="./operations/backup-and-restore.md">backup-and-restore</a></td>
+    </tr>
+  </tbody>
+</table>
 
-## Administer And Automate NetMap
+## Use The Product
 
-| Goal | Start here |
-|---|---|
-| Manage users and instance settings | [Admin Workspace](./administer/index.md) |
-| Understand roles and access | [Permissions](./administer/permissions.md) |
-| Configure OIDC sign-in | [OIDC SSO](./configuration/oidc-sso.md) |
-| Secure the deployment | [Security Overview](./security/index.md) |
-| Automate through the REST API | [API Overview](./api/index.md) |
-| Find an endpoint | [Endpoint Reference](./api/reference/endpoints.md) |
-| Contribute to NetMap | [Developer Guide](./development/development.md) |
+<table data-view="cards">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th data-hidden data-card-target data-type="content-ref"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Topology</strong></td>
+      <td>Map devices and sites, and save a layout your team can share.</td>
+      <td><a href="./using-netmap/topology.md">topology</a></td>
+    </tr>
+    <tr>
+      <td><strong>Monitoring</strong></td>
+      <td>Watch device uptime, latency, and HTTP endpoints.</td>
+      <td><a href="./using-netmap/monitoring.md">monitoring</a></td>
+    </tr>
+    <tr>
+      <td><strong>IPAM</strong></td>
+      <td>Manage subnets, reservations, DHCP leases, and public addresses.</td>
+      <td><a href="./using-netmap/ipam.md">ipam</a></td>
+    </tr>
+    <tr>
+      <td><strong>Run Discovery</strong></td>
+      <td>Find hosts on your private network and review changes before you import them.</td>
+      <td><a href="./guides/run-discovery.md">run-discovery</a></td>
+    </tr>
+  </tbody>
+</table>
 
-## If Something Is Not Working
+## Next Steps
 
-Start with [Common Issues](./troubleshooting/common-issues.md), then choose the troubleshooting page for the affected area. Before sharing logs or screenshots, remove credentials, private addresses, database contents, and raw syslog data.
+- New to NetMap: [What Is NetMap](./product-introduction/what-is-netmap.md), then [Quick Start](./installation/quick-start.md).
+- Already installed: [First-Run Setup And Authentication](./installation/first-run-and-authentication.md) and the [Interface Tour](./using-netmap/interface-overview.md).
+- Something is not working: start with [Common Issues](./troubleshooting/common-issues.md). Remove credentials, private addresses, database contents, and raw syslog data before you share logs.
+
+{% content-ref url="./installation/quick-start.md" %}
+[Quick Start](./installation/quick-start.md)
+{% endcontent-ref %}
+
+{% content-ref url="./product-introduction/what-is-netmap.md" %}
+[What Is NetMap](./product-introduction/what-is-netmap.md)
+{% endcontent-ref %}
