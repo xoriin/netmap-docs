@@ -20,13 +20,15 @@ Endpoint monitors check HTTP and HTTPS URLs on their own schedule, separately fr
 
 The **Endpoints** view opens with **Average Response, Last 24 h**, which ranks endpoints by average response time, beside the **Endpoints**, **Up**, **Down**, and **Avg response** cards. Below the list, **Recent Outages** shows up to five endpoints that are down or under 100% uptime in the last 24 hours. **Certificates Expiring** shows the five certificates that expire soonest, with the days left.
 
+The endpoint list has a **Certificate** column for every HTTPS monitor: **Expired**, the days left (such as `34 d`), or **—** when no certificate has been seen yet. It shows as a warning once the days left reach the monitor's certificate warning threshold. Hover over it for the expiry date and issuer.
+
 ## Monitor Settings
 
 Monitors have their own name, URL, interval, timeout, retry count/interval, enabled/paused state, tags, description, and upside-down mode (a failed request is healthy when failure is expected). Methods support redirect following, maximum redirects, cache busting, and request headers. Bodies may be JSON, form, plain text, or XML subject to the request method and size limits.
 
 ## Assertions And Authentication
 
-Assertions include accepted status codes/ranges, required or forbidden keywords, and JSONPath operators/expected values. Authentication supports Basic, Bearer, OAuth 2.0 client credentials (token URL, client credentials, scopes, audience, auth method), and mutual TLS. Custom CAs, TLS verification, certificate issuer/expiry tracking, and an HTTP proxy are supported.
+Assertions include accepted status codes/ranges, required or forbidden keywords, and JSONPath operators/expected values. Authentication supports Basic, Bearer, OAuth 2.0 client credentials (token URL, client credentials, scopes, audience, auth method), and mutual TLS. Custom CAs, TLS verification, certificate issuer/expiry tracking, and an HTTP proxy are supported. Certificate issuer and expiry are recorded even when TLS verification is turned off.
 
 ## Secrets
 

@@ -52,7 +52,7 @@ Discovery history records status, timestamps, target/mode, result counts, and er
 | empty result | target is unreachable or filtered | verify routing and target format, then retry a small CIDR |
 | scan times out | oversized range or slow probes | reduce the range, use ping sweep, or increase the administrator timeout carefully |
 | `429` | discovery rate limit | wait for the window to clear |
-| `sudo`/nmap error | image or host dependency/capability issue | inspect container logs and verify `/usr/bin/nmap` and the permitted sudo rule |
+| `sudo`/nmap error | image or host dependency/capability issue | read the scan error, which includes nmap's or sudo's own message, then inspect container logs and verify `/usr/bin/nmap` and the permitted sudo rule |
 | hostname is missing | no PTR response within the lookup budget | configure reverse DNS or treat the IP as the identity |
 
 ## API Equivalents
