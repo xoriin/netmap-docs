@@ -126,7 +126,7 @@ curl -X POST "${NETMAP_URL}/api/v1/status-integrations/maintenance" \
   -H "Authorization: Bearer ${NETMAP_STATUS_TOKEN}" \
   -H "Idempotency-Key: switch-firmware-2026-10-24" \
   -H "Content-Type: application/json" \
-  -d '{"title": "Core switch firmware upgrade", "description": "Expect a short interruption.", "starts_at": "2026-10-24T22:00:00+10:00", "ends_at": "2026-10-24T22:30:00+10:00", "items": [{"device": 12}], "pages": ["main"]}'
+  -d '{"title": "Core switch firmware upgrade", "description": "Expect a short interruption.", "starts_at": "2026-10-24T12:00:00Z", "ends_at": "2026-10-24T12:30:00Z", "items": [{"device": 12}], "pages": ["main"]}'
 ```
 
 Change or remove a window this token created:
@@ -135,7 +135,7 @@ Change or remove a window this token created:
 curl -X PATCH "${NETMAP_URL}/api/v1/status-integrations/maintenance/8" \
   -H "Authorization: Bearer ${NETMAP_STATUS_TOKEN}" \
   -H "Content-Type: application/json" \
-  -d '{"ends_at": "2026-10-24T23:00:00+10:00"}'
+  -d '{"ends_at": "2026-10-24T13:00:00Z"}'
 
 curl -X DELETE "${NETMAP_URL}/api/v1/status-integrations/maintenance/8" \
   -H "Authorization: Bearer ${NETMAP_STATUS_TOKEN}"
