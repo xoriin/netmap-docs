@@ -45,7 +45,7 @@ chmod 600 "$INSTALL_DIR/netmap.env"
 This variant publishes the web and syslog ports explicitly:
 
 ```bash
-docker run -d --name netmap --restart unless-stopped --env-file "$INSTALL_DIR/netmap.env" --volume "$INSTALL_DIR/data:/app/data" --publish 8080:8080 --publish 5514:1514/udp --publish 5514:1514/tcp --tmpfs /tmp --cap-drop ALL --cap-add NET_RAW --cap-add NET_BIND_SERVICE --log-driver json-file --log-opt max-size=10m --log-opt max-file=5 xoriin/netmap:latest
+docker run -d --name netmap --restart unless-stopped --env-file "$INSTALL_DIR/netmap.env" --volume "$INSTALL_DIR/data:/app/data" --publish 8080:8080 --publish 5514:1514/udp --publish 5514:1514/tcp --log-driver json-file --log-opt max-size=10m --log-opt max-file=5 xoriin/netmap:latest
 ```
 
 Remove the syslog publish options if this installation will not receive syslog. Use a fixed image tag instead of `latest` when reproducible upgrades are required.
@@ -55,7 +55,7 @@ Remove the syslog publish options if this installation will not receive syslog. 
 Use host networking when NetMap needs Layer-2 access for ARP/MAC discovery or must use the host's LAN address for DHCP checks. Replace the bridge command's publish options with `--network host`:
 
 ```bash
-docker run -d --name netmap --restart unless-stopped --network host --env-file "$INSTALL_DIR/netmap.env" --volume "$INSTALL_DIR/data:/app/data" --tmpfs /tmp --cap-drop ALL --cap-add NET_RAW --cap-add NET_BIND_SERVICE --log-driver json-file --log-opt max-size=10m --log-opt max-file=5 xoriin/netmap:latest
+docker run -d --name netmap --restart unless-stopped --network host --env-file "$INSTALL_DIR/netmap.env" --volume "$INSTALL_DIR/data:/app/data" --log-driver json-file --log-opt max-size=10m --log-opt max-file=5 xoriin/netmap:latest
 ```
 
 Do not combine `--network host` with `--publish`; Docker does not publish ports for a host-networked container. Ensure ports 8080 and 1514 are free on the host.

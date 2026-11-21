@@ -61,13 +61,6 @@ services:
       - "8080:8080"
       - "5514:1514/udp"
       - "5514:1514/tcp"
-    cap_drop:
-      - ALL
-    cap_add:
-      - NET_RAW
-      - NET_BIND_SERVICE
-    tmpfs:
-      - /tmp
     logging:
       driver: json-file
       options:
@@ -91,10 +84,12 @@ Host networking means the container binds directly to the host. The host ports m
 
 ## Capabilities And nmap
 
-The service drops all Linux capabilities and adds only:
+The service uses Docker's default capabilities, which include the two the network tools need:
 
 - `NET_RAW` for ICMP and other raw-packet operations;
 - `NET_BIND_SERVICE` for low-port binds used by network tooling and DHCP replies.
+
+Do not add `cap_drop: ALL` with only those two. NetMap also uses other default capabilities at startup to prepare `/app/data` and switch to the `PUID`/`PGID` user, and without them the container exits with `mkdir /tmp/nginx/client_body: Permission denied`.
 
 Do not add `no-new-privileges` when using discovery. The image grants the `netmap` user narrowly scoped passwordless sudo access to `/usr/bin/nmap`; blocking that transition prevents privileged nmap discovery. Avoid adding broad capabilities or running the container as root as a workaround.
 
@@ -112,13 +107,7 @@ Configure devices to send to the host's published port, or use a host firewall/N
 
 ## Read-Only Root And Temporary Storage
 
-The source-build Compose file uses a read-only container root and a `/tmp` tmpfs. Keep `/app/data` writable; startup needs it for SQLite and application state, while the runtime socket and temporary files belong in `/tmp`.
-
-```yaml
-read_only: true
-tmpfs:
-  - /tmp
-```
+The published Compose files keep the container root writable. Do not set `read_only: true`: startup writes to the container filesystem, and the container exits. Keep `/app/data` writable as well; it holds SQLite and application state.
 
 If a hardened environment changes these settings, verify startup, health checks, database writes, discovery, and exports before deploying it broadly.
 

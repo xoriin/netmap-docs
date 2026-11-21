@@ -25,6 +25,7 @@ Active network tools require `NET_RAW`. MAC discovery requires host networking.
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | container exits immediately | missing `SECRET_KEY` or `MASTER_KEY` in production | set real secrets |
+| container exits with `mkdir /tmp/nginx/client_body: Permission denied` | Compose file drops all capabilities (`cap_drop: ALL`) | remove the `cap_drop` and `cap_add` lines |
 | healthcheck fails | app did not bind web port or startup failed | read logs and verify `APP_PORT` |
 | permission denied on `/app/data` | host directory ownership mismatch | set `PUID`/`PGID` or fix ownership |
 | ping/traceroute fail | missing `NET_RAW` | add `cap_add: [NET_RAW]` |

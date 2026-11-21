@@ -84,13 +84,6 @@ services:
       - "8080:8080"
       - "5514:1514/udp"
       - "5514:1514/tcp"
-    tmpfs:
-      - /tmp
-    cap_drop:
-      - ALL
-    cap_add:
-      - NET_RAW
-      - NET_BIND_SERVICE
     logging:
       driver: json-file
       options:
@@ -98,7 +91,7 @@ services:
         max-file: "5"
 ```
 
-The syslog mappings are optional. Remove them if this installation will not receive syslog. Keep `NET_RAW` for ICMP/network tools and `NET_BIND_SERVICE` for low-port operations such as DHCP checks.
+The syslog mappings are optional. Remove them if this installation will not receive syslog. Docker's default capabilities already include `NET_RAW` for ICMP/network tools and `NET_BIND_SERVICE` for low-port operations such as DHCP checks. Do not add `cap_drop: ALL`: NetMap also needs other default capabilities at startup, and the container exits without them.
 
 ## 5. Validate And Start
 

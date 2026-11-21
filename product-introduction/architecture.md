@@ -61,7 +61,7 @@ Use `network_mode: host` when you need these, after reviewing the larger exposur
 
 ### Capabilities
 
-The image and example Compose files grant only what the network tools need: `NET_RAW`, permission to bind low ports, a capability on `ping`, and permission to run `nmap` as root. Without them, ping falls back to TCP checks, discovery may fail and DHCP checks may not bind their client port.
+The network tools need `NET_RAW`, permission to bind low ports, a capability on `ping`, and permission to run `nmap` as root. Docker's default capabilities include `NET_RAW` and `NET_BIND_SERVICE`, so the published Compose files leave capabilities at their defaults. Without them, ping falls back to TCP checks, discovery may fail and DHCP checks may not bind their client port.
 
 ### Scan Scope
 
