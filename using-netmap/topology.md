@@ -46,6 +46,8 @@ Use the Devices, Links, and Groups lists to search, hover, select, and toggle vi
 
 Add a device from the topology toolbar to create it and place it immediately. Discovery opens the scan/review flow; import only the reviewed rows. To create a link, choose source and target endpoints, relationship type, direction, optional link speed, and notes. The endpoint picker searches by IP, hostname, or display name and supports keyboard navigation.
 
+To link several devices quickly, turn on **Link mode** in the toolbar (or press **L**). Click a device, then the device to link it to: the link is saved straight away and you stay in Link mode for the next pair. A small popup opens at the cursor where you can set the link speed or type, **Undo** a link made by mistake, or choose **More…** for the full edit form (notes and one-way traffic). The popup never needs to be closed — clicking the next device carries on. The speed you pick is used for the next link too, so linking a row of hosts to one switch needs only one speed choice. Clicking a group zone links to that group, as in the link form. Two devices that are already linked are not linked twice; the existing link flashes instead. Press **Esc** to close the popup, then to cancel a half-started link, then to leave Link mode. Link mode and Path mode switch each other off, and Link mode is only shown to roles that can edit the topology.
+
 Edit or delete a selected link from the details panel; direction controls determine whether source-to-target, target-to-source, or both states are allowed. Link speed presets are shown in the edge label and influence edge width; speed is presentation metadata, not a bandwidth test.
 
 ## Layout Controls And Persistence
