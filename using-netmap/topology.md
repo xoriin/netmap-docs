@@ -42,6 +42,8 @@ Status changes produce a short pulse on the affected node. Online/offline counts
 
 Use the Devices, Links, and Groups lists to search, hover, select, and toggle visibility. Shift-drag an empty canvas area to box-select devices; ordinary drag still pans. The floating bulk bar assigns the selected devices to a group/VLAN or site, including clearing an assignment. Bulk changes require `topology_write` and are confirmed before submission.
 
+To clear the links from a group of devices — for example when a rack is re-cabled or removed — box-select them and choose **Remove links…** on the bulk bar. Pick **Only links between these devices** to keep their uplinks to the rest of the network, or **Every link to or from these devices** to remove those too; each choice shows how many links it covers, and the affected links are highlighted on the map while the confirm is open. The devices themselves are not changed. Afterwards a **Removed N links** bar offers **Undo**, which re-creates the links with their type, speed, direction and notes (the restored links get new IDs). **Dismiss** or **Esc** closes the bar.
+
 ## Devices, Links, And Relationship Editing
 
 Add a device from the topology toolbar to create it and place it immediately. Discovery opens the scan/review flow; import only the reviewed rows. To create a link, choose source and target endpoints, relationship type, direction, optional link speed, and notes. The endpoint picker searches by IP, hostname, or display name and supports keyboard navigation.
@@ -53,6 +55,8 @@ Edit or delete a selected link from the details panel; direction controls determ
 ## Layout Controls And Persistence
 
 Fit frames the current graph, Reset returns the default view, and Auto-arrange recalculates positions. Auto-arrange and group-shape controls can change saved positions, so save deliberately. Group layout supports rows or rings, with device spacing and devices-per-row/ring limits. Node size, label size, group-zone opacity, and edge-label size are display preferences; Reset one group restores that group's layout without deleting its devices or links. **Reset to defaults**, at the bottom of the Display menu, returns every slider to its default: the selected group's node size, spacing, devices per row or rings and device label size, plus the background and link label sizes, which apply to every group. Group positions and the Grid/Radial choice stay as they are.
+
+Untick **Boxes** (beside **Icons** and **Text** in the toolbar) to hide every group and VLAN box and place devices freely. Devices keep their positions and their group membership — filtering, colours and per-group sizing still apply — and links drawn to a group attach to that group's main device while boxes are hidden. Dragging a whole group isn't available while boxes are off. Ticking **Boxes** again wraps each group around wherever its devices now sit; **Auto-arrange** tidies them back into rows. The choice is saved with your layout.
 
 Device labels wrap onto more lines rather than being cut off, so long names stay readable on the map, in the Devices list and in the details panel.
 
