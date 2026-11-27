@@ -13,7 +13,7 @@ keywords: [inventory, cloud assets, cloud resources, external IPs, providers]
 - **Add cloud asset** (requires `ipam_write`) records a name, type, provider, account, region, and description. Names are unique per provider account.
 - **Types:** built-in types are Server, Load balancer, Database, Storage, Network, and Other. **Add type…** in the type picker creates a custom type; a name that matches an existing type reuses it.
 - **Add to Inventory** is on by default when you also have `topology_write`: after saving, the device form opens prefilled from the asset, and the new device is linked. Turn it off to pick an existing device or leave the asset unlinked.
-- **Asset Overview:** select a row, then double-click a field to edit it (`ipam_write`). **Link device**, **Unlink**, **Add to Inventory**, **Open device**, and **Show in Devices** manage and follow the device link. Creating a device for an address that an existing device already uses offers to link that device instead.
+- **Asset Overview:** select a row, then double-click a field to edit it (`ipam_write`). **Link device**, **Unlink**, **Add to Inventory**, **Open device**, and **Show in Devices** manage and follow the device link. A copy button beside an address's **IP address** or a resource's **Name** copies the value. Creating a device for an address that an existing device already uses offers to link that device instead.
 - Cloud assets cannot be deleted from the workspace or the API.
 
 ## Use The API

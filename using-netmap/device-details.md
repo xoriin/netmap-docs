@@ -20,6 +20,8 @@ The device details view is the record-level editor used from Overview, Inventory
 
 Select a device row, node, result, or linked IP. Users with `topology_write` can double-click an editable value, type a replacement, then press Enter or leave the field to save. Escape cancels. Read-only users see values but no edit affordance.
 
+The **Hostname**, **IP address** and **MAC address** fields have a copy button beside them, in Inventory and in the Topology details panel. Clicking it copies the value and briefly shows a check mark; it works for read-only users and on plain-HTTP installs too.
+
 Delete is irreversible and requires confirmation.
 
 ## Identity And Classification Fields
